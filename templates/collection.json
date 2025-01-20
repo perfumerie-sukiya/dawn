@@ -19,7 +19,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "disabled": true,
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
@@ -40,18 +39,6 @@
     },
     "17373518348b94db71": {
       "type": "apps",
-      "blocks": {
-        "algolia_ai_search_discovery_instantsearch_yCUY7A": {
-          "type": "shopify://apps/algolia-ai-search-discovery/blocks/instantsearch/57bb7f86-d5fe-4d43-96ca-3953324494cf",
-          "settings": {
-            "disable_skeleton_loader": false,
-            "custom_skeleton_mockup": ""
-          }
-        }
-      },
-      "block_order": [
-        "algolia_ai_search_discovery_instantsearch_yCUY7A"
-      ],
       "settings": {
         "include_margins": true
       }
