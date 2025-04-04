@@ -214,6 +214,26 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_jjeypJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LM20250404.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NtzrMr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20250411.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-explicit-lipstick-body-heat-special-size-2025-4-11"
+          }
+        },
         "column_D3KcAj": {
           "type": "column",
           "settings": {
@@ -246,6 +266,8 @@
         }
       },
       "block_order": [
+        "column_jjeypJ",
+        "column_NtzrMr",
         "column_D3KcAj",
         "column_ipgCbY",
         "column_7pr9LV"
