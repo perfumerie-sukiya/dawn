@@ -1,0 +1,10 @@
+.anygift-about-modal-caution-text-expiration {
+    &::after {
+        content: '※ お相手の方が住所の入力がない場合、5日後にキャンセルとなります。';
+        display: block;
+    }
+}
+
+.anygift-about-modal-caution-text-address {
+    display: none;
+}
