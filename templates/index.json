@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_qQFrnF": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/fa83465e8197dd3ddbab4c204ede5007_78c4bf4f-d7b0-4e33-bd48-385b0ee924d0.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-crystal-lacquer-2ml-mini-size-sample"
+          }
+        },
         "column_jjeypJ": {
           "type": "column",
           "settings": {
@@ -266,6 +276,7 @@
         }
       },
       "block_order": [
+        "column_qQFrnF",
         "column_jjeypJ",
         "column_NtzrMr",
         "column_D3KcAj",
