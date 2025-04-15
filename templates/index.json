@@ -214,6 +214,25 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_LNWDpk": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UxF4AP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20250416_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-aq-absolute-emulsion-micro-radiance-ii-absolute-lotion-hydro-infuse-ii-14ml-each-2025-4-16"
+          }
+        },
         "column_qQFrnF": {
           "type": "column",
           "settings": {
@@ -276,6 +295,8 @@
         }
       },
       "block_order": [
+        "column_LNWDpk",
+        "column_UxF4AP",
         "column_qQFrnF",
         "column_jjeypJ",
         "column_NtzrMr",
