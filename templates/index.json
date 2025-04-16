@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_tzdCqC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LM20250421.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/laura-mercier-special-cushion-sponge-pink"
+          }
+        },
         "column_LNWDpk": {
           "type": "column",
           "settings": {
@@ -286,6 +296,7 @@
         }
       },
       "block_order": [
+        "column_tzdCqC",
         "column_LNWDpk",
         "column_qQFrnF",
         "column_jjeypJ",
@@ -299,7 +310,7 @@
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "none",
         "button_label": "",
