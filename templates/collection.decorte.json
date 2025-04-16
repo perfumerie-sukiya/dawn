@@ -28,22 +28,6 @@
             "link": "https://online.sukiya.biz/products/decorte-liploid-advanced-repair-serum"
           }
         },
-        "slide_VnUATj": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/5JBZZY_AQ_AURA_REFLECTOR__PC-21.jpg",
-            "image_sp": "shopify://shop_images/5JBZZY_AQ_AURA_REFLECTOR__SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-flawless-skin-glowizer-2025-3-16"
-          }
-        },
-        "slide_4cQQ86": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/TOP__ol-05.jpg",
-            "image_sp": "shopify://shop_images/TOP__ol-06.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-hydra-clarity-medicinal-treatment-essence-water-2025-2-16"
-          }
-        },
         "slide_tWFPcx": {
           "type": "slide",
           "settings": {
@@ -51,13 +35,38 @@
             "image_sp": "shopify://shop_images/25__Top_SP-05.jpg",
             "link": ""
           }
+        },
+        "slide_VnUATj": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/25AQ_oil_PC.jpg",
+            "image_sp": "shopify://shop_images/25AQ_oil_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-flawless-skin-glowizer-2025-3-16"
+          }
+        },
+        "slide_4NPcQK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/25AQ_hair_mist_PC.jpg",
+            "image_sp": "shopify://shop_images/25AQ_hair_mist_SP.jpg",
+            "link": ""
+          }
+        },
+        "slide_4cQQ86": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/25_WL_Top_PC.jpg",
+            "image_sp": "shopify://shop_images/25_WL_Top_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-hydra-clarity-medicinal-treatment-essence-water-2025-2-16"
+          }
         }
       },
       "block_order": [
         "slide_NfLWt3",
+        "slide_tWFPcx",
         "slide_VnUATj",
-        "slide_4cQQ86",
-        "slide_tWFPcx"
+        "slide_4NPcQK",
+        "slide_4cQQ86"
       ],
       "settings": {}
     },
