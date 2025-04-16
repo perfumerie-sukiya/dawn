@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_pJxFLc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LM20250421_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/laura-mercier-original-oil-blotting-paper"
+          }
+        },
         "column_tzdCqC": {
           "type": "column",
           "settings": {
@@ -296,6 +306,7 @@
         }
       },
       "block_order": [
+        "column_pJxFLc",
         "column_tzdCqC",
         "column_LNWDpk",
         "column_qQFrnF",
