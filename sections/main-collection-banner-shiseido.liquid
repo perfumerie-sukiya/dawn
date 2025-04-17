@@ -419,7 +419,7 @@
   <div class="page-width tw-my-5">
     <h3 class="tw-mb-2 tw-text-lg tw-underline">SERIES - シリーズ</h3>
     <div class="category-navigation">
-      <ul class="category-navigation-list tw-p-0 tw-grid tw-grid-cols-3 md:tw-grid-cols-3 tw-gap-2 md:tw-gap-4">
+      <ul class="category-navigation-list tw-p-0 tw-grid tw-items-center tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-2 md:tw-gap-4">
         {% for s in series.value %}
           <li>
             <a
@@ -430,8 +430,8 @@
                 class="tw-mx-auto"
                 src="{{ s.image.value.image | image_url}}"
                 alt="{{ s.name.value }}"
-                width="500"
-                height="500"
+                width="244"
+                height="100"
               >
             </a>
           </li>
