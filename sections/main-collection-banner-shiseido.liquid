@@ -419,9 +419,9 @@
   <div class="page-width tw-my-5">
     <h3 class="tw-mb-2 tw-text-lg tw-underline">SERIES - シリーズ</h3>
     <div class="category-navigation">
-      <ul class="category-navigation-list tw-p-0 tw-grid tw-grid-cols-4 md:tw-grid-cols-6 tw-gap-2 md:tw-gap-4">
+      <ul class="category-navigation-list tw-p-0 tw-grid tw-grid-cols-3 md:tw-grid-cols-3 tw-gap-2 md:tw-gap-4">
         {% for s in series.value %}
-          <li class="tw-shadow-md">
+          <li>
             <a
               class="scroll_item_inr tw-no-underline"
               href="/collections/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
@@ -433,7 +433,6 @@
                 width="500"
                 height="500"
               >
-              <div class="tw-text-xs tw-text-center tw-my-2 tw-text-black">{{ s.name.value }}</div>
             </a>
           </li>
         {% endfor %}
