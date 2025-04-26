@@ -234,16 +234,6 @@
             "link": "https://online.sukiya.biz/pages/laura-mercier-special-cushion-sponge-pink"
           }
         },
-        "column_LNWDpk": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20250416_2.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-aq-absolute-emulsion-micro-radiance-ii-absolute-lotion-hydro-infuse-ii-14ml-each-2025-4-16"
-          }
-        },
         "column_qQFrnF": {
           "type": "column",
           "settings": {
@@ -284,16 +274,6 @@
             "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
           }
         },
-        "column_ipgCbY": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ4_GWP_6d04a012-7cc2-4e0d-af61-a3afa8a277df.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-mirror-charm"
-          }
-        },
         "column_7pr9LV": {
           "type": "column",
           "settings": {
@@ -308,12 +288,10 @@
       "block_order": [
         "column_pJxFLc",
         "column_tzdCqC",
-        "column_LNWDpk",
         "column_qQFrnF",
         "column_jjeypJ",
         "column_NtzrMr",
         "column_D3KcAj",
-        "column_ipgCbY",
         "column_7pr9LV"
       ],
       "settings": {
