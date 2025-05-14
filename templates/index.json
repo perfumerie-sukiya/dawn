@@ -214,6 +214,26 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_qqwXRx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20250516_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-aq-bright-emulsion-and-lotion-14ml-bottle-sample-set"
+          }
+        },
+        "column_DL9hB4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20250516.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-aq-radiance-watery-gel-cleansing-15g-aq-radiance-airy-cream-wash-15g-2"
+          }
+        },
         "column_Ya9iab": {
           "type": "column",
           "settings": {
@@ -296,6 +316,8 @@
         }
       },
       "block_order": [
+        "column_qqwXRx",
+        "column_DL9hB4",
         "column_Ya9iab",
         "column_MTRmtn",
         "column_HqzMpe",
