@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_PHmCcb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20250528.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-original-red-pouch"
+          }
+        },
         "column_WLVQBN": {
           "type": "column",
           "settings": {
@@ -316,6 +326,7 @@
         }
       },
       "block_order": [
+        "column_PHmCcb",
         "column_WLVQBN",
         "column_qqwXRx",
         "column_DL9hB4",
