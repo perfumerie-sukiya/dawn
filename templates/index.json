@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_xpi4cJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PJ6_GWP.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paulandjoe-fixing-mist-trial-size"
+          }
+        },
         "column_PHmCcb": {
           "type": "column",
           "settings": {
@@ -326,6 +336,7 @@
         }
       },
       "block_order": [
+        "column_xpi4cJ",
         "column_PHmCcb",
         "column_WLVQBN",
         "column_qqwXRx",
