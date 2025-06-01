@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_f9iW4M": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20250601.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-2025-6-1"
+          }
+        },
         "column_UVigRp": {
           "type": "column",
           "settings": {
@@ -346,6 +356,7 @@
         }
       },
       "block_order": [
+        "column_f9iW4M",
         "column_UVigRp",
         "column_xpi4cJ",
         "column_PHmCcb",
