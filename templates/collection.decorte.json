@@ -20,6 +20,14 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
+        "slide_tWFPcx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DC_LIPOFM_1_online_TOP_4971710379860_PC.jpg",
+            "image_sp": "shopify://shop_images/DC_LIPOFM_1_online_TOP_4971710379860_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-liposome-advanced-repair-serum-color-dreams-2025-6-1"
+          }
+        },
         "slide_VnUATj": {
           "type": "slide",
           "settings": {
@@ -43,21 +51,13 @@
             "image_sp": "shopify://shop_images/25_WL_Top_SP.jpg",
             "link": "https://online.sukiya.biz/products/decorte-whitelogist-neogenesis-brightening-concentrate-limited-size-2025-5-16"
           }
-        },
-        "slide_tWFPcx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/DC_LIPOFM_1_online_TOP_4971710379860_PC.jpg",
-            "image_sp": "shopify://shop_images/DC_LIPOFM_1_online_TOP_4971710379860_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-liposome-advanced-repair-serum-color-dreams-2025-6-1"
-          }
         }
       },
       "block_order": [
+        "slide_tWFPcx",
         "slide_VnUATj",
         "slide_4NPcQK",
-        "slide_4cQQ86",
-        "slide_tWFPcx"
+        "slide_4cQQ86"
       ],
       "settings": {}
     },
