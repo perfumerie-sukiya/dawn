@@ -224,6 +224,16 @@
             "link": "https://online.sukiya.biz/pages/laura-mercier-original-oil-blotting-paper-2025-6-6"
           }
         },
+        "column_Ya9iab": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN_0606.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-set-of-2-hand-creams"
+          }
+        },
         "column_f9iW4M": {
           "type": "column",
           "settings": {
@@ -294,16 +304,6 @@
             "link": "https://online.sukiya.biz/pages/decorte-aq-radiance-watery-gel-cleansing-15g-aq-radiance-airy-cream-wash-15g-2"
           }
         },
-        "column_Ya9iab": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FN20250509.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-set-of-2-hand-creams"
-          }
-        },
         "column_MTRmtn": {
           "type": "column",
           "settings": {
@@ -337,6 +337,7 @@
       },
       "block_order": [
         "column_394aLb",
+        "column_Ya9iab",
         "column_f9iW4M",
         "column_UVigRp",
         "column_xpi4cJ",
@@ -344,7 +345,6 @@
         "column_WLVQBN",
         "column_qqwXRx",
         "column_DL9hB4",
-        "column_Ya9iab",
         "column_MTRmtn",
         "column_HqzMpe",
         "column_D3KcAj"
