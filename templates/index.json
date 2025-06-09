@@ -304,16 +304,6 @@
             "link": "https://online.sukiya.biz/pages/decorte-aq-radiance-watery-gel-cleansing-15g-aq-radiance-airy-cream-wash-15g-2"
           }
         },
-        "column_MTRmtn": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20250502.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-original-hair-clip"
-          }
-        },
         "column_HqzMpe": {
           "type": "column",
           "settings": {
@@ -345,7 +335,6 @@
         "column_WLVQBN",
         "column_qqwXRx",
         "column_DL9hB4",
-        "column_MTRmtn",
         "column_HqzMpe",
         "column_D3KcAj"
       ],
