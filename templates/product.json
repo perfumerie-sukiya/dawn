@@ -57,13 +57,6 @@
             "show_gift_card_recipient": true
           }
         },
-        "vendor_specific_text_q4gyFi": {
-          "type": "vendor_specific_text",
-          "settings": {
-            "target_vendor": "DECORTÉ",
-            "text": "<p><a href=\"/blogs/news/decorte-price-20250601\" title=\"DECORTÉ価格改定のお知らせ\"><span style=\"text-decoration:underline\"><strong>※(2025年6月1日AM10時～) 価格改定のお知らせ</strong></span></a></p>"
-          }
-        },
         "description": {
           "type": "description",
           "settings": {}
@@ -120,7 +113,6 @@
         "a2fac057-a160-42d6-afbe-9d2ec38856bb",
         "quantity_selector",
         "buy_buttons",
-        "vendor_specific_text_q4gyFi",
         "description",
         "collapsible-row-0",
         "collapsible-row-2",
