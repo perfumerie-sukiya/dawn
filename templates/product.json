@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -22,8 +22,7 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "caption": {
           "type": "text",
@@ -35,8 +34,7 @@
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -46,13 +44,11 @@
         },
         "a2fac057-a160-42d6-afbe-9d2ec38856bb": {
           "type": "additional_info",
-          "settings": {
-          }
+          "settings": {}
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -63,15 +59,14 @@
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "内容成分",
             "icon": "clipboard",
-            "content": "<p>{{ product.metafields.my_fields.ingredient | metafield_tag }}<\/p>",
+            "content": "<p>{{ product.metafields.my_fields.ingredient | metafield_tag }}</p>",
             "page": ""
           }
         },
@@ -80,7 +75,7 @@
           "settings": {
             "heading": "使用方法",
             "icon": "lipstick",
-            "content": "<p>{{ product.metafields.my_fields.howtouse | metafield_tag }}<\/p>",
+            "content": "<p>{{ product.metafields.my_fields.howtouse | metafield_tag }}</p>",
             "page": ""
           }
         },
@@ -89,7 +84,7 @@
           "settings": {
             "heading": "注意事項",
             "icon": "check_mark",
-            "content": "<p>{{ product.metafields.my_fields.caution | metafield_tag }}<\/p>",
+            "content": "<p>{{ product.metafields.my_fields.caution | metafield_tag }}</p>",
             "page": ""
           }
         },

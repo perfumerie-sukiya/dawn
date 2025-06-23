@@ -39,11 +39,28 @@
 
   assign show_desktop_slider = false
   assign show_desktop_slider = true
+
+  # Determine selected tag from Storefront Filtering (filter.p.tag) または旧来の current_tags
+  assign filter_tag = ''
+  for filter in collection.filters
+    if filter.param_name == 'filter.p.tag'
+      if filter.active_values != blank
+        assign filter_tag = filter.active_values.first.label
+      endif
+      break
+    endif
+  endfor
+  # 旧 URL 形式 (/collections/handle/tag) の場合は current_tags をフォールバックに使用
+  if filter_tag == ''
+    assign filter_tag = current_tags | first
+  endif
 -%}
 
 <script>
   const img = new Image();
-  img.src = 'https://d36vh7pxyzmz4l.cloudfront.net/images/brand/cle-de-peau-beaute/category/{{ current_tags }}.jpg';
+  {% if filter_tag %}
+    img.src = 'https://d36vh7pxyzmz4l.cloudfront.net/images/brand/cle-de-peau-beaute/category/{{ filter_tag | url_encode }}.jpg';
+  {% endif %}
   img.onload = function () {
     // Image exists and is loaded
     document.getElementById('imageContainer').appendChild(img);
@@ -53,11 +70,10 @@
     console.log('Image not found');
   };
 </script>
-
-{% if current_tags %}
+{% if filter_tag %}
   <div class="cpb-category-header page-width tw-my-5">
     <div id="imageContainer" class="tw-hidden md:tw-block"></div>
-    <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ current_tags }}</h3>
+    <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
   </div>
   <div class="section-{{ section.id }}-padding">
     {%- paginate collection.products by section.settings.products_per_page -%}
@@ -275,7 +291,7 @@
       <div class="pc-only">
         <ul class="tw-tracking-wide tw-grid tw-grid-cols-2 tw-gap-4">
           <li class="tw-relative">
-            <a href="/collections/cle-de-peau-beaute/スキンケア">
+            <a href="/collections/cle-de-peau-beaute?filter.p.tag=スキンケア">
               <img
                 src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/bg_pageheading_20ss_skincare_lotion.jpg?v=1733189755"
                 alt=""
@@ -289,7 +305,7 @@
             </a>
           </li>
           <li class="tw-relative">
-            <a href="/collections/cle-de-peau-beaute/メイクアップ">
+            <a href="/collections/cle-de-peau-beaute?filter.p.tag=メイクアップ">
               <img
                 src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/bg_pageheading_20ss_makeup_lip.jpg?v=1733189979"
                 alt=""
@@ -520,7 +536,7 @@
               <h5 class="tw-font-bold tw-mb-4">HAPPY NEW YEAR 2025</h5>
               <p>
                 神々しいほどに華やかな幕開け。<br>
-                伝統のエナメルアート“琺瑯彩”をモチーフに、<br>
+                伝統のエナメルアート"琺瑯彩"をモチーフに、<br>
                 幸運を呼ぶ吉祥文様をあしらった限定デザイン。<br>
                 ハイジュエリーのような輝きを放つラ・クレームで、<br>
                 さらなる美しさを磨きあげる年に。<br>

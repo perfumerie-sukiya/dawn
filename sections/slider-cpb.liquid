@@ -1,38 +1,61 @@
-{% unless current_tags %}
-<div class="page-width">
-  <div class="cpb-main-visual tw-mb-12">
-    <swiper-container
+{%- liquid
+  # Determine selected tag from Storefront Filtering (filter.p.tag) または旧来の current_tags
+  assign filter_tag = ''
+  for filter in collection.filters
+    if filter.param_name == 'filter.p.tag'
+      if filter.active_values != blank
+        assign filter_tag = filter.active_values.first.label
+      endif
+      break
+    endif
+  endfor
+  if filter_tag == ''
+    assign filter_tag = current_tags | first
+  endif
+-%}
+{% unless filter_tag %}
+  <div class="page-width">
+    <div class="cpb-main-visual tw-mb-12">
+      <swiper-container
         space-between="30"
         effect="fade"
         loop="true"
         autoplay="true"
         init="false"
-    >
-      {% for block in section.blocks %}
-        <swiper-slide class="!tw-h-auto tw-bg-white">
-        {% if block.settings.link %}<a href="{{ block.settings.link }}" class="tw-text-current">{% endif %}
+      >
+        {% for block in section.blocks %}
+          <swiper-slide class="!tw-h-auto tw-bg-white">
+            {% if block.settings.link %}<a href="{{ block.settings.link }}" class="tw-text-current">{% endif %}
             <div class="cpb-main-visual__item">
               <picture>
-                <source media="(max-width: 768px)"
-                        srcset="{{ block.settings.image_sp | image_url: width: 1242, height: 932 }}">
-                <img src="{{ block.settings.image | image_url: width: 1400, height: 500 }}"
-                     alt="{{ block.settings.title }}" width="1400" height="500">
+                <source
+                  media="(max-width: 768px)"
+                  srcset="{{ block.settings.image_sp | image_url: width: 1242, height: 932 }}"
+                >
+                <img
+                  src="{{ block.settings.image | image_url: width: 1400, height: 500 }}"
+                  alt="{{ block.settings.title }}"
+                  width="1400"
+                  height="500"
+                >
               </picture>
               <div class="textarea {% if block.settings.is_text_right %}area-right{% endif %}">
                 <div class="text_inner">
                   <div class="text">
-                    <p class="tw-whitespace-pre-wrap {% if block.settings.is_title_white %}md:tw-text-white{% endif %}">{{ block.settings.title }}</p>
+                    <p class="tw-whitespace-pre-wrap {% if block.settings.is_title_white %}md:tw-text-white{% endif %}">
+                      {{ block.settings.title }}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
             {% if block.settings.link %}</a>{% endif %}
-        </swiper-slide>
-      {% endfor %}
-      <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
-    </swiper-container>
+          </swiper-slide>
+        {% endfor %}
+        <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
+      </swiper-container>
+    </div>
   </div>
-</div>
 {% endunless %}
 
 {% schema %}
@@ -41,10 +64,7 @@
   "tag": "section",
   "class": "section",
   "disabled_on": {
-    "groups": [
-      "header",
-      "footer"
-    ]
+    "groups": ["header", "footer"]
   },
   "blocks": [
     {
