@@ -5,6 +5,7 @@
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'cpb-connect.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'shiseido-connect.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   if request.host == 'perfumerie-sukiya-online-test.myshopify.com'
@@ -96,12 +97,12 @@
 
     {% if bsi_items_size > 0 %}
       {% if customer %}
-        <div class="cpb-connect-notification cpb-connect-status tw-hidden">
+        <div class="cpb-connect-notification bsi-connect-status tw-hidden">
           <p class="cpb-connect-notification__title">SHISEIDO<br/>
             メンバーシッププログラム会員との<br/>
             ID連携は完了しています。</p>
         </div>
-        <div class="cpb-connect-notification cpb-connect-status-not-connected tw-hidden">
+        <div class="cpb-connect-notification bsi-connect-status-not-connected tw-hidden">
           <p class="cpb-connect-notification__title">SHISEIDO<br/>
             メンバーシッププログラム会員との<br/>
             ID連携は行われておりません。</p>
