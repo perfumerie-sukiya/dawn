@@ -234,16 +234,6 @@
             "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-set-of-2-hand-creams"
           }
         },
-        "column_UVigRp": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ20250601.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-pouch-2-body-primer-clear-sample-packs"
-          }
-        },
         "column_xpi4cJ": {
           "type": "column",
           "settings": {
@@ -308,7 +298,6 @@
       "block_order": [
         "column_394aLb",
         "column_Ya9iab",
-        "column_UVigRp",
         "column_xpi4cJ",
         "column_PHmCcb",
         "column_WLVQBN",
