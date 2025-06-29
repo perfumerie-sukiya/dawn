@@ -1,28 +1,14 @@
 {% liquid
   if request.host == 'perfumerie-sukiya-online-test.myshopify.com'
-    assign cpb_connect_url = 'https://test.brand.shiseido.co.jp/my-account/login?onetime_password='
-    assign cpb_api_base_url = 'https://cjsvch9nga.execute-api.ap-northeast-1.amazonaws.com/prod/proxy'
-    assign cpb_api_check_id_url = 'https://test5.www.shiseido.co.jp/sw/api/auth/V1/SWFR010620.seam'
-    assign cpb_api_get_otp_url = 'https://test5.www.shiseido.co.jp/sw/api/auth/V1/SWFR010650.seam'
-    assign cpb_api_site_serial = 'goJFnRadgCtAYhwndQdIRX3TwQToi9K66vmre2ICGNmZy8gVxT'
+    assign bsi_connect_url = 'https://test.brand.shiseido.co.jp/my-account/login?onetime_password='
   else
-    assign cpb_connect_url = 'https://brand.shiseido.co.jp/my-account/login?onetime_password='
-    assign cpb_api_base_url = 'https://cjsvch9nga.execute-api.ap-northeast-1.amazonaws.com/prod/proxy'
-    assign cpb_api_check_id_url = 'https://www.shiseido.co.jp/sw/api/auth/V1/SWFR010620.seam'
-    assign cpb_api_get_otp_url = 'https://www.shiseido.co.jp/sw/api/auth/V1/SWFR010650.seam'
-    assign cpb_api_site_serial = 'gzvDb2Qk5Yvp2Glxg3fqsBPmElb8uo58xMHC4BCevfHlV640pi'
+    assign bsi_connect_url = 'https://brand.shiseido.co.jp/my-account/login?onetime_password='
   endif
 %}
 
-<script src="{{ 'shiseido-connect.js' | asset_url }}" defer="defer"></script>
+{% render 'shiseido-connect' %}
 
-<div
-  class="page-width cpb-connect-page tw-leading-7"
-  cpb-api-base-url="{{ cpb_api_base_url }}"
-  cpb-api-site-serial="{{ cpb_api_site_serial }}"
-  cpb-api-check-id-url="{{ cpb_api_check_id_url }}"
-  cpb-api-get-otp-url="{{ cpb_api_get_otp_url }}"
->
+<div class="page-width cpb-connect-page tw-leading-7">
   <h3 class="tw-text-center tw-text-2xl tw-font-bold">
     SHISEIDO<br>
     メンバーシッププログラム会員との<br>
@@ -40,14 +26,25 @@
     >
     ぜひご登録ください。
   </p>
-  <p class="bsi-connect-status tw-text-center danger tw-hidden">
-    すでにPerfumerie Sukiya Online Storeと ID 連携済みです
-  </p>
-  <a href="{{ cpb_connect_url }}" class="shiseido-connect-register tw-no-underline" target="_blank">登録する</a>
-  <p class="tw-text-[11px] tw-leading-normal tw-mb-2 tw-text-center">
-    ※SHISEIDO オフィシャルサイトへ遷移します。<br>
-    ※SHISEIDO メンバーシッププログラムの会員登録（無料）が必要です。
-  </p>
+  <div class="tw-text-center">
+    <p class="bsi-connect-status tw-text-center danger tw-hidden">
+      すでにPerfumerie Sukiya Online Storeと ID 連携済みです
+    </p>
+    <a
+      href="{{ bsi_connect_url }}"
+      class="shiseido-connect-register tw-no-underline tw-relative tw-w-[300px] tw-mx-auto tw-my-[10px] tw-mb-[45px] tw-px-2 tw-py-2 tw-text-white tw-block tw-bg-black tw-text-center"
+      target="_blank"
+    >
+      登録する
+      <span
+        class="tw-absolute tw-top-1/2 tw-right-5 tw-transform tw--translate-y-1/2 tw-w-[15px] tw-h-3 tw-bg-[url('https://cdn.shopify.com/s/files/1/0496/5436/6365/files/icon_blank.svg?v=1677733084')] tw-bg-contain tw-bg-no-repeat"
+      ></span>
+    </a>
+    <p class="tw-text-[11px] tw-leading-normal tw-mb-2 tw-text-center">
+      ※SHISEIDO オフィシャルサイトへ遷移します。<br>
+      ※SHISEIDO メンバーシッププログラムの会員登録（無料）が必要です。
+    </p>
+  </div>
   <div class="cpb-connect-flow">
     <h3 class="tw-text-center">ID連携の流れ</h3>
     <dl>
@@ -162,10 +159,19 @@
     <p class="bsi-connect-status tw-text-center danger tw-hidden">
       すでにPerfumerie Sukiya Online Storeと ID 連携済みです
     </p>
-    <a href="{{ cpb_connect_url }}" class="shiseido-connect-register" target="_blank">登録する</a>
+    <a
+      href="{{ bsi_connect_url }}"
+      class="shiseido-connect-register tw-no-underline tw-relative tw-w-[300px] tw-mx-auto tw-my-[10px] tw-mb-[45px] tw-px-2 tw-py-2 tw-text-white tw-block tw-bg-black tw-text-center"
+      target="_blank"
+    >
+      登録する
+      <span
+        class="tw-absolute tw-top-1/2 tw-right-5 tw-transform tw--translate-y-1/2 tw-w-[15px] tw-h-3 tw-bg-[url('https://cdn.shopify.com/s/files/1/0496/5436/6365/files/icon_blank.svg?v=1677733084')] tw-bg-contain tw-bg-no-repeat"
+      ></span>
+    </a>
     <p class="tw-text-[11px] tw-leading-normal tw-mb-2 tw-text-center">
-      ※ SHISEIDO オフィシャルサイトへ遷移します。<br>
-      ※ SHISEIDO メンバーシッププログラムの会員登録（無料）が必要です。
+      ※SHISEIDO オフィシャルサイトへ遷移します。<br>
+      ※SHISEIDO メンバーシッププログラムの会員登録（無料）が必要です。
     </p>
   </div>
 </div>

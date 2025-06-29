@@ -1,84 +1,25 @@
-// HTMLから取得する値をフォールバック用に保持
-const fallbackCpbApiBaseUrl = document.querySelector('[cpb-api-base-url]')?.getAttribute('cpb-api-base-url') || '';
-const fallbackCpbApiSiteSerial = document.querySelector('[cpb-api-site-serial]')?.getAttribute('cpb-api-site-serial') || '';
-const fallbackCpbApiCheckIdUrl = document.querySelector('[cpb-api-check-id-url]')?.getAttribute('cpb-api-check-id-url') || '';
-const fallbackCpbApiGetOtpUrl = document.querySelector('[cpb-api-get-otp-url]')?.getAttribute('cpb-api-get-otp-url') || '';
+const bsiApiShopId = document.querySelector('[bsi-api-shop-id]')?.getAttribute('bsi-api-shop-id') || '';
+const bsiApiBaseUrl = document.querySelector('[bsi-api-base-url]')?.getAttribute('bsi-api-base-url') || '';
+const bsiApiSiteSerial = document.querySelector('[bsi-api-site-serial]')?.getAttribute('bsi-api-site-serial') || '';
+const bsiApiCheckIdUrl = document.querySelector('[bsi-api-check-id-url]')?.getAttribute('bsi-api-check-id-url') || '';
+const bsiApiGetOtpUrl = document.querySelector('[bsi-api-get-otp-url]')?.getAttribute('bsi-api-get-otp-url') || '';
 const shopifyCustomerId = __st.cid;
 
-console.log(shopifyCustomerId);
-
-// Shopifyのメタフィールドを取得する関数
-async function getShopMetafields() {
-  const query = `
-    query getShopMetafields {
-      shop {
-        metafield(namespace: "custom", key: "cpb_settings") {
-          value
-        }
-        apiKey: metafield(namespace: "custom", key: "api_key") {
-          value
-        }
-        siteCode: metafield(namespace: "custom", key: "site_code") {
-          value
-        }
-        baseUrl: metafield(namespace: "custom", key: "base_url") {
-          value
-        }
-        checkIdUrl: metafield(namespace: "custom", key: "check_id_url") {
-          value
-        }
-        getOtpUrl: metafield(namespace: "custom", key: "get_otp_url") {
-          value
-        }
-      }
-    }
-  `;
-
-  try {
-    const response = await fetch('/api/2023-10/graphql.json', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Shopify-Storefront-Access-Token': window.Shopify.storefront_access_token || ''
-      },
-      body: JSON.stringify({ query })
-    });
-
-    const data = await response.json();
-
-    if (data.errors) {
-      console.error('GraphQL errors:', data.errors);
-      return null;
-    }
-
-    return data.data.shop;
-  } catch (error) {
-    console.error('メタフィールドの取得に失敗しました:', error);
-    return null;
-  }
-}
-
 async function shiseidoConnectCheck() {
-  console.log('shiseidoConnectCheck');
-  // メタフィールドから設定値を取得
-  const shopMetafields = await getShopMetafields();
-  console.log('shopMetafields', shopMetafields);
+  const shopId = bsiApiShopId;
+  const siteSerial = bsiApiSiteSerial;
+  const proxyUrl = bsiApiBaseUrl;
+  const checkIdUrl = bsiApiCheckIdUrl;
 
-  // メタフィールドの値を使用（フォールバック値も設定）
-  const apiKey = shopMetafields?.apiKey?.value || '627714';
-  const siteCode = shopMetafields?.siteCode?.value || fallbackCpbApiSiteSerial;
-  const baseUrl = shopMetafields?.baseUrl?.value || fallbackCpbApiBaseUrl;
-  const checkIdUrl = shopMetafields?.checkIdUrl?.value || fallbackCpbApiCheckIdUrl;
-
-  const url = baseUrl;
+  const url = proxyUrl;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      site_serial: siteCode,
-      tkisk_cd: apiKey,
+      site_serial: siteSerial,
+      tkisk_cd: shopId,
       tkisk_ec_id: String(shopifyCustomerId),
       target_url: checkIdUrl,
     }),
@@ -105,24 +46,22 @@ async function shiseidoConnectCheck() {
 
 async function getShiseidoConnectOtp() {
   console.log('getShiseidoConnectOtp');
-  // メタフィールドから設定値を取得
-  const shopMetafields = await getShopMetafields();
 
-  // メタフィールドの値を使用（フォールバック値も設定）
-  const apiKey = shopMetafields?.apiKey?.value || '627714';
-  const siteCode = shopMetafields?.siteCode?.value || fallbackCpbApiSiteSerial;
-  const baseUrl = shopMetafields?.baseUrl?.value || fallbackCpbApiBaseUrl;
-  const getOtpUrl = shopMetafields?.getOtpUrl?.value || fallbackCpbApiGetOtpUrl;
+  // フォールバック値を直接使用
+  const shopId = bsiApiShopId;
+  const siteSerial = bsiApiSiteSerial;
+  const proxyUrl = bsiApiBaseUrl;
+  const getOtpUrl = bsiApiGetOtpUrl;
 
-  const url = baseUrl;
+  const url = proxyUrl;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      site_serial: siteCode,
-      tkisk_cd: apiKey,
+      site_serial: siteSerial,
+      tkisk_cd: shopId,
       tkisk_ec_id: String(shopifyCustomerId),
       target_url: getOtpUrl,
     }),
