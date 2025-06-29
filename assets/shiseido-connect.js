@@ -27,8 +27,6 @@ async function shiseidoConnectCheck() {
 
   const data = await response.json();
 
-  console.log(data);
-
   if (data.id_renkei_kbn === '2') {
     const statusElements = document.querySelectorAll('.bsi-connect-status');
     statusElements.forEach((element) => {
@@ -45,8 +43,6 @@ async function shiseidoConnectCheck() {
 }
 
 async function getShiseidoConnectOtp() {
-  console.log('getShiseidoConnectOtp');
-
   // フォールバック値を直接使用
   const shopId = bsiApiShopId;
   const siteSerial = bsiApiSiteSerial;
@@ -78,7 +74,6 @@ async function getShiseidoConnectOtp() {
 
 // 初期化処理
 async function initializeShiseidoConnect() {
-  console.log('initializeShiseidoConnect');
   try {
     await shiseidoConnectCheck();
     await getShiseidoConnectOtp();
