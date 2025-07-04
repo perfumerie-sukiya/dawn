@@ -224,6 +224,16 @@
             "link": "https://online.sukiya.biz/pages/laura-mercier-special-makeup-pouch-2025-7-4"
           }
         },
+        "column_Tyzkbk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LM20250704_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/laura-mercier-eau-de-parfum-amber-vanilla-special-size-2ml-2025-7-4"
+          }
+        },
         "column_VG69GK": {
           "type": "column",
           "settings": {
@@ -307,6 +317,7 @@
       },
       "block_order": [
         "column_WyUVbx",
+        "column_Tyzkbk",
         "column_VG69GK",
         "column_394aLb",
         "column_Ya9iab",
