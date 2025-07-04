@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_WyUVbx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LM20250704.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/laura-mercier-special-makeup-pouch-2025-7-4"
+          }
+        },
         "column_VG69GK": {
           "type": "column",
           "settings": {
@@ -296,6 +306,7 @@
         }
       },
       "block_order": [
+        "column_WyUVbx",
         "column_VG69GK",
         "column_394aLb",
         "column_Ya9iab",
