@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_4nxg7e": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LM20250708_3_8ea837e0-6a51-40b1-ac2f-12cd9d907b85.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/laura-mercier-translucent-loose-setting-powder-tone-up-rose-sample-with-mount-2025-7-8"
+          }
+        },
         "column_KTHVfy": {
           "type": "column",
           "settings": {
@@ -316,6 +326,7 @@
         }
       },
       "block_order": [
+        "column_4nxg7e",
         "column_KTHVfy",
         "column_LRYdcj",
         "column_WyUVbx",
