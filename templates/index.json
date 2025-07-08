@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_KTHVfy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LM20250708_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/laura-mercier-translucent-loose-setting-powder-ultra-blur-sample-with-mount-2025-7-8"
+          }
+        },
         "column_LRYdcj": {
           "type": "column",
           "settings": {
@@ -323,19 +333,10 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
           }
-        },
-        "column_KTHVfy": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/LM20250708_2.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/laura-mercier-translucent-loose-setting-powder-ultra-blur-sample-with-mount-2025-7-8"
-          }
         }
       },
       "block_order": [
+        "column_KTHVfy",
         "column_LRYdcj",
         "column_WyUVbx",
         "column_Tyzkbk",
@@ -346,8 +347,7 @@
         "column_WLVQBN",
         "column_qqwXRx",
         "column_DL9hB4",
-        "column_D3KcAj",
-        "column_KTHVfy"
+        "column_D3KcAj"
       ],
       "settings": {
         "title": "Campaign",
