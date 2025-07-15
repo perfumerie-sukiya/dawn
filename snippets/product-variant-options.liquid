@@ -28,7 +28,7 @@
     assign option_disabled = true
     assign variant = product.variants | where: 'option1', value | first
     if variant.metafields.my_fields.select_variation_img_src == blank
-      assign variant_img_src = variant.featured_image | img_url: width: 50
+      assign variant_img_src = variant.featured_image | image_url: width: 50
     else
       assign variant_img_src = variant.metafields.my_fields.select_variation_img_src
     endif
