@@ -264,9 +264,9 @@
     var width = instant.$results.offsetWidth;
 
     var suffix = 'lg';
-    if (width < 400) suffix = 'xs';
-    else if (width < 800) suffix = 'sm';
-    else if (width < 1200) suffix = 'md';
+    if (width &lt; 400) suffix = 'xs';
+    else if (width &lt; 800) suffix = 'sm';
+    else if (width &lt; 1200) suffix = 'md';
 
     instant.$results.classList.remove('ais-results-size-xs');
     instant.$results.classList.remove('ais-results-size-sm');
@@ -472,18 +472,18 @@
     return item.refinements
       .map(function (refinement) {
         return (
-          '<li class="ais-current-refined-values--item">' +
-          '  <a ' +
+          '&lt;li class="ais-current-refined-values--item"&gt;' +
+          '  &lt;a ' +
           createDataAttributes(refinement) +
-          '    class="ais-current-refined-values--link">' +
-          '    <div>' +
-          '      <div class="ais-current-refined-values--label">' +
+          '    class="ais-current-refined-values--link"&gt;' +
+          '    &lt;div&gt;' +
+          '      &lt;div class="ais-current-refined-values--label"&gt;' +
           facet.title +
-          '      </div>: ' +
+          '      &lt;/div&gt;: ' +
           refinement.label +
-          '    </div>' +
-          '  </a>' +
-          '</li>'
+          '    &lt;/div&gt;' +
+          '  &lt;/a&gt;' +
+          '&lt;/li&gt;'
         );
       })
       .join('');
