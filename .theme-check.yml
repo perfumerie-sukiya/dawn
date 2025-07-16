@@ -7,3 +7,5 @@ ignore:
   - "snippets/zeno-page-*"
   - "templates/*zeno*.liquid"
   - "layout/theme.zeno.fullscreen.liquid"
+  - "assets/algolia_init.js.liquid"
+  - "assets/algolia_instant_search.js.liquid"
