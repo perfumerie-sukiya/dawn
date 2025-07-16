@@ -51,6 +51,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
+      {% assign scheme_classes = '' %}
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% if forloop.index == 1 -%}
@@ -256,10 +257,10 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+      {{ settings.type_body_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'crossorigin' }}
     {%- endunless -%}
     {%- unless settings.type_header_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+      {{ settings.type_header_font | font_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'crossorigin' }}
     {%- endunless -%}
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
@@ -290,13 +291,13 @@
 
 
 
-<script type="text/template" id="template_algolia_money_format">{% include 'algolia_money_format' %}</script>
-<script type="text/template" id="template_algolia_multicurrency_default_format">{% include 'algolia_multicurrency_default_format' %}</script>
-<script type="text/template" id="template_algolia_current_collection_id">{% include 'algolia_current_collection_id' %}</script>
-<script type="text/template" id="template_algolia_autocomplete.css">{% include 'algolia_autocomplete.css' %}</script>
-<script type="text/template" id="template_algolia_instant_search.css">{% include 'algolia_instant_search.css' %}</script>
+<script type="text/template" id="template_algolia_money_format">{% render 'algolia_money_format' %}</script>
+<script type="text/template" id="template_algolia_multicurrency_default_format">{% render 'algolia_multicurrency_default_format' %}</script>
+<script type="text/template" id="template_algolia_current_collection_id">{% render 'algolia_current_collection_id' %}</script>
+<script type="text/template" id="template_algolia_autocomplete.css">{% render 'algolia_autocomplete.css' %}</script>
+<script type="text/template" id="template_algolia_instant_search.css">{% render 'algolia_instant_search.css' %}</script>
 {{ 'algolia_dependency_font-awesome-4-4-0.min.css' | asset_url | stylesheet_tag }}
-{% include 'algolia_markets_init' %}
+{% render 'algolia_markets_init' %}
 <script src="{{ 'algolia_externals.js' | asset_url }}" defer></script>
 <script src="{{ 'algolia_init.js' | asset_url }}" defer></script>
 <script src="{{ 'algolia_translations.js' | asset_url }}" defer></script>
@@ -311,22 +312,22 @@
 <script src="{{ 'algolia_sort_orders.js' | asset_url }}" defer></script>
 <script src="{{ 'algolia_instant_search.js' | asset_url }}" defer></script>
 <script src="{{ 'algolia_analytics.js' | asset_url }}" defer></script>
-{% include 'algolia_autocomplete' %}
-{% include 'algolia_autocomplete_main_products_only' %}
-{% include 'algolia_autocomplete_page' %}
-{% include 'algolia_autocomplete_collection' %}
-{% include 'algolia_autocomplete_article' %}
-{% include 'algolia_autocomplete_product' %}
-{% include 'algolia_autocomplete_suggestion' %}
-{% include 'algolia_autocomplete_header' %}
-{% include 'algolia_autocomplete_footer' %}
-{% include 'algolia_autocomplete_no_results' %}
-{% include 'algolia_instant_search' %}
-{% include 'algolia_instant_search_stats' %}
-{% include 'algolia_instant_search_facet_show_more' %}
-{% include 'algolia_instant_search_facet_item' %}
-{% include 'algolia_instant_search_product' %}
-{% include 'algolia_instant_search_no_result' %}
+{% render 'algolia_autocomplete' %}
+{% render 'algolia_autocomplete_main_products_only' %}
+{% render 'algolia_autocomplete_page' %}
+{% render 'algolia_autocomplete_collection' %}
+{% render 'algolia_autocomplete_article' %}
+{% render 'algolia_autocomplete_product' %}
+{% render 'algolia_autocomplete_suggestion' %}
+{% render 'algolia_autocomplete_header' %}
+{% render 'algolia_autocomplete_footer' %}
+{% render 'algolia_autocomplete_no_results' %}
+{% render 'algolia_instant_search' %}
+{% render 'algolia_instant_search_stats' %}
+{% render 'algolia_instant_search_facet_show_more' %}
+{% render 'algolia_instant_search_facet_item' %}
+{% render 'algolia_instant_search_product' %}
+{% render 'algolia_instant_search_no_result' %}
   <!-- /Algolia head -->
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){

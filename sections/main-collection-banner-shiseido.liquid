@@ -14,9 +14,7 @@
 
 {%- liquid
   assign products_to_display = section.settings.products_to_show
-  assign more_in_collection = true
 
-  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign show_mobile_slider = false
   assign show_mobile_slider = true
 
@@ -48,13 +46,7 @@
           height="90"
         >
       {% else %}
-        <img
-          src="https://d36vh7pxyzmz4l.cloudfront.net/images/logo/{{ collection.handle }}.svg"
-          alt="{{ collection.title }} | Perfumerie Sukiya"
-          class="tw-mx-auto"
-          width="300"
-          height="90"
-        >
+        {{ collection.title }}
       {% endif %}
     </h1>
     <div class="brand-description">{{ collection.description }}</div>
@@ -78,11 +70,11 @@
           <div class="sub-campaigns tw-flex tw-justify-between tw-flex-wrap md:tw-ml-4">
             <picture class="tw-w-[45px] md:tw-w-auto">
               <source
-                srcset="https://d36vh7pxyzmz4l.cloudfront.net/images/brand/campaign-sp.svg"
+                srcset="{{ 'campaign-sp.svg' | file_url }}"
                 media="(max-width: 750px)"
               >
               <img
-                src="https://d36vh7pxyzmz4l.cloudfront.net/images/brand/campaign.svg"
+                src="{{ 'campaign.svg' | file_url }}"
                 alt="FEATURE"
                 width="176"
                 height="55"

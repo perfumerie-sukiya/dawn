@@ -1,4 +1,4 @@
-<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+{{ 'materialdesignicons.min.css' | asset_url | stylesheet_tag }}
 <div class="tw-hidden md:tw-flex md:tw-justify-center tw-min-w-max">
   {% for link in linklists['decorte-nav-menu'].links %}
     {% if link.links != empty %}
