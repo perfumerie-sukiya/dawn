@@ -264,9 +264,9 @@
     var width = instant.$results.offsetWidth;
 
     var suffix = 'lg';
-    if (width &lt; 400) suffix = 'xs';
-    else if (width &lt; 800) suffix = 'sm';
-    else if (width &lt; 1200) suffix = 'md';
+    if (width < 400) suffix = 'xs';
+    else if (width < 800) suffix = 'sm';
+    else if (width < 1200) suffix = 'md';
 
     instant.$results.classList.remove('ais-results-size-xs');
     instant.$results.classList.remove('ais-results-size-sm');
