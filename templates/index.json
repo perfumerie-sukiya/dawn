@@ -303,6 +303,15 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
           }
+        },
+        "column_dY7jTh": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-hydra-clarity-medicinal-treatment-essence-water-30ml-2025-7-16"
+          }
         }
       },
       "block_order": [
@@ -314,7 +323,8 @@
         "column_WLVQBN",
         "column_qqwXRx",
         "column_DL9hB4",
-        "column_D3KcAj"
+        "column_D3KcAj",
+        "column_dY7jTh"
       ],
       "settings": {
         "title": "Campaign",
