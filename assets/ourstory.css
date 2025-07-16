@@ -1,0 +1,1717 @@
+@charset "UTF-8";
+/* smartphone layout break point*/
+/* max width device : iPhone6 plus(Landscape) */
+/* line 12, ../sass/ourstory.scss */
+.mainContainer {
+  will-change: scroll-position;
+}
+/* line 14, ../sass/ourstory.scss */
+.mainContainer h1, .mainContainer h2, .mainContainer p, .mainContainer li, .mainContainer span, .mainContainer a {
+  font-family: "Hiragino Mincho W3 JIS2004", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "YuMincho", "游明朝", "游明朝体", serif;
+}
+/* line 17, ../sass/ourstory.scss */
+.mainContainer .inview,
+.mainContainer .inview-repeat {
+  display: block;
+  transition: 0.4s;
+  transition-timing-function: ease-out;
+}
+/* line 24, ../sass/ourstory.scss */
+.mainContainer .onload {
+  transition: 1s;
+  transition-timing-function: ease-out;
+}
+
+/* line 29, ../sass/ourstory.scss */
+.globalFooter {
+  margin-top: 0;
+  position: relative;
+}
+/* line 32, ../sass/ourstory.scss */
+.globalFooter .globalFooter__pagetop {
+  display: none;
+}
+/* line 35, ../sass/ourstory.scss */
+.globalFooter .globalFooter__nav {
+  margin-top: 0;
+}
+
+/* line 40, ../sass/ourstory.scss */
+body.en-jp .mainContainer #about-top .crucial-values__list__item .lead,
+body.en-jp .mainContainer #about-top .muse__profile__text,
+body.en-jp .mainContainer #about-content .content-wrap .text,
+body.en-jp .mainContainer #about-content .content-wrap .chronology__item,
+body.en-jp .mainContainer #about-content-other .content-wrap .text {
+  text-align: left;
+}
+
+/* line 49, ../sass/ourstory.scss */
+body.zh-jp .mainContainer h1, body.zh-jp .mainContainer h2, body.zh-jp .mainContainer p, body.zh-jp .mainContainer li, body.zh-jp .mainContainer span, body.zh-jp .mainContainer a {
+  font-family: "HY ZhongSongTi", "Hiragino Mincho W3 JIS2004",  "YuMincho", "游明朝", "游明朝体", serif !important;
+}
+/* line 52, ../sass/ourstory.scss */
+body.zh-jp .mainContainer #about-content .content-wrap .chronology__item {
+  word-break: break-all;
+}
+
+@media screen and (min-width: 737px) {
+  /* line 57, ../sass/ourstory.scss */
+  #about-top {
+    padding-bottom: 160px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 57, ../sass/ourstory.scss */
+  #about-top {
+    padding-bottom: 80px;
+  }
+}
+/* line 66, ../sass/ourstory.scss */
+#about-top .opening {
+  background-color: #ffffff;
+  left: 0;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+/* line 75, ../sass/ourstory.scss */
+#about-top .opening .logo {
+  display: none;
+  font-size: 0;
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/logo.png?1015);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media screen and (min-width: 737px) {
+  /* line 75, ../sass/ourstory.scss */
+  #about-top .opening .logo {
+    height: 4vw;
+    left: calc(50% - 10vw);
+    max-width: 340px;
+    position: fixed;
+    text-align: center;
+    top: calc(50% - 2.3vw);
+    width: 20vw;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 75, ../sass/ourstory.scss */
+  #about-top .opening .logo {
+    height: 6vw;
+    left: calc(50% - 15vw);
+    max-width: 340px;
+    position: fixed;
+    text-align: center;
+    top: calc(50% - 3.3vw);
+    width: 30vw;
+  }
+}
+/* line 102, ../sass/ourstory.scss */
+#about-top .opening .copy {
+  display: none;
+  position: fixed;
+  text-align: center;
+  top: calc(50% - 0.5em);
+  width: 100%;
+}
+@media screen and (min-width: 737px) {
+  /* line 102, ../sass/ourstory.scss */
+  #about-top .opening .copy {
+    font-size: 3vw;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 102, ../sass/ourstory.scss */
+  #about-top .opening .copy {
+    font-size: 5vw;
+  }
+}
+/* line 117, ../sass/ourstory.scss */
+#about-top .content-wrap .title-text {
+  letter-spacing: 0.2em!important;
+  line-height: 1.7;
+  margin-bottom: 2em;
+  opacity: 0.3;
+}
+@media screen and (min-width: 737px) {
+  /* line 117, ../sass/ourstory.scss */
+  #about-top .content-wrap .title-text {
+    font-size: 40px!important;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 117, ../sass/ourstory.scss */
+  #about-top .content-wrap .title-text {
+    font-size: 28px!important;
+  }
+}
+/* line 130, ../sass/ourstory.scss */
+#about-top .content-wrap .lean-more__anchor {
+  border-style: solid;
+  border-width: 1px;
+  display: inline-block;
+  padding: 0.5em;
+}
+/* line 138, ../sass/ourstory.scss */
+#about-top .key-visual {
+  background-repeat: no-repeat;
+  position: relative;
+}
+@media screen and (min-width: 737px) {
+  /* line 138, ../sass/ourstory.scss */
+  #about-top .key-visual {
+    /*background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/top_key-visual.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 1000px;*/
+    width: 100%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 138, ../sass/ourstory.scss */
+  #about-top .key-visual {
+    /*background-color: #eeeeed;
+    background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/top_key-visual_sp.jpg);
+    background-position: center bottom;
+    background-size: 100% auto;
+    height: 150vw;*/
+    width: 100%;
+  }
+}
+#about-top .key-visual__image {
+  margin: 0;
+}
+/* line 158, ../sass/ourstory.scss */
+#about-top .key-visual__image img {
+  width: 100%;
+  vertical-align: bottom;
+}
+/* line 162, ../sass/ourstory.scss */
+#about-top .key-visual .page-title {
+  display: none;
+  position: absolute;
+  opacity: 0.3;
+  text-align: center;
+}
+@media screen and (min-width: 737px) {
+  /* line 162, ../sass/ourstory.scss */
+  #about-top .key-visual .page-title {
+    font-size: 40px;
+    max-width: 600px;
+    left: 50%;
+    top: 40%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 162, ../sass/ourstory.scss */
+  #about-top .key-visual .page-title {
+    font-size: 20px;
+    font-size: 5vw;
+    top: 20vw;
+    width: 100%;
+  }
+}
+/* line 182, ../sass/ourstory.scss */
+#about-top .key-visual .copy {
+  position: absolute;
+  text-align: center;
+}
+@media screen and (min-width: 737px) {
+  /* line 182, ../sass/ourstory.scss */
+  #about-top .key-visual .copy {
+    font-size: 40px;
+    max-width: 600px;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 182, ../sass/ourstory.scss */
+  #about-top .key-visual .copy {
+    font-size: 20px;
+    top: 30vw;
+    width: 100%;
+  }
+}
+/* line 199, ../sass/ourstory.scss */
+#about-top .key-visual .copy .sub-text {
+  display: inline-block;
+}
+@media screen and (min-width: 737px) {
+  /* line 199, ../sass/ourstory.scss */
+  #about-top .key-visual .copy .sub-text {
+    font-size: 32px;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 199, ../sass/ourstory.scss */
+  #about-top .key-visual .copy .sub-text {
+    font-size: 15px;
+    font-size: 4vw;
+    margin-top: 20px;
+  }
+}
+/* line 214, ../sass/ourstory.scss */
+#about-top .brand-statement,
+#about-top .brand-name,
+#about-top .craftsmanship {
+  overflow: hidden;
+  position: relative;
+}
+/* line 219, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap,
+#about-top .brand-name .content-wrap,
+#about-top .craftsmanship .content-wrap {
+  background-color: #000000;
+  color: #ffffff;
+  position: relative;
+}
+@media screen and (min-width: 737px) {
+  /* line 219, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap,
+  #about-top .brand-name .content-wrap,
+  #about-top .craftsmanship .content-wrap {
+    box-sizing: border-box;
+    min-height: 840px;
+    min-width: 1200px;
+    padding: 160px 0;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 219, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap,
+  #about-top .brand-name .content-wrap,
+  #about-top .craftsmanship .content-wrap {
+    padding: calc(100vw + 108px) 5% 40px;
+  }
+}
+/* line 232, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap .background-image,
+#about-top .brand-name .content-wrap .background-image,
+#about-top .craftsmanship .content-wrap .background-image {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  content: "";
+  display: block;
+  position: absolute;
+}
+@media screen and (min-width: 737px) {
+  /* line 232, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .background-image,
+  #about-top .brand-name .content-wrap .background-image,
+  #about-top .craftsmanship .content-wrap .background-image {
+    height: 100%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 232, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .background-image,
+  #about-top .brand-name .content-wrap .background-image,
+  #about-top .craftsmanship .content-wrap .background-image {
+    height: 100vw;
+    left: 0;
+    top: 88px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 249, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .title-text,
+  #about-top .brand-name .content-wrap .title-text,
+  #about-top .craftsmanship .content-wrap .title-text {
+    position: absolute;
+    top: 40px;
+  }
+}
+/* line 255, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap .copy,
+#about-top .brand-name .content-wrap .copy,
+#about-top .craftsmanship .content-wrap .copy {
+  line-height: 1.5;
+  margin-bottom: 1em;
+  position: relative;
+}
+@media screen and (min-width: 737px) {
+  /* line 255, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .copy,
+  #about-top .brand-name .content-wrap .copy,
+  #about-top .craftsmanship .content-wrap .copy {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 255, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .copy,
+  #about-top .brand-name .content-wrap .copy,
+  #about-top .craftsmanship .content-wrap .copy {
+    font-size: 24px;
+  }
+}
+/* line 265, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap .copy .inview,
+#about-top .brand-name .content-wrap .copy .inview,
+#about-top .craftsmanship .content-wrap .copy .inview {
+  opacity: 0;
+}
+/* line 267, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap .copy .inview.inview-active,
+#about-top .brand-name .content-wrap .copy .inview.inview-active,
+#about-top .craftsmanship .content-wrap .copy .inview.inview-active {
+  opacity: 1;
+}
+/* line 272, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap .lead,
+#about-top .brand-name .content-wrap .lead,
+#about-top .craftsmanship .content-wrap .lead {
+  color: #cccccc;
+  line-height: 1.7;
+  margin-bottom: 2em;
+}
+@media screen and (min-width: 737px) {
+  /* line 272, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .lead,
+  #about-top .brand-name .content-wrap .lead,
+  #about-top .craftsmanship .content-wrap .lead {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 272, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .lead,
+  #about-top .brand-name .content-wrap .lead,
+  #about-top .craftsmanship .content-wrap .lead {
+    font-size: 12px;
+  }
+}
+/* line 284, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap .lean-more__anchor,
+#about-top .brand-name .content-wrap .lean-more__anchor,
+#about-top .craftsmanship .content-wrap .lean-more__anchor {
+  color: #cccccc;
+}
+/* line 288, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap > .inview,
+#about-top .brand-name .content-wrap > .inview,
+#about-top .craftsmanship .content-wrap > .inview {
+  opacity: 0;
+  transform: translateY(40px);
+}
+/* line 291, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap > .inview.inview-active,
+#about-top .brand-name .content-wrap > .inview.inview-active,
+#about-top .craftsmanship .content-wrap > .inview.inview-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media screen and (min-width: 737px) {
+  /* line 301, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap,
+  #about-top .craftsmanship .content-wrap {
+    padding-left: calc(50% + 40px);
+    padding-right: calc(50% - 640px);
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 306, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .background-image,
+  #about-top .craftsmanship .content-wrap .background-image {
+    top: 0;
+    left: 0;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 312, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .title-text,
+  #about-top .craftsmanship .content-wrap .title-text {
+    right: 5%;
+    text-align: right;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 318, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .copy,
+  #about-top .craftsmanship .content-wrap .copy {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 323, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .lead,
+  #about-top .craftsmanship .content-wrap .lead {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 328, ../sass/ourstory.scss */
+  #about-top .brand-statement .content-wrap .lean-more,
+  #about-top .craftsmanship .content-wrap .lean-more {
+    text-align: right;
+  }
+}
+/* line 337, ../sass/ourstory.scss */
+#about-top .brand-statement .content-wrap .background-image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/top_statement-bg.jpg);
+}
+@media screen and (min-width: 737px) {
+  /* line 343, ../sass/ourstory.scss */
+  #about-top .brand-name .content-wrap {
+    padding-left: calc(50% - 560px);
+    padding-right: 50%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 343, ../sass/ourstory.scss */
+  #about-top .brand-name .content-wrap {
+    padding: calc(100vw + 165px) 5% 40px;
+  }
+}
+/* line 351, ../sass/ourstory.scss */
+#about-top .brand-name .content-wrap .background-image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/top_brandname-bg.jpg);
+}
+@media screen and (min-width: 737px) {
+  /* line 351, ../sass/ourstory.scss */
+  #about-top .brand-name .content-wrap .background-image {
+    top: 0;
+    right: 0;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 351, ../sass/ourstory.scss */
+  #about-top .brand-name .content-wrap .background-image {
+    top: 135px;
+  }
+}
+/* line 365, ../sass/ourstory.scss */
+#about-top .craftsmanship .content-wrap .background-image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/top_craftsmanship-bg.jpg);
+}
+@media screen and (min-width: 737px) {
+  /* line 372, ../sass/ourstory.scss */
+  #about-top .brand-history .content-wrap,
+  #about-top .crucial-values .content-wrap {
+    padding: 160px 0;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 372, ../sass/ourstory.scss */
+  #about-top .brand-history .content-wrap,
+  #about-top .crucial-values .content-wrap {
+    margin: 0 auto;
+    padding: 80px 0;
+    width: 90%;
+  }
+}
+/* line 381, ../sass/ourstory.scss */
+#about-top .brand-history .content-wrap .title-text,
+#about-top .crucial-values .content-wrap .title-text {
+  text-align: center;
+}
+/* line 388, ../sass/ourstory.scss */
+#about-top .brand-history .content-wrap .movie-thumbnail {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/top_history-image.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+}
+@media screen and (min-width: 737px) {
+  /* line 388, ../sass/ourstory.scss */
+  #about-top .brand-history .content-wrap .movie-thumbnail {
+    background-size: auto;
+    height: 313px;
+    width: 1000px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 388, ../sass/ourstory.scss */
+  #about-top .brand-history .content-wrap .movie-thumbnail {
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+  }
+}
+/* line 405, ../sass/ourstory.scss */
+#about-top .brand-history .content-wrap .movie-thumbnail::after {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/movie-arrow.png);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: block;
+  height: 80px;
+  right: calc(50% - 40px);
+  opacity: 0.6;
+  position: absolute;
+  top: calc(50% - 40px);
+  width: 80px;
+}
+/* line 421, ../sass/ourstory.scss */
+#about-top .brand-history.inview {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+/* line 425, ../sass/ourstory.scss */
+#about-top .brand-history.inview.inview-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* line 432, ../sass/ourstory.scss */
+#about-top .crucial-values__list {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
+}
+/* line 436, ../sass/ourstory.scss */
+#about-top .crucial-values__list__item {
+  padding: 0 20px;
+  position: relative;
+  z-index: 0;
+}
+/* line 440, ../sass/ourstory.scss */
+#about-top .crucial-values__list__item:not(.slick-current) {
+  opacity: 0.3;
+}
+/* line 443, ../sass/ourstory.scss */
+#about-top .crucial-values__list__item .thumbnail {
+  background-color: #333333;
+}
+@media screen and (min-width: 737px) {
+  /* line 443, ../sass/ourstory.scss */
+  #about-top .crucial-values__list__item .thumbnail {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 443, ../sass/ourstory.scss */
+  #about-top .crucial-values__list__item .thumbnail {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+/* line 452, ../sass/ourstory.scss */
+#about-top .crucial-values__list__item .thumbnail img {
+  width: 100%;
+}
+/* line 456, ../sass/ourstory.scss */
+#about-top .crucial-values__list__item .copy {
+  color: #333333;
+  line-height: 1.7;
+  text-align: center;
+}
+@media screen and (min-width: 737px) {
+  /* line 456, ../sass/ourstory.scss */
+  #about-top .crucial-values__list__item .copy {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 456, ../sass/ourstory.scss */
+  #about-top .crucial-values__list__item .copy {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+/* line 468, ../sass/ourstory.scss */
+#about-top .crucial-values__list__item .lead {
+  color: #333333;
+  line-height: 1.7;
+  padding: 0 20px;
+  text-align: justify;
+}
+@media screen and (min-width: 737px) {
+  /* line 468, ../sass/ourstory.scss */
+  #about-top .crucial-values__list__item .lead {
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 468, ../sass/ourstory.scss */
+  #about-top .crucial-values__list__item .lead {
+    font-size: 12px;
+    margin-bottom: 40px;
+  }
+}
+/* line 481, ../sass/ourstory.scss */
+#about-top .crucial-values__list__item .lean-more {
+  text-align: center;
+}
+/* line 483, ../sass/ourstory.scss */
+#about-top .crucial-values__list__item .lean-more__anchor {
+  color: #333333;
+}
+/* line 488, ../sass/ourstory.scss */
+#about-top .crucial-values__list .slick-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0;
+  height: 20px;
+  padding: 0;
+  position: absolute;
+  width: 20px;
+  z-index: 1;
+}
+@media screen and (min-width: 737px) {
+  /* line 488, ../sass/ourstory.scss */
+  #about-top .crucial-values__list .slick-arrow {
+    top: 415px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 488, ../sass/ourstory.scss */
+  #about-top .crucial-values__list .slick-arrow {
+    top: calc(50% - 10px);
+  }
+}
+/* line 504, ../sass/ourstory.scss */
+#about-top .crucial-values__list .slick-arrow:checked {
+  border: none;
+}
+/* line 507, ../sass/ourstory.scss */
+#about-top .crucial-values__list .slick-arrow:focus {
+  border: none;
+}
+/* line 510, ../sass/ourstory.scss */
+#about-top .crucial-values__list .slick-arrow::after {
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 20px;
+  opacity: 0.3;
+  width: 20px;
+}
+@media screen and (min-width: 737px) {
+  /* line 518, ../sass/ourstory.scss */
+  #about-top .crucial-values__list .slick-arrow.slick-prev {
+    left: 180px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 518, ../sass/ourstory.scss */
+  #about-top .crucial-values__list .slick-arrow.slick-prev {
+    left: 0;
+  }
+}
+/* line 525, ../sass/ourstory.scss */
+#about-top .crucial-values__list .slick-arrow.slick-prev::after {
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 5px;
+}
+@media screen and (min-width: 737px) {
+  /* line 534, ../sass/ourstory.scss */
+  #about-top .crucial-values__list .slick-arrow.slick-next {
+    right: 180px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 534, ../sass/ourstory.scss */
+  #about-top .crucial-values__list .slick-arrow.slick-next {
+    right: 0;
+  }
+}
+/* line 541, ../sass/ourstory.scss */
+#about-top .crucial-values__list .slick-arrow.slick-next::after {
+  border-top: 1px solid;
+  border-right: 1px solid;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  right: 5px;
+}
+/* line 554, ../sass/ourstory.scss */
+#about-top .muse__image {
+  margin-bottom: 40px;
+  text-align: center;
+}
+@media screen and (min-width: 737px) {
+  /* line 557, ../sass/ourstory.scss */
+  #about-top .muse__image img {
+    width: 420px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 557, ../sass/ourstory.scss */
+  #about-top .muse__image img {
+    width: 100%;
+  }
+}
+/* line 566, ../sass/ourstory.scss */
+#about-top .muse__name {
+  color: #333333;
+  text-align: center;
+}
+@media screen and (min-width: 737px) {
+  /* line 566, ../sass/ourstory.scss */
+  #about-top .muse__name {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 566, ../sass/ourstory.scss */
+  #about-top .muse__name {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 577, ../sass/ourstory.scss */
+  #about-top .muse__name .sub-text {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 577, ../sass/ourstory.scss */
+  #about-top .muse__name .sub-text {
+    font-size: 12px;
+  }
+}
+/* line 586, ../sass/ourstory.scss */
+#about-top .muse__profile {
+  color: #333333;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+@media screen and (max-width: 736px) {
+  /* line 586, ../sass/ourstory.scss */
+  #about-top .muse__profile {
+    width: 90%;
+  }
+}
+/* line 593, ../sass/ourstory.scss */
+#about-top .muse__profile__label {
+  border-bottom: 1px solid #b2b2b2;
+  border-top: 1px solid #b2b2b2;
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
+}
+@media screen and (max-width: 736px) {
+  /* line 593, ../sass/ourstory.scss */
+  #about-top .muse__profile__label {
+    font-size: 12px;
+  }
+}
+/* line 602, ../sass/ourstory.scss */
+#about-top .muse__profile__text {
+  line-height: 1.7;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+@media screen and (max-width: 736px) {
+  /* line 602, ../sass/ourstory.scss */
+  #about-top .muse__profile__text {
+    font-size: 12px;
+  }
+}
+/* line 609, ../sass/ourstory.scss */
+#about-top .muse__profile__text.border {
+  border-top: 1px solid #b2b2b2;
+  padding-top: 1em;
+}
+/* line 614, ../sass/ourstory.scss */
+#about-top .muse__profile .acd-btn {
+  position: relative;
+}
+@media screen and (min-width: 737px) {
+  /* line 614, ../sass/ourstory.scss */
+  #about-top .muse__profile .acd-btn {
+    display: none;
+  }
+}
+/* line 619, ../sass/ourstory.scss */
+#about-top .muse__profile .acd-btn::after {
+  display: inline-block;
+  content: "+";
+  position: absolute;
+  right: 1em;
+  width: 1em;
+}
+@media screen and (max-width: 736px) {
+  /* line 627, ../sass/ourstory.scss */
+  #about-top .muse__profile .acd-box {
+    display: none;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 633, ../sass/ourstory.scss */
+  #about-top .muse .content-wrap {
+    width: 100%;
+  }
+}
+/* line 637, ../sass/ourstory.scss */
+#about-top .muse .content-wrap .background-image-muse {
+  background-color: #fafafa;
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/top_muse-image.jpg);
+  content: "";
+  display: block;
+  width: 100%;
+}
+@media screen and (min-width: 737px) {
+  /* line 637, ../sass/ourstory.scss */
+  #about-top .muse .content-wrap .background-image-muse {
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 637, ../sass/ourstory.scss */
+  #about-top .muse .content-wrap .background-image-muse {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 200px;
+    margin-bottom: 80px;
+  }
+}
+/* line 657, ../sass/ourstory.scss */
+#about-top .muse .content-wrap .title-text {
+  text-align: center;
+}
+/* line 661, ../sass/ourstory.scss */
+#about-top .muse.inview {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+/* line 665, ../sass/ourstory.scss */
+#about-top .muse.inview.inview-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* line 672, ../sass/ourstory.scss */
+#about-top .modal-content {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* line 681, ../sass/ourstory.scss */
+#about-top .modal-content .movie__youtube {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 795px;
+  width: 80%;
+}
+
+/* line 691, ../sass/ourstory.scss */
+#about-content {
+  background-color: #000000;
+  overflow: hidden;
+  position: relative;
+}
+/* line 695, ../sass/ourstory.scss */
+#about-content::before {
+  background-color: #000000;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+@media screen and (min-width: 737px) {
+  /* line 695, ../sass/ourstory.scss */
+  #about-content::before {
+    background-position: left top;
+    background-size: 50%;
+    min-width: 1200px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 695, ../sass/ourstory.scss */
+  #about-content::before {
+    background-size: 100% auto;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 691, ../sass/ourstory.scss */
+  #about-content {
+    min-width: 1200px;
+    padding: 160px 0 80px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 691, ../sass/ourstory.scss */
+  #about-content {
+    padding: 100px 0 400px;
+    padding: 100px 0 100vw;
+  }
+}
+/* line 723, ../sass/ourstory.scss */
+#about-content.brand-statement::before {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/statement_bg.jpg);
+}
+@media screen and (max-width: 736px) {
+  /* line 723, ../sass/ourstory.scss */
+  #about-content.brand-statement::before {
+    background-position: center top 200px;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 729, ../sass/ourstory.scss */
+  #about-content.brand-statement .background-image {
+    background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/statement_bg.jpg);
+    background-position: left -10% top 15%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 729, ../sass/ourstory.scss */
+  #about-content.brand-statement .background-image {
+    background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/statement_bg_sp.jpg);
+    background-position: center bottom 55px;
+    background-size: 140% auto;
+  }
+}
+/* line 742, ../sass/ourstory.scss */
+#about-content.craftsmanship::before {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/craftsmanship_bg.jpg);
+}
+@media screen and (max-width: 736px) {
+  /* line 742, ../sass/ourstory.scss */
+  #about-content.craftsmanship::before {
+    background-position: center top 200px;
+  }
+}
+/* line 748, ../sass/ourstory.scss */
+#about-content.craftsmanship .background-image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/craftsmanship_bg.jpg);
+}
+@media screen and (min-width: 737px) {
+  /* line 748, ../sass/ourstory.scss */
+  #about-content.craftsmanship .background-image {
+    background-position: left -10% top 40%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 748, ../sass/ourstory.scss */
+  #about-content.craftsmanship .background-image {
+    background-size: 160% auto;
+  }
+}
+/* line 759, ../sass/ourstory.scss */
+#about-content.brand-name::before {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/brandname_bg.jpg);
+}
+@media screen and (max-width: 736px) {
+  /* line 759, ../sass/ourstory.scss */
+  #about-content.brand-name::before {
+    background-position: center top 300px;
+  }
+}
+/* line 765, ../sass/ourstory.scss */
+#about-content.brand-name .background-image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/brandname_bg.jpg);
+}
+@media screen and (min-width: 737px) {
+  /* line 765, ../sass/ourstory.scss */
+  #about-content.brand-name .background-image {
+    background-position: left -10% top 40%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 765, ../sass/ourstory.scss */
+  #about-content.brand-name .background-image {
+    background-size: 160% auto;
+  }
+}
+/* line 775, ../sass/ourstory.scss */
+#about-content .background-image {
+  background-color: #000000;
+  background-repeat: no-repeat;
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+@media screen and (min-width: 737px) {
+  /* line 775, ../sass/ourstory.scss */
+  #about-content .background-image {
+    background-size: 80%;
+    min-width: 1200px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 775, ../sass/ourstory.scss */
+  #about-content .background-image {
+    background-position: center bottom -10%;
+  }
+}
+/* line 794, ../sass/ourstory.scss */
+#about-content .content-wrap {
+  position: relative;
+}
+@media screen and (min-width: 737px) {
+  /* line 794, ../sass/ourstory.scss */
+  #about-content .content-wrap {
+    max-width: 720px;
+    padding-left: calc(50% - 120px);
+    width: 50%;
+  }
+}
+/* line 803, ../sass/ourstory.scss */
+#about-content .content-wrap h1, #about-content .content-wrap h2, #about-content .content-wrap p, #about-content .content-wrap li, #about-content .content-wrap span, #about-content .content-wrap a {
+  color: #dddddd;
+}
+/* line 806, ../sass/ourstory.scss */
+#about-content .content-wrap .back-top {
+  margin-top: 80px;
+}
+/* line 808, ../sass/ourstory.scss */
+#about-content .content-wrap .back-top__anchor {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  color: #dddddd;
+  display: inline-block;
+  padding: 0.5em;
+  text-align: center;
+  width: 100%;
+}
+/* line 817, ../sass/ourstory.scss */
+#about-content .content-wrap .back-top__anchor::before {
+  content: "";
+  display: inline-block;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  -webkit-transform: rotate(45deg);
+  height: 0.5em;
+  margin-right: 0.5em;
+  position: relative;
+  top: -2px;
+  transform: rotate(45deg);
+  width: 0.5em;
+}
+/* line 833, ../sass/ourstory.scss */
+#about-content .content-wrap .title-text {
+  color: #ffffff;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  opacity: 0.3;
+}
+@media screen and (min-width: 737px) {
+  /* line 833, ../sass/ourstory.scss */
+  #about-content .content-wrap .title-text {
+    font-size: 60px;
+    margin-bottom: 60px;
+    margin-left: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 833, ../sass/ourstory.scss */
+  #about-content .content-wrap .title-text {
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+/* line 848, ../sass/ourstory.scss */
+#about-content .content-wrap .title-text.onload {
+  opacity: 0;
+}
+/* line 850, ../sass/ourstory.scss */
+#about-content .content-wrap .title-text.onload.onload-active {
+  opacity: 0.3;
+}
+/* line 855, ../sass/ourstory.scss */
+#about-content .content-wrap .copy {
+  color: #ffffff;
+  line-height: 1.7;
+}
+@media screen and (min-width: 737px) {
+  /* line 855, ../sass/ourstory.scss */
+  #about-content .content-wrap .copy {
+    font-size: 40px;
+    margin-bottom: 40px;
+    margin-left: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 855, ../sass/ourstory.scss */
+  #about-content .content-wrap .copy {
+    font-size: 28px;
+    margin-bottom: 60vw;
+    text-align: center;
+  }
+}
+/* line 868, ../sass/ourstory.scss */
+#about-content .content-wrap .copy.onload {
+  opacity: 0;
+}
+/* line 870, ../sass/ourstory.scss */
+#about-content .content-wrap .copy.onload.onload-active {
+  opacity: 1;
+}
+/* line 875, ../sass/ourstory.scss */
+#about-content .content-wrap .text-wrap {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media screen and (min-width: 737px) {
+  /* line 875, ../sass/ourstory.scss */
+  #about-content .content-wrap .text-wrap {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 875, ../sass/ourstory.scss */
+  #about-content .content-wrap .text-wrap {
+    padding: 40px 5%;
+  }
+}
+/* line 883, ../sass/ourstory.scss */
+#about-content .content-wrap .text-wrap.onload {
+  opacity: 0;
+  transform: translateY(40px);
+}
+/* line 886, ../sass/ourstory.scss */
+#about-content .content-wrap .text-wrap.onload.onload-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* line 892, ../sass/ourstory.scss */
+#about-content .content-wrap .lead {
+  border-bottom: 1px solid #4d4d4d;
+  color: #ffffff;
+  line-height: 1.7;
+}
+@media screen and (min-width: 737px) {
+  /* line 892, ../sass/ourstory.scss */
+  #about-content .content-wrap .lead {
+    font-size: 28px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 892, ../sass/ourstory.scss */
+  #about-content .content-wrap .lead {
+    font-size: 18px;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+}
+/* line 908, ../sass/ourstory.scss */
+#about-content .content-wrap .text {
+  line-height: 2;
+  margin-bottom: 2em;
+  text-align: justify;
+}
+@media screen and (min-width: 737px) {
+  /* line 908, ../sass/ourstory.scss */
+  #about-content .content-wrap .text {
+    font-size: 18px;
+  }
+}
+/* line 916, ../sass/ourstory.scss */
+#about-content .content-wrap .chronology {
+  line-height: 1.7;
+}
+/* line 918, ../sass/ourstory.scss */
+#about-content .content-wrap .chronology__item {
+  margin-bottom: 2em;
+  padding-left: 5em;
+  position: relative;
+  text-align: justify;
+}
+@media screen and (min-width: 737px) {
+  /* line 918, ../sass/ourstory.scss */
+  #about-content .content-wrap .chronology__item {
+    font-size: 18px;
+  }
+}
+/* line 926, ../sass/ourstory.scss */
+#about-content .content-wrap .chronology__item .year {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+}
+
+@media screen and (min-width: 737px) {
+  /* line 935, ../sass/ourstory.scss */
+  #about-content-other {
+    padding: 160px 0 80px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 935, ../sass/ourstory.scss */
+  #about-content-other {
+    padding: 100px 0 80px;
+  }
+}
+/* line 942, ../sass/ourstory.scss */
+#about-content-other img {
+  width: 100%;
+}
+/* line 945, ../sass/ourstory.scss */
+#about-content-other .content-wrap {
+  margin: 0 auto;
+}
+@media screen and (min-width: 737px) {
+  /* line 945, ../sass/ourstory.scss */
+  #about-content-other .content-wrap {
+    min-height: 670px;
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 945, ../sass/ourstory.scss */
+  #about-content-other .content-wrap {
+    width: 90%;
+  }
+}
+/* line 954, ../sass/ourstory.scss */
+#about-content-other .content-wrap h1, #about-content-other .content-wrap h2, #about-content-other .content-wrap p, #about-content-other .content-wrap li, #about-content-other .content-wrap span, #about-content-other .content-wrap a, #about-content-other .content-wrap sup {
+  color: #333333;
+}
+/* line 957, ../sass/ourstory.scss */
+#about-content-other .content-wrap sup, #about-content-other .content-wrap small {
+  font-size: 12px;
+}
+/* line 960, ../sass/ourstory.scss */
+#about-content-other .content-wrap .back-top {
+  margin: 80px auto 0;
+}
+@media screen and (min-width: 737px) {
+  /* line 960, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .back-top {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 960, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .back-top {
+    width: 80%;
+  }
+}
+/* line 968, ../sass/ourstory.scss */
+#about-content-other .content-wrap .back-top__anchor {
+  border: 1px solid;
+  box-sizing: border-box;
+  color: #333333;
+  display: inline-block;
+  padding: 0.5em;
+  text-align: center;
+  width: 100%;
+}
+/* line 976, ../sass/ourstory.scss */
+#about-content-other .content-wrap .back-top__anchor::before {
+  content: "";
+  display: inline-block;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  -webkit-transform: rotate(45deg);
+  height: 0.5em;
+  margin-right: 0.5em;
+  position: relative;
+  top: -2px;
+  transform: rotate(45deg);
+  width: 0.5em;
+}
+/* line 992, ../sass/ourstory.scss */
+#about-content-other .content-wrap .title-text {
+  color: #000000;
+  letter-spacing: 0.2em;
+  line-height: 1.5;
+  opacity: 0.3;
+}
+@media screen and (min-width: 737px) {
+  /* line 992, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .title-text {
+    font-size: 60px;
+    margin-bottom: 80px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 992, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .title-text {
+    font-size: 20px;
+    margin-bottom: 80px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 1007, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block {
+    margin-bottom: 160px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1007, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block {
+    margin-bottom: 80px;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 1017, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block.content01 .image, #about-content-other .content-wrap .content-block.content03 .image, #about-content-other .content-wrap .content-block.content05 .image {
+    margin-left: -40px;
+    float: left;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1017, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block.content01 .image, #about-content-other .content-wrap .content-block.content03 .image, #about-content-other .content-wrap .content-block.content05 .image {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 1027, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block.content01 > *:not(.image), #about-content-other .content-wrap .content-block.content03 > *:not(.image), #about-content-other .content-wrap .content-block.content05 > *:not(.image) {
+    margin-left: auto;
+    margin-right: 0;
+    width: 680px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1034, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block.content01 .copy, #about-content-other .content-wrap .content-block.content03 .copy, #about-content-other .content-wrap .content-block.content05 .copy {
+    text-align: right;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 1042, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block.content02 .image, #about-content-other .content-wrap .content-block.content04 .image {
+    margin-right: -40px;
+    float: right;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1042, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block.content02 .image, #about-content-other .content-wrap .content-block.content04 .image {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 1052, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .content-block.content02 > *:not(.image), #about-content-other .content-wrap .content-block.content04 > *:not(.image) {
+    margin-left: 0;
+    margin-right: auto;
+    width: 680px;
+  }
+}
+/* line 1060, ../sass/ourstory.scss */
+#about-content-other .content-wrap .content-block.content01 .image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/crucial_content-image01.jpg);
+}
+/* line 1063, ../sass/ourstory.scss */
+#about-content-other .content-wrap .content-block.content02 .image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/crucial_content-image02.jpg);
+}
+/* line 1066, ../sass/ourstory.scss */
+#about-content-other .content-wrap .content-block.content03 .image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/crucial_content-image03.jpg);
+}
+/* line 1069, ../sass/ourstory.scss */
+#about-content-other .content-wrap .content-block.content04 .image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/crucial_content-image04.jpg);
+}
+/* line 1072, ../sass/ourstory.scss */
+#about-content-other .content-wrap .content-block.content05 .image {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/crucial_content-image05.jpg);
+}
+/* line 1076, ../sass/ourstory.scss */
+#about-content-other .content-wrap .overview {
+  opacity: 0;
+  transition: 0.4s;
+}
+/* line 1079, ../sass/ourstory.scss */
+#about-content-other .content-wrap .overview-active {
+  opacity: 1;
+}
+/* line 1083, ../sass/ourstory.scss */
+#about-content-other .content-wrap .image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+@media screen and (min-width: 737px) {
+  /* line 1083, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .image {
+    height: 673px;
+    width: 480px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1083, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .image {
+    height: 82vw;
+    width: 59vw;
+    margin-bottom: 20px;
+  }
+}
+/* line 1096, ../sass/ourstory.scss */
+#about-content-other .content-wrap .image.inview-repeat {
+  background-size: 150%;
+  transition: 1s;
+  transition-timing-function: ease-out;
+}
+/* line 1100, ../sass/ourstory.scss */
+#about-content-other .content-wrap .image.inview-repeat.inview-repeat-active {
+  background-size: 100%;
+}
+/* line 1105, ../sass/ourstory.scss */
+#about-content-other .content-wrap .inview {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+/* line 1109, ../sass/ourstory.scss */
+#about-content-other .content-wrap .inview.inview-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* line 1114, ../sass/ourstory.scss */
+#about-content-other .content-wrap .copy {
+  color: #000000;
+  line-height: 1.7;
+}
+#about-content-other .content-wrap .copy .sub-copy {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 1.5;
+}
+@media screen and (min-width: 737px) {
+  /* line 1114, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .copy {
+    font-size: 40px;
+    margin-bottom: 80px;
+    padding-top: 80px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1114, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .copy {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  #about-content-other .content-wrap .copy .sub-copy {
+    font-size: 20px;
+  }
+}
+/* line 1127, ../sass/ourstory.scss */
+#about-content-other .content-wrap .text {
+  line-height: 2;
+  margin-bottom: 2em;
+  text-align: justify;
+}
+@media screen and (max-width: 736px) {
+  /* line 1127, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .text {
+    font-size: 12px;
+  }
+}
+/* line 1135, ../sass/ourstory.scss */
+#about-content-other .content-wrap .column {
+  font-size: 12px;
+}
+/* line 1137, ../sass/ourstory.scss */
+#about-content-other .content-wrap .column .liposome-image {
+  width: 120px;
+}
+/* line 1140, ../sass/ourstory.scss */
+#about-content-other .content-wrap .column .caption {
+  display: inline-block;
+  line-height: 1.7;
+  margin-left: 1em;
+  width: calc(100% - 140px);
+}
+@media screen and (max-width: 736px) {
+  /* line 1147, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 1152, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__photo {
+    float: left;
+    width: 160px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1152, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__photo {
+    margin-left: auto;
+    margin-right: 10px;
+    width: 42.6vw;
+  }
+}
+@media screen and (min-width: 737px) {
+  /* line 1163, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__products {
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: 0;
+    width: 500px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1163, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__products {
+    margin-left: 10px;
+    margin-right: auto;
+    width: 21.3vw;
+  }
+}
+/* line 1175, ../sass/ourstory.scss */
+#about-content-other .content-wrap .marcel-profile__products span {
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+  display: inline-block;
+}
+@media screen and (min-width: 737px) {
+  /* line 1175, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__products span {
+    margin-right: 10px;
+    width: 120px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1175, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__products span {
+    margin-bottom: 10px;
+  }
+}
+/* line 1188, ../sass/ourstory.scss */
+#about-content-other .content-wrap .marcel-profile__text {
+  font-size: 12px;
+  line-height: 1.7;
+}
+@media screen and (min-width: 737px) {
+  /* line 1188, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__text {
+    margin-left: auto;
+    margin-right: 0;
+    width: 500px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1188, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__text {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+/* line 1200, ../sass/ourstory.scss */
+#about-content-other .content-wrap .marcel-profile__text .name {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 737px) {
+  /* line 1200, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__text .name {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1200, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__text .name {
+    font-size: 16px;
+  }
+}
+/* line 1209, ../sass/ourstory.scss */
+#about-content-other .content-wrap .marcel-profile__text .name .sub-text {
+  line-height: 1.7;
+}
+@media screen and (min-width: 737px) {
+  /* line 1209, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__text .name .sub-text {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1209, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .marcel-profile__text .name .sub-text {
+    font-size: 12px;
+  }
+}
+/* line 1221, ../sass/ourstory.scss */
+#about-content-other .content-wrap .movie-thumbnail {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/crucial_movie-thumbnail.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+}
+@media screen and (min-width: 737px) {
+  /* line 1221, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .movie-thumbnail {
+    background-size: auto;
+    height: 213px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 736px) {
+  /* line 1221, ../sass/ourstory.scss */
+  #about-content-other .content-wrap .movie-thumbnail {
+    background-size: cover;
+    height: 213px;
+    width: 100%;
+  }
+}
+/* line 1238, ../sass/ourstory.scss */
+#about-content-other .content-wrap .movie-thumbnail::after {
+  background-image: url(https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/ourstory/movie-arrow.png);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: block;
+  height: 80px;
+  right: calc(50% - 40px);
+  opacity: 0.6;
+  position: absolute;
+  top: calc(50% - 40px);
+  width: 80px;
+}
+/* line 1254, ../sass/ourstory.scss */
+#about-content-other .modal-content {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+/* line 1263, ../sass/ourstory.scss */
+#about-content-other .modal-content .movie__youtube {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 795px;
+  width: 80%;
+}
+
+@media screen and (min-width: 769px) {
+  *, :after, :before {
+    box-sizing: initial;
+  }
+}

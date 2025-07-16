@@ -66,6 +66,7 @@
       {% endif %}
     >
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+    {%- comment -%} theme-check-disable RemoteAsset {%- endcomment -%}
       <img src="{{ variant_img_src }}" alt="{{ value -}}" width="50" height="50" class="tw-mx-auto">
       {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>

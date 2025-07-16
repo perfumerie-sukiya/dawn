@@ -15,7 +15,7 @@
       <a href="/" class="tw-text-black">TOP</a></li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-px-3">|</li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-text-gray-400">
-      <a href="/collections/{{ product.metafields.my_fields.vendor_slug }}"
+      <a href="{{ routes.collections_url }}/{{ product.metafields.my_fields.vendor_slug }}"
          class="tw-text-gray-400">{{ product.vendor }}</a>
     </li>
   </ul>
@@ -23,9 +23,9 @@
   {% if product.vendor == 'クレ・ド・ポー ボーテ' %}
     <div class="cpb-header tw-pb-6">
       <h1 class="brand-logo tw-m-0">
-        <a href="/collections/cle-de-peau-beaute"><img
+        <a href="{{ routes.collections_url }}/cle-de-peau-beaute"><img
             class="tw-mx-auto"
-            src="https://d36vh7pxyzmz4l.cloudfront.net/images/logo/cle-de-peau-beaute.svg"
+            src="{{ 'cle-de-peau-beaute.svg' | file_url }}"
             alt="クレ・ド・ポー ボーテ | Perfumerie Sukiya" width="300" height="90"></a>
       </h1>
       {% render 'header-navigation-cpb' %}
@@ -129,7 +129,7 @@
                     {{ block.shopify_attributes }}
                 >
                 {%- if block.settings.is_vendor -%} <a
-                      href="/collections/{{ product.metafields.my_fields.vendor_slug }}">{%- endif -%}
+                      href="{{ routes.collections_url }}/{{ product.metafields.my_fields.vendor_slug }}">{%- endif -%}
                     {{- block.settings.text -}}
                     {%- if block.settings.is_vendor -%}</a>{%- endif -%}
                 </p>
@@ -548,6 +548,7 @@
                                  class="contains-card contains-card--product complementary-slider grid grid--1-col slider slider--everywhere"
                                  role="list"{% if number_of_slides > 1 %} aria-label="{{ 'general.slider.name' | t }}"{% endif %}>
                               {%- for i in (1..number_of_slides) -%}
+                                {%- assign continue = forloop.index0 | times: block.settings.products_per_page -%}
                                 <div id="Slide-{{ block.id }}-{{ forloop.index }}"
                                      class="complementary-slide complementary-slide--{{ settings.card_style }} grid__item slider__slide slideshow__slide"
                                      tabindex="-1"

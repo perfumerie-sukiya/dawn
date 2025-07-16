@@ -1,5 +1,8 @@
-<link rel="stylesheet" href="https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/css/ourstory.css">
-<link rel="stylesheet" href="https://d36vh7pxyzmz4l.cloudfront.net/images/brand/decorte/css/vendor/slick.css">
+{%- comment -%}
+  Brand-specific CSS files served from external CDN for DECORTE story page
+{%- endcomment -%}
+{{ 'ourstory.css' | asset_url | stylesheet_tag }}
+{{ 'slick.css' | asset_url | stylesheet_tag }}
 <main class="tw-my-6">
   {{ page.content }}
 </main>
