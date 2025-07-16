@@ -20,7 +20,7 @@
   var escapeHtml = function escapeHtml(unsafe) {
     return (unsafe || '')
       .replace(/&/g, '&amp;')
-      .replace(/&lt;/g, '&lt;')
+      .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
@@ -40,7 +40,7 @@
       if (algolia.helpers.marketsEnabled()) {
         hit.currency = algolia.config.store_currency.toLowerCase();
       }
-      
+
       if (!algolia.helpers.marketsEnabled() || algolia.helpers.activeCurrencyCode() === algolia.config.store_currency.toLowerCase()) {
         return hit;
       }
@@ -146,21 +146,21 @@
           let shouldCheckMarketIndex = true;
           try {
             const marketStorage = JSON.parse(localStorage.getItem(ALGOLIA_MARKET_KEY) || '{}');
-            
+
             if (
-              marketStorage.id == algolia.shopify.market.id && 
+              marketStorage.id == algolia.shopify.market.id &&
               marketStorage.locale == algolia.shopify.market.language.shop_locale.locale
             ) {
               cache_suffix = marketStorage.suffix ? `_${marketStorage.suffix}` : '';
               shouldCheckMarketIndex = false;
               isMemoized = true;
-            } 
+            }
           } catch (e) {
             localStorage.removeItem(ALGOLIA_MARKET_KEY);
             cache_suffix = '';
             isMemoized =true;
           }
-          
+
           if(shouldCheckMarketIndex) {
             try {
               // key = {market_id}_{market_language}
