@@ -43,8 +43,8 @@
           "type": "slide",
           "settings": {
             "title": "NARS",
-            "image": "shopify://shop_images/NARS_LRLP_Sukiya_890_550.png",
-            "image_sp": "shopify://shop_images/NARS_LRLP_Sukiya_828_1242.png",
+            "image": "shopify://shop_images/890_550_sukiya_1.png",
+            "image_sp": "shopify://shop_images/828_1242_sukiya.png",
             "link": "shopify://collections/nars"
           }
         },
