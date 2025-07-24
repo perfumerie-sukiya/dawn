@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_fhWEYN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20250825.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-licca-chan-mirror-with-case-2025-7-25"
+          }
+        },
         "column_k6VdLU": {
           "type": "column",
           "settings": {
@@ -284,16 +294,6 @@
             "link": "https://online.sukiya.biz/pages/laura-mercier-eau-de-parfum-amber-vanilla-special-size-2ml-2025-7-4"
           }
         },
-        "column_Ya9iab": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FN_0606.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-set-of-2-hand-creams"
-          }
-        },
         "column_WLVQBN": {
           "type": "column",
           "settings": {
@@ -336,6 +336,7 @@
         }
       },
       "block_order": [
+        "column_fhWEYN",
         "column_k6VdLU",
         "column_YhKFQd",
         "column_dY7jTh",
@@ -343,7 +344,6 @@
         "column_KTHVfy",
         "column_LRYdcj",
         "column_Tyzkbk",
-        "column_Ya9iab",
         "column_WLVQBN",
         "column_qqwXRx",
         "column_DL9hB4",
