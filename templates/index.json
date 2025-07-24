@@ -224,6 +224,16 @@
             "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-licca-chan-mirror-with-case-2025-7-25"
           }
         },
+        "column_LTVrfa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20250725.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-sweet-osmanthus-repair-moist-shampoo-and-treatment-sample-2025-7-25"
+          }
+        },
         "column_k6VdLU": {
           "type": "column",
           "settings": {
@@ -337,6 +347,7 @@
       },
       "block_order": [
         "column_fhWEYN",
+        "column_LTVrfa",
         "column_k6VdLU",
         "column_YhKFQd",
         "column_dY7jTh",
