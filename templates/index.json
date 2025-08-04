@@ -43,8 +43,8 @@
           "type": "slide",
           "settings": {
             "title": "NARS",
-            "image": "shopify://shop_images/NARS_LRLP_Sukiya_890_550.png",
-            "image_sp": "shopify://shop_images/NARS_LRLP_Sukiya_828_1242.png",
+            "image": "shopify://shop_images/890_550_sukiya_1.png",
+            "image_sp": "shopify://shop_images/828_1242_sukiya.png",
             "link": "shopify://collections/nars"
           }
         },
@@ -61,8 +61,8 @@
           "type": "slide",
           "settings": {
             "title": "ADDICTION",
-            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_25Summer.jpg",
-            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_25Summer.jpg",
+            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_25Fall.jpg",
+            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_25Fall.jpg",
             "link": "shopify://collections/addiction"
           }
         },
@@ -214,6 +214,56 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_6KMhbX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/8_PJ_GWP.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paulandjoe-original-canvas-tote-bag-2025-8-1"
+          }
+        },
+        "column_fhWEYN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20250825.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-licca-chan-mirror-with-case-2025-7-25"
+          }
+        },
+        "column_LTVrfa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20250725.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-sweet-osmanthus-repair-moist-shampoo-and-treatment-sample-2025-7-25"
+          }
+        },
+        "column_k6VdLU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/LM20250718.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/laura-mercier-special-mirror-2025-7-18"
+          }
+        },
+        "column_YhKFQd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20250718.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-radiant-creamy-concealer-1242-special-size-2025-7-18"
+          }
+        },
         "column_dY7jTh": {
           "type": "column",
           "settings": {
@@ -264,16 +314,6 @@
             "link": "https://online.sukiya.biz/pages/laura-mercier-eau-de-parfum-amber-vanilla-special-size-2ml-2025-7-4"
           }
         },
-        "column_Ya9iab": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FN_0606.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-set-of-2-hand-creams"
-          }
-        },
         "column_WLVQBN": {
           "type": "column",
           "settings": {
@@ -282,26 +322,6 @@
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/laura-mercier-souffle-hand-cream-midi-neroli-30g"
-          }
-        },
-        "column_qqwXRx": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20250516_2.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-aq-bright-emulsion-and-lotion-14ml-bottle-sample-set"
-          }
-        },
-        "column_DL9hB4": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20250516.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-aq-radiance-watery-gel-cleansing-15g-aq-radiance-airy-cream-wash-15g-2"
           }
         },
         "column_D3KcAj": {
@@ -316,15 +336,17 @@
         }
       },
       "block_order": [
+        "column_6KMhbX",
+        "column_fhWEYN",
+        "column_LTVrfa",
+        "column_k6VdLU",
+        "column_YhKFQd",
         "column_dY7jTh",
         "column_4nxg7e",
         "column_KTHVfy",
         "column_LRYdcj",
         "column_Tyzkbk",
-        "column_Ya9iab",
         "column_WLVQBN",
-        "column_qqwXRx",
-        "column_DL9hB4",
         "column_D3KcAj"
       ],
       "settings": {

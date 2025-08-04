@@ -23,41 +23,32 @@
         "slide_tWFPcx": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/DC_LIPOFM_1_online_TOP_4971710379860_PC.jpg",
-            "image_sp": "shopify://shop_images/DC_LIPOFM_1_online_TOP_4971710379860_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-liposome-advanced-repair-serum-color-dreams-2025-6-1"
+            "image": "shopify://shop_images/25__Top_PC-05.jpg",
+            "image_sp": "shopify://shop_images/25__Top_SP-05_7353b237-fe8a-408f-8b2c-955fd7d74441.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-skin-shadow-designing-palette-2025-7-16"
           }
         },
         "slide_VnUATj": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/25AQ_oil_PC.jpg",
-            "image_sp": "shopify://shop_images/25AQ_oil_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-aq-pore-serum-oil-2025-5-16"
+            "image": "shopify://shop_images/5JDZZY_1__OLB_25__ZENPF_PC-16.jpg",
+            "image_sp": "shopify://shop_images/5JDZZY_1__OLB_25__ZENPF_SP-16.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-zen-wear-powder-foundation-refill-2025-8-21"
           }
         },
         "slide_4NPcQK": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/25AQ_hair_mist_PC.jpg",
-            "image_sp": "shopify://shop_images/25AQ_hair_mist_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-aq-perfumed-hair-mist-2025-5-16"
-          }
-        },
-        "slide_4cQQ86": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/25_WL_Top_PC.jpg",
-            "image_sp": "shopify://shop_images/25_WL_Top_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-whitelogist-neogenesis-brightening-concentrate-limited-size-2025-5-16"
+            "image": "shopify://shop_images/banner_PC.jpg",
+            "image_sp": "shopify://shop_images/banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-rosy-glowriser-2025-8-21"
           }
         }
       },
       "block_order": [
         "slide_tWFPcx",
         "slide_VnUATj",
-        "slide_4NPcQK",
-        "slide_4cQQ86"
+        "slide_4NPcQK"
       ],
       "settings": {}
     },
