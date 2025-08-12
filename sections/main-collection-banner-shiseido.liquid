@@ -392,7 +392,7 @@
           <li class="tw-shadow-md">
             <a
               class="scroll_item_inr tw-no-underline"
-              href="/collections/{{ collection.handle }}/?filter.p.tag={{ category.tag_name.value }}#Collection"
+              href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ category.tag_name.value }}#Collection"
             >
               <img
                 class="tw-mx-auto"
@@ -419,7 +419,7 @@
           <li>
             <a
               class="scroll_item_inr tw-no-underline"
-              href="/collections/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
+              href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
             >
               <img
                 class="tw-mx-auto"
