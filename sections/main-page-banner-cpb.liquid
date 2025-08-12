@@ -1,14 +1,14 @@
 <div class="cpb-header page-width">
   <ul class="tw-flex tw-items-center tw-flex-wrap tw-flex-auto tw-list-none tw-m-0 tw-py-4 tw-px-0">
-    <li class="tw-items-center tw-inline-flex tw-text-sm"><a href="/" class="tw-text-black">TOP</a></li>
+    <li class="tw-items-center tw-inline-flex tw-text-sm"><a href="{{ routes.root_url }}" class="tw-text-black">TOP</a></li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-px-3">|</li>
-    <li class="tw-items-center tw-inline-flex tw-text-sm tw-text-gray-400"><a href="/collections/cle-de-peau-beaute"
+    <li class="tw-items-center tw-inline-flex tw-text-sm tw-text-gray-400"><a href="{{ routes.collections_url }}/cle-de-peau-beaute"
                                                                               class="tw-text-black">クレ・ド・ポー
         ボーテ</a></li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-px-3">|</li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-text-gray-400">{{ page.title }}</li>
   </ul>
-  <h1 class="brand-logo tw-m-0"><a href="/collections/cle-de-peau-beaute"><img
+  <h1 class="brand-logo tw-m-0"><a href="{{ routes.collections_url }}/cle-de-peau-beaute"><img
           src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/cle-de-peau-beaute_0571a30f-ac95-4e82-b2c7-4a22892b9a17.svg?v=1733190850"
           alt="Clé de Peau Beauté | Perfumerie Sukiya" width="300" height="90" class="tw-mx-auto"></a></h1>
   {% render 'header-navigation-cpb' %}
