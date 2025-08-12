@@ -25,7 +25,7 @@
 <div class="page-width">
   <ul class="tw-flex tw-items-center tw-flex-wrap tw-flex-auto tw-list-none tw-m-0 tw-py-4 tw-px-0">
     <li class="tw-items-center tw-inline-flex tw-text-sm">
-      <a href="/" class="tw-text-black">TOP</a>
+      <a href="{{ routes.root_url }}" class="tw-text-black">TOP</a>
     </li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-px-3">|</li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-text-gray-400">
@@ -318,7 +318,7 @@
           生命感あふれるつややかな肌へ導く。
         </p>
         <a
-          href="/collections/shiseido/?filter.p.tag=スキンケア#Collection"
+          href="{{ routes.collections_url }}/shiseido/?filter.p.tag=スキンケア#Collection"
           class="tw-block tw-bg-black tw-text-white tw-no-underline tw-px-4 tw-py-4 tw-mt-4 tw-text-center "
           >詳しくはこちら＞</a
         >
@@ -339,7 +339,7 @@
           ふれるたび、思いがけない美しさが生まれる。
         </p>
         <a
-          href="/collections/shiseido/?filter.p.tag=メイクアップ#Collection"
+          href="{{ routes.collections_url }}/shiseido/?filter.p.tag=メイクアップ#Collection"
           class="tw-block tw-bg-black tw-text-white tw-no-underline tw-px-4 tw-py-4 tw-mt-4 tw-text-center"
           >詳しくはこちら＞</a
         >
@@ -392,7 +392,7 @@
           <li class="tw-shadow-md">
             <a
               class="scroll_item_inr tw-no-underline"
-              href="/collections/{{ collection.handle }}/?filter.p.tag={{ category.tag_name.value }}#Collection"
+              href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ category.tag_name.value }}#Collection"
             >
               <img
                 class="tw-mx-auto"
@@ -419,7 +419,7 @@
           <li>
             <a
               class="scroll_item_inr tw-no-underline"
-              href="/collections/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
+              href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
             >
               <img
                 class="tw-mx-auto"
