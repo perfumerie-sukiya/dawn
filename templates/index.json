@@ -214,16 +214,6 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
-        "column_6KMhbX": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/8_PJ_GWP.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-canvas-tote-bag-2025-8-1"
-          }
-        },
         "column_fhWEYN": {
           "type": "column",
           "settings": {
@@ -346,7 +336,6 @@
         }
       },
       "block_order": [
-        "column_6KMhbX",
         "column_fhWEYN",
         "column_LTVrfa",
         "column_k6VdLU",
