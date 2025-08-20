@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_eMtPBJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20250821.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2025-8-21"
+          }
+        },
         "column_fhWEYN": {
           "type": "column",
           "settings": {
@@ -323,19 +333,10 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
           }
-        },
-        "column_eMtPBJ": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20250821.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2025-8-21"
-          }
         }
       },
       "block_order": [
+        "column_eMtPBJ",
         "column_fhWEYN",
         "column_LTVrfa",
         "column_k6VdLU",
@@ -346,8 +347,7 @@
         "column_LRYdcj",
         "column_Tyzkbk",
         "column_WLVQBN",
-        "column_D3KcAj",
-        "column_eMtPBJ"
+        "column_D3KcAj"
       ],
       "settings": {
         "title": "Campaign",
