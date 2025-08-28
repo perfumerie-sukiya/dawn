@@ -334,16 +334,6 @@
             "link": "https://online.sukiya.biz/pages/laura-mercier-eau-de-parfum-amber-vanilla-special-size-2ml-2025-7-4"
           }
         },
-        "column_WLVQBN": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/LM20250523.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/laura-mercier-souffle-hand-cream-midi-neroli-30g"
-          }
-        },
         "column_D3KcAj": {
           "type": "column",
           "settings": {
@@ -368,7 +358,6 @@
         "column_KTHVfy",
         "column_LRYdcj",
         "column_Tyzkbk",
-        "column_WLVQBN",
         "column_D3KcAj"
       ],
       "settings": {
