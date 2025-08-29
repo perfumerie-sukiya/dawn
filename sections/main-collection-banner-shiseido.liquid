@@ -52,7 +52,7 @@
     <div class="brand-description">{{ collection.description }}</div>
     <div class="campaign">
       <div class="tw-flex tw-flex-wrap tw-max-w-[800px] tw-mx-auto">
-        <div class="tw-w-full md:tw-w-3/4">
+        <div class="tw-w-full">
           <div class="main-campaign">
             {% if collection.metafields.my_fields.main_banner_link %}
               <a href="{{ collection.metafields.my_fields.main_banner_link }}">
@@ -64,50 +64,6 @@
               height="500"
             >
             {% if collection.metafields.my_fields.main_banner_link %}</a>{% endif %}
-          </div>
-        </div>
-        <div class="tw-w-full md:tw-w-1/4">
-          <div class="sub-campaigns tw-flex tw-justify-between tw-flex-wrap md:tw-ml-4">
-            <picture class="tw-w-[45px] md:tw-w-auto">
-              <source
-                srcset="{{ 'campaign-sp.svg' | file_url }}"
-                media="(max-width: 750px)"
-              >
-              <img
-                src="{{ 'campaign.svg' | file_url }}"
-                alt="FEATURE"
-                width="176"
-                height="55"
-              >
-            </picture>
-            <div
-              class="tw-flex tw-justify-between tw-flex-auto max-md:tw-basis-0 max-md:tw-space-x-2.5 md:tw-flex-wrap"
-            >
-              <div class="md:tw-mb-4 tw-flex-grow tw-bg-white">
-                {% if collection.metafields.my_fields.feature1_banner_link %}
-                  <a href="{{ collection.metafields.my_fields.feature1_banner_link }}">
-                {%- endif %}
-                <img
-                  src="{{ collection.metafields.my_fields.feature1_banner | image_url }}"
-                  alt="{{ collection.metafields.my_fields.feature1_banner.alt }}"
-                  width="178"
-                  height="178"
-                >
-                {% if collection.metafields.my_fields.feature1_banner_link %}</a>{% endif %}
-              </div>
-              <div class="tw-flex-grow tw-bg-white">
-                {% if collection.metafields.my_fields.feature2_banner_link %}
-                  <a href="{{ collection.metafields.my_fields.feature2_banner_link }}">
-                {%- endif %}
-                <img
-                  src="{{ collection.metafields.my_fields.feature2_banner | image_url }}"
-                  alt="{{ collection.metafields.my_fields.feature2_banner.alt }}"
-                  width="178"
-                  height="178"
-                >
-                {% if collection.metafields.my_fields.feature2_banner_link %}</a>{% endif %}
-              </div>
-            </div>
           </div>
         </div>
       </div>
