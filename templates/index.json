@@ -25,8 +25,8 @@
           "type": "slide",
           "settings": {
             "title": "INOUI",
-            "image": "shopify://shop_images/in_1_890_550_7400afc6-c6f0-46d6-8dd8-81aa2aade0a4.jpg",
-            "image_sp": "shopify://shop_images/in_1_828_1242_114b2b68-7964-4fcc-8cb9-a12a46434197.jpg",
+            "image": "shopify://shop_images/in_1_890_550_d64ddfed-f327-4644-91ab-882c6f6da567.jpg",
+            "image_sp": "shopify://shop_images/in_1_828_1242_jpg.jpg",
             "link": "shopify://collections/inoui"
           }
         },
@@ -214,6 +214,36 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_DEAecK": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/9_PJ_GWP.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paul-and-joe-original-vanity-pouch-2025-9-1"
+          }
+        },
+        "column_T3K8C9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20250833.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-original-spatula-2025-8-22"
+          }
+        },
+        "column_eMtPBJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20250821.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2025-8-21"
+          }
+        },
         "column_fhWEYN": {
           "type": "column",
           "settings": {
@@ -304,16 +334,6 @@
             "link": "https://online.sukiya.biz/pages/laura-mercier-eau-de-parfum-amber-vanilla-special-size-2ml-2025-7-4"
           }
         },
-        "column_WLVQBN": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/LM20250523.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/laura-mercier-souffle-hand-cream-midi-neroli-30g"
-          }
-        },
         "column_D3KcAj": {
           "type": "column",
           "settings": {
@@ -323,19 +343,12 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
           }
-        },
-        "column_eMtPBJ": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20250821.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2025-8-21"
-          }
         }
       },
       "block_order": [
+        "column_DEAecK",
+        "column_T3K8C9",
+        "column_eMtPBJ",
         "column_fhWEYN",
         "column_LTVrfa",
         "column_k6VdLU",
@@ -345,9 +358,7 @@
         "column_KTHVfy",
         "column_LRYdcj",
         "column_Tyzkbk",
-        "column_WLVQBN",
-        "column_D3KcAj",
-        "column_eMtPBJ"
+        "column_D3KcAj"
       ],
       "settings": {
         "title": "Campaign",
