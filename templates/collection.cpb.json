@@ -20,6 +20,28 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_ycztMn": {
+          "type": "slide",
+          "settings": {
+            "title": "光がもたらす、彩りの影。\n数量限定カラー新発売",
+            "image": "shopify://shop_images/offer_eye-shadow_25aw_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_eye-shadow_25aw_sp_40336b72-6edc-484f-b027-671140bfdf48.jpg",
+            "link": "",
+            "is_title_white": true,
+            "is_text_right": false
+          }
+        },
+        "slide_WGkzNU": {
+          "type": "slide",
+          "settings": {
+            "title": "贅沢な色彩と輝きを、\nいつでも唇に纏わせて",
+            "image": "shopify://shop_images/offer_lipstick_25aw_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_lipstick_25aw_sp_434bff28-0c5a-4476-b289-a522c1a313a9.jpg",
+            "link": "https://online.sukiya.biz/collections/cle-de-peau-beaute?filter.p.tag=%E3%83%AA%E3%83%83%E3%83%97",
+            "is_title_white": true,
+            "is_text_right": true
+          }
+        },
         "slide_TpUYee": {
           "type": "slide",
           "settings": {
@@ -66,6 +88,8 @@
         }
       },
       "block_order": [
+        "slide_ycztMn",
+        "slide_WGkzNU",
         "slide_TpUYee",
         "slide_6eVUkJ",
         "slide_QrXbxY",
