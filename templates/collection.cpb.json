@@ -74,28 +74,6 @@
             "is_title_white": true,
             "is_text_right": false
           }
-        },
-        "slide_aKTq4Q": {
-          "type": "slide",
-          "settings": {
-            "title": "UNLOCK THE HEART\n深まる絆、あふれる愛の輝き。",
-            "image": "shopify://shop_images/offer_25SS_LOVECollection_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_25SS_LOVECollection_sp.jpg",
-            "link": "",
-            "is_title_white": false,
-            "is_text_right": false
-          }
-        },
-        "slide_xngKK3": {
-          "type": "slide",
-          "settings": {
-            "title": "本物を知る肌に。\n輝きは無限に生まれ続ける。",
-            "image": "shopify://shop_images/offer_the-serum-2_24aw_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_the-serum-2_24aw_sp.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beautel-serum-ii-2024-9-1",
-            "is_title_white": true,
-            "is_text_right": false
-          }
         }
       },
       "block_order": [
@@ -103,9 +81,7 @@
         "slide_6eVUkJ",
         "slide_cDwdGX",
         "slide_jdMnEt",
-        "slide_QrXbxY",
-        "slide_aKTq4Q",
-        "slide_xngKK3"
+        "slide_QrXbxY"
       ],
       "settings": {}
     },
