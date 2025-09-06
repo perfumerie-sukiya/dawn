@@ -42,17 +42,6 @@
             "is_text_right": false
           }
         },
-        "slide_cDwdGX": {
-          "type": "slide",
-          "settings": {
-            "title": "その瞬間、澄みきった輝きがあふれ出す。キスト",
-            "image": "shopify://shop_images/offer_PreciousGoldVitalitySerum_pc_dba3c7d1-aae7-46db-874d-0f1fd79fc94c.jpg",
-            "image_sp": "shopify://shop_images/offer_PreciousGoldVitalitySerum_sp_b4dc126a-e039-4ed6-ae6c-fdd24dc22ef4.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-ceram-vitalite-eau-precieux-2025-1-21?_pos=13&_fid=8841b2cf5&_ss=c",
-            "is_title_white": true,
-            "is_text_right": false
-          }
-        },
         "slide_QrXbxY": {
           "type": "slide",
           "settings": {
@@ -79,7 +68,6 @@
       "block_order": [
         "slide_TpUYee",
         "slide_6eVUkJ",
-        "slide_cDwdGX",
         "slide_QrXbxY",
         "slide_jdMnEt"
       ],
