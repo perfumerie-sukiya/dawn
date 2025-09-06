@@ -20,6 +20,50 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_TpUYee": {
+          "type": "slide",
+          "settings": {
+            "title": "自ら輝きつづける肌、頂点へ。",
+            "image": "shopify://shop_images/CPB_25SS_KeyRadianceCare_pc.jpg",
+            "image_sp": "shopify://shop_images/CPB_25SS_KeyRadianceCare_sp_788abf3c-8541-42cf-bfb5-4c5ebf340c87.jpg",
+            "link": "",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
+        "slide_6eVUkJ": {
+          "type": "slide",
+          "settings": {
+            "title": "透明感の極みへ。\n内面から光を放つ品格の肌。",
+            "image": "shopify://shop_images/offer_25SS_TranslucentLoosePowder_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_25SS_TranslucentLoosePowder_sp_d03bf8b4-6a61-4c4c-92a7-d5a05c19a811.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-poodle-transparant-n-m-2025-3-21",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
+        "slide_cDwdGX": {
+          "type": "slide",
+          "settings": {
+            "title": "その瞬間、澄みきった輝きがあふれ出す。キスト",
+            "image": "shopify://shop_images/offer_PreciousGoldVitalitySerum_pc_dba3c7d1-aae7-46db-874d-0f1fd79fc94c.jpg",
+            "image_sp": "shopify://shop_images/offer_PreciousGoldVitalitySerum_sp_b4dc126a-e039-4ed6-ae6c-fdd24dc22ef4.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-ceram-vitalite-eau-precieux-2025-1-21?_pos=13&_fid=8841b2cf5&_ss=c",
+            "is_title_white": true,
+            "is_text_right": false
+          }
+        },
+        "slide_jdMnEt": {
+          "type": "slide",
+          "settings": {
+            "title": "本物を知る肌に。\n輝きは無限に生まれ続ける。",
+            "image": "shopify://shop_images/offer_the-serum-2_24aw_pc_07b371dc-f348-4295-bf2c-7fd6c91d8901.jpg",
+            "image_sp": "shopify://shop_images/offer_the-serum-2_24aw_sp_218605d7-c097-4d20-a160-6ca86e82397a.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beautel-serum-ii-2024-9-1",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
         "slide_QrXbxY": {
           "type": "slide",
           "settings": {
@@ -31,19 +75,9 @@
             "is_text_right": false
           }
         },
-        "slide_RD3XcL": {
-          "type": "slide",
-          "settings": {
-            "title": "HAPPY NEW YEAR 2025",
-            "image": "shopify://shop_images/offer_25SS_LunarNewYear_LaCreme_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_25SS_LunarNewYear_LaCreme_sp.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-la-creme-l-2025-limited-edition-2025-1-21",
-            "is_title_white": true,
-            "is_text_right": false
-          }
-        },
         "slide_aKTq4Q": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "title": "UNLOCK THE HEART\n深まる絆、あふれる愛の輝き。",
             "image": "shopify://shop_images/offer_25SS_LOVECollection_pc.jpg",
@@ -55,6 +89,7 @@
         },
         "slide_xngKK3": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "title": "本物を知る肌に。\n輝きは無限に生まれ続ける。",
             "image": "shopify://shop_images/offer_the-serum-2_24aw_pc.jpg",
@@ -77,8 +112,11 @@
         }
       },
       "block_order": [
+        "slide_TpUYee",
+        "slide_6eVUkJ",
+        "slide_cDwdGX",
+        "slide_jdMnEt",
         "slide_QrXbxY",
-        "slide_RD3XcL",
         "slide_aKTq4Q",
         "slide_xngKK3",
         "slide_Eyhmky"
