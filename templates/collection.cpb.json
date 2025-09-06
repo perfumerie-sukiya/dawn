@@ -53,17 +53,6 @@
             "is_text_right": false
           }
         },
-        "slide_jdMnEt": {
-          "type": "slide",
-          "settings": {
-            "title": "本物を知る肌に。\n輝きは無限に生まれ続ける。",
-            "image": "shopify://shop_images/offer_the-serum-2_24aw_pc_07b371dc-f348-4295-bf2c-7fd6c91d8901.jpg",
-            "image_sp": "shopify://shop_images/offer_the-serum-2_24aw_sp_218605d7-c097-4d20-a160-6ca86e82397a.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beautel-serum-ii-2024-9-1",
-            "is_title_white": false,
-            "is_text_right": false
-          }
-        },
         "slide_QrXbxY": {
           "type": "slide",
           "settings": {
@@ -74,14 +63,25 @@
             "is_title_white": true,
             "is_text_right": false
           }
+        },
+        "slide_jdMnEt": {
+          "type": "slide",
+          "settings": {
+            "title": "本物を知る肌に。\n輝きは無限に生まれ続ける。",
+            "image": "shopify://shop_images/offer_the-serum-2_24aw_pc_07b371dc-f348-4295-bf2c-7fd6c91d8901.jpg",
+            "image_sp": "shopify://shop_images/offer_the-serum-2_24aw_sp_218605d7-c097-4d20-a160-6ca86e82397a.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beautel-serum-ii-2024-9-1",
+            "is_title_white": false,
+            "is_text_right": false
+          }
         }
       },
       "block_order": [
         "slide_TpUYee",
         "slide_6eVUkJ",
         "slide_cDwdGX",
-        "slide_jdMnEt",
-        "slide_QrXbxY"
+        "slide_QrXbxY",
+        "slide_jdMnEt"
       ],
       "settings": {}
     },
