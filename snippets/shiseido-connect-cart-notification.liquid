@@ -37,8 +37,22 @@
       </p>
     </div>
   {% else %}
-    <script type="text/javascript">
-      window.location.href = '/account/login?checkout_url=/cart';
-    </script>
+    <div class="cpb-connect-notification">
+      <p class="cpb-connect-notification__title">
+        SHISEIDO<br>
+        Beauty keyポイントの付与には<br>
+        ログインが必要です。
+      </p>
+      <p class="text-center">
+        SHISEIDOの会員ポイントを<br>
+        Perfumerie Sukiya Online Storeでの購入で付与するには、<br class="pc-only">
+        ログインしてID連携を行ってください。
+      </p>
+      <a href="/account/login?checkout_url=/cart" class="cpb-connect-button">ログインする</a>
+      <p class="cpb-connect-small">
+        ※ Perfumerie Sukiya Online Store会員登録およびSHISEIDO
+        メンバーシッププログラムのどちらも会員登録が必要となります。
+      </p>
+    </div>
   {% endif %}
 {% endif %}
