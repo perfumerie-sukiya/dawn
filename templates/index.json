@@ -35,7 +35,7 @@
           "settings": {
             "title": "クレ・ド・ポー ボーテ",
             "image": "shopify://shop_images/CPB_25SS_KeyRadianceCare_sp_63cf1750-dc5e-4cb7-a19b-ce8ef92a0aee.jpg",
-            "image_sp": "shopify://shop_images/CPB_25SS_KeyRadianceCare_sp_63cf1750-dc5e-4cb7-a19b-ce8ef92a0aee.jpg",
+            "image_sp": "shopify://shop_images/CPB_Sukiya_Banner_01.1_PC_890x550_2x_B.jpg",
             "link": "shopify://collections/cle-de-peau-beaute"
           }
         },
@@ -274,6 +274,16 @@
             "link": "https://online.sukiya.biz/pages/nars-radiant-creamy-concealer-1242-special-size-2025-7-18"
           }
         },
+        "column_dY7jTh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20250716.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-hydra-clarity-medicinal-treatment-essence-water-30ml-2025-7-16"
+          }
+        },
         "column_D3KcAj": {
           "type": "column",
           "settings": {
@@ -292,6 +302,7 @@
         "column_eMtPBJ",
         "column_LTVrfa",
         "column_YhKFQd",
+        "column_dY7jTh",
         "column_D3KcAj"
       ],
       "settings": {
