@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_zMNEJh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20251016.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-aq-skin-care-sample-set-2025-10-16"
+          }
+        },
         "column_FfqexE": {
           "type": "column",
           "settings": {
@@ -306,6 +316,7 @@
         }
       },
       "block_order": [
+        "column_zMNEJh",
         "column_FfqexE",
         "column_aaFcEy",
         "column_f4Xdgt",
