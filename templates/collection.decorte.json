@@ -20,22 +20,6 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
-        "slide_tWFPcx": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/banner_PC-17.jpg",
-            "image_sp": "shopify://shop_images/banner_SP-17.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-youth-power-essence-lotion-2025-9-16"
-          }
-        },
-        "slide_4NPcQK": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/25_ZENWEARGLOW__banner_OL_PC-05.jpg",
-            "image_sp": "shopify://shop_images/25_ZENWEARGLOW__banner_OL_SP-05.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-zen-wear-glow-2025-9-16?_pos=1&_fid=305499d16&_ss=c"
-          }
-        },
         "slide_R7DQhX": {
           "type": "slide",
           "settings": {
@@ -51,13 +35,29 @@
             "image_sp": "shopify://shop_images/5JEZZZ_AQhair_Sampoo_banner_ol_SP.jpg",
             "link": "https://online.sukiya.biz/products/decorte-aq-repair-essence-shampoo-2025-10-16"
           }
+        },
+        "slide_tWFPcx": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/5JFZZT_25CD_purple_ribbon_PC.jpg",
+            "image_sp": "shopify://shop_images/5JFZZT_25CD_purple_ribbon_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-liposome-advanced-repair-serum-purple-ribbon-set-2025-2025-11-1"
+          }
+        },
+        "slide_4NPcQK": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/5JFZZW_25CD__PC-10.jpg",
+            "image_sp": "shopify://shop_images/5JFZZW_25CD__SP-10.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-eternal-bloom-collection-2025-11-1"
+          }
         }
       },
       "block_order": [
-        "slide_tWFPcx",
-        "slide_4NPcQK",
         "slide_R7DQhX",
-        "slide_VnUATj"
+        "slide_VnUATj",
+        "slide_tWFPcx",
+        "slide_4NPcQK"
       ],
       "settings": {}
     },
