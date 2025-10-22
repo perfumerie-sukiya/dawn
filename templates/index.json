@@ -214,6 +214,26 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_ejRDFG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/KL20251024_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/kiehls-original-travel-pouch-original-eco-bag-2025-10-24"
+          }
+        },
+        "column_KxETgX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/KL20251024.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/kiehls-original-travel-pouch-2025-10-24"
+          }
+        },
         "column_zMNEJh": {
           "type": "column",
           "settings": {
@@ -264,16 +284,6 @@
             "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2025-8-21"
           }
         },
-        "column_LTVrfa": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FN20250725.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-sweet-osmanthus-repair-moist-shampoo-and-treatment-sample-2025-7-25"
-          }
-        },
         "column_YhKFQd": {
           "type": "column",
           "settings": {
@@ -282,16 +292,6 @@
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/nars-radiant-creamy-concealer-1242-special-size-2025-7-18"
-          }
-        },
-        "column_dY7jTh": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20250716.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-hydra-clarity-medicinal-treatment-essence-water-30ml-2025-7-16"
           }
         },
         "column_D3KcAj": {
@@ -306,14 +306,14 @@
         }
       },
       "block_order": [
+        "column_ejRDFG",
+        "column_KxETgX",
         "column_zMNEJh",
         "column_FfqexE",
         "column_aaFcEy",
         "column_T3K8C9",
         "column_eMtPBJ",
-        "column_LTVrfa",
         "column_YhKFQd",
-        "column_dY7jTh",
         "column_D3KcAj"
       ],
       "settings": {
