@@ -1507,6 +1507,9 @@
           "label": "「クイック追加」ボタンを有効にする",
           "info": "ポップアップやドロワーカートのタイプに最適です。"
         },
+        "max_title_length": {
+          "label": "商品名の最大文字数"
+        },
         "columns_desktop": {
           "label": "デスクトップの列数"
         },
@@ -3155,6 +3158,9 @@
         "show_rating": {
           "label": "商品の評価を表示",
           "info": "評価を表示するには、商品評価アプリを追加します。[詳しくはこちら](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/page-types#product-recommendations-section-settings)"
+        },
+        "max_title_length": {
+          "label": "商品名の最大文字数"
         },
         "header_mobile": {
           "content": "モバイルのレイアウト"
