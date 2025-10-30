@@ -490,6 +490,150 @@
           >クローズアップ</span
         >
       </h3>
+      {%- comment -%} Priority items from closeup_priority_1_2.json {%- endcomment -%}
+      {%- assign today_date = 'now' | date: '%Y-%m-%d' -%}
+
+      {%- comment -%} Priority 1: Holiday Collection {%- endcomment -%}
+      {%- assign expires_on_1 = '2026-06-30' | date: '%Y-%m-%d' -%}
+      {%- if today_date <= expires_on_1 -%}
+        {%- capture pc_title_1 -%}さあ、秘めた力を解き放つ旅へ。
+        DREAMS EXPRESS COLLECTION{%- endcapture -%}
+        {%- capture sp_title_1 -%}さあ、秘めた力を解き放つ旅へ。
+        DREAMS EXPRESS COLLECTION{%- endcapture -%}
+        {%- capture pc_text_1 -%}
+自分を信じ、もっと大胆に人生を楽しみたい。
+そう願う彼女の夢に現れた、金色に輝くDREAM EXPRESS。
+運命に導かれるように幻想的な世界を旅し、
+さまざまな生き物たちとの出会いが
+彼女の中に眠っていた力を呼び覚ます。
+リミットレスな生き方、思いのままの人生へ。
+すべてを解き放ち、自らの意思で未来を切り拓いてゆく。
+
+クレ・ド・ポー ボーテ　2025ホリデーコレクション{%- endcapture -%}
+        {%- capture sp_text_1 -%}
+自分を信じ、もっと大胆に人生を楽しみたい。
+そう願う彼女の夢に現れた、
+金色に輝くDREAM EXPRESS。
+運命に導かれるように幻想的な世界を旅し、
+さまざまな生き物たちとの出会いが
+彼女の中に眠っていた力を呼び覚ます。
+リミットレスな生き方、思いのままの人生へ。
+すべてを解き放ち、
+自らの意思で未来を切り拓いてゆく。
+
+クレ・ド・ポー ボーテ
+2025ホリデーコレクション{%- endcapture -%}
+        <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
+          <picture class="tw-w-full md:tw-w-1/2">
+            <source
+              media="(max-width: 768px)"
+              srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_holiday_25aw_sp.webp?v=1761806676"
+            >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_holiday_25aw_sp.webp?v=1761806676"
+              alt=""
+              width="1242"
+              height="932"
+            >
+          </picture>
+          <div class="textarea area-right tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-my-[15px] md:tw-my-0 md:tw-w-1/2 md:tw-flex md:tw-items-center md:tw-justify-center md:tw-p-[30px] md:tw-static">
+            <div class="text_inner">
+              <div class="text tw-mb-5">
+                <div class="pc-only">
+                  <h5 class="tw-font-bold tw-mb-4">{{ pc_title_1 | newline_to_br }}</h5>
+                  <p>{{ pc_text_1 | newline_to_br }}</p>
+                </div>
+                <div class="sp-only">
+                  <h5 class="tw-font-bold tw-mb-4">{{ sp_title_1 | newline_to_br }}</h5>
+                  <p>{{ sp_text_1 | newline_to_br }}</p>
+                </div>
+                <a
+                  class="tw-block tw-mx-auto tw-w-[300px] tw-no-underline tw-text-black"
+                  href="https://online.sukiya.biz/collections/kuredopo-bote_2025_11_21_new"
+                >
+                  <div class="btn tw-border tw-border-solid tw-border-black tw-bg-white tw-text-center tw-py-[5px] tw-px-[15px] tw-mt-[15px]">
+                    詳細はこちらから
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Priority 2: Brightening Serum {%- endcomment -%}
+      {%- assign expires_on_2 = '2099-12-31' | date: '%Y-%m-%d' -%}
+      {%- if today_date <= expires_on_2 -%}
+        {%- capture pc_title_2 -%}先端美白研究の結晶。
+        あなたの肌に、最高峰*の輝きを{%- endcapture -%}
+        {%- capture sp_title_2 -%}先端美白研究の結晶。
+        あなたの肌に、最高峰*の輝きを{%- endcapture -%}
+        {%- capture pc_text_2 -%}
+エピジェネティクス（後成遺伝学）研究に着目。
+シーファーメントブライトナー（保湿）配合
+（アルテロモナス発酵エキス、濃グリセリン）のセラムで、
+肌をうるおいで満たし、乾燥によるくすみ印象を防ぎます。
+美白有効成分、アクティブ4MSK（４－メトキシサリチル酸カリウム塩）配合。肌にメラニンが溜まる前に多面的にアプローチ。
+メラニン生成の引き金となる、酵素チロシナーゼの働きを
+複数ステップでブロックし、効果的にメラニンの生成を抑え、
+シミ・そばかすを防ぎます。
+
+*クレ・ド・ポー ボーテ史上
+{%- endcapture -%}
+        {%- capture sp_text_2 -%}
+エピジェネティクス（後成遺伝学）研究に着目。
+シーファーメントブライトナー（保湿）配合
+（アルテロモナス発酵エキス、濃グリセリン）の
+セラムで、肌をうるおいで満たし、
+乾燥によるくすみ印象を防ぎます。
+美白有効成分、アクティブ4MSK
+（４－メトキシサリチル酸カリウム塩）配合。
+肌にメラニンが溜まる前に多面的にアプローチ。
+メラニン生成の引き金となる、
+酵素チロシナーゼの働きを
+複数ステップでブロックし、
+効果的にメラニンの生成を抑え、
+シミ・そばかすを防ぎます。
+
+*クレ・ド・ポー ボーテ史上{%- endcapture -%}
+        <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
+          <picture class="tw-w-full md:tw-w-1/2">
+            <source
+              media="(max-width: 768px)"
+              srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_Brightening-Serum-Supreme_25aw_sp.webp?v=1761806676"
+            >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_Brightening-Serum-Supreme_25aw_sp.webp?v=1761806676"
+              alt=""
+              width="1242"
+              height="932"
+            >
+          </picture>
+          <div class="textarea area-right tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-my-[15px] md:tw-my-0 md:tw-w-1/2 md:tw-flex md:tw-items-center md:tw-justify-center md:tw-p-[30px] md:tw-static">
+            <div class="text_inner">
+              <div class="text tw-mb-5">
+                <div class="pc-only">
+                  <h5 class="tw-font-bold tw-mb-4">{{ pc_title_2 | newline_to_br }}</h5>
+                  <p>{{ pc_text_2 | newline_to_br }}</p>
+                </div>
+                <div class="sp-only">
+                  <h5 class="tw-font-bold tw-mb-4">{{ sp_title_2 | newline_to_br }}</h5>
+                  <p>{{ sp_text_2 | newline_to_br }}</p>
+                </div>
+                <a
+                  class="tw-block tw-mx-auto tw-w-[300px] tw-no-underline tw-text-black"
+                  href="https://online.sukiya.biz/products/cle-de-peau-beaute-serum-eclat-s"
+                >
+                  <div class="btn tw-border tw-border-solid tw-border-black tw-bg-white tw-text-center tw-py-[5px] tw-px-[15px] tw-mt-[15px]">
+                    詳細はこちらから
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
       <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
         <picture class="tw-w-full md:tw-w-1/2">
           <source
