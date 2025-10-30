@@ -108,6 +108,7 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
+        "max_title_length": 28,
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
