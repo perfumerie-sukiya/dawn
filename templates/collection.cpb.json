@@ -20,6 +20,17 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_DYrgiw": {
+          "type": "slide",
+          "settings": {
+            "title": "さあ、秘めた力を解き放つ旅へ。\n DREAMS EXPRESS COLLECTION",
+            "image": "shopify://shop_images/offer_holiday_25aw_pc.webp",
+            "image_sp": "shopify://shop_images/offer_holiday_25aw_sp.webp",
+            "link": "shopify://collections/kuredopo-bote_2025_11_21_new",
+            "is_title_white": true,
+            "is_text_right": false
+          }
+        },
         "slide_ycztMn": {
           "type": "slide",
           "settings": {
@@ -88,6 +99,7 @@
         }
       },
       "block_order": [
+        "slide_DYrgiw",
         "slide_ycztMn",
         "slide_WGkzNU",
         "slide_TpUYee",
