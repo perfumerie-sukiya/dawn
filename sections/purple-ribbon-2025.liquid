@@ -1,0 +1,301 @@
+{{ 'section-purple-ribbon-2025.css' | asset_url | stylesheet_tag }}
+
+<article class="page-purpleribbon2025">
+  <section class="block-intro">
+    <h1 class="block-intro--main-visual">
+      <img src="{{ 'main_visual.jpg' | asset_url }}" alt="Purple Ribbon 2025" loading="lazy">
+    </h1>
+    <p class="block-intro--lead">{{ section.settings.intro_text_1 }}</p>
+    <p class="block-intro--lead">{{ section.settings.intro_text_2 }}</p>
+    <p class="block-intro--lead">{{ section.settings.intro_text_3 }}</p>
+    <p class="block-intro--lead">{{ section.settings.intro_text_4 }}</p>
+    <p class="block-intro--lead">{{ section.settings.intro_text_5 }}</p>
+    <p class="block-intro--notes">{{ section.settings.intro_notes }}</p>
+  </section>
+
+  <section class="block-lineup">
+    <h2 class="block-lineup--title">
+      LINEUP
+      <span class="block-lineup--title-sub-text">セット品紹介</span>
+    </h2>
+    <div class="block-lineup--list">
+      {% if section.settings.product_1_handle != blank %}
+        {% assign product_1 = all_products[section.settings.product_1_handle] %}
+        <div class="block-lineup--set block-lineup--set__serum">
+          <p class="block-lineup--set-catch">
+            <span>約<strong>{{ section.settings.product_1_value }}</strong>円<br>相当</span>
+          </p>
+          <p class="block-lineup--set-lead">{{ section.settings.product_1_lead }}</p>
+          <div class="block-lineup--set-container">
+            <p class="block-lineup--set-image">
+              <img src="{{ 'lineup_a.jpg' | asset_url }}" alt="{{ product_1.title }}" loading="lazy">
+            </p>
+            <p class="block-lineup--set-name">{{ section.settings.product_1_name }}</p>
+            <p class="block-lineup--set-price">{{ section.settings.product_1_price }}</p>
+            <p class="block-lineup--set-detail">{{ section.settings.product_1_detail }}</p>
+          </div>
+          {% if product_1 != blank %}
+            <button class="block-lineup--set-cart js-add-to-cart" data-product-handle="{{ product_1.handle }}">
+              カートに入れる
+            </button>
+            <a class="block-lineup--set-more" href="{{ product_1.url }}">商品詳細はこちら</a>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.product_2_handle != blank %}
+        {% assign product_2 = all_products[section.settings.product_2_handle] %}
+        <div class="block-lineup--set block-lineup--set__cream">
+          <p class="block-lineup--set-catch">
+            <span>約<strong>{{ section.settings.product_2_value }}</strong>円<br>相当</span>
+          </p>
+          <p class="block-lineup--set-lead">{{ section.settings.product_2_lead }}</p>
+          <div class="block-lineup--set-container">
+            <p class="block-lineup--set-image">
+              <img src="{{ 'lineup_b.jpg' | asset_url }}" alt="{{ product_2.title }}" loading="lazy">
+            </p>
+            <p class="block-lineup--set-name">{{ section.settings.product_2_name }}</p>
+            <p class="block-lineup--set-price">{{ section.settings.product_2_price }}</p>
+            <p class="block-lineup--set-detail">{{ section.settings.product_2_detail }}</p>
+          </div>
+          {% if product_2 != blank %}
+            <button class="block-lineup--set-cart js-add-to-cart" data-product-handle="{{ product_2.handle }}">
+              カートに入れる
+            </button>
+            <a class="block-lineup--set-more" href="{{ product_2.url }}">商品詳細はこちら</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="block-about-purpleribbon2025-project">
+    <a class="block-about-purpleribbon2025-project--container block-about-purpleribbon2025-project--anchor" href="{{ section.settings.project_url }}">
+      <div class="block-about-purpleribbon2025-project--text-area">
+        <p class="block-about-purpleribbon2025-project--catch">
+          {{ section.settings.project_catch }}
+          <span class="block-about-purpleribbon2025-project--catch-sub-text">{{ section.settings.project_catch_sub }}</span>
+        </p>
+        <h2 class="block-about-purpleribbon2025-project--title">{{ section.settings.project_title }}</h2>
+        <p class="block-about-purpleribbon2025-project--more">{{ section.settings.project_more }}</p>
+      </div>
+      <p class="block-about-purpleribbon2025-project--ribbon-image">
+        <img src="{{ 'project_ribbon.png' | asset_url }}" alt="Purple Ribbon" loading="lazy">
+      </p>
+    </a>
+  </section>
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // View check functionality
+    function viewCheck(target) {
+      const obj = document.querySelector(target);
+      if (!obj) return;
+      
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const objTop = obj.offsetTop;
+      const objHeight = obj.offsetHeight;
+
+      if (objTop < scrollTop + windowHeight && scrollTop < objTop + objHeight) {
+        obj.classList.add('-view');
+      } else {
+        obj.classList.remove('-view');
+      }
+      
+      if (objTop < scrollTop + windowHeight) {
+        obj.classList.add('-viewStart');
+      }
+      
+      if (objTop < scrollTop + (windowHeight * 0.8)) {
+        obj.classList.add('-viewSpotted');
+      }
+    }
+
+    // Initial check
+    viewCheck('.block-intro--main-visual');
+
+    // Scroll event
+    window.addEventListener('scroll', function() {
+      viewCheck('.block-lineup');
+      viewCheck('.block-about-purpleribbon2025-project');
+      viewCheck('.block-intro--main-visual');
+    });
+
+    // Add to cart functionality
+    const addToCartButtons = document.querySelectorAll('.js-add-to-cart');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const productHandle = this.getAttribute('data-product-handle');
+        // This would need to be integrated with your existing cart system
+        console.log('Add to cart:', productHandle);
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Purple Ribbon 2025",
+  "settings": [
+    {
+      "type": "header",
+      "content": "イントロセクション"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text_1",
+      "label": "イントロテキスト 1",
+      "default": "コスメデコルテが誇りをもってお届けする、カプセルテクノロジー\"多重層バイオリポソーム®\"。"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text_2",
+      "label": "イントロテキスト 2",
+      "default": "生体機能研究の真価と最新テクノロジーを存分に堪能いただける2種の限定セットをご用意しました。"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text_3",
+      "label": "イントロテキスト 3",
+      "default": "1兆個※1のリポソームで全方位から美を立て直す、革新のリペア美容液のセット。"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text_4",
+      "label": "イントロテキスト 4",
+      "default": "睡眠不足でも3時間多く眠ったような肌に導く、ナイトクリームのセット。"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text_5",
+      "label": "イントロテキスト 5",
+      "default": "どちらを選んでも、黒麹発酵液※2と多重層バイオリポソーム®美容水を高濃度配合したコスメデコルテの新化粧水をお試しいただけます。"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_notes",
+      "label": "注釈",
+      "default": "※1 美容液は1滴0.1mL、クリームは1回の使用量1gとして算出（概算値）\n※2 アスペルギルス培養物（整肌保湿）\n※ 限定品は数に限りがございますので、品切れの際はご容赦ください"
+    },
+    {
+      "type": "header",
+      "content": "商品 1（セラム）"
+    },
+    {
+      "type": "product",
+      "id": "product_1_handle",
+      "label": "商品 1"
+    },
+    {
+      "type": "text",
+      "id": "product_1_value",
+      "label": "商品価値",
+      "default": "24,970"
+    },
+    {
+      "type": "textarea",
+      "id": "product_1_lead",
+      "label": "リード文",
+      "default": "リポソーム　セラム本品価格で\nクリームとローションがセットに"
+    },
+    {
+      "type": "textarea",
+      "id": "product_1_name",
+      "label": "商品名",
+      "default": "コスメデコルテ\nリポソーム アドバンスト　リペアセラム\nパープルリボン セット 2025"
+    },
+    {
+      "type": "text",
+      "id": "product_1_price",
+      "label": "価格",
+      "default": "17,050円（税込）"
+    },
+    {
+      "type": "textarea",
+      "id": "product_1_detail",
+      "label": "商品詳細",
+      "default": "＜セット内容＞\nリポソーム アドバンスト　リペアセラム　75mL\nリポソーム アドバンスト　リペアクリーム　20g\nユース パワー エッセンス ローション　30ｍL"
+    },
+    {
+      "type": "header",
+      "content": "商品 2（クリーム）"
+    },
+    {
+      "type": "product",
+      "id": "product_2_handle",
+      "label": "商品 2"
+    },
+    {
+      "type": "text",
+      "id": "product_2_value",
+      "label": "商品価値",
+      "default": "18,370"
+    },
+    {
+      "type": "textarea",
+      "id": "product_2_lead",
+      "label": "リード文",
+      "default": "リポソーム　ナイトクリーム本品価格で\nセラムとローションがセットに"
+    },
+    {
+      "type": "textarea",
+      "id": "product_2_name",
+      "label": "商品名",
+      "default": "コスメデコルテ\nリポソーム アドバンスト　リペアクリーム\nパープルリボン セット 2025"
+    },
+    {
+      "type": "text",
+      "id": "product_2_price",
+      "label": "価格",
+      "default": "11,550円（税込）"
+    },
+    {
+      "type": "textarea",
+      "id": "product_2_detail",
+      "label": "商品詳細",
+      "default": "＜セット内容＞\nリポソーム アドバンスト　リペアクリーム　50g\nリポソーム アドバンスト リペアセラム 12mL\nユース パワー エッセンス　ローション　30ｍL"
+    },
+    {
+      "type": "header",
+      "content": "プロジェクトセクション"
+    },
+    {
+      "type": "url",
+      "id": "project_url",
+      "label": "プロジェクトURL",
+      "default": "/pages/purple-ribbon-project"
+    },
+    {
+      "type": "text",
+      "id": "project_catch",
+      "label": "キャッチコピー",
+      "default": "A light of true hope."
+    },
+    {
+      "type": "text",
+      "id": "project_catch_sub",
+      "label": "キャッチコピー（サブ）",
+      "default": "すべての女性に、自分らしく生きる権利を。"
+    },
+    {
+      "type": "textarea",
+      "id": "project_title",
+      "label": "タイトル",
+      "default": "安心・安全で、美しい社会の実現を目指す\nPURPLE RIBBON PROJECT"
+    },
+    {
+      "type": "text",
+      "id": "project_more",
+      "label": "リンクテキスト",
+      "default": "コスメデコルテ パープルリボンプロジェクト 特設サイトはこちら"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Purple Ribbon 2025"
+    }
+  ]
+}
+{% endschema %}
