@@ -413,6 +413,29 @@
     font-size: 16px;
   }
 
+  /* SP幅での円形キャッチの調整（はみ出し防止） */
+  .page-purpleribbon2025 .block-lineup--set-catch {
+    width: 80px;
+    height: 80px;
+    left: 10px;
+    top: -20px;
+  }
+
+  .page-purpleribbon2025 .block-lineup--set-catch span {
+    font-size: 11px;
+  }
+
+  .page-purpleribbon2025 .block-lineup--set-catch strong {
+    font-size: 15px;
+  }
+
+  /* SP幅でのボタン幅調整（タップ領域拡大） */
+  .page-purpleribbon2025 .block-lineup--set-more,
+  .page-purpleribbon2025 .block-lineup--set-cart {
+    width: 100%;
+    max-width: 420px;
+  }
+
   .page-purpleribbon2025 .block-about-purpleribbon2025-project--catch {
     font-size: 20px;
   }
