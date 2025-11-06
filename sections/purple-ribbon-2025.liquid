@@ -21,51 +21,55 @@
     <div class="block-lineup--list">
       {% if section.settings.product_1_handle != blank %}
         {% assign product_1 = all_products[section.settings.product_1_handle] %}
-        <div class="block-lineup--set block-lineup--set__serum">
-          <p class="block-lineup--set-catch">
-            <span>約<strong>{{ section.settings.product_1_value }}</strong>円<br>相当</span>
-          </p>
-          <p class="block-lineup--set-lead">{{ section.settings.product_1_lead }}</p>
-          <div class="block-lineup--set-container">
-            <p class="block-lineup--set-image">
-              <img src="{{ 'lineup_a.jpg' | asset_url }}" alt="{{ product_1.title }}" width="780" height="558" loading="lazy">
-            </p>
-            <p class="block-lineup--set-name">{{ section.settings.product_1_name }}</p>
-            <p class="block-lineup--set-price">{{ section.settings.product_1_price }}</p>
-            <p class="block-lineup--set-detail">{{ section.settings.product_1_detail }}</p>
-          </div>
-          {% if product_1 != blank %}
-            <button class="block-lineup--set-cart js-add-to-cart" data-product-handle="{{ product_1.handle }}">
-              カートに入れる
-            </button>
-            <a class="block-lineup--set-more" href="{{ product_1.url }}">商品詳細はこちら</a>
-          {% endif %}
-        </div>
       {% endif %}
+      <div class="block-lineup--set block-lineup--set__serum">
+        <p class="block-lineup--set-catch">
+          <span>約<strong>{{ section.settings.product_1_value }}</strong>円<br>相当</span>
+        </p>
+        <p class="block-lineup--set-lead">{{ section.settings.product_1_lead }}</p>
+        <div class="block-lineup--set-container">
+          <p class="block-lineup--set-image">
+            <img src="{{ 'lineup_a.jpg' | asset_url }}" alt="セット商品A" width="780" height="558" loading="lazy">
+          </p>
+          <p class="block-lineup--set-name">{{ section.settings.product_1_name }}</p>
+          <p class="block-lineup--set-price">{{ section.settings.product_1_price }}</p>
+          <p class="block-lineup--set-detail">{{ section.settings.product_1_detail }}</p>
+        </div>
+        {% if section.settings.product_1_handle != blank and product_1 != blank %}
+          <button class="block-lineup--set-cart js-add-to-cart" data-product-handle="{{ product_1.handle }}">
+            カートに入れる
+          </button>
+          <a class="block-lineup--set-more" href="{{ product_1.url }}">商品詳細はこちら</a>
+        {% elsif section.settings.product_1_more_url != blank %}
+          <a class="block-lineup--set-more" href="{{ section.settings.product_1_more_url }}">商品詳細はこちら</a>
+        {% endif %}
+      </div>
 
       {% if section.settings.product_2_handle != blank %}
         {% assign product_2 = all_products[section.settings.product_2_handle] %}
-        <div class="block-lineup--set block-lineup--set__cream">
-          <p class="block-lineup--set-catch">
-            <span>約<strong>{{ section.settings.product_2_value }}</strong>円<br>相当</span>
-          </p>
-          <p class="block-lineup--set-lead">{{ section.settings.product_2_lead }}</p>
-          <div class="block-lineup--set-container">
-            <p class="block-lineup--set-image">
-              <img src="{{ 'lineup_b.jpg' | asset_url }}" alt="{{ product_2.title }}" width="780" height="558" loading="lazy">
-            </p>
-            <p class="block-lineup--set-name">{{ section.settings.product_2_name }}</p>
-            <p class="block-lineup--set-price">{{ section.settings.product_2_price }}</p>
-            <p class="block-lineup--set-detail">{{ section.settings.product_2_detail }}</p>
-          </div>
-          {% if product_2 != blank %}
-            <button class="block-lineup--set-cart js-add-to-cart" data-product-handle="{{ product_2.handle }}">
-              カートに入れる
-            </button>
-            <a class="block-lineup--set-more" href="{{ product_2.url }}">商品詳細はこちら</a>
-          {% endif %}
-        </div>
       {% endif %}
+      <div class="block-lineup--set block-lineup--set__cream">
+        <p class="block-lineup--set-catch">
+          <span>約<strong>{{ section.settings.product_2_value }}</strong>円<br>相当</span>
+        </p>
+        <p class="block-lineup--set-lead">{{ section.settings.product_2_lead }}</p>
+        <div class="block-lineup--set-container">
+          <p class="block-lineup--set-image">
+            <img src="{{ 'lineup_b.jpg' | asset_url }}" alt="セット商品B" width="780" height="558" loading="lazy">
+          </p>
+          <p class="block-lineup--set-name">{{ section.settings.product_2_name }}</p>
+          <p class="block-lineup--set-price">{{ section.settings.product_2_price }}</p>
+          <p class="block-lineup--set-detail">{{ section.settings.product_2_detail }}</p>
+        </div>
+        {% if section.settings.product_2_handle != blank and product_2 != blank %}
+          <button class="block-lineup--set-cart js-add-to-cart" data-product-handle="{{ product_2.handle }}">
+            カートに入れる
+          </button>
+          <a class="block-lineup--set-more" href="{{ product_2.url }}">商品詳細はこちら</a>
+        {% elsif section.settings.product_2_more_url != blank %}
+          <a class="block-lineup--set-more" href="{{ section.settings.product_2_more_url }}">商品詳細はこちら</a>
+        {% endif %}
+      </div>
     </div>
   </section>
 
@@ -115,6 +119,8 @@
 
     // Initial check
     viewCheck('.block-intro--main-visual');
+    viewCheck('.block-lineup');
+    viewCheck('.block-about-purpleribbon2025-project');
 
     // Scroll event
     window.addEventListener('scroll', function() {
@@ -219,6 +225,12 @@
       "default": "＜セット内容＞\nリポソーム アドバンスト　リペアセラム　75mL\nリポソーム アドバンスト　リペアクリーム　20g\nユース パワー エッセンス ローション　30ｍL"
     },
     {
+      "type": "text",
+      "id": "product_1_more_url",
+      "label": "商品詳細URL（オプション）",
+      "info": "商品ハンドルが設定されていない場合に使用されます"
+    },
+    {
       "type": "header",
       "content": "商品 2（クリーム）"
     },
@@ -256,6 +268,12 @@
       "id": "product_2_detail",
       "label": "商品詳細",
       "default": "＜セット内容＞\nリポソーム アドバンスト　リペアクリーム　50g\nリポソーム アドバンスト リペアセラム 12mL\nユース パワー エッセンス　ローション　30ｍL"
+    },
+    {
+      "type": "text",
+      "id": "product_2_more_url",
+      "label": "商品詳細URL（オプション）",
+      "info": "商品ハンドルが設定されていない場合に使用されます"
     },
     {
       "type": "header",
