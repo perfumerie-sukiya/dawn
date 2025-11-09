@@ -41,7 +41,7 @@
           "settings": {
             "image": "shopify://shop_images/5JFZZT_25CD_purple_ribbon_PC.jpg",
             "image_sp": "shopify://shop_images/5JFZZT_25CD_purple_ribbon_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-liposome-advanced-repair-serum-purple-ribbon-set-2025-2025-11-1"
+            "link": "shopify://pages/decorte-perpul-ribbon-set-2025"
           }
         },
         "slide_4NPcQK": {
@@ -72,6 +72,7 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
+        "max_title_length": 28,
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
