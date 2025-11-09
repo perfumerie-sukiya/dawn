@@ -23,13 +23,13 @@
         {% assign product_1 = all_products[section.settings.product_1_handle] %}
       {% endif %}
       <div class="block-lineup--set block-lineup--set__serum">
-        <p class="block-lineup--set-catch">
-          <span>約<strong>{{ section.settings.product_1_value }}</strong>円<br>相当</span>
-        </p>
         <p class="block-lineup--set-lead">{{ section.settings.product_1_lead }}</p>
         <div class="block-lineup--set-container">
           <p class="block-lineup--set-image">
             <img src="{{ 'lineup_a.jpg' | asset_url }}" alt="セット商品A" width="780" height="558" loading="lazy">
+            <span class="block-lineup--set-catch">
+              <span>約<strong>{{ section.settings.product_1_value }}</strong>円<br>相当</span>
+            </span>
           </p>
           <p class="block-lineup--set-name">{{ section.settings.product_1_name }}</p>
           <p class="block-lineup--set-price">{{ section.settings.product_1_price }}</p>
@@ -40,8 +40,10 @@
             カートに入れる
           </button>
           <a class="block-lineup--set-more" href="{{ product_1.url }}">商品詳細はこちら</a>
-        {% elsif section.settings.product_1_more_url != blank %}
-          <a class="block-lineup--set-more" href="{{ section.settings.product_1_more_url }}">商品詳細はこちら</a>
+        {% else %}
+          {% if section.settings.product_1_more_url != blank %}
+            <a class="block-lineup--set-more" href="{{ section.settings.product_1_more_url }}">商品詳細はこちら</a>
+          {% endif %}
         {% endif %}
       </div>
 
@@ -49,13 +51,13 @@
         {% assign product_2 = all_products[section.settings.product_2_handle] %}
       {% endif %}
       <div class="block-lineup--set block-lineup--set__cream">
-        <p class="block-lineup--set-catch">
-          <span>約<strong>{{ section.settings.product_2_value }}</strong>円<br>相当</span>
-        </p>
         <p class="block-lineup--set-lead">{{ section.settings.product_2_lead }}</p>
         <div class="block-lineup--set-container">
           <p class="block-lineup--set-image">
             <img src="{{ 'lineup_b.jpg' | asset_url }}" alt="セット商品B" width="780" height="558" loading="lazy">
+            <span class="block-lineup--set-catch">
+              <span>約<strong>{{ section.settings.product_2_value }}</strong>円<br>相当</span>
+            </span>
           </p>
           <p class="block-lineup--set-name">{{ section.settings.product_2_name }}</p>
           <p class="block-lineup--set-price">{{ section.settings.product_2_price }}</p>
@@ -66,8 +68,10 @@
             カートに入れる
           </button>
           <a class="block-lineup--set-more" href="{{ product_2.url }}">商品詳細はこちら</a>
-        {% elsif section.settings.product_2_more_url != blank %}
-          <a class="block-lineup--set-more" href="{{ section.settings.product_2_more_url }}">商品詳細はこちら</a>
+        {% else %}
+          {% if section.settings.product_2_more_url != blank %}
+            <a class="block-lineup--set-more" href="{{ section.settings.product_2_more_url }}">商品詳細はこちら</a>
+          {% endif %}
         {% endif %}
       </div>
     </div>

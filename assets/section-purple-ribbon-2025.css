@@ -92,8 +92,9 @@
 
 .page-purpleribbon2025 .block-lineup--set {
   position: relative;
-  width: 580px;
-  max-width: 100%;
+  width: calc(50% - 60px);
+  max-width: 580px;
+  min-width: 300px;
 }
 
 .page-purpleribbon2025 .block-lineup--set:hover .block-lineup--set-image img {
@@ -141,13 +142,13 @@
   display: flex;
   height: 100px;
   justify-content: center;
-  left: -20px;
   padding-top: 10px;
   position: absolute;
   text-align: center;
-  top: -30px;
+  right: 10px;
+  top: 10px;
   width: 100px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .page-purpleribbon2025 .block-lineup--set-catch span {
@@ -164,7 +165,8 @@
 
 .page-purpleribbon2025 .block-lineup--set-image {
   margin-bottom: 20px;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
 }
 
 .page-purpleribbon2025 .block-lineup--set-image img {
@@ -182,12 +184,12 @@
 }
 
 .page-purpleribbon2025 .block-lineup--set-price {
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 30px;
 }
 
 .page-purpleribbon2025 .block-lineup--set-detail {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.6;
   white-space: pre-line;
 }
@@ -260,63 +262,114 @@
 
 /* About Purple Ribbon Project Section */
 .page-purpleribbon2025 .block-about-purpleribbon2025-project {
-  background-color: #f5f5f5;
-  padding: 80px 20px;
+  background: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.2) 0%, rgba(74, 25, 132, 0) 45%),
+    linear-gradient(135deg, #3f0d6a 0%, #6221a8 55%, #250646 100%);
+  padding: 110px 20px;
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
   text-decoration: none;
-  color: inherit;
+  color: #381962;
+  background: linear-gradient(130deg, rgba(123, 67, 201, 0.95) 0%, rgba(80, 37, 156, 0.95) 100%);
+  padding: 55px 70px;
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(22, 6, 44, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.page-purpleribbon2025 .block-about-purpleribbon2025-project--container::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 18px 32px rgba(45, 18, 94, 0.18);
+  z-index: 0;
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--container:hover {
-  opacity: 0.8;
+  transform: translateY(-4px);
+  box-shadow: 0 36px 70px rgba(22, 6, 44, 0.45);
+}
+
+.page-purpleribbon2025 .block-about-purpleribbon2025-project--text-area,
+.page-purpleribbon2025 .block-about-purpleribbon2025-project--ribbon-image {
+  position: relative;
+  z-index: 1;
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--text-area {
   flex: 1;
+  color: #381962;
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--catch {
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 700;
-  color: #351674;
-  margin-bottom: 20px;
-  line-height: 1.4;
+  color: #4b197e;
+  margin-bottom: 18px;
+  line-height: 1.35;
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--catch-sub-text {
   display: block;
   font-size: 16px;
-  font-weight: 400;
-  margin-top: 10px;
-  color: #333333;
+  font-weight: 500;
+  margin-top: 12px;
+  color: #7a6a9f;
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #333333;
-  margin-bottom: 30px;
-  line-height: 1.6;
+  font-size: 22px;
+  font-weight: 600;
+  color: #5a5184;
+  margin-bottom: 26px;
+  line-height: 1.8;
   white-space: pre-line;
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--more {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #5b22a3 0%, #3d0c70 100%);
+  color: #ffffff;
   font-size: 14px;
-  color: #351674;
-  text-decoration: underline;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  min-width: 260px;
+  transition: background 0.3s ease;
+}
+
+.page-purpleribbon2025 .block-about-purpleribbon2025-project--more::after {
+  content: "";
+  display: inline-block;
+  margin-left: 12px;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+}
+
+.page-purpleribbon2025 .block-about-purpleribbon2025-project--more:hover {
+  background: linear-gradient(135deg, #6a2cc5 0%, #471089 100%);
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--ribbon-image {
   flex-shrink: 0;
-  width: 300px;
+  width: 280px;
 }
 
 .page-purpleribbon2025 .block-about-purpleribbon2025-project--ribbon-image img {
@@ -364,6 +417,7 @@
 
   .page-purpleribbon2025 .block-lineup--set {
     width: 100%;
+    min-width: 100%;
   }
 
   .page-purpleribbon2025 .block-lineup--set-lead {
@@ -376,19 +430,31 @@
 
   .page-purpleribbon2025 .block-lineup--set-name {
     font-size: 18px;
+    white-space: pre-line;
   }
 
   .page-purpleribbon2025 .block-about-purpleribbon2025-project {
-    padding: 60px 20px;
+    padding: 80px 16px;
   }
 
   .page-purpleribbon2025 .block-about-purpleribbon2025-project--container {
     flex-direction: column;
-    gap: 40px;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    padding: 42px 36px;
+  }
+
+  .page-purpleribbon2025 .block-about-purpleribbon2025-project--container::before {
+    inset: 5px;
+  }
+
+  .page-purpleribbon2025 .block-about-purpleribbon2025-project--text-area {
+    text-align: center;
   }
 
   .page-purpleribbon2025 .block-about-purpleribbon2025-project--catch {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .page-purpleribbon2025 .block-about-purpleribbon2025-project--title {
@@ -396,7 +462,14 @@
   }
 
   .page-purpleribbon2025 .block-about-purpleribbon2025-project--ribbon-image {
-    width: 200px;
+    width: 220px;
+    order: -1;
+    margin: 0 auto;
+  }
+
+  .page-purpleribbon2025 .block-about-purpleribbon2025-project--more {
+    width: 100%;
+    max-width: 360px;
   }
 }
 
@@ -411,14 +484,16 @@
 
   .page-purpleribbon2025 .block-lineup--set-lead {
     font-size: 16px;
+    margin-bottom: 20px;
   }
 
-  /* SP幅での円形キャッチの調整（はみ出し防止） */
+  /* SP幅での円形キャッチの調整（画像右上に配置） */
   .page-purpleribbon2025 .block-lineup--set-catch {
     width: 80px;
     height: 80px;
-    left: 10px;
-    top: -20px;
+    right: 5px;
+    top: 5px;
+    z-index: 2;
   }
 
   .page-purpleribbon2025 .block-lineup--set-catch span {
@@ -429,6 +504,13 @@
     font-size: 15px;
   }
 
+  /* SP幅での商品名調整 */
+  .page-purpleribbon2025 .block-lineup--set-name {
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+
   /* SP幅でのボタン幅調整（タップ領域拡大） */
   .page-purpleribbon2025 .block-lineup--set-more,
   .page-purpleribbon2025 .block-lineup--set-cart {
@@ -437,10 +519,32 @@
   }
 
   .page-purpleribbon2025 .block-about-purpleribbon2025-project--catch {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .page-purpleribbon2025 .block-about-purpleribbon2025-project--title {
     font-size: 18px;
+  }
+
+  .page-purpleribbon2025 .block-about-purpleribbon2025-project {
+    padding: 70px 14px;
+  }
+
+  .page-purpleribbon2025 .block-about-purpleribbon2025-project--container {
+    padding: 32px 24px;
+    gap: 28px;
+  }
+
+  .page-purpleribbon2025 .block-about-purpleribbon2025-project--container::before {
+    inset: 4px;
+  }
+
+  .page-purpleribbon2025 .block-about-purpleribbon2025-project--ribbon-image {
+    width: 160px;
+  }
+
+  .page-purpleribbon2025 .block-about-purpleribbon2025-project--more {
+    padding: 14px 24px;
+    font-size: 13px;
   }
 }
