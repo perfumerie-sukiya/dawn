@@ -224,16 +224,6 @@
             "link": "https://online.sukiya.biz/pages/kiehls-original-travel-pouch-2025-10-24"
           }
         },
-        "column_zMNEJh": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20251016.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-aq-skin-care-sample-set-2025-10-16"
-          }
-        },
         "column_FfqexE": {
           "type": "column",
           "settings": {
@@ -277,7 +267,6 @@
       },
       "block_order": [
         "column_KxETgX",
-        "column_zMNEJh",
         "column_FfqexE",
         "column_eMtPBJ",
         "column_YhKFQd",
