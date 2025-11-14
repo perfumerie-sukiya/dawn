@@ -134,11 +134,11 @@ if (isLineLogin !== 'true') {
 }
 
 function changeToDummyImage() {
-  // lineLoginRequiredクラスを思つimg要素のsrc属性を'https://via.placeholder.com/600x600?text=Secret'に変更する
+  // lineLoginRequiredクラスを思つimg要素のsrc属性を'https://cdn.shopify.com/s/files/1/0496/5436/6365/files/secret-product.jpg?v=1763088092'に変更する
   document.querySelectorAll('.line-login-required').forEach((element) => {
     // srcset属性を削除
     element.removeAttribute('srcset');
-    element.src = 'https://via.placeholder.com/600x600?text=Secret';
+    element.src = 'https://cdn.shopify.com/s/files/1/0496/5436/6365/files/secret-product.jpg?v=1763088092';
   });
 }
 
