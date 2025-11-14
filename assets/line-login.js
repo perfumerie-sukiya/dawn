@@ -15,7 +15,7 @@ async function verifyAccessToken(accessToken) {
 }
 
 async function getAccessToken(code) {
-  const redirect_uri = window.location.origin + window.location.pathname
+  const redirect_uri = window.location.origin + window.location.pathname;
   const params = new URLSearchParams();
   params.append('grant_type', 'authorization_code');
   params.append('code', code);
@@ -26,9 +26,9 @@ async function getAccessToken(code) {
   const response = await fetch('https://api.line.me/oauth2/v2.1/token', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: params.toString()
+    body: params.toString(),
   });
 
   if (!response.ok) {
@@ -41,8 +41,8 @@ async function getAccessToken(code) {
 async function getUserProfile(accessToken) {
   const response = await fetch('https://api.line.me/v2/profile', {
     headers: {
-      Authorization: `Bearer ${accessToken}`
-    }
+      Authorization: `Bearer ${accessToken}`,
+    },
   });
 
   if (!response.ok) {
@@ -89,44 +89,48 @@ async function verifyLineApp(access_token) {
 if (!lineAccessToken || lineAccessToken === 'undefined' || lineAccessToken === 'true') {
   console.log('no token');
   const url = new URL(window.location.href);
-  const code = url.searchParams.get("code");
+  const code = url.searchParams.get('code');
   if (code) {
-    verifyLineLogin(code).then(r => {
-      console.log('verifyLineLogin === true', r);
-      document.querySelector('.line-login-success').classList.remove('tw-hidden');
-      if (r) {
-        document.querySelector('.line-connect-success').classList.remove('tw-hidden');
-        document.getElementById('open-modal').classList.add('tw-hidden');
-        localStorage.setItem('isLineLogin', 'true');
-      } else {
-        document.querySelector('.line-connect-required').classList.remove('tw-hidden');
+    verifyLineLogin(code)
+      .then((r) => {
+        console.log('verifyLineLogin === true', r);
+        document.querySelector('.line-login-success').classList.remove('tw-hidden');
+        if (r) {
+          document.querySelector('.line-connect-success').classList.remove('tw-hidden');
+          document.getElementById('open-modal').classList.add('tw-hidden');
+          localStorage.setItem('isLineLogin', 'true');
+        } else {
+          document.querySelector('.line-connect-required').classList.remove('tw-hidden');
+          changeToDummyImage();
+        }
+      })
+      .catch((e) => {
+        console.error('verifyLineLogin === false', e);
         changeToDummyImage();
-      }
-    }).catch(e => {
-      console.error('verifyLineLogin === false', e);
-      changeToDummyImage();
-    });
+      });
   } else {
     document.querySelector('.line-login-required').classList.remove('tw-hidden');
     changeToDummyImage();
   }
 } else {
   console.log('has token');
-  verifyLineApp(lineAccessToken).then(r => {
-    console.log('response is ', r)
-    // ユーザーが存在しない場合はID連携を促す
-    if (!r) {
+  verifyLineApp(lineAccessToken)
+    .then((r) => {
+      console.log('response is ', r);
+      // ユーザーが存在しない場合はID連携を促す
+      if (!r) {
+        changeToDummyImage();
+        document.querySelector('.line-connect-required').classList.remove('tw-hidden');
+      } else {
+        document.querySelector('.line-connect-success').classList.remove('tw-hidden');
+        document.getElementById('open-modal').classList.add('tw-hidden');
+        localStorage.setItem('isLineLogin', 'true');
+      }
+    })
+    .catch((e) => {
       changeToDummyImage();
-      document.querySelector('.line-connect-required').classList.remove('tw-hidden');
-    } else {
-      document.querySelector('.line-connect-success').classList.remove('tw-hidden');
-      document.getElementById('open-modal').classList.add('tw-hidden');
-      localStorage.setItem('isLineLogin', 'true');
-    }
-  }).catch(e => {
-    changeToDummyImage();
-    console.error('verifyLineApp === false', e);
-  });
+      console.error('verifyLineApp === false', e);
+    });
 }
 
 if (isLineLogin !== 'true') {
