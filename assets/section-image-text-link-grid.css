@@ -55,8 +55,10 @@
   display: block;
 }
 
-.image-text-link-grid .media--adapt > img {
+.image-text-link-grid .media.media--adapt > img.image-text-link-grid__image {
   position: static;
+  inset: auto;
+  width: 100%;
   height: auto;
 }
 
