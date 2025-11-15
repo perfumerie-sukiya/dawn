@@ -44,6 +44,12 @@
   margin-bottom: 1.5rem;
 }
 
+@media screen and (min-width: 750px) {
+  .image-text-link-grid__image-wrapper {
+    max-width: 600px;
+  }
+}
+
 .image-text-link-grid__image-link {
   display: block;
   text-decoration: none;
