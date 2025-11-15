@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_r7jgQb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SI20251115.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/shiseido-essence-skin-glow-primer-special-size-5g-2025-11-15"
+          }
+        },
         "column_tWMeAg": {
           "type": "column",
           "settings": {
@@ -266,6 +276,7 @@
         }
       },
       "block_order": [
+        "column_r7jgQb",
         "column_tWMeAg",
         "column_KxETgX",
         "column_FfqexE",
