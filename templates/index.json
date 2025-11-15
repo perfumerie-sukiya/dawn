@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_VUzYhi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PJ_0a80f9e6-7bd2-4657-a9fd-770259641e03.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paul-and-joe-original-satin-pouch-2025-11-15"
+          }
+        },
         "column_r7jgQb": {
           "type": "column",
           "settings": {
@@ -276,6 +286,7 @@
         }
       },
       "block_order": [
+        "column_VUzYhi",
         "column_r7jgQb",
         "column_tWMeAg",
         "column_KxETgX",
