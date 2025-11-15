@@ -55,6 +55,21 @@
   display: block;
 }
 
+.image-text-link-grid .media--adapt > img {
+  position: static;
+  height: auto;
+}
+
+.image-text-link-grid__item.center .media--adapt,
+.image-text-link-grid__item .media--adapt .image-text-link-grid__image {
+  width: auto;
+}
+
+.image-text-link-grid__item.center .media--adapt img {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .image-text-link-grid__text {
   text-align: center;
   font-size: 1.4rem;
