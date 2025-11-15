@@ -214,6 +214,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_tWMeAg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IN20251115.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/inoui-original-makeup-palette-with-original-mini-brush-2025-11-15"
+          }
+        },
         "column_KxETgX": {
           "type": "column",
           "settings": {
@@ -232,16 +242,6 @@
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/nars-holiday-limited-edition-design-pouch-2025-10-10"
-          }
-        },
-        "column_eMtPBJ": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20250821.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2025-8-21"
           }
         },
         "column_YhKFQd": {
@@ -266,9 +266,9 @@
         }
       },
       "block_order": [
+        "column_tWMeAg",
         "column_KxETgX",
         "column_FfqexE",
-        "column_eMtPBJ",
         "column_YhKFQd",
         "column_D3KcAj"
       ],
