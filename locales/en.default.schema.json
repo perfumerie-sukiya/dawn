@@ -2549,6 +2549,75 @@
         "name": "Multicolumn"
       }
     },
+    "image-text-link-grid": {
+      "name": "Image Text Link Grid",
+      "settings": {
+        "title": {
+          "label": "Heading"
+        },
+        "image_ratio": {
+          "label": "Image ratio",
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Portrait"
+          },
+          "options__3": {
+            "label": "Square"
+          }
+        },
+        "columns_desktop": {
+          "label": "Number of columns on desktop"
+        },
+        "item_alignment": {
+          "label": "Item alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          }
+        },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        },
+        "columns_mobile": {
+          "label": "Number of columns on mobile",
+          "options__1": {
+            "label": "1 column"
+          },
+          "options__2": {
+            "label": "2 columns"
+          },
+          "options__3": {
+            "label": "3 columns"
+          }
+        },
+        "swipe_on_mobile": {
+          "label": "Enable swipe on mobile"
+        }
+      },
+      "blocks": {
+        "item": {
+          "name": "Item",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "text": {
+              "label": "Text"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Image Text Link Grid"
+      }
+    },
     "newsletter": {
       "name": "Email signup",
       "settings": {

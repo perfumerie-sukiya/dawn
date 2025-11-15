@@ -2250,6 +2250,75 @@
         "name": "マルチカラム"
       }
     },
+    "image-text-link-grid": {
+      "name": "画像・テキスト・リンクグリッド",
+      "settings": {
+        "title": {
+          "label": "見出し"
+        },
+        "image_ratio": {
+          "label": "画像比",
+          "options__1": {
+            "label": "画像に合わせる"
+          },
+          "options__2": {
+            "label": "ポートレート"
+          },
+          "options__3": {
+            "label": "正方形"
+          }
+        },
+        "columns_desktop": {
+          "label": "デスクトップの列数"
+        },
+        "item_alignment": {
+          "label": "アイテムの配置",
+          "options__1": {
+            "label": "左"
+          },
+          "options__2": {
+            "label": "中央"
+          }
+        },
+        "header_mobile": {
+          "content": "モバイルのレイアウト"
+        },
+        "columns_mobile": {
+          "label": "モバイルでの列数",
+          "options__1": {
+            "label": "1列"
+          },
+          "options__2": {
+            "label": "2列"
+          },
+          "options__3": {
+            "label": "3列"
+          }
+        },
+        "swipe_on_mobile": {
+          "label": "モバイルでスワイプを有効にする"
+        }
+      },
+      "blocks": {
+        "item": {
+          "name": "アイテム",
+          "settings": {
+            "image": {
+              "label": "画像"
+            },
+            "text": {
+              "label": "テキスト"
+            },
+            "link": {
+              "label": "リンク"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "画像・テキスト・リンクグリッド"
+      }
+    },
     "newsletter": {
       "name": "メール登録",
       "settings": {
