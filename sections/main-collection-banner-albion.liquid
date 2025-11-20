@@ -1,0 +1,62 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+  .collection-hero--with-image .collection-hero__inner {
+  padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+  }
+  }
+{%- endstyle -%}
+
+<!--  Albionヘッダーここから  -->
+<div class="cpb-header">
+  <h1 class="brand-logo tw-relative tw-mt-4 md:tw-max-w-[900px] md:tw-mx-auto">
+    <a href="{{ routes.collections_url }}/albion"><img
+          class="tw-mx-auto"
+          src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/decorte_64899ade-e198-43ce-bf14-0df9c9ae6ef1.svg?v=1733191122"
+          alt="ALBION | Perfumerie Sukiya" width="300" height="90"></a>
+    <img class="tw-absolute tw-top-1/2 -tw-translate-y-1/2 tw-w-[60px] md:tw-w-[100px] tw-right-5 md:tw-right-1/4"
+         src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/decorte-official-logo.svg?v=1733191191"
+         alt="ブランド認定正規品取扱店舗 ALBION"
+         width="175"
+         height="150"
+    >
+  </h1>
+
+  {% render 'header-navigation-albion' %}
+</div>
+<!--  Albionヘッダーここまで  -->
+
+{% schema %}
+{
+  "name": "コレクションバナーAlbion",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    }
+  ]
+}
+{% endschema %}
+

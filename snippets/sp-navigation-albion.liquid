@@ -1,0 +1,52 @@
+{% comment %}my-accordion.jsの読み込み{% endcomment %}
+<script src="{{ 'my-accordion.js' | asset_url }}" defer="defer"></script>
+
+<!-- SP ナビメニュー -->
+<div class="sp-only">
+  <my-accordion>
+    <ul class="tw-bg-gray-900 tw-text-white tw-mb-10 tw-p-0">
+      {%- for link in linklists['albion-category-menu'].links -%}
+        <li class="tw-w-full tw-border-b tw-border-gray-700">
+          {%- if link.links.size == 0 -%}
+            <a href="{{ link.url }}" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current">
+              <span>{{ link.title }}</span>
+              <i class="mdi mdi-chevron-right"></i>
+            </a>
+          {%- else -%}
+            <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
+              <span>{{ link.title }}</span>
+              <i class="mdi mdi-plus"></i>
+            </div>
+
+            <div class="panel tw-bg-gray-100 tw-text-black">
+              {%- for child_link in link.links -%}
+                {%- if child_link.links.size == 0 -%}
+                  <a href="{{ child_link.url }}" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current">
+                    <span>{{ child_link.title }}</span>
+                    <i class="mdi mdi-chevron-right"></i>
+                  </a>
+                {%- else -%}
+                  <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
+                    <span>{{ child_link.title }}</span>
+                    <i class="mdi mdi-plus"></i>
+                  </div>
+
+                  <div class="panel tw-bg-white tw-grid tw-grid-cols-2">
+                    {%- for grandchild_link in child_link.links -%}
+                      <a href="{{ grandchild_link.url }}" class="tw-block tw-p-4 tw-border tw-border-gray-100 tw-no-underline tw-text-current">
+                        <span>{{ grandchild_link.title }}</span>
+                        <i class="mdi mdi-chevron-right"></i>
+                      </a>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </my-accordion>
+</div>
+<!-- SP ナビメニュー end -->
+

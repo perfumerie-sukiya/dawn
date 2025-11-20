@@ -1,0 +1,53 @@
+.counseling-start-action {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.counseling-start-action .counseling-start-btn {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 10px 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.08rem;
+  line-height: 1.4;
+  min-height: 44px;
+  border-radius: 2px;
+  border: solid 1px #000000;
+  vertical-align: middle;
+}
+
+.gPreorderSellingPlanWrapper {
+  display: none;
+}
+
+.counseling-content {
+  padding: 1rem;
+}
+
+.counseling-content .counseling-question {
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.counseling-content label {
+  margin-right: 20px;
+}
+
+.page, .counseling-result {
+  display: none;
+}
+
+.page.active, .counseling-result.active {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .counseling-content {
+    padding: 1.5rem;
+  }
+}
+
