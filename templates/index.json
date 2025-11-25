@@ -136,12 +136,10 @@
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_ratio": "adapt",
         "columns_desktop": 1,
         "item_alignment": "center",
         "color_scheme": "",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -243,16 +241,6 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
-        "column_VUzYhi": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ_0a80f9e6-7bd2-4657-a9fd-770259641e03.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paul-and-joe-original-satin-pouch-2025-11-15"
-          }
-        },
         "column_r7jgQb": {
           "type": "column",
           "settings": {
@@ -293,16 +281,6 @@
             "link": "https://online.sukiya.biz/pages/nars-holiday-limited-edition-design-pouch-2025-10-10"
           }
         },
-        "column_YhKFQd": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20250718.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-radiant-creamy-concealer-1242-special-size-2025-7-18"
-          }
-        },
         "column_D3KcAj": {
           "type": "column",
           "settings": {
@@ -315,12 +293,10 @@
         }
       },
       "block_order": [
-        "column_VUzYhi",
         "column_r7jgQb",
         "column_tWMeAg",
         "column_KxETgX",
         "column_FfqexE",
-        "column_YhKFQd",
         "column_D3KcAj"
       ],
       "settings": {
