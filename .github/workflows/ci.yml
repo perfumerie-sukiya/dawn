@@ -4,6 +4,7 @@ jobs:
   lhci:
     name: Lighthouse
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v3
       - name: Lighthouse
@@ -15,6 +16,7 @@ jobs:
           collection_handle: all
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_TOKEN }}
           lhci_min_score_performance: 0.5
+        continue-on-error: false
   theme-check:
     name: Theme Check
     runs-on: ubuntu-latest
