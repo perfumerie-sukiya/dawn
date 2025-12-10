@@ -241,6 +241,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_L6hFjh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20251212.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-cherry-blossom-shampoo-and-treatment-2025-12-12"
+          }
+        },
         "column_xamFcC": {
           "type": "column",
           "settings": {
@@ -323,6 +333,7 @@
         }
       },
       "block_order": [
+        "column_L6hFjh",
         "column_xamFcC",
         "column_x8Gdbk",
         "column_89DbTx",
