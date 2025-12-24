@@ -241,6 +241,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_L4NRke": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AD20251226.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/addiction-original-pouch-2025-12-26"
+          }
+        },
         "column_L6hFjh": {
           "type": "column",
           "settings": {
@@ -323,6 +333,7 @@
         }
       },
       "block_order": [
+        "column_L4NRke",
         "column_L6hFjh",
         "column_hFGAAJ",
         "column_xamFcC",
