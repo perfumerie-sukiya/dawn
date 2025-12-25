@@ -1,9 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-blog",
+      "custom_css": [
+        "/* ブログ記事グリッド表示 */.blog-articles {display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;}",
+        ".blog-articles .article-card {border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; transition: all 0.3s;}",
+        ".blog-articles .article-card:hover {transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);}",
+        "@media (max-width: 990px) {.blog-articles {grid-template-columns: repeat(2, 1fr); }}",
+        "@media (max-width: 749px) {.blog-articles {grid-template-columns: 1fr; }}"
+      ],
       "settings": {
-        "layout": "collage",
+        "layout": "grid",
         "show_image": true,
         "image_height": "medium",
         "show_date": true,
