@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -22,6 +31,18 @@
     },
     "52d3f9a0-27f4-4529-991a-a9c1c1af2739": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_zmyRMa": {
+          "type": "announcement",
+          "settings": {
+            "text": "年末年始の配送に関して",
+            "link": "shopify://blogs/news/2025-2026年末年始の配送に関しまして"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_zmyRMa"
+      ],
       "settings": {
         "color_scheme": "",
         "show_line_separator": true,
