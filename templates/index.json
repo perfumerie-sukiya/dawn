@@ -281,16 +281,6 @@
             "link": "https://online.sukiya.biz/pages/decorte-aq-absolute-emulsion-micro-radiance-ii-absolute-lotion-hydro-infuse-ii-14ml-each-2025-11-28"
           }
         },
-        "column_xamFcC": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20251201.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-explicit-lipstick-803-body-heat-special-size-2025-12-1"
-          }
-        },
         "column_x8Gdbk": {
           "type": "column",
           "settings": {
@@ -330,16 +320,6 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/nars-holiday-limited-edition-design-pouch-2025-10-10"
           }
-        },
-        "column_D3KcAj": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/999d9e34f9571723c33317ac4bb11f16.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
-          }
         }
       },
       "block_order": [
@@ -347,12 +327,10 @@
         "column_L4NRke",
         "column_L6hFjh",
         "column_hFGAAJ",
-        "column_xamFcC",
         "column_x8Gdbk",
         "column_r7jgQb",
         "column_tWMeAg",
-        "column_FfqexE",
-        "column_D3KcAj"
+        "column_FfqexE"
       ],
       "settings": {
         "title": "Campaign",
