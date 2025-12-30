@@ -241,6 +241,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_YwmYwH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20260114.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-original-mirror-lip-case-2026-1-14"
+          }
+        },
         "column_L4NRke": {
           "type": "column",
           "settings": {
@@ -333,6 +343,7 @@
         }
       },
       "block_order": [
+        "column_YwmYwH",
         "column_L4NRke",
         "column_L6hFjh",
         "column_hFGAAJ",
