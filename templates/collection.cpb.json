@@ -20,6 +20,17 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_3JGxbq": {
+          "type": "slide",
+          "settings": {
+            "title": "HAPPY RADIANT\nNEW YEAR",
+            "image": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-la-creme-l-2026-limited-edition-2026-1-21?_pos=1&_fid=80f42f6b4&_ss=c",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
         "slide_DYrgiw": {
           "type": "slide",
           "settings": {
@@ -99,6 +110,7 @@
         }
       },
       "block_order": [
+        "slide_3JGxbq",
         "slide_DYrgiw",
         "slide_ycztMn",
         "slide_WGkzNU",
