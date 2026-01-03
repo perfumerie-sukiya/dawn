@@ -20,6 +20,17 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_kzAWwA": {
+          "type": "slide",
+          "settings": {
+            "title": "宿命さえ超えてゆく、\n革新の根源美白ケア。",
+            "image": "shopify://shop_images/offer_brightening_serum_26SS_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_brightening_serum_26SS_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-serum-eclat-s/?variant=%2042011960901789",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
         "slide_hLR9ea": {
           "type": "slide",
           "settings": {
@@ -77,6 +88,7 @@
         }
       },
       "block_order": [
+        "slide_kzAWwA",
         "slide_hLR9ea",
         "slide_3JGxbq",
         "slide_DYrgiw",
