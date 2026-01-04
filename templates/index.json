@@ -119,24 +119,12 @@
     },
     "image_text_link_grid_PUAaAR": {
       "type": "image-text-link-grid",
-      "blocks": {
-        "item_LyTb8d": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/top-banner_6b2802c4-7011-4136-8100-bac24bf4604c.jpg",
-            "text": "Sukiya特選福袋2026",
-            "link": "shopify://collections/sukiya-hukubukuro-2026"
-          }
-        }
-      },
-      "block_order": [
-        "item_LyTb8d"
-      ],
+      "disabled": true,
       "name": "t:sections.image-text-link-grid.presets.name",
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "columns_desktop": 1,
+        "columns_desktop": 4,
         "item_alignment": "center",
         "color_scheme": "",
         "columns_mobile": "1",
