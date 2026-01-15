@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_Wxtq6i": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20260216.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-loose-powder-00-15g-2026-1-16"
+          }
+        },
         "column_yEtxgC": {
           "type": "column",
           "settings": {
@@ -311,6 +321,7 @@
         }
       },
       "block_order": [
+        "column_Wxtq6i",
         "column_yEtxgC",
         "column_YwmYwH",
         "column_L4NRke",
