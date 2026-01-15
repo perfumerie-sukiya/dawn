@@ -1345,13 +1345,29 @@
   border-bottom: solid 1px #707070;
 }
 
-.top-main-visual .swiper-container {
+.top-main-visual swiper-container {
+  overflow: hidden;
+}
+.top-main-visual swiper-container:not(:defined) {
   width: 890px;
   height: 550px;
 }
 @media screen and (max-width: 768px) {
-  .top-main-visual .swiper-container {
+  .top-main-visual swiper-container:not(:defined) {
     width: 100%;
+    height: calc((100vw - 72px) / 2 * 3);
+  }
+}
+.top-main-visual swiper-container {
+  width: 100%;
+  max-width: 890px;
+  height: 550px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .top-main-visual swiper-container {
+    width: 100%;
+    max-width: 100%;
     height: calc((100vw - 72px) / 2 * 3);
   }
 }
@@ -1902,6 +1918,18 @@ input, select, textarea {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+swiper-container:not(:defined) {
+  display: block;
+}
+
+swiper-container:not(:defined) swiper-slide {
+  display: none;
+}
+
+swiper-container:not(:defined) swiper-slide:first-child {
   display: block;
 }
 
