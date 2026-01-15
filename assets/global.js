@@ -766,9 +766,7 @@ class SlideshowComponent extends SliderComponent {
       this.autoplayButtonIsSetToPlay = true;
       this.play();
     } else {
-      this.reducedMotion.matches || this.announcementBarArrowButtonWasClicked
-        ? this.pause()
-        : this.play();
+      this.reducedMotion.matches || this.announcementBarArrowButtonWasClicked ? this.pause() : this.play();
     }
   }
 
@@ -832,10 +830,7 @@ class SlideshowComponent extends SliderComponent {
         event.target === this.sliderAutoplayButton || this.sliderAutoplayButton.contains(event.target);
       if (!this.autoplayButtonIsSetToPlay || focusedOnAutoplayButton) return;
       this.play();
-    } else if (
-      !this.reducedMotion.matches &&
-      !this.announcementBarArrowButtonWasClicked
-    ) {
+    } else if (!this.reducedMotion.matches && !this.announcementBarArrowButtonWasClicked) {
       this.play();
     }
   }
@@ -877,9 +872,7 @@ class SlideshowComponent extends SliderComponent {
 
   autoRotateSlides() {
     const slideScrollPosition =
-      this.currentPage === this.sliderItems.length
-        ? 0
-        : this.slider.scrollLeft + this.sliderItemOffset;
+      this.currentPage === this.sliderItems.length ? 0 : this.slider.scrollLeft + this.sliderItemOffset;
 
     this.setSlidePosition(slideScrollPosition);
     this.applyAnimationToAnnouncementBar();
@@ -943,7 +936,7 @@ class SlideshowComponent extends SliderComponent {
     const slideScrollPosition =
       this.slider.scrollLeft +
       this.sliderFirstItemNode.clientWidth *
-      (this.sliderControlLinksArray.indexOf(event.currentTarget) + 1 - this.currentPage);
+        (this.sliderControlLinksArray.indexOf(event.currentTarget) + 1 - this.currentPage);
     this.slider.scrollTo({
       left: slideScrollPosition,
     });
@@ -988,13 +981,15 @@ class VariantSelects extends HTMLElement {
       const escapedAlt = escapeCSS(this.currentVariant.featured_image.alt);
 
       // 'tw-hidden'クラスを全ての要素から削除
-      document.querySelectorAll('[thumbnail-alt]').forEach(img => img.classList.remove('tw-hidden'));
+      document.querySelectorAll('[thumbnail-alt]').forEach((img) => img.classList.remove('tw-hidden'));
 
       // 現在のバリアントのalt属性と一致しない要素に'tw-hidden'クラスを追加
-      document.querySelectorAll(`[thumbnail-alt]:not([thumbnail-alt="${escapedAlt}"])`).forEach(img => img.classList.add('tw-hidden'));
+      document
+        .querySelectorAll(`[thumbnail-alt]:not([thumbnail-alt="${escapedAlt}"])`)
+        .forEach((img) => img.classList.add('tw-hidden'));
     } else {
       // 'tw-hidden'クラスを全ての要素から削除
-      document.querySelectorAll('[thumbnail-alt]').forEach(img => img.classList.remove('tw-hidden'));
+      document.querySelectorAll('[thumbnail-alt]').forEach((img) => img.classList.remove('tw-hidden'));
     }
   }
 
@@ -1100,7 +1095,8 @@ class VariantSelects extends HTMLElement {
     const sectionId = this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section;
 
     fetch(
-      `${this.dataset.url}?variant=${requestedVariantId}&section_id=${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section
+      `${this.dataset.url}?variant=${requestedVariantId}&section_id=${
+        this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section
       }`
     )
       .then((response) => response.text())
@@ -1127,7 +1123,9 @@ class VariantSelects extends HTMLElement {
         );
 
         const pricePerItemDestination = document.getElementById(`Price-Per-Item-${this.dataset.section}`);
-        const pricePerItemSource = html.getElementById(`Price-Per-Item-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`);
+        const pricePerItemSource = html.getElementById(
+          `Price-Per-Item-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        );
 
         const volumePricingDestination = document.getElementById(`Volume-${this.dataset.section}`);
         const qtyRules = document.getElementById(`Quantity-Rules-${this.dataset.section}`);
@@ -1157,8 +1155,7 @@ class VariantSelects extends HTMLElement {
 
         if (price) price.classList.remove('hidden');
 
-        if (inventoryDestination)
-          inventoryDestination.classList.toggle('hidden', inventorySource.innerText === '');
+        if (inventoryDestination) inventoryDestination.classList.toggle('hidden', inventorySource.innerText === '');
 
         const addButtonUpdated = html.getElementById(`ProductSubmitButton-${sectionId}`);
         this.toggleAddButton(
@@ -1289,3 +1286,102 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+function getDecorteFilterTagLabel(container = document) {
+  const heading = container.querySelector('[data-filter-tag-label]');
+  if (heading && heading.dataset.filterTagLabel) return heading.dataset.filterTagLabel;
+  const pill = container.querySelector('[data-fallback-filter-label]');
+  if (pill) return pill.getAttribute('data-fallback-filter-label');
+  return 'カテゴリ';
+}
+
+function getDecorteFilterTagText() {
+  const params = new URLSearchParams(window.location.search);
+  const tagParam = params.get('filter.p.tag');
+  if (!tagParam) return '';
+  return tagParam
+    .split(',')
+    .map((value) => value.replace(/\+/g, ' ').trim())
+    .filter(Boolean)
+    .join(', ');
+}
+
+function applyDecorteFilterTagHeading(container = document) {
+  const wrappers = container.querySelectorAll('[data-filter-tag-heading]');
+  if (!wrappers.length) return;
+
+  const tagText = getDecorteFilterTagText();
+  if (!tagText) return;
+
+  wrappers.forEach((wrapper) => {
+    const heading = wrapper.querySelector('h3');
+    if (heading && heading.textContent.trim() === '') {
+      heading.textContent = tagText;
+    }
+    wrapper.classList.remove('tw-hidden');
+  });
+}
+
+function applyDecorteFallbackFilterPills(container = document) {
+  const pills = container.querySelectorAll('[data-fallback-filter-pill]');
+  if (!pills.length) return;
+
+  const tagText = getDecorteFilterTagText();
+  if (!tagText) return;
+
+  const label = getDecorteFilterTagLabel(container);
+  const activeFacetTexts = Array.from(container.querySelectorAll('.active-facets__button-inner')).map((el) =>
+    el.textContent.replace(/\s+/g, ' ').trim()
+  );
+  const hasTagFacet = activeFacetTexts.some((text) => text.includes(tagText));
+
+  pills.forEach((pill) => {
+    if (hasTagFacet) {
+      pill.classList.add('tw-hidden');
+      return;
+    }
+
+    const textEl = pill.querySelector('[data-fallback-filter-text]');
+    if (textEl) textEl.textContent = `${label}: ${tagText}`;
+
+    const linkEl = pill.querySelector('[data-fallback-filter-link]');
+    if (linkEl) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('filter.p.tag');
+      const href = url.search ? `${url.pathname}?${url.searchParams.toString()}` : url.pathname;
+      linkEl.setAttribute('href', href);
+    }
+
+    pill.classList.remove('tw-hidden');
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    applyDecorteFilterTagHeading();
+    applyDecorteFallbackFilterPills();
+  });
+} else {
+  applyDecorteFilterTagHeading();
+  applyDecorteFallbackFilterPills();
+}
+
+document.addEventListener('shopify:section:load', (event) => {
+  if (!event.target) return;
+  applyDecorteFilterTagHeading(event.target);
+  applyDecorteFallbackFilterPills(event.target);
+});
+
+const decorteHeadingObserverTarget = document.getElementById('MainContent') || document.body;
+if (decorteHeadingObserverTarget) {
+  const decorteHeadingObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (!(node instanceof Element)) return;
+        applyDecorteFilterTagHeading(node);
+        applyDecorteFallbackFilterPills(node);
+      });
+    });
+  });
+  decorteHeadingObserver.observe(decorteHeadingObserverTarget, { childList: true, subtree: true });
+}

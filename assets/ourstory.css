@@ -917,6 +917,7 @@ body.zh-jp .mainContainer #about-content .content-wrap .chronology__item {
   background-color: #000000;
   overflow: hidden;
   position: relative;
+  z-index: 0;
 }
 /* line 695, ../sass/ourstory.scss */
 #about-content::before {
@@ -926,9 +927,11 @@ body.zh-jp .mainContainer #about-content .content-wrap .chronology__item {
   display: block;
   height: 100vh;
   left: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 @media screen and (min-width: 737px) {
   /* line 695, ../sass/ourstory.scss */
@@ -1045,6 +1048,8 @@ body.zh-jp .mainContainer #about-content .content-wrap .chronology__item {
   position: fixed;
   top: 0;
   width: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 @media screen and (min-width: 737px) {
   /* line 775, ../sass/ourstory.scss */
@@ -1062,6 +1067,7 @@ body.zh-jp .mainContainer #about-content .content-wrap .chronology__item {
 /* line 794, ../sass/ourstory.scss */
 #about-content .content-wrap {
   position: relative;
+  z-index: 1;
 }
 @media screen and (min-width: 737px) {
   /* line 794, ../sass/ourstory.scss */
@@ -1074,6 +1080,12 @@ body.zh-jp .mainContainer #about-content .content-wrap .chronology__item {
 /* line 803, ../sass/ourstory.scss */
 #about-content .content-wrap h1, #about-content .content-wrap h2, #about-content .content-wrap p, #about-content .content-wrap li, #about-content .content-wrap span, #about-content .content-wrap a {
   color: #dddddd;
+}
+/* Ensure title-text is visible on h1 and h2 elements */
+#about-content .content-wrap h1.title-text,
+#about-content .content-wrap h2.title-text {
+  color: #ffffff;
+  opacity: 0.3;
 }
 /* line 806, ../sass/ourstory.scss */
 #about-content .content-wrap .back-top {
@@ -1133,6 +1145,12 @@ body.zh-jp .mainContainer #about-content .content-wrap .chronology__item {
 /* line 850, ../sass/ourstory.scss */
 #about-content .content-wrap .title-text.onload.onload-active {
   opacity: 0.3;
+}
+/* Ensure h1 and h2 title-text.onload become visible when onload-active is added */
+#about-content .content-wrap h1.title-text.onload.onload-active,
+#about-content .content-wrap h2.title-text.onload.onload-active {
+  opacity: 0.3;
+  color: #ffffff;
 }
 /* line 855, ../sass/ourstory.scss */
 #about-content .content-wrap .copy {

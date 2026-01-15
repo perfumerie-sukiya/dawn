@@ -1,19 +1,33 @@
 {%- liquid
-  assign filter_tag = ''
-  for filter in collection.filters
-    if filter.param_name == 'filter.p.tag'
+  # 商品一覧ページ（view=decorte-products）ではスライダーを表示しない
+  assign show_slider = true
+  if template.suffix == 'decorte-products'
+    assign show_slider = false
+  else
+    # フィルタがアクティブな場合もスライダーを表示しない
+    assign has_active_filters = false
+    for filter in collection.filters
       if filter.active_values != blank
-        assign filter_tag = filter.active_values.first.label
+        assign has_active_filters = true
+        break
       endif
-      break
+    endfor
+    if current_tags != blank
+      assign has_active_filters = true
     endif
-  endfor
-  if filter_tag == ''
-    assign filter_tag = current_tags | first
+
+    assign has_filtered_results = false
+    if collection.products_count != collection.all_products_count
+      assign has_filtered_results = true
+    endif
+
+    if has_active_filters or has_filtered_results
+      assign show_slider = false
+    endif
   endif
 -%}
 
-{% unless filter_tag %}
+{% if show_slider %}
   <div class="page-width">
     <div class="tw-my-6">
       <swiper-container
@@ -47,7 +61,7 @@
       </swiper-container>
     </div>
   </div>
-{% endunless %}
+{% endif %}
 
 {% schema %}
 {

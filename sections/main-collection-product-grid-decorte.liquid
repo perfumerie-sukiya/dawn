@@ -39,24 +39,88 @@
 
   # Determine selected tag from Storefront Filtering (filter.p.tag) または旧来の current_tags
   assign filter_tag = ''
+  assign filter_tag_label = 'カテゴリ'
+  assign active_filter_count = 0
   for filter in collection.filters
+    if filter.active_values != blank
+      assign active_filter_count = active_filter_count | plus: filter.active_values.size
+    endif
     if filter.param_name == 'filter.p.tag'
+      assign filter_tag_label = filter.label | default: filter_tag_label
       if filter.active_values != blank
-        assign filter_tag = filter.active_values.first.label
+        assign filter_tag = filter.active_values | map: 'label' | join: ', '
+        if filter_tag == ''
+          assign filter_tag = filter.active_values | map: 'value' | join: ', '
+        endif
       endif
-      break
     endif
   endfor
-  if filter_tag == ''
-    assign filter_tag = current_tags | first
+
+  # Fallback: Use current_tags for old-style URLs (/collections/handle/tag)
+  if filter_tag == '' and current_tags != blank
+    assign filter_tag = current_tags | join: ', '
+  endif
+
+  assign has_active_filters = false
+  if active_filter_count > 0
+    assign has_active_filters = true
+  endif
+
+  assign has_filtered_results = false
+  if collection.products_count != collection.all_products_count
+    assign has_filtered_results = true
+  endif
+  
+  assign force_list_view = false
+  if template.suffix == 'decorte-products'
+    assign force_list_view = true
+  endif
+
+  # force_product_grid が true の場合は常に商品一覧を表示
+  assign show_product_grid = false
+  if force_list_view
+    assign show_product_grid = true
+  elsif section.settings.force_product_grid
+    assign show_product_grid = true
+  elsif has_active_filters or current_tags != blank or has_filtered_results
+    assign show_product_grid = true
   endif
 -%}
 
+{% comment %}
+  filter.p.tag パラメータが Shopify の Storefront Filter API で認識されない場合、
+  旧形式の URL (/collections/decorte/tag-name) にリダイレクトする
+  force_product_grid が true の場合はリダイレクトしない（常に一覧表示のため）
+{% endcomment %}
+{% if filter_tag == '' and current_tags == blank %}
+  {% unless section.settings.force_product_grid %}
+    <script>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var tagParam = params.get('filter.p.tag');
+        if (tagParam) {
+          // filter.p.tag が URL にあるが Liquid で検出できなかった場合、旧形式にリダイレクト
+          var newUrl = window.location.pathname + '/' + encodeURIComponent(tagParam);
+          var viewParam = params.get('view');
+          if (viewParam) {
+            newUrl += '?view=' + encodeURIComponent(viewParam);
+          }
+          window.location.replace(newUrl);
+        }
+      })();
+    </script>
+  {% endunless %}
+{% endif %}
+
 <!-- Decorte -->
 <div class="item-list cpb-brand-page">
-  {% if filter_tag %}
+  {% if show_product_grid %}
     <!-- Decorte商品一覧ここから -->
-    <div class="page-width tw-my-5">
+    <div
+      class="page-width tw-my-5{% unless filter_tag %} tw-hidden{% endunless %}"
+      data-filter-tag-heading
+      data-filter-tag-label="{{ filter_tag_label | escape }}"
+    >
       <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
     </div>
     <div class="section-{{ section.id }}-padding">
@@ -148,7 +212,9 @@
                 enable_filtering: section.settings.enable_filtering,
                 enable_sorting: section.settings.enable_sorting,
                 filter_type: section.settings.filter_type,
-                paginate: paginate
+              paginate: paginate,
+              fallback_filter_label: filter_tag_label,
+              view_param: 'decorte-products'
               %}
             </aside>
           {%- endif -%}
@@ -691,6 +757,17 @@
       "id": "swipe_on_mobile",
       "default": true,
       "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "Decorte専用設定"
+    },
+    {
+      "type": "checkbox",
+      "id": "force_product_grid",
+      "default": false,
+      "label": "常に商品一覧を表示する",
+      "info": "true に設定すると、フィルタが無い状態でも商品一覧を表示します（ブランドトップを表示しません）。一覧モード用テンプレート（collection.decorte-products.json）で使用します。"
     }
   ]
 }
