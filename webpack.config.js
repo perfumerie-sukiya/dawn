@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const path = require('path');
 // 'production' か 'development' を指定
-const MODE = "development";
+const MODE = process.env.NODE_ENV || "production";
 
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
 const enabledSourceMap = MODE === "development";
@@ -11,9 +11,13 @@ module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: MODE,
+  entry: {
+    main: './src/index.js',
+    'swiper-init': './src/swiper-init.js',
+  },
   output: {
     path: path.resolve(__dirname, 'assets'),
-    filename: 'main.js',
+    filename: '[name].js',
   },
 
   module: {
@@ -67,7 +71,9 @@ module.exports = {
     extensions: ["*", ".js", ".json"],
   },
   plugins: [
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    })
   ],
   target: "web",
 };
