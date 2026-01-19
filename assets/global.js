@@ -1151,6 +1151,15 @@ class VariantSelects extends HTMLElement {
           pricePerItemDestination.classList.toggle('hidden', pricePerItemSource.classList.contains('hidden'));
         }
 
+        const fragranceDescriptionSource = html.getElementById(
+          `FragranceDescription-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
+        );
+        const fragranceDescriptionDestination = document.getElementById(`FragranceDescription-${this.dataset.section}`);
+
+        if (fragranceDescriptionSource && fragranceDescriptionDestination) {
+          fragranceDescriptionDestination.innerHTML = fragranceDescriptionSource.innerHTML;
+        }
+
         const price = document.getElementById(`price-${this.dataset.section}`);
 
         if (price) price.classList.remove('hidden');
