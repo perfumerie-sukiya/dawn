@@ -250,7 +250,7 @@
                       class="visually-hidden">{{ 'products.product.sku' | t }}:</span> {{- product.selected_or_first_available_variant.sku -}}
                 </p>
               {%- when 'custom_liquid' -%}
-                <div id="FragranceDescription-{{ section.id }}" {{ block.shopify_attributes }}>
+                <div id="FragranceDescription-{{ block.id }}-{{ section.id }}" class="custom-liquid-block" {{ block.shopify_attributes }}>
                   {{ block.settings.custom_liquid }}
                 </div>
               {%- when 'collapsible_tab' -%}
