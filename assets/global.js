@@ -1151,14 +1151,13 @@ class VariantSelects extends HTMLElement {
           pricePerItemDestination.classList.toggle('hidden', pricePerItemSource.classList.contains('hidden'));
         }
 
-        const sectionIdForSource = this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section;
-        const fragranceDescriptionDestinations = document.querySelectorAll(
-          `[id^="FragranceDescription-"][id$="-${this.dataset.section}"]`
+        const variantContentDestinations = document.querySelectorAll(
+          `#ProductInfo-${this.dataset.section} [data-variant-content]`
         );
 
-        fragranceDescriptionDestinations.forEach((destination) => {
-          const blockId = destination.id.replace(`FragranceDescription-`, '').replace(`-${this.dataset.section}`, '');
-          const source = html.getElementById(`FragranceDescription-${blockId}-${sectionIdForSource}`);
+        variantContentDestinations.forEach((destination) => {
+          const contentId = destination.getAttribute('data-variant-content');
+          const source = html.querySelector(`[data-variant-content="${contentId}"]`);
           if (source) {
             destination.innerHTML = source.innerHTML;
           }
