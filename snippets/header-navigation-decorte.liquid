@@ -1,4 +1,3 @@
-{{ 'materialdesignicons.min.css' | asset_url | stylesheet_tag }}
 <div class="tw-hidden md:tw-flex md:tw-justify-center tw-min-w-max">
   {% for link in linklists['decorte-nav-menu'].links %}
     {% if link.links != empty %}
@@ -7,8 +6,7 @@
         <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-white tw-no-underline"
            href="{{ link.url }}">
           {{ link.title }}
-          <i aria-hidden="true"
-             class="tw-inline-flex tw-text-2xl tw-leading-none notranslate mdi mdi-chevron-right tw-no-underline tw-text-current"></i>
+          <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
         </a>
         <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-black tw-text-white">
           {% for child_link in link.links %}
@@ -20,8 +18,7 @@
                    class="tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current"
                 >
                   {{ child_link.title }}
-                  <i aria-hidden="true"
-                     class="tw-inline-flex tw-text-2xl tw-leading-none notranslate mdi mdi-chevron-right"></i>
+                  <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
                 </a>
                 <div class="nested-menu group-hover/nest2:tw-block tw-hidden tw-bg-black tw-text-white">
                   {% for grandchild_link in child_link.links %}
@@ -53,8 +50,7 @@
           {%- endunless -%}
       >
         {{ link.title }}
-        <i aria-hidden="true"
-           class="tw-inline-flex tw-text-2xl tw-leading-none notranslate mdi mdi-chevron-right"></i>
+        <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
       </a>
     {% endif %}
   {% endfor %}

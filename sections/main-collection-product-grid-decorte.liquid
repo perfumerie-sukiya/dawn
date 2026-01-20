@@ -460,10 +460,7 @@
                   href="{{ link.url }}"
                 >
                   {{ link.title }}
-                  <i
-                    aria-hidden="true"
-                    class="tw-inline-flex tw-text-2xl tw-leading-none notranslate mdi mdi-chevron-right"
-                  ></i>
+                  <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
                 </a>
                 <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-black tw-text-white tw-absolute tw-z-10 tw-w-full">
                   {%- for child_link in link.links -%}
@@ -474,10 +471,7 @@
                           class="tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline"
                         >
                           {{ child_link.title }}
-                          <i
-                            aria-hidden="true"
-                            class="tw-inline-flex tw-text-2xl tw-leading-none notranslate mdi mdi-chevron-right"
-                          ></i>
+                          <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
                         </a>
                         <div class="nested-menu group-hover/nest2:tw-block tw-hidden tw-bg-black tw-text-white">
                           {%- for grandchild_link in child_link.links -%}
@@ -511,10 +505,7 @@
                 {%- endunless -%}
               >
                 {{ link.title }}
-                <i
-                  aria-hidden="true"
-                  class="tw-inline-flex tw-text-2xl tw-leading-none notranslate mdi mdi-chevron-right"
-                ></i>
+                <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
               </a>
             {%- endif -%}
           {%- endfor -%}
