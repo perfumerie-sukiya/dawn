@@ -5,6 +5,16 @@ class MyAccordion extends HTMLElement {
         transition: 0.4s;
       }
 
+      .my-accordion svg {
+        width: 14px !important;
+        height: 14px !important;
+        display: block;
+      }
+
+      .my-accordion .icon-minus {
+        height: 3px !important;
+      }
+
       .panel {
         transition: max-height 0.2s ease-out;
         overflow: hidden;

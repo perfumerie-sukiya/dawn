@@ -10,15 +10,15 @@
           {%- if link.links.size == 0 -%}
             <a href="{{ link.url }}" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current">
               <span>{{ link.title }}</span>
-              <span class="tw-inline-flex tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
+              <span class="tw-inline-flex tw-text-white">{% render 'icon-chevron-right', width: 14, height: 14 %}</span>
             </a>
           {%- else -%}
             <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
               <span>{{ link.title }}</span>
-              <span class="tw-inline-flex" data-accordion-icon>
-  <span data-accordion-icon-closed>{% render 'icon-plus' %}</span>
-  <span data-accordion-icon-open hidden>{% render 'icon-minus' %}</span>
-</span>
+              <span class="tw-inline-flex tw-text-white" data-accordion-icon>
+                <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+                <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+              </span>
             </div>
 
             <div class="panel tw-bg-gray-100 tw-text-black">
@@ -26,22 +26,22 @@
                 {%- if child_link.links.size == 0 -%}
                   <a href="{{ child_link.url }}" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current">
                     <span>{{ child_link.title }}</span>
-                    <span class="tw-inline-flex tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
+                    <span class="tw-inline-flex tw-text-current">{% render 'icon-chevron-right', width: 14, height: 14 %}</span>
                   </a>
                 {%- else -%}
                   <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
                     <span>{{ child_link.title }}</span>
-                    <span class="tw-inline-flex" data-accordion-icon>
-  <span data-accordion-icon-closed>{% render 'icon-plus' %}</span>
-  <span data-accordion-icon-open hidden>{% render 'icon-minus' %}</span>
-</span>
+                    <span class="tw-inline-flex tw-text-current" data-accordion-icon>
+                      <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+                      <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+                    </span>
                   </div>
 
                   <div class="panel tw-bg-white tw-grid tw-grid-cols-2">
                     {%- for grandchild_link in child_link.links -%}
                       <a href="{{ grandchild_link.url }}" class="tw-block tw-p-4 tw-border tw-border-gray-100 tw-no-underline tw-text-current">
                         <span>{{ grandchild_link.title }}</span>
-                        <span class="tw-inline-flex tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
+                        <span class="tw-inline-flex tw-text-current">{% render 'icon-chevron-right', width: 14, height: 14 %}</span>
                       </a>
                     {%- endfor -%}
                   </div>
