@@ -1151,6 +1151,18 @@ class VariantSelects extends HTMLElement {
           pricePerItemDestination.classList.toggle('hidden', pricePerItemSource.classList.contains('hidden'));
         }
 
+        const variantContentDestinations = document.querySelectorAll(
+          `#ProductInfo-${this.dataset.section} [data-variant-content]`
+        );
+
+        variantContentDestinations.forEach((destination) => {
+          const contentId = destination.getAttribute('data-variant-content');
+          const source = html.querySelector(`[data-variant-content="${contentId}"]`);
+          if (source) {
+            destination.innerHTML = source.innerHTML;
+          }
+        });
+
         const price = document.getElementById(`price-${this.dataset.section}`);
 
         if (price) price.classList.remove('hidden');
