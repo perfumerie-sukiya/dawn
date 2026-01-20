@@ -46,7 +46,7 @@
           "type": "custom_liquid",
           "name": "香り説明",
           "settings": {
-            "custom_liquid": "{%- if product.selected_or_first_available_variant.metafields.custom.fragrance_description != blank -%}\n  <div class=\"fragrance-description\">\n    <h4>香りの説明</h4>\n    <p>{{ product.selected_or_first_available_variant.metafields.custom.fragrance_description | newline_to_br }}</p>\n  </div>\n{%- endif -%}"
+            "custom_liquid": "{%- if product.selected_or_first_available_variant.metafields.custom.fragrance_description != blank -%}\n  <div class=\"fragrance-description\" data-variant-content=\"fragrance-description\">\n    <h4>香りの説明</h4>\n    <p>{{ product.selected_or_first_available_variant.metafields.custom.fragrance_description | newline_to_br }}</p>\n  </div>\n{%- endif -%}"
           }
         },
         "a2fac057-a160-42d6-afbe-9d2ec38856bb": {
