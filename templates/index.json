@@ -239,16 +239,6 @@
             "link": "https://online.sukiya.biz/pages/decorte-loose-powder-00-15g-2026-1-16"
           }
         },
-        "column_yEtxgC": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/1_1d894435-1b88-47c0-8cc0-244375f5611a.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paul-and-joe-original-cosmetic-box-2026-1-5"
-          }
-        },
         "column_YwmYwH": {
           "type": "column",
           "settings": {
@@ -312,7 +302,6 @@
       },
       "block_order": [
         "column_Wxtq6i",
-        "column_yEtxgC",
         "column_YwmYwH",
         "column_L4NRke",
         "column_L6hFjh",
