@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_UX49z8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AD2060213.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
         "column_LWCBiy": {
           "type": "column",
           "settings": {
@@ -321,6 +331,7 @@
         }
       },
       "block_order": [
+        "column_UX49z8",
         "column_LWCBiy",
         "column_Qe3nkk",
         "column_Wxtq6i",
