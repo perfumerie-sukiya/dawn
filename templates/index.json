@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_Qe3nkk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20260316.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-serum-6ml-3"
+          }
+        },
         "column_Wxtq6i": {
           "type": "column",
           "settings": {
@@ -301,6 +311,7 @@
         }
       },
       "block_order": [
+        "column_Qe3nkk",
         "column_Wxtq6i",
         "column_YwmYwH",
         "column_L4NRke",
