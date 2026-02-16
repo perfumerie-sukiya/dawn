@@ -20,6 +20,39 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_kzAWwA": {
+          "type": "slide",
+          "settings": {
+            "title": "宿命さえ超えてゆく、\n革新の根源美白ケア。",
+            "image": "shopify://shop_images/offer_brightening_serum_26SS_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_brightening_serum_26SS_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-serum-eclat-s/?variant=%2042011960901789",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
+        "slide_hLR9ea": {
+          "type": "slide",
+          "settings": {
+            "title": "BUTTERFLY KISSES\nときめきの出会いへと導く\n自由な羽ばたき。",
+            "image": "shopify://shop_images/offer_LoveCollection_26ss_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_LoveCollection_26ss_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-rouge-alleve-luminizing-love-collection-2026-2026-1-21?_pos=1&_fid=5714da13b&_ss=c",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
+        "slide_3JGxbq": {
+          "type": "slide",
+          "settings": {
+            "title": "HAPPY RADIANT\nNEW YEAR",
+            "image": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-la-creme-l-2026-limited-edition-2026-1-21?_pos=1&_fid=80f42f6b4&_ss=c",
+            "is_title_white": true,
+            "is_text_right": false
+          }
+        },
         "slide_DYrgiw": {
           "type": "slide",
           "settings": {
@@ -31,28 +64,6 @@
             "is_text_right": false
           }
         },
-        "slide_ycztMn": {
-          "type": "slide",
-          "settings": {
-            "title": "光がもたらす、彩りの影。\n数量限定カラー新発売",
-            "image": "shopify://shop_images/offer_eye-shadow_25aw_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_eye-shadow_25aw_sp_40336b72-6edc-484f-b027-671140bfdf48.jpg",
-            "link": "",
-            "is_title_white": true,
-            "is_text_right": false
-          }
-        },
-        "slide_WGkzNU": {
-          "type": "slide",
-          "settings": {
-            "title": "贅沢な色彩と輝きを、\nいつでも唇に纏わせて",
-            "image": "shopify://shop_images/offer_lipstick_25aw_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_lipstick_25aw_sp_434bff28-0c5a-4476-b289-a522c1a313a9.jpg",
-            "link": "https://online.sukiya.biz/collections/cle-de-peau-beaute?filter.p.tag=%E3%83%AA%E3%83%83%E3%83%97",
-            "is_title_white": true,
-            "is_text_right": true
-          }
-        },
         "slide_TpUYee": {
           "type": "slide",
           "settings": {
@@ -61,28 +72,6 @@
             "image_sp": "shopify://shop_images/CPB_25SS_KeyRadianceCare_sp_788abf3c-8541-42cf-bfb5-4c5ebf340c87.jpg",
             "link": "",
             "is_title_white": false,
-            "is_text_right": false
-          }
-        },
-        "slide_6eVUkJ": {
-          "type": "slide",
-          "settings": {
-            "title": "透明感の極みへ。\n内面から光を放つ品格の肌。",
-            "image": "shopify://shop_images/offer_25SS_TranslucentLoosePowder_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_25SS_TranslucentLoosePowder_sp_d03bf8b4-6a61-4c4c-92a7-d5a05c19a811.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-poodle-transparant-n-m-2025-3-21",
-            "is_title_white": false,
-            "is_text_right": false
-          }
-        },
-        "slide_QrXbxY": {
-          "type": "slide",
-          "settings": {
-            "title": "その瞬間、澄みきった輝きがあふれ出す。",
-            "image": "shopify://shop_images/offer_PreciousGoldVitalitySerum_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_PreciousGoldVitalitySerum_sp.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-ceram-vitalite-eau-precieux-2025-1-21",
-            "is_title_white": true,
             "is_text_right": false
           }
         },
@@ -99,12 +88,11 @@
         }
       },
       "block_order": [
+        "slide_kzAWwA",
+        "slide_hLR9ea",
+        "slide_3JGxbq",
         "slide_DYrgiw",
-        "slide_ycztMn",
-        "slide_WGkzNU",
         "slide_TpUYee",
-        "slide_6eVUkJ",
-        "slide_QrXbxY",
         "slide_jdMnEt"
       ],
       "settings": {}

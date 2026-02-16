@@ -43,8 +43,8 @@
           "type": "slide",
           "settings": {
             "title": "NARS",
-            "image": "shopify://shop_images/890_550_sukiya_2.png",
-            "image_sp": "shopify://shop_images/828_1242_sukiya_1.png",
+            "image": "shopify://shop_images/2601_NARS_AGLB_890_550.jpg",
+            "image_sp": "shopify://shop_images/202601_828_1242_sukiya.png",
             "link": "shopify://collections/nars"
           }
         },
@@ -52,8 +52,8 @@
           "type": "slide",
           "settings": {
             "title": "JILL STUART",
-            "image": "shopify://shop_images/JS24_10th_CB_SU_W890_H550px.jpg",
-            "image_sp": "shopify://shop_images/JS24_10th_CB_SU_W828_H1242px.jpg",
+            "image": "shopify://shop_images/JS26_Spring_Collection_S890_W550_Hpx.jpg",
+            "image_sp": "shopify://shop_images/JS26_Spring_Collection_S828_W1242_Hpx.jpg",
             "link": "shopify://collections/jillstuart"
           }
         },
@@ -61,8 +61,8 @@
           "type": "slide",
           "settings": {
             "title": "ADDICTION",
-            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_25Holiday-1.jpg",
-            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_25Holiday-1.jpg",
+            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_26Spring.jpg",
+            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_26Spring.jpg",
             "link": "shopify://collections/addiction"
           }
         },
@@ -119,29 +119,15 @@
     },
     "image_text_link_grid_PUAaAR": {
       "type": "image-text-link-grid",
-      "blocks": {
-        "item_LyTb8d": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/top-banner_6b2802c4-7011-4136-8100-bac24bf4604c.jpg",
-            "text": "Sukiya特選福袋2026",
-            "link": "shopify://collections/sukiya-hukubukuro-2026"
-          }
-        }
-      },
-      "block_order": [
-        "item_LyTb8d"
-      ],
+      "disabled": true,
       "name": "t:sections.image-text-link-grid.presets.name",
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_ratio": "adapt",
-        "columns_desktop": 1,
+        "columns_desktop": 4,
         "item_alignment": "center",
         "color_scheme": "",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -243,14 +229,84 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
-        "column_VUzYhi": {
+        "column_UX49z8": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PJ_0a80f9e6-7bd2-4657-a9fd-770259641e03.jpg",
+            "image": "shopify://shop_images/AD2060213.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paul-and-joe-original-satin-pouch-2025-11-15"
+            "link": ""
+          }
+        },
+        "column_LWCBiy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20260316_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-aq-pore-cleansing-serum-mini-size-15ml"
+          }
+        },
+        "column_Qe3nkk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20260316.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-serum-6ml-3"
+          }
+        },
+        "column_Wxtq6i": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20260216.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-loose-powder-00-15g-2026-1-16"
+          }
+        },
+        "column_L4NRke": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/AD20251226.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/addiction-original-pouch-2025-12-26"
+          }
+        },
+        "column_L6hFjh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20251212.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-cherry-blossom-shampoo-and-treatment-2025-12-12"
+          }
+        },
+        "column_hFGAAJ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CD20251128.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-aq-absolute-emulsion-micro-radiance-ii-absolute-lotion-hydro-infuse-ii-14ml-each-2025-11-28"
+          }
+        },
+        "column_x8Gdbk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SI20251201.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/shiseido-shiseido-special-brush-case-2025-12-1"
           }
         },
         "column_r7jgQb": {
@@ -262,66 +318,18 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/shiseido-essence-skin-glow-primer-special-size-5g-2025-11-15"
           }
-        },
-        "column_tWMeAg": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/IN20251115.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/inoui-original-makeup-palette-with-original-mini-brush-2025-11-15"
-          }
-        },
-        "column_KxETgX": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/KL20251024.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/kiehls-original-travel-pouch-2025-10-24"
-          }
-        },
-        "column_FfqexE": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20251010.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-holiday-limited-edition-design-pouch-2025-10-10"
-          }
-        },
-        "column_YhKFQd": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20250718.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-radiant-creamy-concealer-1242-special-size-2025-7-18"
-          }
-        },
-        "column_D3KcAj": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/999d9e34f9571723c33317ac4bb11f16.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
-          }
         }
       },
       "block_order": [
-        "column_VUzYhi",
-        "column_r7jgQb",
-        "column_tWMeAg",
-        "column_KxETgX",
-        "column_FfqexE",
-        "column_YhKFQd",
-        "column_D3KcAj"
+        "column_UX49z8",
+        "column_LWCBiy",
+        "column_Qe3nkk",
+        "column_Wxtq6i",
+        "column_L4NRke",
+        "column_L6hFjh",
+        "column_hFGAAJ",
+        "column_x8Gdbk",
+        "column_r7jgQb"
       ],
       "settings": {
         "title": "Campaign",

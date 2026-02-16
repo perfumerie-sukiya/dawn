@@ -20,58 +20,67 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
-        "slide_tWFPcx": {
+        "slide_8MhbVB": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/5JFZZT_25CD_purple_ribbon_PC.jpg",
-            "image_sp": "shopify://shop_images/5JFZZT_25CD_purple_ribbon_SP.jpg",
-            "link": "shopify://pages/decorte-perpul-ribbon-set-2025"
+            "image": "shopify://shop_images/WHITELOGIST_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/WHITELOGIST_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-whitelogist-chronogenesis-brightening-concentrate-18x-2026-1-16?_pos=1&_fid=db58d6596&_ss=c"
           }
         },
-        "slide_4NPcQK": {
+        "slide_7wCMyd": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/5JFZZW_25CD__PC-10.jpg",
-            "image_sp": "shopify://shop_images/5JFZZW_25CD__SP-10.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-eternal-bloom-collection-2025-11-1"
+            "image": "shopify://shop_images/Rouge_Decorte_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/Rouge_Decorte_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-rouge-decollete-tint-and-plump-2026-1-16"
+          }
+        },
+        "slide_nx8kjr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/SkinShadow_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/SkinShadow_banner_SP-11.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-skin-shadow-designing-palette-2026-1-16?_pos=1&_fid=9b762c857&_ss=c"
           }
         },
         "slide_BdQtHa": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/5JFZZR_eleganceBOX_banner_PC.jpg",
-            "image_sp": "shopify://shop_images/5JFZZR_eleganceBOX_banner_SP.jpg",
-            "link": ""
+            "image": "shopify://shop_images/6JAZZR_ZEN_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JAZZR_ZEN_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-zen-wear-stay-2026-2-16"
           }
         },
         "slide_R7DQhX": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/5JFZZU_25MWC_banner_PC.jpg",
-            "image_sp": "shopify://shop_images/5JFZZU_25MWC_banner_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-face-powder-xv-2025-12-1"
+            "image": "shopify://shop_images/25CD_online_boutique_KIMONO_W1280xH640px_sakura.jpg",
+            "image_sp": "shopify://shop_images/25CD_online_boutique_KIMONO_W750x_H1008px_sakura.jpg",
+            "link": ""
           }
         },
         "slide_VnUATj": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/5FJZZN_25CD_AQ_coffret_PC.jpg",
-            "image_sp": "shopify://shop_images/5FJZZN_25CD_AQ_coffret_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-aq-radiance-coffret-ii-2025-12-1"
+            "image": "shopify://shop_images/25CD_online_boutique_KIMONO_W1280xH640px_hikari.jpg",
+            "image_sp": "shopify://shop_images/25CD_online_boutique_KIMONO_W750x_H1008px_hikari.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-kimono-hikari-water-cologne-2026-2-16"
           }
         },
         "slide_qdLMNh": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/5FJZZN_25CD_AQ_coffret_PC_c4c4bc59-7961-494c-971d-2d0fbfcd6356.jpg",
-            "image_sp": "shopify://shop_images/5FJZZN_25CD_AQ_coffret_SP_bed97ca7-9b90-42f4-8c64-be69a3a80f91.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-aq-bright-radiance-coffret-ii-2025-12-1"
+            "image": "shopify://shop_images/6JAZZT_UV_Confort_banner_1280-640.jpg",
+            "image_sp": "shopify://shop_images/6JAZZT_UV_Confort_banner_750-1008.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-uv-comfort-airy-transparent-2026-2-16"
           }
         }
       },
       "block_order": [
-        "slide_tWFPcx",
-        "slide_4NPcQK",
+        "slide_8MhbVB",
+        "slide_7wCMyd",
+        "slide_nx8kjr",
         "slide_BdQtHa",
         "slide_R7DQhX",
         "slide_VnUATj",
@@ -99,7 +108,8 @@
         "padding_bottom": 36,
         "products_to_show": 4,
         "enable_desktop_slider": true,
-        "swipe_on_mobile": true
+        "swipe_on_mobile": true,
+        "force_product_grid": false
       }
     }
   },

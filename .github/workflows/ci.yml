@@ -4,8 +4,9 @@ jobs:
   lhci:
     name: Lighthouse
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Lighthouse
         uses: shopify/lighthouse-ci-action@v1.2.0
         with:
@@ -15,6 +16,7 @@ jobs:
           collection_handle: all
           lhci_github_app_token: ${{ secrets.LHCI_GITHUB_TOKEN }}
           lhci_min_score_performance: 0.5
+        continue-on-error: false
   theme-check:
     name: Theme Check
     runs-on: ubuntu-latest

@@ -6,3 +6,69 @@
 <main class="tw-my-6">
   {{ page.content }}
 </main>
+
+{% javascript %}
+  /**
+   * Decorte story page: ensure `#about-content .title-text.onload` becomes visible.
+   *
+   * `ourstory.css` sets `.title-text.onload { opacity: 0; }` and expects
+   * `.title-text.onload.onload-active { opacity: 0.3; }` after the 2nd stage animation.
+   * On some pages the `onload-active` class is applied to the lower content,
+   * but not to the title, leaving it stuck at opacity: 0.
+   */
+  (() => {
+    const init = (root = document) => {
+      const aboutContent = root.querySelector('#about-content');
+      if (!aboutContent) return;
+
+      const contentWrap = aboutContent.querySelector('.content-wrap');
+      if (!contentWrap) return;
+
+      const title = contentWrap.querySelector('.title-text.onload');
+      if (!title || title.classList.contains('onload-active')) return;
+      if (title.dataset.decorteTitleOnloadFixBound === '1') return;
+      title.dataset.decorteTitleOnloadFixBound = '1';
+
+      const activate = () => {
+        if (title.classList.contains('onload-active')) return;
+        title.classList.add('onload-active');
+      };
+
+      const hasOtherOnloadActive = () =>
+        Boolean(contentWrap.querySelector('.onload.onload-active:not(.title-text)'));
+
+      // If the lower content already started its animation, sync the title immediately.
+      if (hasOtherOnloadActive()) {
+        activate();
+        return;
+      }
+
+      // Otherwise, watch for the moment other onload elements become active.
+      const observer = new MutationObserver(() => {
+        if (title.classList.contains('onload-active')) {
+          observer.disconnect();
+          return;
+        }
+        if (hasOtherOnloadActive()) {
+          activate();
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(contentWrap, {
+        attributes: true,
+        subtree: true,
+        attributeFilter: ['class'],
+      });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => init(document));
+    } else {
+      init(document);
+    }
+
+    // Theme editor: when the section reloads, re-run init for that section root.
+    document.addEventListener('shopify:section:load', (event) => init(event.target));
+  })();
+{% endjavascript %}

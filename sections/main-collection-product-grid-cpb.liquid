@@ -243,6 +243,25 @@
     {% render 'sp-navigation-cpb' %}
   </div>
 {% else %}
+  {% comment %}
+    filter.p.tag パラメータがURLに存在するがLiquidで検出できなかった場合、
+    旧形式のURL(/collections/cle-de-peau-beaute/タグ名)にリダイレクトする
+    これはShopifyのStorefront Filter APIの制限によるワークアラウンド
+  {% endcomment %}
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var tagParam = params.get('filter.p.tag');
+      if (tagParam) {
+        var newUrl = window.location.pathname + '/' + encodeURIComponent(tagParam);
+        var viewParam = params.get('view');
+        if (viewParam) {
+          newUrl += '?view=' + encodeURIComponent(viewParam);
+        }
+        window.location.replace(newUrl);
+      }
+    })();
+  </script>
   <div class="page-width mt-4">
     <div class="cpb-detail">
       <div class="tw-relative tw-mb-[45px]">
