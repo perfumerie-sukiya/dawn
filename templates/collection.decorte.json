@@ -20,30 +20,6 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
-        "slide_8MhbVB": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WHITELOGIST_banner_PC.jpg",
-            "image_sp": "shopify://shop_images/WHITELOGIST_banner_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-whitelogist-chronogenesis-brightening-concentrate-18x-2026-1-16?_pos=1&_fid=db58d6596&_ss=c"
-          }
-        },
-        "slide_7wCMyd": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Rouge_Decorte_banner_PC.jpg",
-            "image_sp": "shopify://shop_images/Rouge_Decorte_banner_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-rouge-decollete-tint-and-plump-2026-1-16"
-          }
-        },
-        "slide_nx8kjr": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/SkinShadow_banner_PC.jpg",
-            "image_sp": "shopify://shop_images/SkinShadow_banner_SP-11.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-skin-shadow-designing-palette-2026-1-16?_pos=1&_fid=9b762c857&_ss=c"
-          }
-        },
         "slide_BdQtHa": {
           "type": "slide",
           "settings": {
@@ -78,9 +54,6 @@
         }
       },
       "block_order": [
-        "slide_8MhbVB",
-        "slide_7wCMyd",
-        "slide_nx8kjr",
         "slide_BdQtHa",
         "slide_R7DQhX",
         "slide_VnUATj",
