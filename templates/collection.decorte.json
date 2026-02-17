@@ -51,13 +51,22 @@
             "image_sp": "shopify://shop_images/6JAZZT_UV_Confort_banner_750-1008.jpg",
             "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-uv-comfort-airy-transparent-2026-2-16"
           }
+        },
+        "slide_3q7ahC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JBZMZ_HYDRA_banner_ol-26.jpg",
+            "image_sp": "shopify://shop_images/6JBZMZ_HYDRA_banner_SP-26.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-hydra-clarity-medicated-brightening-essence-water-2026-3-16"
+          }
         }
       },
       "block_order": [
         "slide_BdQtHa",
         "slide_R7DQhX",
         "slide_VnUATj",
-        "slide_qdLMNh"
+        "slide_qdLMNh",
+        "slide_3q7ahC"
       ],
       "settings": {}
     },
