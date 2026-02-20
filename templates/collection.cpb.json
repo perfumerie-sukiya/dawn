@@ -20,14 +20,14 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
-        "slide_kzAWwA": {
+        "slide_3JGxbq": {
           "type": "slide",
           "settings": {
-            "title": "宿命さえ超えてゆく、\n革新の根源美白ケア。",
-            "image": "shopify://shop_images/offer_brightening_serum_26SS_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_brightening_serum_26SS_sp.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-serum-eclat-s/?variant=%2042011960901789",
-            "is_title_white": false,
+            "title": "HAPPY RADIANT\nNEW YEAR",
+            "image": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-la-creme-l-2026-limited-edition-2026-1-21?_pos=1&_fid=80f42f6b4&_ss=c",
+            "is_title_white": true,
             "is_text_right": false
           }
         },
@@ -39,17 +39,6 @@
             "image_sp": "shopify://shop_images/offer_LoveCollection_26ss_sp.jpg",
             "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-rouge-alleve-luminizing-love-collection-2026-2026-1-21?_pos=1&_fid=5714da13b&_ss=c",
             "is_title_white": false,
-            "is_text_right": false
-          }
-        },
-        "slide_3JGxbq": {
-          "type": "slide",
-          "settings": {
-            "title": "HAPPY RADIANT\nNEW YEAR",
-            "image": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_sp.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-la-creme-l-2026-limited-edition-2026-1-21?_pos=1&_fid=80f42f6b4&_ss=c",
-            "is_title_white": true,
             "is_text_right": false
           }
         },
@@ -75,6 +64,17 @@
             "is_text_right": false
           }
         },
+        "slide_cGeeMx": {
+          "type": "slide",
+          "settings": {
+            "title": "透明感の極みへ。\n内面から光を放つ品格の肌。",
+            "image": "shopify://shop_images/offer_25SS_TranslucentLoosePowder_pc_04bb8ab5-53e5-42df-9049-50453e9a96d3.jpg",
+            "image_sp": "shopify://shop_images/offer_25SS_TranslucentLoosePowder_sp_c0464f0e-0b78-4b4e-93c1-251bca02231b.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-poudre-transparent-n-m-small-2026-3-21",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
         "slide_jdMnEt": {
           "type": "slide",
           "settings": {
@@ -88,11 +88,11 @@
         }
       },
       "block_order": [
-        "slide_kzAWwA",
-        "slide_hLR9ea",
         "slide_3JGxbq",
+        "slide_hLR9ea",
         "slide_DYrgiw",
         "slide_TpUYee",
+        "slide_cGeeMx",
         "slide_jdMnEt"
       ],
       "settings": {}
