@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_RNMiH3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IN20260221.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/inoui-original-foundation-brush-2026-2-21"
+          }
+        },
         "column_UX49z8": {
           "type": "column",
           "settings": {
@@ -321,6 +331,7 @@
         }
       },
       "block_order": [
+        "column_RNMiH3",
         "column_UX49z8",
         "column_LWCBiy",
         "column_Qe3nkk",
