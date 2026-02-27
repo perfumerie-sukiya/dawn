@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_nkdVMc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PJ20260301.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paul-and-joe-original-round-pouch-2026-3"
+          }
+        },
         "column_QdMhrJ": {
           "type": "column",
           "settings": {
@@ -341,6 +351,7 @@
         }
       },
       "block_order": [
+        "column_nkdVMc",
         "column_QdMhrJ",
         "column_hCW7AT",
         "column_RNMiH3",
