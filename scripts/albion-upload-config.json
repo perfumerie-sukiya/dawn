@@ -1,0 +1,26 @@
+{
+  "basePath": "docs/albion",
+  "prefix": "albion_",
+  "files": [
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/PC/AL/①AL26B前_PC_FLB_1280×640.jpg",
+      "shopifyFilename": "albion_4月_AL_PC_1.jpg",
+      "usage": "TOPバナー PC 1枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/PC/AL/②EA_26B_シリウス_1280_640.jpg",
+      "shopifyFilename": "albion_4月_AL_PC_2.jpg",
+      "usage": "TOPバナー PC 2枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/SP/AL/①AL26B前_SP_FLB_750×1008.jpg",
+      "shopifyFilename": "albion_4月_AL_SP_1.jpg",
+      "usage": "TOPバナー SP 1枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/SP/AL/②EA_26B_シリウス_750_1008.jpg",
+      "shopifyFilename": "albion_4月_AL_SP_2.jpg",
+      "usage": "TOPバナー SP 2枚目"
+    }
+  ]
+}

@@ -193,8 +193,8 @@ PDF記載順: ①FLARUNE ②INFINESSE ③EXCIA ④EMBEAGE ⑤ALBION ⑥ALBIONSTU
 
 `docs/albion/` の画像を Shopify Files へアップロードし、テンプレートの画像参照を更新するスクリプトを用意している。
 
-1. **設定**: `scripts/albion-upload-config.json` を作成（`albion-upload-config.example.json` を参考）
-2. **アップロード**: `npm run albion:upload` を実行。事前確認は `npm run albion:upload:dry`
-3. **テンプレート反映**: `scripts/albion-apply-config.json` を設定し `npm run albion:apply` を実行
+1. **設定**: `scripts/albion-upload-config.json` を作成（`scripts/upload-config.example.json` を参考）
+2. **アップロード**: `npm run albion:upload` を実行。事前確認は `npm run albion:upload:dry`。詳細は `scripts/README.md` を参照
+3. **テンプレート反映**: `scripts/albion-upload-mapping.json` の内容を `templates/collection.albion.json` の該当ブロックに手動または AI エージェントで反映
 
-必要な環境変数（`.env`）: `SHOPIFY_SHOP`、`SHOPIFY_ACCESS_TOKEN`（`write_files` スコープ必須）
+必要な環境変数（`.env`）: `SHOPIFY_SHOP`、`SHOPIFY_CLIENT_ID`、`SHOPIFY_CLIENT_SECRET`（Dev Dashboard アプリ、`write_files` スコープ必須）

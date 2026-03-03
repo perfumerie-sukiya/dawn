@@ -152,4 +152,4 @@
 ### アセット配置の注意
 
 - **画角・形式**: 提供形式はJPEG/PNG/ai。画角差異時はガイドライン「画角対応」に従い余白調整。
-- **自動アップロード**: `scripts/albion-upload-config.json` に IGNIS 用パスを追加し、`npm run albion:upload` で Shopify Files へ投入可能。
+- **自動アップロード**: `scripts/ignis-upload-config.json` を作成し、`node scripts/shopify-upload-files.mjs --config=scripts/ignis-upload-config.json` で Shopify Files へ投入可能。詳細は `scripts/README.md` を参照。
