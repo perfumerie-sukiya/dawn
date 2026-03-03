@@ -19,7 +19,14 @@
   padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
   padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-
+  .cpb-brand-page .cpb-contents-nav a,
+  .cpb-brand-page .sp-only a {
+    color: #000;
+  }
+  .cpb-brand-page .cpb-contents-nav a:hover,
+  .cpb-brand-page .sp-only a:hover {
+    color: #000;
+  }
   @media screen and (min-width: 750px) {
   .section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top }}px;
@@ -243,22 +250,6 @@
         </p>
       </div>
 
-      <a href="/pages/decorte-our-story">
-        <img
-          class="tw-w-full"
-          src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/top_story_bg.jpg?v=1733191322"
-          alt="Albion Our Story"
-          width="1638"
-          height="816"
-        >
-        <img
-          class="tw-w-full"
-          src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/cd_story_banner.jpg?v=1733191441"
-          alt="Albion Our Story"
-          width="1000"
-          height="100"
-        >
-      </a>
       <div class="cpb-items tw-my-10">
         <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">NEW ARRIVALS</h3>
         <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -397,10 +388,15 @@
 
         {% render 'sp-navigation-albion' %}
       </div>
+
+      {% render 'albion-series-finder' %}
+
       <div class="tw-my-3">
         <a
           class="tw-text-white tw-bg-black tw-font-bold tw-block tw-text-center tw-p-5 tw-no-underline"
-          href="/pages/albion-counseling"
+          href="https://www.albion.co.jp/counseling/"
+          target="_blank"
+          rel="noopener"
           >オンラインカウンセリング
         </a>
       </div>

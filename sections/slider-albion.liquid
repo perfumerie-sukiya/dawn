@@ -13,6 +13,8 @@
   endif
 -%}
 
+<script src="{{ 'swiper-init.js' | asset_url }}" defer="defer"></script>
+
 {% unless filter_tag %}
   <div class="page-width">
     <div class="tw-my-6">
@@ -24,21 +26,88 @@
         init="false"
       >
         {% for block in section.blocks %}
+          {%- liquid
+            assign img_pc = block.settings.image
+            assign img_sp = block.settings.image_sp
+            assign img_pc_file = block.settings.image_file | strip
+            assign img_sp_file = block.settings.image_sp_file | strip
+            assign img_pc_file_normalized = img_pc_file | replace: '月', '_'
+            assign img_sp_file_normalized = img_sp_file | replace: '月', '_'
+            assign img_pc_file_resolved = img_pc_file
+            assign img_sp_file_resolved = img_sp_file
+            if img_pc_file_normalized != blank and img_pc_file_normalized != img_pc_file
+              assign img_pc_file_resolved = img_pc_file_normalized
+            endif
+            if img_sp_file_normalized != blank and img_sp_file_normalized != img_sp_file
+              assign img_sp_file_resolved = img_sp_file_normalized
+            endif
+            assign img_pc_file_obj = images[img_pc_file]
+            if img_pc_file_obj == blank and img_pc_file_resolved != img_pc_file
+              assign img_pc_file_obj = images[img_pc_file_resolved]
+            endif
+            assign img_sp_file_obj = images[img_sp_file]
+            if img_sp_file_obj == blank and img_sp_file_resolved != img_sp_file
+              assign img_sp_file_obj = images[img_sp_file_resolved]
+            endif
+            assign pc_url = ''
+            assign sp_url_750 = ''
+            assign sp_url_1280 = ''
+
+            if img_pc != blank
+              assign pc_url = img_pc | image_url: width: 1280, height: 400
+            endif
+            if pc_url == blank and img_pc_file != blank
+              if img_pc_file_obj != blank
+                assign pc_url = img_pc_file_obj | image_url: width: 1280, height: 400
+              else
+                assign pc_url = img_pc_file_resolved | file_img_url: '1280x'
+              endif
+            endif
+
+            if img_sp != blank
+              assign sp_url_750 = img_sp | image_url: width: 750, height: 1008
+              assign sp_url_1280 = img_sp | image_url: width: 1280, height: 400
+            endif
+            if sp_url_1280 == blank and img_sp_file != blank
+              if img_sp_file_obj != blank
+                assign sp_url_750 = img_sp_file_obj | image_url: width: 750, height: 1008
+                assign sp_url_1280 = img_sp_file_obj | image_url: width: 1280, height: 400
+              else
+                assign sp_url_750 = img_sp_file_resolved | file_img_url: '750x'
+                assign sp_url_1280 = img_sp_file_resolved | file_img_url: '1280x'
+              endif
+            endif
+          -%}
           <swiper-slide class="!tw-h-auto tw-bg-white">
             {% if block.settings.link %}<a href="{{ block.settings.link }}" class="tw-text-current">{% endif %}
             <div class="cpb-main-visual__item">
-              <picture>
+              {% if pc_url != blank or sp_url_1280 != blank %}
+              <picture class="tw-block tw-w-full">
+                {% if sp_url_750 != blank %}
                 <source
                   media="(max-width: 768px)"
-                  srcset="{{ block.settings.image_sp | image_url: width: 750, height: 392 }}"
+                  srcset="{{ sp_url_750 }}"
                 >
+                {% endif %}
+                {% if pc_url != blank %}
                 <img
-                  src="{{ block.settings.image | image_url: width: 1280, height: 400 }}"
+                  src="{{ pc_url }}"
                   alt="{{ block.settings.title }}"
                   width="1280"
                   height="400"
+                  class="tw-w-full tw-h-auto tw-max-w-full"
                 >
+                {% elsif sp_url_1280 != blank %}
+                <img
+                  src="{{ sp_url_1280 }}"
+                  alt="{{ block.settings.title }}"
+                  width="1280"
+                  height="400"
+                  class="tw-w-full tw-h-auto tw-max-w-full"
+                >
+                {% endif %}
               </picture>
+              {% endif %}
             </div>
             {% if block.settings.link %}</a>{% endif %}
           </swiper-slide>
@@ -69,9 +138,21 @@
           "label": "t:sections.slideshow.blocks.slide.settings.image.label"
         },
         {
+          "type": "text",
+          "id": "image_file",
+          "label": "PC画像ファイル名（Files）",
+          "info": "image_picker が空のとき、Files のファイル名を指定（例: albion_4__AL_PC_1.jpg）"
+        },
+        {
           "type": "image_picker",
           "id": "image_sp",
           "label": "SP画像"
+        },
+        {
+          "type": "text",
+          "id": "image_sp_file",
+          "label": "SP画像ファイル名（Files）",
+          "info": "image_sp が空のとき、Files のファイル名を指定"
         },
         {
           "type": "url",

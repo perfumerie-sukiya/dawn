@@ -4,23 +4,83 @@
   "files": [
     {
       "localPath": "ブランドTOP_ビジュアル/4月/PC/AL/①AL26B前_PC_FLB_1280×640.jpg",
-      "shopifyFilename": "albion_4月_AL_PC_1.jpg",
+      "shopifyFilename": "albion_4__AL_PC_1.jpg",
       "usage": "TOPバナー PC 1枚目"
     },
     {
       "localPath": "ブランドTOP_ビジュアル/4月/PC/AL/②EA_26B_シリウス_1280_640.jpg",
-      "shopifyFilename": "albion_4月_AL_PC_2.jpg",
+      "shopifyFilename": "albion_4__AL_PC_2.jpg",
       "usage": "TOPバナー PC 2枚目"
     },
     {
       "localPath": "ブランドTOP_ビジュアル/4月/SP/AL/①AL26B前_SP_FLB_750×1008.jpg",
-      "shopifyFilename": "albion_4月_AL_SP_1.jpg",
+      "shopifyFilename": "albion_4__AL_SP_1.jpg",
       "usage": "TOPバナー SP 1枚目"
     },
     {
       "localPath": "ブランドTOP_ビジュアル/4月/SP/AL/②EA_26B_シリウス_750_1008.jpg",
-      "shopifyFilename": "albion_4月_AL_SP_2.jpg",
+      "shopifyFilename": "albion_4__AL_SP_2.jpg",
       "usage": "TOPバナー SP 2枚目"
+    },
+    {
+      "localPath": "ブランドTOP/（仮）認定ロゴ/albion_nintei_logo_white.jpg",
+      "shopifyFilename": "albion_nintei_logo_white.jpg",
+      "usage": "認定ロゴ（ブランド認定正規品取扱店舗 ALBION）"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/FLARUNE.jpg",
+      "shopifyFilename": "albion_series_flarune.jpg",
+      "usage": "シリーズから探す ①FLARUNE"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/INFINESSE_新シリーズ.jpg",
+      "shopifyFilename": "albion_series_infinesse.jpg",
+      "usage": "シリーズから探す ②INFINESSE"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/EXCIA.jpg",
+      "shopifyFilename": "albion_series_excia.jpg",
+      "usage": "シリーズから探す ③EXCIA"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/EMBEAGE_EXCIA.jpg",
+      "shopifyFilename": "albion_series_embeage.jpg",
+      "usage": "シリーズから探す ④EMBEAGE"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/ALBION.jpg",
+      "shopifyFilename": "albion_series_albion.jpg",
+      "usage": "シリーズから探す ⑤ALBION"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/ALBION STUDIO rogo.jpg",
+      "shopifyFilename": "albion_series_albion_studio.jpg",
+      "usage": "シリーズから探す ⑥ALBION STUDIO"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/EX-VIE_GINZA.jpg",
+      "shopifyFilename": "albion_series_ex_vie.jpg",
+      "usage": "シリーズから探す ⑦EX-VIE"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/SUPER_UV_CUT.jpg",
+      "shopifyFilename": "albion_series_uv.jpg",
+      "usage": "シリーズから探す ⑧UV"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/SPALANKA.jpg",
+      "shopifyFilename": "albion_series_spalanka.jpg",
+      "usage": "シリーズから探す ⑨SPALANKA"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/Renasair.jpg",
+      "shopifyFilename": "albion_series_renasair.jpg",
+      "usage": "シリーズから探す ⑩RENASAIR"
+    },
+    {
+      "localPath": "ブランドTOP/アルビオンシリーズロゴ/JOUIR.jpg",
+      "shopifyFilename": "albion_series_jouir.jpg",
+      "usage": "シリーズから探す ⑪JOUIR"
     }
   ]
 }

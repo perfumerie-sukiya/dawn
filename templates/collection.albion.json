@@ -23,16 +23,20 @@
         "slide_tWFPcx": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/albion_4月_AL_PC_1.jpg",
-            "image_sp": "shopify://shop_images/albion_4月_AL_SP_1.jpg",
+            "image": "shopify://shop_images/albion_4__AL_PC_1.jpg",
+            "image_file": "albion_4__AL_PC_1.jpg",
+            "image_sp": "shopify://shop_images/albion_4__AL_SP_1.jpg",
+            "image_sp_file": "albion_4__AL_SP_1.jpg",
             "link": ""
           }
         },
         "slide_4NPcQK": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/albion_4月_AL_PC_2.jpg",
-            "image_sp": "shopify://shop_images/albion_4月_AL_SP_2.jpg",
+            "image": "shopify://shop_images/albion_4__AL_PC_2.jpg",
+            "image_file": "albion_4__AL_PC_2.jpg",
+            "image_sp": "shopify://shop_images/albion_4__AL_SP_2.jpg",
+            "image_sp_file": "albion_4__AL_SP_2.jpg",
             "link": ""
           }
         }
