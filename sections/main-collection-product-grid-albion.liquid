@@ -250,18 +250,19 @@
         </p>
       </div>
 
+      {%- if section.settings.new_arrival_collection != blank -%}
       <div class="cpb-items tw-my-10">
         <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">NEW ARRIVALS</h3>
         <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <ul
-            id="Slider-{{ section.id }}"
-            class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+            id="Slider-{{ section.id }}-new-arrival"
+            class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.new_arrival_collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
             role="list"
             aria-label="{{ 'general.slider.name' | t }}"
           >
-            {%- for product in collections['albion-top-new-arrival'].products -%}
+            {%- for product in section.settings.new_arrival_collection.products limit: section.settings.products_to_show -%}
               <li
-                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                id="Slide-{{ section.id }}-new-arrival-{{ forloop.index }}"
                 class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.ranking %} ranking-item{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -292,7 +293,7 @@
                 class="slider-button slider-button--prev"
                 name="previous"
                 aria-label="{{ 'general.slider.previous_slide' | t }}"
-                aria-controls="Slider-{{ section.id }}"
+                aria-controls="Slider-{{ section.id }}-new-arrival"
               >
                 {% render 'icon-caret' %}
               </button>
@@ -307,7 +308,7 @@
                 class="slider-button slider-button--next"
                 name="next"
                 aria-label="{{ 'general.slider.next_slide' | t }}"
-                aria-controls="Slider-{{ section.id }}"
+                aria-controls="Slider-{{ section.id }}-new-arrival"
               >
                 {% render 'icon-caret' %}
               </button>
@@ -315,18 +316,20 @@
           {%- endif -%}
         </slider-component>
       </div>
+      {%- endif -%}
+      {%- if section.settings.ranking_collection != blank -%}
       <div class="cpb-items tw-my-10">
         <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">RANKING</h3>
         <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <ul
-            id="Slider-{{ section.id }}"
-            class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+            id="Slider-{{ section.id }}-ranking"
+            class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.ranking_collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
             role="list"
             aria-label="{{ 'general.slider.name' | t }}"
           >
-            {%- for product in collections['albion-top-recommend'].products -%}
+            {%- for product in section.settings.ranking_collection.products limit: section.settings.products_to_show -%}
               <li
-                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                id="Slide-{{ section.id }}-ranking-{{ forloop.index }}"
                 class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.ranking %} ranking-item{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -357,7 +360,7 @@
                 class="slider-button slider-button--prev"
                 name="previous"
                 aria-label="{{ 'general.slider.previous_slide' | t }}"
-                aria-controls="Slider-{{ section.id }}"
+                aria-controls="Slider-{{ section.id }}-ranking"
               >
                 {% render 'icon-caret' %}
               </button>
@@ -372,7 +375,7 @@
                 class="slider-button slider-button--next"
                 name="next"
                 aria-label="{{ 'general.slider.next_slide' | t }}"
-                aria-controls="Slider-{{ section.id }}"
+                aria-controls="Slider-{{ section.id }}-ranking"
               >
                 {% render 'icon-caret' %}
               </button>
@@ -380,6 +383,7 @@
           {%- endif -%}
         </slider-component>
       </div>
+      {%- endif -%}
 
       <div class="cpb-contents-nav mb-10">
         <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">CATEGORY</h3>
@@ -607,6 +611,26 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "ブランドトップ（NEW ARRIVAL / RANKING）"
+    },
+    {
+      "type": "collection",
+      "id": "new_arrival_collection",
+      "label": "NEW ARRIVAL に表示するコレクション"
+    },
+    {
+      "type": "collection",
+      "id": "ranking_collection",
+      "label": "RANKING に表示するコレクション"
+    },
+    {
+      "type": "checkbox",
+      "id": "ranking",
+      "default": true,
+      "label": "RANKING に順位番号を表示する"
     },
     {
       "type": "range",

@@ -80,7 +80,7 @@
             if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
               assign quantity_rule_soldout = true
             endif
-            if slug == 'decorte' or slug == 'predia' or slug == 'predia' or slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui' or slug == 'albion'
+            if slug == 'decorte' or slug == 'predia' or slug == 'predia' or slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui' or slug == 'albion' or slug == 'elegance' or slug == 'ignis'
               assign counseling_product = true
             endif
           -%}
@@ -111,7 +111,7 @@
             {% render 'cart-question-decorte', section_id: section_id %}
           {% elsif slug == 'predia' %}
             {% render 'cart-question-predia', section_id: section_id %}
-          {% elsif slug == 'albion' %}
+          {% elsif slug == 'albion' or slug == 'elegance' or slug == 'ignis' %}
             {% render 'cart-question-albion', section_id: section_id %}
           {% elsif slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui' %}
             {% render 'cart-question-cpb', section_id: section_id, product: product %}
