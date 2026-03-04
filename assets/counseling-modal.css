@@ -37,6 +37,29 @@
   margin-right: 20px;
 }
 
+/* ALBION: チェックボックス設問（角丸ボーダー・左にチェック） */
+.counseling-question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.counseling-question-item {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.75rem;
+}
+
+.counseling-question-item:has(.counseling-checkbox:checked) {
+  border-color: #4b5563;
+  background-color: #f9fafb;
+}
+
+.counseling-checkbox {
+  accent-color: #1f2937;
+  cursor: pointer;
+}
+
 .page, .counseling-result {
   display: none;
 }

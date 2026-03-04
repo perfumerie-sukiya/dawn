@@ -14,6 +14,14 @@ class MyDialog extends HTMLElement {
     this.closeButtons = this.querySelectorAll('.close-button');
     this.nextPageButton = this.querySelector('.next-page');
     this.radioButtons = this.querySelectorAll('input[type="radio"]');
+    this.useCheckbox = this.getAttribute('data-input-type') === 'checkbox';
+    this.checkboxes = this.useCheckbox
+      ? [
+          this.querySelector('input[type="checkbox"][name^="q1"]'),
+          this.querySelector('input[type="checkbox"][name^="q2"]'),
+          this.querySelector('input[type="checkbox"][name^="q3"]')
+        ].filter(Boolean)
+      : [];
     this.counselingResult = this.querySelectorAll('.counseling-result');
     this.nextPageDisableButton = this.querySelector('.next-page-disable');
     this.submitButtons = this.querySelectorAll('button[type="submit"]');
@@ -41,6 +49,21 @@ class MyDialog extends HTMLElement {
       });
     });
 
+    this.retryButtons = this.querySelectorAll('.retry-counseling');
+    this.retryButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        this.pages.forEach((p, i) => p.classList.toggle('active', i === 0));
+        this.activePageIndex = 0;
+        if (this.useCheckbox && this.checkboxes.length === 3) {
+          this.checkboxes.forEach((cb) => { cb.checked = false; });
+          this.checkNextButtonActive();
+        } else {
+          this.radioButtons.forEach((r) => { r.checked = false; });
+          this.checkNextButtonActive();
+        }
+      });
+    });
+
     if (this.nextPageButton) {
       this.nextPageButton.addEventListener('click', () => {
         this.nextPage();
@@ -56,9 +79,29 @@ class MyDialog extends HTMLElement {
         this.checkNextButtonActive();
       });
     });
+
+    if (this.useCheckbox && this.checkboxes.length === 3) {
+      this.checkboxes.forEach((cb) => {
+        cb.addEventListener('change', () => {
+          this.checkNextButtonActive();
+        });
+      });
+      this.checkNextButtonActive();
+    }
   }
 
   checkNextButtonActive() {
+    if (this.useCheckbox && this.checkboxes.length === 3) {
+      const allAnswered = this.checkboxes.every((cb) => cb !== null);
+      if (allAnswered) {
+        if (this.nextPageDisableButton) this.nextPageDisableButton.style.display = 'none';
+        if (this.nextPageButton) this.nextPageButton.style.display = 'block';
+      } else {
+        if (this.nextPageButton) this.nextPageButton.style.display = 'none';
+        if (this.nextPageDisableButton) this.nextPageDisableButton.style.display = 'block';
+      }
+      return;
+    }
     // Assuming all questions have 2 choices, each question must have at least 1 selected
     // Support both old format (q1, q2, q3) and new format (q1-{section_id}, q2-{section_id}, q3-{section_id})
     let radioGroup1 = Array.from(this.querySelectorAll('input[name^="q1"]')).some((radio) => radio.checked);
@@ -97,15 +140,21 @@ class MyDialog extends HTMLElement {
   }
 
   updateSecondPage() {
-    if (this.radioButtons.length < 6) return;
+    let q1Value, q2Value, q3Value;
 
-    // Get radio button values: q1, q2, q3 (YES=1, NO=0)
-    // Radio buttons are ordered: q1_YES, q1_NO, q2_YES, q2_NO, q3_YES, q3_NO
-    const q1Value = this.radioButtons[0].checked ? 1 : this.radioButtons[1].checked ? 0 : null;
-    const q2Value = this.radioButtons[2].checked ? 1 : this.radioButtons[3].checked ? 0 : null;
-    const q3Value = this.radioButtons[4].checked ? 1 : this.radioButtons[5].checked ? 0 : null;
-
-    if (q1Value === null || q2Value === null || q3Value === null) return;
+    if (this.useCheckbox && this.checkboxes.length === 3) {
+      q1Value = this.checkboxes[0].checked ? 1 : 0;
+      q2Value = this.checkboxes[1].checked ? 1 : 0;
+      q3Value = this.checkboxes[2].checked ? 1 : 0;
+    } else {
+      if (this.radioButtons.length < 6) return;
+      // Get radio button values: q1, q2, q3 (YES=1, NO=0)
+      // Radio buttons are ordered: q1_YES, q1_NO, q2_YES, q2_NO, q3_YES, q3_NO
+      q1Value = this.radioButtons[0].checked ? 1 : this.radioButtons[1].checked ? 0 : null;
+      q2Value = this.radioButtons[2].checked ? 1 : this.radioButtons[3].checked ? 0 : null;
+      q3Value = this.radioButtons[4].checked ? 1 : this.radioButtons[5].checked ? 0 : null;
+      if (q1Value === null || q2Value === null || q3Value === null) return;
+    }
 
     // Reset all results first
     this.counselingResult.forEach((result) => result.classList.remove('active'));
@@ -129,15 +178,15 @@ class MyDialog extends HTMLElement {
     // Result 2: q1=YES - 販売できません
 
     if (this.brand === 'albion') {
-      // Albion-specific logic
-      // You can customize this logic for Albion
-      if (q1 === 0 && q2 === 0 && q3 === 0) {
-        return 0; // All NO
-      } else if (q1 === 0 && (q2 === 1 || q3 === 1)) {
-        return 1; // q1=NO and (q2=YES or q3=YES)
-      } else {
-        return 2; // q1=YES (cannot sell)
+      // Albion: 否定文でチェック=YES（当てはまる）. ガイドライン判定ロジック
+      // Q1=YES,Q2=YES,Q3=YES -> 購入可 | Q1=YESかつ(Q2=NO or Q3=NO) -> 注意喚起 | それ以外 -> 購入不可
+      if (q1 === 1 && q2 === 1 && q3 === 1) {
+        return 0; // アルゴリズム① 購入可
       }
+      if (q1 === 1 && (q2 === 0 || q3 === 0)) {
+        return 1; // アルゴリズム② 注意喚起
+      }
+      return 2; // アルゴリズム③ 購入不可
     } else {
       // Decorte/default logic
       if (q1 === 0 && q2 === 0 && q3 === 0) {
