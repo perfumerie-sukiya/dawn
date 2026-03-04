@@ -1,9 +1,9 @@
 {{ 'dialog-polyfill.css' | asset_url | stylesheet_tag }}
-{{ 'dialog-polyfill.css' | asset_url | stylesheet_tag }}
+{{ 'counseling-modal.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'dialog-polyfill.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'counseling-modal-decorte.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'counseling-modal.js' | asset_url }}" defer="defer"></script>
 
-<my-dialog id="myDialog">
+<my-dialog id="myDialog" data-brand="predia">
   <dialog class="tw-w-[600px] tw-max-w-[90%]">
     <div class="page">
       <div class="counseling-content tw-p-2 md:tw-p-6">

@@ -12,15 +12,6 @@
     "24868b4c-3917-47de-829e-304405793cbe": {
       "type": "top-slider",
       "blocks": {
-        "228b3023-7ae7-439e-8bb4-ebd68c6d489f": {
-          "type": "slide",
-          "settings": {
-            "title": "INOUI",
-            "image": "shopify://shop_images/in_1_890_550_7400afc6-c6f0-46d6-8dd8-81aa2aade0a4.jpg",
-            "image_sp": "shopify://shop_images/in_1_828_1242_114b2b68-7964-4fcc-8cb9-a12a46434197.jpg",
-            "link": "shopify://collections/inoui"
-          }
-        },
         "aed8695d-1c8c-4faf-90e2-f9596f48623a": {
           "type": "slide",
           "settings": {
@@ -30,12 +21,21 @@
             "link": "shopify://collections/decorte"
           }
         },
+        "228b3023-7ae7-439e-8bb4-ebd68c6d489f": {
+          "type": "slide",
+          "settings": {
+            "title": "INOUI",
+            "image": "shopify://shop_images/in_1_890_550_d64ddfed-f327-4644-91ab-882c6f6da567.jpg",
+            "image_sp": "shopify://shop_images/in_1_828_1242_jpg.jpg",
+            "link": "shopify://collections/inoui"
+          }
+        },
         "5614945f-e2ea-4edb-a296-37fe83d4bd86": {
           "type": "slide",
           "settings": {
             "title": "クレ・ド・ポー ボーテ",
-            "image": "shopify://shop_images/CPB_Sukiya_Banner_01.1_PC_890x550_2x_B.jpg",
-            "image_sp": "shopify://shop_images/CPB_Sukiya_Banner_01.1_SP_828x1242_B.jpg",
+            "image": "shopify://shop_images/CPB_25SS_KeyRadianceCare.jpg",
+            "image_sp": "shopify://shop_images/SP_CPB_25AW_KRC_DigitalKV_fa05a4d8-f37f-4f9f-a326-bd58253d69dd.jpg",
             "link": "shopify://collections/cle-de-peau-beaute"
           }
         },
@@ -43,8 +43,8 @@
           "type": "slide",
           "settings": {
             "title": "NARS",
-            "image": "shopify://shop_images/890_550_sukiya.png",
-            "image_sp": "shopify://shop_images/sukiya_828_1242.png",
+            "image": "shopify://shop_images/890_550_sukiya_2.png",
+            "image_sp": "shopify://shop_images/828_1242_sukiya_1.png",
             "link": "shopify://collections/nars"
           }
         },
@@ -61,9 +61,18 @@
           "type": "slide",
           "settings": {
             "title": "ADDICTION",
-            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_25Summer.jpg",
-            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_25Summer.jpg",
+            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_25Holiday-1.jpg",
+            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_25Holiday-1.jpg",
             "link": "shopify://collections/addiction"
+          }
+        },
+        "slide_DVLfxj": {
+          "type": "slide",
+          "settings": {
+            "title": "Davines",
+            "image": "shopify://shop_images/sukiya_890x550_1_8840a9f4-a8cf-4bad-bc22-8cf58235b6d1.jpg",
+            "image_sp": "shopify://shop_images/sukiya_828x1242_1_01cbde72-79f6-4dc2-956c-e20e08eb1511.jpg",
+            "link": "shopify://collections/davines"
           }
         },
         "a1cc6b99-2ae6-47b8-b02b-6fe593d572d7": {
@@ -73,15 +82,6 @@
             "image": "shopify://shop_images/2025SP_primer_main_y.jpg",
             "image_sp": "shopify://shop_images/2025SP_primer_main_t_85267cb9-632f-4e6b-ae8b-959befcd93e4.jpg",
             "link": "shopify://collections/paul-and-joe"
-          }
-        },
-        "af8ff3bf-2131-40b9-96b8-1e33b3e3df53": {
-          "type": "slide",
-          "settings": {
-            "title": "LAURA MERCIER",
-            "image": "shopify://shop_images/sukiya_890x550-1.png",
-            "image_sp": "shopify://shop_images/sukiya_828x1242_b9e34910-fdf3-497d-aa63-806e8b7df1c5.png",
-            "link": "shopify://collections/laura_mercier"
           }
         },
         "52bf3442-8879-4745-833f-93a39618b6aa": {
@@ -97,25 +97,52 @@
           "type": "slide",
           "settings": {
             "title": "セルジュ・ルタンス",
-            "image": "shopify://shop_images/SL_slide_pc.jpg",
-            "image_sp": "shopify://shop_images/SL_slide_sp.jpg",
+            "image": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_1.618x1.jpg",
+            "image_sp": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_828x1242_d9c1bf42-16c0-4beb-8c38-17cd2ee28cb5.jpg",
             "link": "shopify://collections/serge-lutens"
           }
         }
       },
       "block_order": [
-        "228b3023-7ae7-439e-8bb4-ebd68c6d489f",
         "aed8695d-1c8c-4faf-90e2-f9596f48623a",
+        "228b3023-7ae7-439e-8bb4-ebd68c6d489f",
         "5614945f-e2ea-4edb-a296-37fe83d4bd86",
         "df7f0c5b-43ad-426d-aae8-11c72a9455ed",
         "88f8f653-ead8-4ae6-b7fb-c0c277520c47",
         "661067f2-b6f0-4de4-9ae0-f8624f2add30",
+        "slide_DVLfxj",
         "a1cc6b99-2ae6-47b8-b02b-6fe593d572d7",
-        "af8ff3bf-2131-40b9-96b8-1e33b3e3df53",
         "52bf3442-8879-4745-833f-93a39618b6aa",
         "09e6a20b-5b0f-4d1a-8e8d-35d867d49fae"
       ],
       "settings": {}
+    },
+    "image_text_link_grid_PUAaAR": {
+      "type": "image-text-link-grid",
+      "blocks": {
+        "item_LyTb8d": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/top-banner_6b2802c4-7011-4136-8100-bac24bf4604c.jpg",
+            "text": "Sukiya特選福袋2026",
+            "link": "shopify://collections/sukiya-hukubukuro-2026"
+          }
+        }
+      },
+      "block_order": [
+        "item_LyTb8d"
+      ],
+      "name": "t:sections.image-text-link-grid.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "columns_desktop": 1,
+        "item_alignment": "center",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "4e924789-09e2-4d09-b5ac-1841525ecc15": {
       "type": "featured-collection",
@@ -140,7 +167,7 @@
         "ranking": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "max_title_length": 26,
+        "max_title_length": 28,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -204,7 +231,7 @@
         "ranking": true,
         "show_rating": false,
         "enable_quick_add": false,
-        "max_title_length": 26,
+        "max_title_length": 28,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -214,48 +241,92 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_VUzYhi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PJ_0a80f9e6-7bd2-4657-a9fd-770259641e03.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paul-and-joe-original-satin-pouch-2025-11-15"
+          }
+        },
+        "column_r7jgQb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SI20251115.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/shiseido-essence-skin-glow-primer-special-size-5g-2025-11-15"
+          }
+        },
+        "column_tWMeAg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/IN20251115.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/inoui-original-makeup-palette-with-original-mini-brush-2025-11-15"
+          }
+        },
+        "column_KxETgX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/KL20251024.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/kiehls-original-travel-pouch-2025-10-24"
+          }
+        },
+        "column_FfqexE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20251010.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-holiday-limited-edition-design-pouch-2025-10-10"
+          }
+        },
+        "column_YhKFQd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20250718.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-radiant-creamy-concealer-1242-special-size-2025-7-18"
+          }
+        },
         "column_D3KcAj": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/LE20250403.jpg",
+            "image": "shopify://shop_images/999d9e34f9571723c33317ac4bb11f16.jpg",
             "title": "",
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
           }
-        },
-        "column_ipgCbY": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ4_GWP_6d04a012-7cc2-4e0d-af61-a3afa8a277df.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-mirror-charm"
-          }
-        },
-        "column_7pr9LV": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FN20250328.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-original-pouch-2025-3-28"
-          }
         }
       },
       "block_order": [
-        "column_D3KcAj",
-        "column_ipgCbY",
-        "column_7pr9LV"
+        "column_VUzYhi",
+        "column_r7jgQb",
+        "column_tWMeAg",
+        "column_KxETgX",
+        "column_FfqexE",
+        "column_YhKFQd",
+        "column_D3KcAj"
       ],
       "settings": {
         "title": "Campaign",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "none",
         "button_label": "",
@@ -287,6 +358,7 @@
   },
   "order": [
     "24868b4c-3917-47de-829e-304405793cbe",
+    "image_text_link_grid_PUAaAR",
     "4e924789-09e2-4d09-b5ac-1841525ecc15",
     "7e633bcc-ce15-4de6-ac72-96f7eff1c483",
     "9b8922e2-5e36-4a67-acad-ca3d2ec85a82",

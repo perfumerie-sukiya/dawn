@@ -1,0 +1,71 @@
+{% comment %}
+  ALBION PRODUCTS「シリーズから探す」
+  ガイドライン: docs/albion/albion-jsec-guideline-v1-1.md
+  表示順: ①FLARUNE ②INFINESSE ③EXCIA ④EMBEAGE ⑤ALBION ⑥ALBIONSTUDIO ⑦EX-VIE ⑧UV ⑨SPALANKA ⑩RENASAIR ⑪JOUIR
+  画像: JPG（透過なし）→ 白背景。文字ラベルなし。各バナーはセル内でアスペクト比を保って表示。
+  遷移先: 対象シリーズのカテゴリ一覧（filter.p.tag）
+{% endcomment %}
+{% assign albion_collection_url = routes.collections_url | append: '/albion' %}
+
+<div class="albion-series-finder tw-my-10 tw-bg-white tw-py-6">
+  <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">シリーズから探す</h3>
+  <div class="page-width">
+    <ul class="tw-grid tw-grid-cols-3 sm:tw-grid-cols-6 tw-gap-4 tw-list-none tw-pl-0 tw-m-0">
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=FLARUNE#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_flarune.jpg' | file_url }}" alt="FLARUNE" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=INFINESSE#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_infinesse.jpg' | file_url }}" alt="INFINESSE" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=EXCIA#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_excia.jpg' | file_url }}" alt="EXCIA" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=EMBEAGE#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_embeage.jpg' | file_url }}" alt="EMBEAGE" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=ALBION#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_albion.jpg' | file_url }}" alt="ALBION" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=ALBION%20STUDIO#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_albion_studio.jpg' | file_url }}" alt="ALBION STUDIO" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=EX-VIE#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_ex_vie.jpg' | file_url }}" alt="EX-VIE" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=UV#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_uv.jpg' | file_url }}" alt="UV" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=SPALANKA#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_spalanka.jpg' | file_url }}" alt="SPALANKA" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=RENASAIR#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_renasair.jpg' | file_url }}" alt="RENASAIR" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+      <li class="tw-m-0">
+        <a href="{{ albion_collection_url }}?filter.p.tag=JOUIR#Collection" class="tw-block tw-aspect-square tw-bg-white tw-rounded tw-overflow-hidden tw-no-underline hover:tw-opacity-80 tw-flex tw-items-center tw-justify-center tw-p-3">
+          <img src="{{ 'albion_series_jouir.jpg' | file_url }}" alt="JOUIR" class="tw-max-w-full tw-max-h-full tw-w-auto tw-h-auto tw-object-contain" loading="lazy">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

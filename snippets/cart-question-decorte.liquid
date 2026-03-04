@@ -1,7 +1,7 @@
 {{ 'dialog-polyfill.css' | asset_url | stylesheet_tag }}
-{{ 'dialog-polyfill.css' | asset_url | stylesheet_tag }}
+{{ 'counseling-modal.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'dialog-polyfill.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'counseling-modal-decorte.js' | asset_url }}" defer=""></script>
+<script src="{{ 'counseling-modal.js' | asset_url }}" defer="defer"></script>
 <style>
   .counseling-start-action #ProductSubmitButton-{{ section_id }}.gPreorderHidden {
     display: block !important;
@@ -9,7 +9,7 @@
   }
 </style>
 
-<my-dialog id="myDialog">
+<my-dialog id="myDialog" data-brand="decorte">
   <dialog class="tw-w-[600px] tw-max-w-[90%]">
     <div class="page">
       <div class="counseling-content">
@@ -24,28 +24,28 @@
             <p class="tw-mb-4"><small>※肌トラブル：炎症・アトピー・赤味・はれ・かゆみ・刺激
                 ・色抜け（白斑等）・黒ずみ等</small></p>
             <div class="tw-flex tw-items-center">
-              <input class="tw-mr-1" type="radio" id="q1_1" name="q1" value="1">
-              <label for="q1_1" class="tw-inline-block">YES</label>
-              <input class="tw-mr-1" type="radio" id="q1_2" name="q1" value="0">
-              <label for="q1_2">NO</label>
+              <input class="tw-mr-1" type="radio" id="q1_1-{{ section_id }}" name="q1-{{ section_id }}" value="1">
+              <label for="q1_1-{{ section_id }}" class="tw-inline-block">YES</label>
+              <input class="tw-mr-1" type="radio" id="q1_2-{{ section_id }}" name="q1-{{ section_id }}" value="0">
+              <label for="q1_2-{{ section_id }}">NO</label>
             </div>
           </div>
           <div class="tw-mb-5">
             <p class="tw-text-sm">過去に化粧品で肌トラブルを起こしたことはありますか？</p>
             <div class="tw-flex tw-items-center">
-              <input class="tw-mr-1" type="radio" id="q2_1" name="q2" value="1">
-              <label for="q2_1">YES</label>
-              <input class="tw-mr-1" type="radio" id="q2_2" name="q2" value="0">
-              <label for="q2_2">NO</label>
+              <input class="tw-mr-1" type="radio" id="q2_1-{{ section_id }}" name="q2-{{ section_id }}" value="1">
+              <label for="q2_1-{{ section_id }}">YES</label>
+              <input class="tw-mr-1" type="radio" id="q2_2-{{ section_id }}" name="q2-{{ section_id }}" value="0">
+              <label for="q2_2-{{ section_id }}">NO</label>
             </div>
           </div>
           <div class="tw-mb-5">
             <p class="tw-text-sm">自身の肌は、ゆらぎやすく、敏感・不安定ですか？</p>
             <div class="tw-flex tw-items-center">
-              <input class="tw-mr-1" type="radio" id="q3_1" name="q3" value="1">
-              <label for="q3_1">YES</label>
-              <input class="tw-mr-1" type="radio" id="q3_2" name="q3" value="0">
-              <label for="q3_2">NO</label>
+              <input class="tw-mr-1" type="radio" id="q3_1-{{ section_id }}" name="q3-{{ section_id }}" value="1">
+              <label for="q3_1-{{ section_id }}">YES</label>
+              <input class="tw-mr-1" type="radio" id="q3_2-{{ section_id }}" name="q3-{{ section_id }}" value="0">
+              <label for="q3_2-{{ section_id }}">NO</label>
             </div>
           </div>
           <div class="tw-flex tw-justify-center tw-gap-2">

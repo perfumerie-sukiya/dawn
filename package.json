@@ -3,7 +3,11 @@
     "build": "webpack",
     "prod": "webpack --mode production",
     "watch": "webpack --watch",
-    "test": "jest"
+    "test": "jest",
+    "upload:files": "node scripts/shopify-upload-files.mjs",
+    "upload:files:dry": "node scripts/shopify-upload-files.mjs --dry-run",
+    "albion:upload": "node scripts/shopify-upload-files.mjs --config=scripts/albion-upload-config.json",
+    "albion:upload:dry": "node scripts/shopify-upload-files.mjs --config=scripts/albion-upload-config.json --dry-run"
   },
   "dependencies": {
     "dotenv": "^16.5.0",

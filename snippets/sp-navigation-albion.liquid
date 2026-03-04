@@ -1,0 +1,10 @@
+{% comment %}my-accordion.jsの読み込み{% endcomment %}
+<script src="{{ 'my-accordion.js' | asset_url }}" defer="defer"></script>
+
+<!-- SP ナビメニュー -->
+<div class="sp-only">
+  <my-accordion>
+    {% render 'albion-nav-items', layout: 'sp' %}
+  </my-accordion>
+</div>
+<!-- SP ナビメニュー end -->
