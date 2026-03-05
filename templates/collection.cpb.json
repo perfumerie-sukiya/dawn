@@ -20,6 +20,17 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_HWnFzk": {
+          "type": "slide",
+          "settings": {
+            "title": "セラムエクラS Ⅱ \n\n宿命さえ超えてゆく、\n革新の根源美白ケア。",
+            "image": "shopify://shop_images/offer_brightening_serum_26SS_pc_30bfa007-9c04-4222-968f-d83f008c2fb3.jpg",
+            "image_sp": "shopify://shop_images/offer_brightening_serum_26SS_sp_44a2eabe-8678-4f51-8c9b-86bc2d9f796c.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-serum-eclat-s-ii-2026-2-21",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
         "slide_3JGxbq": {
           "type": "slide",
           "settings": {
@@ -64,17 +75,6 @@
             "is_text_right": false
           }
         },
-        "slide_cGeeMx": {
-          "type": "slide",
-          "settings": {
-            "title": "透明感の極みへ。\n内面から光を放つ品格の肌。",
-            "image": "shopify://shop_images/offer_25SS_TranslucentLoosePowder_pc_04bb8ab5-53e5-42df-9049-50453e9a96d3.jpg",
-            "image_sp": "shopify://shop_images/offer_25SS_TranslucentLoosePowder_sp_c0464f0e-0b78-4b4e-93c1-251bca02231b.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-poudre-transparent-n-m-small-2026-3-21",
-            "is_title_white": false,
-            "is_text_right": false
-          }
-        },
         "slide_jdMnEt": {
           "type": "slide",
           "settings": {
@@ -88,11 +88,11 @@
         }
       },
       "block_order": [
+        "slide_HWnFzk",
         "slide_3JGxbq",
         "slide_hLR9ea",
         "slide_DYrgiw",
         "slide_TpUYee",
-        "slide_cGeeMx",
         "slide_jdMnEt"
       ],
       "settings": {}
