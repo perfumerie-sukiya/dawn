@@ -262,6 +262,11 @@
         "type": "shopify://apps/algolia-ai-search-discovery/blocks/autocomplete/57bb7f86-d5fe-4d43-96ca-3953324494cf",
         "disabled": false,
         "settings": {}
+      },
+      "6897675550240258559": {
+        "type": "shopify://apps/promolayer/blocks/app-embed/e4a9128f-b151-4feb-ad9e-ef8fbb63bf07",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
