@@ -1,0 +1,107 @@
+{
+  "basePath": "docs/albion",
+  "prefix": "elegance_",
+  "mappingOutput": "scripts/elegance-upload-mapping.json",
+  "files": [
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/PC/EL/①EL26SS_FD_A：1280px × 640px.jpg",
+      "shopifyFilename": "elegance_4__EL_PC_1.jpg",
+      "usage": "TOPバナー PC 1枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/PC/EL/②EL26SS S1_PC1280px_640px.jpg",
+      "shopifyFilename": "elegance_4__EL_PC_2.jpg",
+      "usage": "TOPバナー PC 2枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/SP/EL/①EL26SS_FD_A ： 750px × 1008px.jpg",
+      "shopifyFilename": "elegance_4__EL_SP_1.jpg",
+      "usage": "TOPバナー SP 1枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/SP/EL/②EL26SS S1_SP750px_1008px.jpg",
+      "shopifyFilename": "elegance_4__EL_SP_2.jpg",
+      "usage": "TOPバナー SP 2枚目"
+    },
+    {
+      "localPath": "ブランドTOP/（仮）認定ロゴ/elegance_nintei_logo_white.jpg",
+      "shopifyFilename": "elegance_nintei_logo_white.jpg",
+      "usage": "認定ロゴ（ホワイト）"
+    },
+    {
+      "localPath": "ブランドTOP/オンラインカウンセリングバナー/G25101273-online-EL.jpg",
+      "shopifyFilename": "elegance_online_counseling_banner.jpg",
+      "usage": "オンラインカウンセリングバナー"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeenqq05__main.png",
+      "shopifyFilename": "elegance_category_aeenqq05.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeenqp20__main.png",
+      "shopifyFilename": "elegance_category_aeenqp20.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeentv09__main.png",
+      "shopifyFilename": "elegance_category_aeentv09.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeeifb201__main.png",
+      "shopifyFilename": "elegance_category_aeeifb201.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeenqj21__main.png",
+      "shopifyFilename": "elegance_category_aeenqj21.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/exzm__main.png",
+      "shopifyFilename": "elegance_category_exzm.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeenua__main.png",
+      "shopifyFilename": "elegance_category_aeenua.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeenqs10__main.png",
+      "shopifyFilename": "elegance_category_aeenqs10.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/eyzt__main.png",
+      "shopifyFilename": "elegance_category_eyzt.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeennj05__main.png",
+      "shopifyFilename": "elegance_category_aeennj05.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeenpb01__main.png",
+      "shopifyFilename": "elegance_category_aeenpb01.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeehyj__main.png",
+      "shopifyFilename": "elegance_category_aeehyj.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/makeupBase-collection.png",
+      "shopifyFilename": "elegance_category_makeup-base.png",
+      "usage": "カテゴリ画像"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/aeenjqp102__main.png",
+      "shopifyFilename": "elegance_category_aeenjqp102.png",
+      "usage": "カテゴリ画像"
+    }
+  ]
+}

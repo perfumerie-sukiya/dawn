@@ -1,0 +1,152 @@
+{
+  "basePath": "docs/albion",
+  "prefix": "ignis_",
+  "mappingOutput": "scripts/ignis-upload-mapping.json",
+  "files": [
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/PC/IG/①IG 26春_1280px×640px_PC_テンダーピュア.jpg",
+      "shopifyFilename": "ignis_4__IG_PC_1.jpg",
+      "usage": "TOPバナー PC 1枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/PC/IG/②IG_26spring_1280×640.jpg",
+      "shopifyFilename": "ignis_4__IG_PC_2.jpg",
+      "usage": "TOPバナー PC 2枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/SP/IG/①IG 26春_750px×1008px_SP_テンダーピュア.jpg",
+      "shopifyFilename": "ignis_4__IG_SP_1.jpg",
+      "usage": "TOPバナー SP 1枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/SP/IG/②IG_26spring_750×1008.jpg",
+      "shopifyFilename": "ignis_4__IG_SP_2.jpg",
+      "usage": "TOPバナー SP 2枚目"
+    },
+    {
+      "localPath": "ブランドTOP/（仮）認定ロゴ/ignis_nintei_logo_white.jpg",
+      "shopifyFilename": "ignis_nintei_logo_white.jpg",
+      "usage": "認定ロゴ（ホワイト）"
+    },
+    {
+      "localPath": "ブランドTOP/オンラインカウンセリングバナー/G25101273-online-IG.jpg",
+      "shopifyFilename": "ignis_online_counseling_banner.jpg",
+      "usage": "オンラインカウンセリングバナー"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-yoko/G25101273-IGNIS-cleansing-yoko.jpg",
+      "shopifyFilename": "ignis_category_cleansing_yoko.jpg",
+      "usage": "カテゴリバナー 横"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-yoko/G25101273-IGNIS-facewash-yoko.jpg",
+      "shopifyFilename": "ignis_category_facewash_yoko.jpg",
+      "usage": "カテゴリバナー 横"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-yoko/G25101273-IGNIS-milk-yoko.jpg",
+      "shopifyFilename": "ignis_category_milk_yoko.jpg",
+      "usage": "カテゴリバナー 横"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-yoko/G25101273-IGNIS-lotion-yoko.jpg",
+      "shopifyFilename": "ignis_category_lotion_yoko.jpg",
+      "usage": "カテゴリバナー 横"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-yoko/G25101273-IGNIS-essence-yoko.jpg",
+      "shopifyFilename": "ignis_category_essence_yoko.jpg",
+      "usage": "カテゴリバナー 横"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-yoko/G25101273-IGNIS-cream-yoko.jpg",
+      "shopifyFilename": "ignis_category_cream_yoko.jpg",
+      "usage": "カテゴリバナー 横"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-yoko/G25101273-IGNIS-specialcare-yoko.jpg",
+      "shopifyFilename": "ignis_category_specialcare_yoko.jpg",
+      "usage": "カテゴリバナー 横"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-yoko/G25101273-IGNIS-tools-yoko.jpg",
+      "shopifyFilename": "ignis_category_tools_yoko.jpg",
+      "usage": "カテゴリバナー 横"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-tate/G25101273-IGNIS-cleansing-tate.jpg",
+      "shopifyFilename": "ignis_category_cleansing_tate.jpg",
+      "usage": "カテゴリバナー 縦"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-tate/G25101273-IGNIS-facewash-tate.jpg",
+      "shopifyFilename": "ignis_category_facewash_tate.jpg",
+      "usage": "カテゴリバナー 縦"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-tate/G25101273-IGNIS-milk-tate.jpg",
+      "shopifyFilename": "ignis_category_milk_tate.jpg",
+      "usage": "カテゴリバナー 縦"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-tate/G25101273-IGNIS-lotion-tate.jpg",
+      "shopifyFilename": "ignis_category_lotion_tate.jpg",
+      "usage": "カテゴリバナー 縦"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-tate/G25101273-IGNIS-essence-tate.jpg",
+      "shopifyFilename": "ignis_category_essence_tate.jpg",
+      "usage": "カテゴリバナー 縦"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-tate/G25101273-IGNIS-cream-tate.jpg",
+      "shopifyFilename": "ignis_category_cream_tate.jpg",
+      "usage": "カテゴリバナー 縦"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-tate/G25101273-IGNIS-specialcare-tate.jpg",
+      "shopifyFilename": "ignis_category_specialcare_tate.jpg",
+      "usage": "カテゴリバナー 縦"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニス_カテゴリーバナー/IGNIS-tate/G25101273-IGNIS-tools-tate.jpg",
+      "shopifyFilename": "ignis_category_tools_tate.jpg",
+      "usage": "カテゴリバナー 縦"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニスiO各種バナー/G25101273-io-top.jpg",
+      "shopifyFilename": "ignis_io_top.jpg",
+      "usage": "IGNIS iO トップバナー"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニスiO各種バナー/G25101273-io-skincare.png",
+      "shopifyFilename": "ignis_io_skincare.png",
+      "usage": "IGNIS iO バナー"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニスiO各種バナー/G25101273-io-UV.png",
+      "shopifyFilename": "ignis_io_uv.png",
+      "usage": "IGNIS iO バナー"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニスiO各種バナー/G25101273-io-bodycare.png",
+      "shopifyFilename": "ignis_io_bodycare.png",
+      "usage": "IGNIS iO バナー"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニスiO各種バナー/G25101273-io-harecare.png",
+      "shopifyFilename": "ignis_io_harecare.png",
+      "usage": "IGNIS iO バナー"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニスiO各種バナー/G25101273-io-fragrance.png",
+      "shopifyFilename": "ignis_io_fragrance.png",
+      "usage": "IGNIS iO バナー"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニスiO各種バナー/G25101273-io-handcare.png",
+      "shopifyFilename": "ignis_io_handcare.png",
+      "usage": "IGNIS iO バナー"
+    }
+  ]
+}
