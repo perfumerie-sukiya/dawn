@@ -54,24 +54,24 @@
             assign sp_url_1280 = ''
 
             if img_pc != blank
-              assign pc_url = img_pc | image_url: width: 1280, height: 400
+              assign pc_url = img_pc | image_url: width: 1280
             endif
             if pc_url == blank and img_pc_file != blank
               if img_pc_file_obj != blank
-                assign pc_url = img_pc_file_obj | image_url: width: 1280, height: 400
+                assign pc_url = img_pc_file_obj | image_url: width: 1280
               else
                 assign pc_url = img_pc_file_resolved | file_img_url: '1280x'
               endif
             endif
 
             if img_sp != blank
-              assign sp_url_750 = img_sp | image_url: width: 750, height: 1008
-              assign sp_url_1280 = img_sp | image_url: width: 1280, height: 400
+              assign sp_url_750 = img_sp | image_url: width: 750
+              assign sp_url_1280 = img_sp | image_url: width: 1280
             endif
             if sp_url_1280 == blank and img_sp_file != blank
               if img_sp_file_obj != blank
-                assign sp_url_750 = img_sp_file_obj | image_url: width: 750, height: 1008
-                assign sp_url_1280 = img_sp_file_obj | image_url: width: 1280, height: 400
+                assign sp_url_750 = img_sp_file_obj | image_url: width: 750
+                assign sp_url_1280 = img_sp_file_obj | image_url: width: 1280
               else
                 assign sp_url_750 = img_sp_file_resolved | file_img_url: '750x'
                 assign sp_url_1280 = img_sp_file_resolved | file_img_url: '1280x'
@@ -94,7 +94,7 @@
                   src="{{ pc_url }}"
                   alt="{{ block.settings.title }}"
                   width="1280"
-                  height="400"
+                  height="640"
                   class="tw-w-full tw-h-auto tw-max-w-full"
                 >
                 {% elsif sp_url_1280 != blank %}
@@ -102,7 +102,7 @@
                   src="{{ sp_url_1280 }}"
                   alt="{{ block.settings.title }}"
                   width="1280"
-                  height="400"
+                  height="640"
                   class="tw-w-full tw-h-auto tw-max-w-full"
                 >
                 {% endif %}
@@ -169,4 +169,3 @@
   ]
 }
 {% endschema %}
-

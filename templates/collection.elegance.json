@@ -48,7 +48,7 @@
       "settings": {}
     },
     "product-grid": {
-      "type": "main-collection-product-grid-albion",
+      "type": "main-collection-product-grid-elegance",
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,

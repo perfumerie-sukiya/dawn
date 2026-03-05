@@ -1,54 +1,19 @@
+{% assign ignis_collection_url = routes.collections_url | append: '/ignis' %}
+{% assign counseling_url = 'https://www.albion.co.jp/counseling/' %}
+
 <div class="tw-hidden md:tw-flex md:tw-justify-center tw-min-w-max tw-border-t tw-border-x-0 tw-border-b-0 tw-border-t-black tw-border-solid">
-  {% for link in linklists['ignis-nav-menu'].links %}
-    {% if link.links != empty %}
-      <div class="tw-group tw-relative tw-text-left hover:tw-bg-slate-50">
-        <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current"
-           href="{{ link.url }}">
-          {{ link.title }}
-          <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
-        </a>
-        <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-white">
-          {% for child_link in link.links %}
-            {% if child_link.links != empty %}
-              <div class="tw-group/nest2 tw-h-10 tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-slate-50">
-                <a href="{{ child_link.url }}"
-                   class="tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current"
-                >
-                  {{ child_link.title }}
-                  <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
-                </a>
-                <div class="nested-menu group-hover/nest2:tw-block tw-hidden tw-bg-white">
-                  {% for grandchild_link in child_link.links %}
-                    <a href="{{ grandchild_link.url }}" class="tw-no-underline tw-text-current">
-                      <div
-                        class="tw-h-10 tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-slate-50 tw-flex tw-items-center tw-text-sm tw-tracking-widest">
-                        {{ grandchild_link.title }}
-                      </div>
-                    </a>
-                  {% endfor %}
-                </div>
-              </div>
-            {% else %}
-              <a
-                class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-slate-50 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current"
-                href="{{ child_link.url }}">
-                {{ child_link.title }}
-              </a>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-    {% else %}
-      <a
-        class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-slate-50 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current"
-        href="{{ link.url }}"
-        {%- unless link.url contains 'https://online.sukiya.biz' -%}
-          target="_blank"
-        {%- endunless -%}
-      >
-        {{ link.title }}
-        <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
-      </a>
-    {% endif %}
-  {% endfor %}
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ ignis_collection_url }}?filter.p.tag=クレンジング#Collection">クレンジング</a>
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ ignis_collection_url }}?filter.p.tag=洗顔料#Collection">洗顔料</a>
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ ignis_collection_url }}?filter.p.tag=乳液#Collection">乳液</a>
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ ignis_collection_url }}?filter.p.tag=化粧水#Collection">化粧水</a>
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ ignis_collection_url }}?filter.p.tag=美容液#Collection">美容液</a>
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ ignis_collection_url }}?filter.p.tag=クリーム#Collection">クリーム</a>
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ ignis_collection_url }}?filter.p.tag=スペシャルケア#Collection">スペシャルケア</a>
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ ignis_collection_url }}?filter.p.tag=雑貨#Collection">雑貨</a>
+  <a
+    class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50"
+    href="{{ counseling_url }}"
+    target="_blank"
+    rel="noopener"
+  >オンラインカウンセリング</a>
 </div>

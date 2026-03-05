@@ -48,7 +48,7 @@
       "settings": {}
     },
     "product-grid": {
-      "type": "main-collection-product-grid-albion",
+      "type": "main-collection-product-grid-ignis",
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
@@ -67,7 +67,8 @@
         "padding_bottom": 36,
         "products_to_show": 4,
         "enable_desktop_slider": true,
-        "swipe_on_mobile": true
+        "swipe_on_mobile": true,
+        "ignis_io_all_url": "/collections/ignis-io"
       }
     }
   },
