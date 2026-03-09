@@ -67,7 +67,7 @@
         "padding_bottom": 36,
         "new_arrival_collection": "albion-new-items-colors",
         "ranking_collection": "",
-        "must_items_collection": "",
+        "must_items_collection": "albion-must-buy",
         "ranking": true,
         "products_to_show": 4,
         "enable_desktop_slider": true,
