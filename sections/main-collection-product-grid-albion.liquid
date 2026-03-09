@@ -385,6 +385,18 @@
         {% render 'sp-navigation-albion' %}
       </div>
 
+      {% render 'albion-must-items',
+        must_items_collection: section.settings.must_items_collection,
+        media_aspect_ratio: section.settings.image_ratio,
+        image_shape: section.settings.image_shape,
+        show_secondary_image: section.settings.show_secondary_image,
+        show_vendor: section.settings.show_vendor,
+        show_rating: section.settings.show_rating,
+        show_quick_add: section.settings.enable_quick_add,
+        max_title_length: section.settings.max_title_length,
+        section_id: section.id
+      %}
+
       {% render 'albion-series-finder' %}
 
       <div class="tw-my-3">
@@ -606,7 +618,7 @@
     },
     {
       "type": "header",
-      "content": "ブランドトップ（NEW ARRIVAL / RANKING）"
+      "content": "ブランドトップ（NEW ARRIVAL / RANKING / マストアイテム）"
     },
     {
       "type": "collection",
@@ -617,6 +629,11 @@
       "type": "collection",
       "id": "ranking_collection",
       "label": "RANKING に表示するコレクション"
+    },
+    {
+      "type": "collection",
+      "id": "must_items_collection",
+      "label": "マストアイテムを見る に表示するコレクション"
     },
     {
       "type": "checkbox",
