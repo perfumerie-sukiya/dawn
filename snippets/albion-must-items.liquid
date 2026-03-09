@@ -1,0 +1,35 @@
+{% comment %}
+  ALBION PRODUCTS「マストアイテムを見る」
+  ガイドライン: docs/albion/albion-jsec-guideline-v1-1.md
+  指定の5品（増減の可能性あり）。商品詳細ページのデータを流用。遷移先は対象商品詳細ページ。
+  must_items_collection: マストアイテム用コレクション（未設定時は非表示）
+  section: 親セクション（card-product 用の設定を渡す）
+{% endcomment %}
+{% if must_items_collection != blank and must_items_collection.products.size > 0 %}
+<div class="albion-must-items tw-my-10 tw-bg-white tw-py-6">
+  <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">マストアイテムを見る</h3>
+  <div class="page-width">
+    <ul
+      class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--2-col-tablet-down grid--5-col-desktop tw-list-none tw-pl-0 tw-m-0 tw-gap-4"
+      role="list"
+    >
+      {%- for product in must_items_collection.products limit: 5 -%}
+        <li class="grid__item tw-m-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}>
+          {% render 'card-product',
+            card_product: product,
+            media_aspect_ratio: media_aspect_ratio | default: 'adapt',
+            image_shape: image_shape | default: 'default',
+            show_secondary_image: show_secondary_image | default: false,
+            show_vendor: show_vendor | default: false,
+            show_rating: show_rating | default: false,
+            lazy_load: true,
+            show_quick_add: show_quick_add | default: false,
+            max_title_length: max_title_length | default: 28,
+            section_id: section_id
+          %}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+{% endif %}
