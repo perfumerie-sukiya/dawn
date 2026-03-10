@@ -2,7 +2,6 @@
 {{ 'component-loading-spinner.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -19,13 +18,8 @@
   padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
   padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-  .cpb-brand-page .cpb-contents-nav a,
-  .cpb-brand-page .sp-only a {
-    color: #000;
-  }
-  .cpb-brand-page .cpb-contents-nav a:hover,
-  .cpb-brand-page .sp-only a:hover {
-    color: #000;
+  .cpb-brand-page {
+    font-family: "ヒラギノ角ゴシック", "Hiragino Sans", "メイリオ", Meiryo, sans-serif;
   }
   .c-heading {
     text-align: center;
@@ -61,15 +55,13 @@
 {%- endstyle -%}
 
 {%- liquid
-  assign products_to_display = section.settings.products_to_show
+  assign ignis_io_collection_url = routes.collections_url | append: '/ignis-io'
+  if section.settings.ignis_url != blank
+    assign ignis_collection_url = section.settings.ignis_url
+  else
+    assign ignis_collection_url = routes.collections_url | append: '/ignis'
+  endif
 
-  assign show_mobile_slider = false
-  assign show_mobile_slider = true
-
-  assign show_desktop_slider = false
-  assign show_desktop_slider = true
-
-  # Determine selected tag from Storefront Filtering (filter.p.tag) または旧来の current_tags
   assign filter_tag = ''
   for filter in collection.filters
     if filter.param_name == 'filter.p.tag'
@@ -84,16 +76,15 @@
   endif
 -%}
 
-<!-- Albion -->
+<!-- IGNIS iO -->
 <div class="item-list cpb-brand-page">
   {% if filter_tag %}
-    <!-- Albion商品一覧ここから -->
+    <!-- IGNIS iO 商品一覧ここから -->
     <div class="page-width tw-my-5">
       <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
     </div>
     <div class="section-{{ section.id }}-padding">
       {%- paginate collection.products by section.settings.products_per_page -%}
-        {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
         {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
           <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden">
             <form class="facets-vertical-form" id="FacetSortForm">
@@ -130,7 +121,6 @@
                   </button>
                 </noscript>
               </div>
-
               <div class="product-count-vertical light" role="status">
                 <h2 class="product-count__text text-body">
                   <span id="ProductCountDesktop">
@@ -258,183 +248,74 @@
         {% render 'mask-arch' %}
       {%- endif -%}
 
-      <div class="tw-mt-8 sp-only">
-        <h3 class="tw-text-center tw-text-xl tw-font-bold tw-mb-6">CATEGORY</h3>
-        {% render 'sp-navigation-albion' %}
-      </div>
+      {% render 'sp-navigation-ignis-io' %}
     </div>
-    <!-- Albion商品一覧ここまで -->
+    <!-- IGNIS iO 商品一覧ここまで -->
   {% else %}
-    <!-- Albionブランドトップ -->
+    <!-- IGNIS iO ブランドトップ -->
     <div class="page-width">
-      {%- if section.settings.new_arrival_collection != blank -%}
-      <div class="cpb-items tw-my-10">
+      <div class="tw-my-10">
         <div class="c-heading">
-          <h2 class="c-heading__main">New Items & Colors</h2>
-          <p class="c-heading__sub">新商品・新色情報</p>
+          <h2 class="c-heading__main">IGNIS iO</h2>
+          <p class="c-heading__sub">イグニス イオ</p>
         </div>
-        <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          <ul
-            id="Slider-{{ section.id }}-new-arrival"
-            class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.new_arrival_collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
-            role="list"
-            aria-label="{{ 'general.slider.name' | t }}"
+        <a class="tw-block tw-mb-6" href="{{ ignis_io_collection_url }}">
+          <img
+            class="tw-w-full tw-h-auto"
+            src="{{ 'ignis_io_top.jpg' | file_url }}"
+            alt="IGNIS iO"
+            width="1600"
+            height="800"
+            loading="eager"
           >
-            {%- for product in section.settings.new_arrival_collection.products limit: section.settings.products_to_show -%}
-              <li
-                id="Slide-{{ section.id }}-new-arrival-{{ forloop.index }}"
-                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {% render 'card-product',
-                  card_product: product,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  image_shape: section.settings.image_shape,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating,
-                  show_quick_add: section.settings.enable_quick_add,
-                  max_title_length: section.settings.max_title_length,
-                  section_id: section.id
-                %}
-              </li>
-            {%- endfor -%}
-          </ul>
-          {%- if show_mobile_slider or show_desktop_slider -%}
-            <div class="slider-buttons no-js-hidden">
-              <button
-                type="button"
-                class="slider-button slider-button--prev"
-                name="previous"
-                aria-label="{{ 'general.slider.previous_slide' | t }}"
-                aria-controls="Slider-{{ section.id }}-new-arrival"
-              >
-                {% render 'icon-caret' %}
-              </button>
-              <div class="slider-counter caption">
-                <span class="slider-counter--current">1</span>
-                <span aria-hidden="true"> / </span>
-                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-                <span class="slider-counter--total">{{ products_to_display }}</span>
-              </div>
-              <button
-                type="button"
-                class="slider-button slider-button--next"
-                name="next"
-                aria-label="{{ 'general.slider.next_slide' | t }}"
-                aria-controls="Slider-{{ section.id }}-new-arrival"
-              >
-                {% render 'icon-caret' %}
-              </button>
-            </div>
-          {%- endif -%}
-        </slider-component>
+        </a>
       </div>
-      {%- endif -%}
-      {%- if section.settings.ranking_collection != blank -%}
-      <div class="cpb-items tw-my-10">
+
+      <div class="cpb-contents-nav tw-my-10">
         <div class="c-heading">
-          <h2 class="c-heading__main">RANKING</h2>
-          <p class="c-heading__sub">ランキング</p>
+          <h2 class="c-heading__main">PRODUCT</h2>
+          <p class="c-heading__sub">商品カテゴリー</p>
         </div>
-        <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          <ul
-            id="Slider-{{ section.id }}-ranking"
-            class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.ranking_collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
-            role="list"
-            aria-label="{{ 'general.slider.name' | t }}"
+        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
+          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=skincare#Collection">
+            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_skincare.png' | file_url }}" alt="Skincare" width="600" height="600" loading="lazy">
+          </a>
+          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=UV#Collection">
+            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_uv.png' | file_url }}" alt="UV" width="600" height="600" loading="lazy">
+          </a>
+          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=bodycare#Collection">
+            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_bodycare.png' | file_url }}" alt="Bodycare" width="600" height="600" loading="lazy">
+          </a>
+          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=harecare#Collection">
+            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_harecare.png' | file_url }}" alt="Harecare" width="600" height="600" loading="lazy">
+          </a>
+          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=fragrance#Collection">
+            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_fragrance.png' | file_url }}" alt="Fragrance" width="600" height="600" loading="lazy">
+          </a>
+          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=handcare#Collection">
+            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_handcare.png' | file_url }}" alt="Handcare" width="600" height="600" loading="lazy">
+          </a>
+        </div>
+      </div>
+
+      <div class="tw-my-6">
+        <a class="tw-block" href="{{ ignis_collection_url }}">
+          <img
+            class="tw-w-full tw-h-auto"
+            src="{{ 'ignis_transition_banner.jpg' | file_url }}"
+            alt="イグニスはこちらへ"
+            width="600"
+            height="200"
+            loading="lazy"
           >
-            {%- for product in section.settings.ranking_collection.products limit: section.settings.products_to_show -%}
-              <li
-                id="Slide-{{ section.id }}-ranking-{{ forloop.index }}"
-                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.ranking %} ranking-item{% endif %}"
-                {% if settings.animations_reveal_on_scroll %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                {% endif %}
-              >
-                {% if section.settings.ranking %}
-                  <span class="rank">{{ forloop.index }}</span>
-                {% endif %}
-                {% render 'card-product',
-                  card_product: product,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  image_shape: section.settings.image_shape,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating,
-                  show_quick_add: section.settings.enable_quick_add,
-                  max_title_length: section.settings.max_title_length,
-                  section_id: section.id
-                %}
-              </li>
-            {%- endfor -%}
-          </ul>
-          {%- if show_mobile_slider or show_desktop_slider -%}
-            <div class="slider-buttons no-js-hidden">
-              <button
-                type="button"
-                class="slider-button slider-button--prev"
-                name="previous"
-                aria-label="{{ 'general.slider.previous_slide' | t }}"
-                aria-controls="Slider-{{ section.id }}-ranking"
-              >
-                {% render 'icon-caret' %}
-              </button>
-              <div class="slider-counter caption">
-                <span class="slider-counter--current">1</span>
-                <span aria-hidden="true"> / </span>
-                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-                <span class="slider-counter--total">{{ products_to_display }}</span>
-              </div>
-              <button
-                type="button"
-                class="slider-button slider-button--next"
-                name="next"
-                aria-label="{{ 'general.slider.next_slide' | t }}"
-                aria-controls="Slider-{{ section.id }}-ranking"
-              >
-                {% render 'icon-caret' %}
-              </button>
-            </div>
-          {%- endif -%}
-        </slider-component>
+        </a>
       </div>
-      {%- endif -%}
-
-      <div class="cpb-contents-nav mb-10">
-        <div class="c-heading">
-          <h2 class="c-heading__main">CATEGORY</h2>
-          <p class="c-heading__sub">カテゴリー</p>
-        </div>
-
-        {% render 'albion-nav-items', layout: 'category' %}
-
-        {% render 'sp-navigation-albion' %}
-      </div>
-
-      {% render 'albion-must-items',
-        must_items_collection: section.settings.must_items_collection,
-        media_aspect_ratio: section.settings.image_ratio,
-        image_shape: section.settings.image_shape,
-        show_secondary_image: section.settings.show_secondary_image,
-        show_vendor: section.settings.show_vendor,
-        show_rating: section.settings.show_rating,
-        show_quick_add: section.settings.enable_quick_add,
-        max_title_length: section.settings.max_title_length,
-        section_id: section.id
-      %}
-
-      {% render 'albion-series-finder' %}
 
       <div class="tw-my-3 tw-flex tw-justify-center">
         <a href="https://www.albion.co.jp/counseling/" target="_blank" rel="noopener" class="tw-block tw-w-1/2">
           <img
             class="tw-w-full tw-h-auto"
-            src="{{ 'albion_counseling_banner.jpg' | file_url }}"
+            src="{{ 'ignis_counseling_banner.jpg' | file_url }}"
             alt="ONLINE COUNSELING オンラインカウンセリング"
             width="1200"
             height="240"
@@ -443,14 +324,14 @@
         </a>
       </div>
     </div>
-    <!-- Albionブランドトップここまで -->
+    <!-- IGNIS iO ブランドトップここまで -->
   {% endif %}
 </div>
-<!-- Albionここまで -->
+<!-- IGNIS iOここまで -->
 
 {% schema %}
 {
-  "name": "商品グリッドALBION",
+  "name": "商品グリッドIGNIS iO",
   "class": "section",
   "settings": [
     {
@@ -566,7 +447,7 @@
       "id": "max_title_length",
       "default": 28,
       "label": "t:sections.main-collection-product-grid.settings.max_title_length.label",
-      "info": "指定した最大文字数には省略記号（…）1文字も含まれます。したがって実際の本文はその分短く表示されます。さらにHTMLエスケープ（例: & → &amp;）の影響で、見た目の文字数が1〜数文字少なくなる場合があります。"
+      "info": "指定した最大文字数には省略記号（…）1文字も含まれます。"
     },
     {
       "type": "header",
@@ -651,52 +532,10 @@
       "default": 36
     },
     {
-      "type": "header",
-      "content": "ブランドトップ（NEW ARRIVAL / RANKING / マストアイテム）"
-    },
-    {
-      "type": "collection",
-      "id": "new_arrival_collection",
-      "label": "NEW ARRIVAL に表示するコレクション"
-    },
-    {
-      "type": "collection",
-      "id": "ranking_collection",
-      "label": "RANKING に表示するコレクション"
-    },
-    {
-      "type": "collection",
-      "id": "must_items_collection",
-      "label": "マストアイテムを見る に表示するコレクション"
-    },
-    {
-      "type": "checkbox",
-      "id": "ranking",
-      "default": true,
-      "label": "RANKING に順位番号を表示する"
-    },
-    {
-      "type": "range",
-      "id": "products_to_show",
-      "min": 2,
-      "max": 25,
-      "step": 1,
-      "default": 4,
-      "label": "t:sections.featured-collection.settings.products_to_show.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_desktop_slider",
-      "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "swipe_on_mobile",
-      "default": true,
-      "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
+      "type": "url",
+      "id": "ignis_url",
+      "label": "IGNIS コレクションへのリンク（遷移バナー用）"
     }
   ]
 }
 {% endschema %}
-

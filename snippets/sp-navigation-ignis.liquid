@@ -1,0 +1,35 @@
+{% comment %}
+  IGNIS カテゴリページ下部 SP用カテゴリナビ
+  8カテゴリのシンプルなリスト（アコーディオンなし）
+{% endcomment %}
+{% assign ignis_collection_url = routes.collections_url | append: '/ignis' %}
+
+<div class="sp-only tw-mt-8">
+  <h3 class="tw-text-center tw-text-xl tw-font-bold tw-mb-6">CATEGORY</h3>
+  <ul class="tw-list-none tw-pl-0 tw-m-0 tw-border tw-border-gray-200">
+    <li class="tw-border-b tw-border-gray-200 last:tw-border-b-0">
+      <a href="{{ ignis_collection_url }}?filter.p.tag=クレンジング#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black">クレンジング</a>
+    </li>
+    <li class="tw-border-b tw-border-gray-200 last:tw-border-b-0">
+      <a href="{{ ignis_collection_url }}?filter.p.tag=洗顔料#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black">洗顔料</a>
+    </li>
+    <li class="tw-border-b tw-border-gray-200 last:tw-border-b-0">
+      <a href="{{ ignis_collection_url }}?filter.p.tag=乳液#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black">乳液</a>
+    </li>
+    <li class="tw-border-b tw-border-gray-200 last:tw-border-b-0">
+      <a href="{{ ignis_collection_url }}?filter.p.tag=化粧水#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black">化粧水</a>
+    </li>
+    <li class="tw-border-b tw-border-gray-200 last:tw-border-b-0">
+      <a href="{{ ignis_collection_url }}?filter.p.tag=美容液#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black">美容液</a>
+    </li>
+    <li class="tw-border-b tw-border-gray-200 last:tw-border-b-0">
+      <a href="{{ ignis_collection_url }}?filter.p.tag=クリーム#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black">クリーム</a>
+    </li>
+    <li class="tw-border-b tw-border-gray-200 last:tw-border-b-0">
+      <a href="{{ ignis_collection_url }}?filter.p.tag=スペシャルケア#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black">スペシャルケア</a>
+    </li>
+    <li class="tw-border-b tw-border-gray-200 last:tw-border-b-0">
+      <a href="{{ ignis_collection_url }}?filter.p.tag=雑貨#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black">雑貨</a>
+    </li>
+  </ul>
+</div>

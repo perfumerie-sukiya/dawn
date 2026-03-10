@@ -30,7 +30,7 @@
     },
     {
       "localPath": "ブランドTOP/オンラインカウンセリングバナー/G25101273-online-IG.jpg",
-      "shopifyFilename": "ignis_online_counseling_banner.jpg",
+      "shopifyFilename": "ignis_counseling_banner.jpg",
       "usage": "オンラインカウンセリングバナー"
     },
     {
@@ -147,6 +147,11 @@
       "localPath": "ブランドTOP/★イグニスiO各種バナー/G25101273-io-handcare.png",
       "shopifyFilename": "ignis_io_handcare.png",
       "usage": "IGNIS iO バナー"
+    },
+    {
+      "localPath": "ブランドTOP/★イグニスiO各種バナー/G26020373-IGNIS_transition-600.jpg",
+      "shopifyFilename": "ignis_transition_banner.jpg",
+      "usage": "IGNIS iO から IGNIS への遷移バナー"
     }
   ]
 }

@@ -27,10 +27,146 @@
   .cpb-brand-page .sp-only a:hover {
     color: #000;
   }
+  .cpb-brand-page {
+    font-family: "ヒラギノ角ゴシック", "Hiragino Sans", "メイリオ", Meiryo, sans-serif;
+  }
+  .c-heading {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .c-heading__main {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .c-heading__sub {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0.25rem 0 0;
+    line-height: 1.5;
+  }
+  .ignis-io-bridge {
+    margin-top: 4rem;
+    padding: 3.5rem 1.5rem;
+    background: #f5f4ef;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .ignis-io-bridge__inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .ignis-io-bridge__header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: #7d766d;
+  }
+  .ignis-io-bridge__title {
+    margin: 0;
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 0.38em;
+    text-indent: 0.38em;
+  }
+  .ignis-io-bridge__catchcopy {
+    margin: 1rem 0 0;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    letter-spacing: 0.16em;
+  }
+  .ignis-io-bridge__body {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+  .ignis-io-bridge__image-wrap {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .ignis-io-bridge__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+  .ignis-io-bridge__content {
+    text-align: center;
+    color: #6f685f;
+  }
+  .ignis-io-bridge__lead {
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 2.1;
+    letter-spacing: 0.08em;
+  }
+  .ignis-io-bridge__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16rem;
+    margin-top: 2rem;
+    padding: 1.1rem 1.75rem;
+    border: 1px solid #b9b1a7;
+    color: #898177;
+    background: transparent;
+    font-size: 1.3rem;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .ignis-io-bridge__button:hover {
+    background: rgba(255, 255, 255, 0.72);
+    border-color: #9c9388;
+    color: #6f685f;
+  }
   @media screen and (min-width: 750px) {
   .section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  .c-heading__main {
+    font-size: 1.75rem;
+    letter-spacing: 0.2em;
+  }
+  .c-heading__sub {
+    font-size: 0.9375rem;
+  }
+  .ignis-io-bridge {
+    margin-top: 5.5rem;
+    padding: 5rem 4rem 5.25rem;
+  }
+  .ignis-io-bridge__header {
+    margin-bottom: 4rem;
+  }
+  .ignis-io-bridge__catchcopy {
+    font-size: 1rem;
+  }
+  .ignis-io-bridge__body {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5.5rem;
+  }
+  .ignis-io-bridge__image-wrap {
+    justify-self: end;
+    margin: 0;
+  }
+  .ignis-io-bridge__content {
+    text-align: left;
+    justify-self: start;
+    max-width: 420px;
+  }
+  .ignis-io-bridge__lead {
+    font-size: 1.6rem;
+  }
+  .ignis-io-bridge__button {
+    font-size: 1.6rem;
   }
   }
 {%- endstyle -%}
@@ -233,6 +369,7 @@
         {% render 'mask-arch' %}
       {%- endif -%}
 
+      {% render 'sp-navigation-ignis' %}
     </div>
     <!-- IGNIS商品一覧ここまで -->
   {% else %}
@@ -240,7 +377,10 @@
     <div class="page-width">
       {%- if section.settings.new_arrival_collection != blank -%}
       <div class="cpb-items tw-my-10">
-        <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">NEW ARRIVALS</h3>
+        <div class="c-heading">
+          <h2 class="c-heading__main">New Items & Colors</h2>
+          <p class="c-heading__sub">新商品・新色情報</p>
+        </div>
         <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <ul
             id="Slider-{{ section.id }}-new-arrival"
@@ -251,15 +391,12 @@
             {%- for product in section.settings.new_arrival_collection.products limit: section.settings.products_to_show -%}
               <li
                 id="Slide-{{ section.id }}-new-arrival-{{ forloop.index }}"
-                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.ranking %} ranking-item{% endif %}"
+                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {% if section.settings.ranking %}
-                  <span class="rank">{{ forloop.index }}</span>
-                {% endif %}
                 {% render 'card-product',
                   card_product: product,
                   media_aspect_ratio: section.settings.image_ratio,
@@ -307,7 +444,10 @@
       {%- endif -%}
       {%- if section.settings.ranking_collection != blank -%}
       <div class="cpb-items tw-my-10">
-        <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">RANKING</h3>
+        <div class="c-heading">
+          <h2 class="c-heading__main">RANKING</h2>
+          <p class="c-heading__sub">ランキング</p>
+        </div>
         <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <ul
             id="Slider-{{ section.id }}-ranking"
@@ -374,7 +514,10 @@
       {%- endif -%}
 
       <div class="cpb-contents-nav tw-my-10">
-        <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">CATEGORY</h3>
+        <div class="c-heading">
+          <h2 class="c-heading__main">CATEGORY</h2>
+          <p class="c-heading__sub">カテゴリー</p>
+        </div>
         <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4">
           <a class="tw-no-underline tw-text-current" href="{{ routes.collections_url }}/ignis?filter.p.tag=クレンジング#Collection">
             <img class="tw-w-full tw-h-auto md:tw-hidden" src="{{ 'ignis_category_cleansing_tate.jpg' | file_url }}" alt="クレンジング" width="600" height="900">
@@ -411,34 +554,48 @@
         </div>
       </div>
 
-      <div class="tw-my-3">
-        <a
-          class="tw-text-white tw-bg-black tw-font-bold tw-block tw-text-center tw-p-5 tw-no-underline"
-          href="https://www.albion.co.jp/counseling/"
-          target="_blank"
-          rel="noopener"
-          >オンラインカウンセリング
+      <div class="tw-my-3 tw-flex tw-justify-center">
+        <a href="https://www.albion.co.jp/counseling/" target="_blank" rel="noopener" class="tw-block tw-w-1/2">
+          <img
+            class="tw-w-full tw-h-auto"
+            src="{{ 'ignis_counseling_banner.jpg' | file_url }}"
+            alt="ONLINE COUNSELING オンラインカウンセリング"
+            width="1200"
+            height="240"
+            loading="lazy"
+          >
         </a>
       </div>
 
-      <div class="tw-my-12">
+      <div class="ignis-io-bridge">
         {% assign ignis_io_url = section.settings.ignis_io_all_url | default: '/collections/ignis-io' %}
-        <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">IGNIS iO</h3>
-        <a class="tw-block tw-mb-4" href="{{ ignis_io_url }}">
-          <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_top.jpg' | file_url }}" alt="IGNIS iO" width="1600" height="800">
-        </a>
-        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-3">
-          <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_skincare.png' | file_url }}" alt="IGNIS iO Skincare" width="600" height="600">
-          <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_uv.png' | file_url }}" alt="IGNIS iO UV" width="600" height="600">
-          <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_bodycare.png' | file_url }}" alt="IGNIS iO Bodycare" width="600" height="600">
-          <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_harecare.png' | file_url }}" alt="IGNIS iO Harecare" width="600" height="600">
-          <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_fragrance.png' | file_url }}" alt="IGNIS iO Fragrance" width="600" height="600">
-          <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_handcare.png' | file_url }}" alt="IGNIS iO Handcare" width="600" height="600">
-        </div>
-        <div class="tw-mt-6">
-          <a class="tw-text-white tw-bg-black tw-font-bold tw-block tw-text-center tw-p-4 tw-no-underline" href="{{ ignis_io_url }}">
-            商品一覧を見る
-          </a>
+        <div class="ignis-io-bridge__inner">
+          <div class="ignis-io-bridge__header">
+            <h2 class="ignis-io-bridge__title">IGNIS iO</h2>
+            <p class="ignis-io-bridge__catchcopy">今日はどれでキレイになろう</p>
+          </div>
+          <div class="ignis-io-bridge__body">
+            <div class="ignis-io-bridge__image-wrap">
+            <img
+              class="ignis-io-bridge__image"
+              src="{{ 'ignis_io_top.jpg' | file_url }}"
+              alt="IGNIS iO"
+              width="600"
+              height="600"
+              loading="lazy"
+            >
+            </div>
+            <div class="ignis-io-bridge__content">
+              <p class="ignis-io-bridge__lead">
+                さあ、好きなものを好きなだけ。<br>
+                IGNIS iO はわたしのスタイルにあわせて<br>
+                自由に選べるアラカルトコスメです。
+              </p>
+              <a class="ignis-io-bridge__button" href="{{ ignis_io_url }}">
+                イグニス イオはこちらへ
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -7,7 +7,10 @@
 {% endcomment %}
 {% if must_items_collection != blank and must_items_collection.products.size > 0 %}
 <div class="albion-must-items tw-my-10 tw-bg-white tw-py-6">
-  <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">マストアイテムを見る</h3>
+  <div class="c-heading">
+    <h2 class="c-heading__main">Must Items</h2>
+    <p class="c-heading__sub">マストアイテムを見る</p>
+  </div>
   <div class="page-width">
     <ul
       class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--2-col-tablet-down grid--5-col-desktop tw-list-none tw-pl-0 tw-m-0 tw-gap-4"
