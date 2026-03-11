@@ -6,6 +6,8 @@
     "test": "jest",
     "upload:files": "node scripts/shopify-upload-files.mjs",
     "upload:files:dry": "node scripts/shopify-upload-files.mjs --dry-run",
+    "upload:nintei": "node scripts/shopify-upload-files.mjs --config=scripts/nintei-logo-upload-config.json",
+    "upload:nintei:dry": "node scripts/shopify-upload-files.mjs --config=scripts/nintei-logo-upload-config.json --dry-run",
     "albion:upload": "node scripts/shopify-upload-files.mjs --config=scripts/albion-upload-config.json",
     "albion:upload:dry": "node scripts/shopify-upload-files.mjs --config=scripts/albion-upload-config.json --dry-run"
   },

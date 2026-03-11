@@ -313,15 +313,12 @@
             {%- for product in section.settings.new_arrival_collection.products limit: section.settings.products_to_show -%}
               <li
                 id="Slide-{{ section.id }}-new-arrival-{{ forloop.index }}"
-                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.ranking %} ranking-item{% endif %}"
+                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {% if section.settings.ranking %}
-                  <span class="rank">{{ forloop.index }}</span>
-                {% endif %}
                 {% render 'card-product',
                   card_product: product,
                   media_aspect_ratio: section.settings.image_ratio,
