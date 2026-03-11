@@ -5,9 +5,23 @@
 {% assign series = collection.metafields.custom.pickup_series %}
 
 {%- style -%}
+  .ignis-io-default-logo {
+    display: none;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .ignis-io-default-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
   @media screen and (max-width: 749px) {
     .collection-hero--with-image .collection-hero__inner {
       padding-bottom: calc({{settings.media_shadow_vertical_offset | at_least: 0}}px + 2rem);
+    }
+
+    .ignis-io-default-logo {
+      max-width: 220px;
     }
   }
 {%- endstyle -%}
@@ -111,10 +125,43 @@
       class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
     >
       <div class="collection-hero__text-wrapper">
-        <h1 class="collection-hero__title">
+        <h1 class="collection-hero__title"{% if collection.handle == 'ignis-io' %} data-ignis-io-default-title{% endif %}>
           <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
           {{- collection.title | escape -}}
         </h1>
+        {% if collection.handle == 'ignis-io' %}
+          <div class="ignis-io-default-logo" data-ignis-io-default-logo>
+            <a href="{{ routes.collections_url }}/ignis-io" class="tw-block tw-no-underline">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/ignis-io.svg?v=1700812326"
+                alt="IGNIS iO"
+                width="300"
+                height="90"
+                loading="eager"
+              >
+            </a>
+          </div>
+          <script>
+            (function() {
+              function toggleIgnisIoDefaultBannerTitle() {
+                var params = new URLSearchParams(window.location.search);
+                if (params.get('view') !== 'all') return;
+
+                var title = document.querySelector('[data-ignis-io-default-title]');
+                var logo = document.querySelector('[data-ignis-io-default-logo]');
+
+                if (title) title.style.display = 'none';
+                if (logo) logo.style.display = 'block';
+              }
+
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', toggleIgnisIoDefaultBannerTitle);
+              } else {
+                toggleIgnisIoDefaultBannerTitle();
+              }
+            })();
+          </script>
+        {% endif %}
 
         {%- if section.settings.show_collection_description -%}
           <div class="collection-hero__description rte">{{ collection.description }}</div>

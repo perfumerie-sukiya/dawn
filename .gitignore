@@ -119,3 +119,6 @@ dist
 
 .DS_Store
 .shopify
+
+# playwright-cli generated files
+.playwright-cli/

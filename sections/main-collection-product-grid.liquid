@@ -24,6 +24,16 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .section-{{ section.id }}-padding .c-heading__main {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+  }
+  .section-{{ section.id }}-padding .c-heading__sub {
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+  }
 {%- endstyle -%}
 
 <div id="Collection" class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
@@ -181,6 +191,16 @@
   {% if section.settings.image_shape == 'arch' %}
     {% render 'mask-arch' %}
   {%- endif -%}
+
+  {% if collection.handle == 'ignis-io' %}
+    <div class="page-width tw-mb-10" style="margin-top: 30px;">
+      <div class="c-heading tw-mb-6">
+        <h2 class="c-heading__main tw-text-center tw-text-xl tw-font-normal tw-tracking-[0.15em] tw-m-0">CATEGORY</h2>
+        <p class="c-heading__sub tw-text-center tw-text-sm tw-mt-2 tw-mb-0">カテゴリー</p>
+      </div>
+      {% render 'ignis-io-nav-items', layout: 'category' %}
+    </div>
+  {% endif %}
 </div>
 
 {% schema %}

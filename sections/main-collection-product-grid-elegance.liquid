@@ -95,6 +95,32 @@
   endif
 -%}
 
+{% comment %}
+  filter.p.tag パラメータが Shopify の Storefront Filter API で認識されない場合、
+  旧形式の URL (/collections/elegance/tag-name) にリダイレクトする
+{% endcomment %}
+{% unless filter_tag %}
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var tagParam = params.get('filter.p.tag');
+      if (tagParam) {
+        var newUrl = window.location.pathname + '/' + encodeURIComponent(tagParam);
+        var viewParam = params.get('view');
+        if (viewParam) {
+          newUrl += '?view=' + encodeURIComponent(viewParam);
+        }
+
+        if (window.location.hash) {
+          newUrl += window.location.hash;
+        }
+
+        window.location.replace(newUrl);
+      }
+    })();
+  </script>
+{% endunless %}
+
 <!-- Elegance -->
 <div class="item-list cpb-brand-page">
   {% if filter_tag %}
@@ -102,7 +128,7 @@
     <div class="page-width tw-my-5">
       <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
     </div>
-    <div class="section-{{ section.id }}-padding">
+    <div id="Collection" class="section-{{ section.id }}-padding">
       {%- paginate collection.products by section.settings.products_per_page -%}
         {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
         {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -472,19 +498,11 @@
               </div>
             </div>
 
-            <div class="tw-grid tw-grid-cols-2 tw-gap-4">
-              <div>
-                <p class="elegance-group-title">SKINCARE</p>
-                <a class="tw-text-center tw-no-underline tw-text-current tw-block" href="{{ routes.collections_url }}/elegance?filter.p.tag=スキンケア#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeehyj.png' | file_url }}" alt="SKINCARE" width="280" height="220">
-                </a>
-              </div>
-              <div>
-                <p class="elegance-group-title">WRAPPING</p>
-                <a class="tw-text-center tw-no-underline tw-text-current tw-block" href="{{ routes.collections_url }}/elegance?filter.p.tag=ラッピング#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_exzm.png' | file_url }}" alt="WRAPPING" width="280" height="220">
-                </a>
-              </div>
+            <div>
+              <p class="elegance-group-title">SKINCARE</p>
+              <a class="tw-text-center tw-no-underline tw-text-current tw-block" href="{{ routes.collections_url }}/elegance?filter.p.tag=スキンケア#Collection">
+                <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeehyj.png' | file_url }}" alt="SKINCARE" width="280" height="220">
+              </a>
             </div>
           </div>
         </div>

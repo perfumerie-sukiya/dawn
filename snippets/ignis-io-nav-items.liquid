@@ -1,0 +1,16 @@
+{% comment %}
+  IGNIS iO カテゴリーナビ（商品一覧下のカテゴリー一覧）
+  layout: 'category' = 商品一覧下のカテゴリー一覧（Albion/Elegance風）
+{% endcomment %}
+{% assign ignis_io_collection_url = routes.collections_url | append: '/ignis-io' %}
+
+{% if layout == 'category' %}
+  <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4 tw-max-w-[800px] tw-mx-auto">
+    <a class="tw-flex tw-items-center tw-justify-center tw-py-4 tw-px-4 tw-border tw-border-gray-200 tw-no-underline tw-text-black hover:tw-bg-gray-50 tw-text-base tw-tracking-widest" href="{{ ignis_io_collection_url }}?filter.p.tag=スキンケア">スキンケア</a>
+    <a class="tw-flex tw-items-center tw-justify-center tw-py-4 tw-px-4 tw-border tw-border-gray-200 tw-no-underline tw-text-black hover:tw-bg-gray-50 tw-text-base tw-tracking-widest" href="{{ ignis_io_collection_url }}?filter.p.tag=サンケア">UV</a>
+    <a class="tw-flex tw-items-center tw-justify-center tw-py-4 tw-px-4 tw-border tw-border-gray-200 tw-no-underline tw-text-black hover:tw-bg-gray-50 tw-text-base tw-tracking-widest" href="{{ ignis_io_collection_url }}?filter.p.tag=ボディケア">ボディケア</a>
+    <a class="tw-flex tw-items-center tw-justify-center tw-py-4 tw-px-4 tw-border tw-border-gray-200 tw-no-underline tw-text-black hover:tw-bg-gray-50 tw-text-base tw-tracking-widest" href="{{ ignis_io_collection_url }}?filter.p.tag=ヘアケア">ヘアケア</a>
+    <a class="tw-flex tw-items-center tw-justify-center tw-py-4 tw-px-4 tw-border tw-border-gray-200 tw-no-underline tw-text-black hover:tw-bg-gray-50 tw-text-base tw-tracking-widest" href="{{ ignis_io_collection_url }}?filter.p.tag=フレグランス">フレグランス</a>
+    <a class="tw-flex tw-items-center tw-justify-center tw-py-4 tw-px-4 tw-border tw-border-gray-200 tw-no-underline tw-text-black hover:tw-bg-gray-50 tw-text-base tw-tracking-widest" href="{{ ignis_io_collection_url }}?filter.p.tag=ハンドケア">ハンドケア</a>
+  </div>
+{% endif %}

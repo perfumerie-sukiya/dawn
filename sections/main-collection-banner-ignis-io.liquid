@@ -8,29 +8,39 @@
   .cpb-header a:hover {
     color: #000;
   }
+  .ignis-io-header__logo-link {
+    display: inline-block;
+    max-width: 300px;
+  }
+  .ignis-io-header__logo {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
   @media screen and (max-width: 749px) {
     .collection-hero--with-image .collection-hero__inner {
       padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+    }
+    .ignis-io-header__logo-link {
+      max-width: 220px;
     }
   }
 {%- endstyle -%}
 
 <!-- IGNIS iOヘッダーここから -->
 <div class="cpb-header">
-  <h1 class="brand-logo tw-relative tw-mt-4 md:tw-max-w-[900px] md:tw-mx-auto tw-text-center">
-    <a href="{{ routes.collections_url }}/ignis-io" class="tw-text-2xl md:tw-text-3xl tw-font-normal tw-tracking-[0.2em] tw-no-underline tw-text-black">
-      IGNIS iO
+  <h1 class="brand-logo tw-mt-4 md:tw-max-w-[900px] md:tw-mx-auto tw-text-center">
+    <a href="{{ routes.collections_url }}/ignis-io" class="ignis-io-header__logo-link tw-no-underline" aria-label="IGNIS iO">
+      <img
+        class="ignis-io-header__logo"
+        src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/ignis-io.svg?v=1700812326"
+        alt="IGNIS iO"
+        width="300"
+        height="90"
+        loading="eager"
+      >
     </a>
-    <img
-      class="tw-absolute tw-top-1/2 -tw-translate-y-1/2 tw-w-[60px] md:tw-w-[100px] tw-right-5 md:tw-right-1/4"
-      src="{{ 'ignis_nintei_logo_white.jpg' | file_url }}"
-      alt="ブランド認定正規品取扱店舗 IGNIS iO"
-      width="175"
-      height="150"
-    >
   </h1>
-
-  {% render 'header-navigation-ignis-io' %}
 </div>
 <!-- IGNIS iOヘッダーここまで -->
 

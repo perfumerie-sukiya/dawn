@@ -39,6 +39,61 @@
     margin: 0.25rem 0 0;
     line-height: 1.5;
   }
+  .ignis-io-category-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 15px;
+  }
+  .ignis-io-category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .ignis-io-category-card__image {
+    display: block;
+  }
+  .ignis-io-category-card__name {
+    margin: 0;
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+  }
+  .ignis-io-action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.4rem;
+    padding: 0.875rem 1.5rem;
+    border: 1px solid #000;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.6rem;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .ignis-io-action-button:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  .ignis-io-all-products-link {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .ignis-io-list-logo {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .ignis-io-list-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .ignis-io-transition-banner {
+    max-width: 300px;
+    margin: 0 auto;
+  }
   @media screen and (min-width: 750px) {
   .section-{{ section.id }}-padding {
   padding-top: {{ section.settings.padding_top }}px;
@@ -78,10 +133,25 @@
 
 <!-- IGNIS iO -->
 <div class="item-list cpb-brand-page">
-  {% if filter_tag %}
-    <!-- IGNIS iO 商品一覧ここから -->
-    <div class="page-width tw-my-5">
+  <!-- IGNIS iO 商品一覧ここから -->
+  <div
+    class="{% unless filter_tag %}tw-hidden {% endunless %}ignis-io-product-grid"
+    data-ignis-io-product-grid
+    id="Collection"
+  >
+    <div class="page-width tw-my-5{% unless filter_tag %} tw-hidden{% endunless %}" data-ignis-io-filter-heading>
       <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
+    </div>
+    <div class="page-width tw-my-5 tw-hidden" data-ignis-io-all-heading>
+      <div class="ignis-io-list-logo">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/ignis-io.svg?v=1700812326"
+          alt="IGNIS iO"
+          width="300"
+          height="90"
+          loading="eager"
+        >
+      </div>
     </div>
     <div class="section-{{ section.id }}-padding">
       {%- paginate collection.products by section.settings.products_per_page -%}
@@ -248,58 +318,93 @@
         {% render 'mask-arch' %}
       {%- endif -%}
 
-      {% render 'sp-navigation-ignis-io' %}
-    </div>
-    <!-- IGNIS iO 商品一覧ここまで -->
-  {% else %}
-    <!-- IGNIS iO ブランドトップ -->
-    <div class="page-width">
-      <div class="tw-my-10">
-        <div class="c-heading">
-          <h2 class="c-heading__main">IGNIS iO</h2>
-          <p class="c-heading__sub">イグニス イオ</p>
+      <div class="page-width tw-mb-10" style="margin-top: 30px;">
+        <div class="c-heading tw-mb-6">
+          <h2 class="c-heading__main tw-text-center tw-text-xl tw-font-normal tw-tracking-[0.15em] tw-m-0">CATEGORY</h2>
+          <p class="c-heading__sub tw-text-center tw-text-sm tw-mt-2 tw-mb-0">カテゴリー</p>
         </div>
-        <a class="tw-block tw-mb-6" href="{{ ignis_io_collection_url }}">
-          <img
-            class="tw-w-full tw-h-auto"
-            src="{{ 'ignis_io_top.jpg' | file_url }}"
-            alt="IGNIS iO"
-            width="1600"
-            height="800"
-            loading="eager"
-          >
-        </a>
+        {% render 'ignis-io-nav-items', layout: 'category' %}
       </div>
+    </div>
+  </div>
+  <!-- IGNIS iO 商品一覧ここまで -->
+  {% unless filter_tag %}
+    <script>
+      (function() {
+        function toggleIgnisIoView() {
+          var params = new URLSearchParams(window.location.search);
+          if (params.get('view') !== 'all') return;
 
+          var productGrid = document.querySelector('[data-ignis-io-product-grid]');
+          var brandTop = document.querySelector('[data-ignis-io-brand-top]');
+          var allHeading = document.querySelector('[data-ignis-io-all-heading]');
+          var filterHeading = document.querySelector('[data-ignis-io-filter-heading]');
+
+          if (productGrid) productGrid.classList.remove('tw-hidden');
+          if (brandTop) brandTop.classList.add('tw-hidden');
+          if (allHeading) allHeading.classList.remove('tw-hidden');
+          if (filterHeading) filterHeading.classList.add('tw-hidden');
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', toggleIgnisIoView);
+        } else {
+          toggleIgnisIoView();
+        }
+      })();
+    </script>
+    <!-- IGNIS iO ブランドトップ -->
+    <div class="page-width" data-ignis-io-brand-top>
       <div class="cpb-contents-nav tw-my-10">
         <div class="c-heading">
           <h2 class="c-heading__main">PRODUCT</h2>
           <p class="c-heading__sub">商品カテゴリー</p>
         </div>
-        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
-          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=skincare#Collection">
-            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_skincare.png' | file_url }}" alt="Skincare" width="600" height="600" loading="lazy">
-          </a>
-          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=UV#Collection">
-            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_uv.png' | file_url }}" alt="UV" width="600" height="600" loading="lazy">
-          </a>
-          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=bodycare#Collection">
-            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_bodycare.png' | file_url }}" alt="Bodycare" width="600" height="600" loading="lazy">
-          </a>
-          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=harecare#Collection">
-            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_harecare.png' | file_url }}" alt="Harecare" width="600" height="600" loading="lazy">
-          </a>
-          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=fragrance#Collection">
-            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_fragrance.png' | file_url }}" alt="Fragrance" width="600" height="600" loading="lazy">
-          </a>
-          <a class="tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=handcare#Collection">
-            <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_handcare.png' | file_url }}" alt="Handcare" width="600" height="600" loading="lazy">
-          </a>
+        <div class="ignis-io-category-grid tw-grid tw-grid-cols-2 md:tw-grid-cols-3">
+          <div class="ignis-io-category-card">
+            <a class="ignis-io-category-card__image tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=スキンケア">
+              <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_skincare.png' | file_url }}" alt="スキンケア" width="600" height="600" loading="lazy">
+            </a>
+            <p class="ignis-io-category-card__name">スキンケア</p>
+          </div>
+          <div class="ignis-io-category-card">
+            <a class="ignis-io-category-card__image tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=サンケア">
+              <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_uv.png' | file_url }}" alt="UV" width="600" height="600" loading="lazy">
+            </a>
+            <p class="ignis-io-category-card__name">UV</p>
+          </div>
+          <div class="ignis-io-category-card">
+            <a class="ignis-io-category-card__image tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=ボディケア">
+              <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_bodycare.png' | file_url }}" alt="ボディケア" width="600" height="600" loading="lazy">
+            </a>
+            <p class="ignis-io-category-card__name">ボディケア</p>
+          </div>
+          <div class="ignis-io-category-card">
+            <a class="ignis-io-category-card__image tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=ヘアケア">
+              <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_harecare.png' | file_url }}" alt="ヘアケア" width="600" height="600" loading="lazy">
+            </a>
+            <p class="ignis-io-category-card__name">ヘアケア</p>
+          </div>
+          <div class="ignis-io-category-card">
+            <a class="ignis-io-category-card__image tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=フレグランス">
+              <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_fragrance.png' | file_url }}" alt="フレグランス" width="600" height="600" loading="lazy">
+            </a>
+            <p class="ignis-io-category-card__name">フレグランス</p>
+          </div>
+          <div class="ignis-io-category-card">
+            <a class="ignis-io-category-card__image tw-no-underline tw-text-current" href="{{ ignis_io_collection_url }}?filter.p.tag=ハンドケア">
+              <img class="tw-w-full tw-h-auto" src="{{ 'ignis_io_handcare.png' | file_url }}" alt="ハンドケア" width="600" height="600" loading="lazy">
+            </a>
+            <p class="ignis-io-category-card__name">ハンドケア</p>
+          </div>
+        </div>
+        <div class="ignis-io-all-products-link">
+          <a class="ignis-io-action-button" href="{{ ignis_io_collection_url }}?view=all">全商品を見る</a>
         </div>
       </div>
 
       <div class="tw-my-6">
-        <a class="tw-block" href="{{ ignis_collection_url }}">
+        <a class="ignis-io-transition-banner tw-block" href="{{ ignis_collection_url }}">
           <img
             class="tw-w-full tw-h-auto"
             src="{{ 'ignis_transition_banner.jpg' | file_url }}"
@@ -325,7 +430,7 @@
       </div>
     </div>
     <!-- IGNIS iO ブランドトップここまで -->
-  {% endif %}
+  {% endunless %}
 </div>
 <!-- IGNIS iOここまで -->
 
