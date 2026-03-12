@@ -265,6 +265,32 @@
     </div>
     <!-- Albion商品一覧ここまで -->
   {% else %}
+    {% comment %}
+      Storefront Filtering API で filter.p.tag の値が解決できなかった場合、
+      /collections/{handle}/{tag} 形式のタグURLフィルタリングにフォールバックする。
+      参考: https://shopify.dev/docs/storefronts/themes/navigation-search/filtering/tag-filtering
+    {% endcomment %}
+    <script>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var filterTags = params.getAll('filter.p.tag');
+        if (filterTags.length > 0) {
+          var tags = [];
+          filterTags.forEach(function(ft) {
+            ft.split(',').forEach(function(t) {
+              var trimmed = t.trim();
+              if (trimmed) tags.push(trimmed);
+            });
+          });
+          if (tags.length > 0) {
+            var tagPath = tags.join('+');
+            var collectionUrl = {{ collection.url | json }};
+            var hash = window.location.hash || '#Collection';
+            window.location.replace(collectionUrl + '/' + tagPath + hash);
+          }
+        }
+      })();
+    </script>
     <!-- Albionブランドトップ -->
     <div class="page-width">
       {%- if section.settings.new_arrival_collection != blank -%}
