@@ -283,10 +283,9 @@
             });
           });
           if (tags.length > 0) {
-            var tagPath = tags.join('+');
             var collectionUrl = {{ collection.url | json }};
             var hash = window.location.hash || '#Collection';
-            window.location.replace(collectionUrl + '/' + tagPath + hash);
+            window.location.replace(collectionUrl + '/' + tags[0] + hash);
           }
         }
       })();
