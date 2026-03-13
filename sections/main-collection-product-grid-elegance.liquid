@@ -33,6 +33,7 @@
   }
   .elegance-products-title {
     color: #b3a06a;
+    font-size: 2.175rem;
     letter-spacing: 0.12em;
     font-weight: 500;
   }
@@ -54,14 +55,76 @@
     flex: 1;
   }
   .elegance-item-image {
+    display: block;
+    width: 100%;
     max-height: 88px;
     object-fit: contain;
   }
+  .elegance-item-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
   .elegance-item-label {
-    margin-top: 0.5rem;
+    margin: 0;
     font-size: 0.8rem;
     letter-spacing: 0.06em;
     color: #666;
+    text-align: center;
+  }
+  .brand-new-items {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .brand-new-items__grid {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+  }
+  .brand-new-items__grid--compact {
+    width: min(100%, calc(var(--brand-new-items-desktop-cols, 4) * 14rem + (var(--brand-new-items-desktop-cols, 4) - 1) * 1.5rem));
+  }
+  .brand-new-items__actions {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .brand-new-items__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 12rem;
+    min-height: 3rem;
+    padding: 0.75rem 1.75rem;
+    border: 1px solid #b3a06a;
+    color: #b3a06a;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+  }
+  .brand-new-items__link:hover {
+    background: #b3a06a;
+    color: #fff;
+  }
+  .brand-counseling-banner {
+    margin: 0.75rem auto;
+    display: flex;
+    justify-content: center;
+  }
+  .brand-counseling-banner__link {
+    display: block;
+    width: 50%;
+  }
+  .brand-counseling-banner__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  @media screen and (max-width: 749px) {
+    .brand-counseling-banner {
+      width: 100%;
+    }
+    .brand-counseling-banner__link {
+      width: 100%;
+    }
   }
   @media screen and (min-width: 750px) {
   .section-{{ section.id }}-padding {
@@ -93,6 +156,78 @@
   if filter_tag == ''
     assign filter_tag = current_tags | first
   endif
+
+  assign is_new_items_template = false
+  if template.suffix contains 'new-items'
+    assign is_new_items_template = true
+  endif
+
+  assign new_arrival_count = 0
+  if section.settings.new_arrival_collection != blank
+    assign new_arrival_count = section.settings.new_arrival_collection.products_count
+  endif
+
+  assign show_new_arrival_slider = false
+  if new_arrival_count > section.settings.products_to_show
+    assign show_new_arrival_slider = true
+  endif
+
+  assign show_new_arrival_view_all = false
+  if new_arrival_count >= 5 and section.settings.new_arrival_collection != blank
+    assign show_new_arrival_view_all = true
+  endif
+
+  assign new_arrival_mobile_cols = section.settings.columns_mobile | plus: 0
+  if new_arrival_count > 0 and new_arrival_count < new_arrival_mobile_cols
+    assign new_arrival_mobile_cols = new_arrival_count
+  endif
+  if new_arrival_mobile_cols == 0
+    assign new_arrival_mobile_cols = 1
+  endif
+
+  assign new_arrival_desktop_cols = section.settings.columns_desktop
+  if new_arrival_count > 0 and new_arrival_count < new_arrival_desktop_cols
+    assign new_arrival_desktop_cols = new_arrival_count
+  endif
+  if new_arrival_desktop_cols == 0
+    assign new_arrival_desktop_cols = 1
+  endif
+
+  assign new_arrival_products_to_display = section.settings.products_to_show
+  if new_arrival_count > 0 and new_arrival_count < new_arrival_products_to_display
+    assign new_arrival_products_to_display = new_arrival_count
+  endif
+
+  assign ranking_count = 0
+  if section.settings.ranking_collection != blank
+    assign ranking_count = section.settings.ranking_collection.products_count
+  endif
+
+  assign show_ranking_slider = false
+  if ranking_count > section.settings.products_to_show
+    assign show_ranking_slider = true
+  endif
+
+  assign ranking_mobile_cols = section.settings.columns_mobile | plus: 0
+  if ranking_count > 0 and ranking_count < ranking_mobile_cols
+    assign ranking_mobile_cols = ranking_count
+  endif
+  if ranking_mobile_cols == 0
+    assign ranking_mobile_cols = 1
+  endif
+
+  assign ranking_desktop_cols = section.settings.columns_desktop
+  if ranking_count > 0 and ranking_count < ranking_desktop_cols
+    assign ranking_desktop_cols = ranking_count
+  endif
+  if ranking_desktop_cols == 0
+    assign ranking_desktop_cols = 1
+  endif
+
+  assign ranking_products_to_display = section.settings.products_to_show
+  if ranking_count > 0 and ranking_count < ranking_products_to_display
+    assign ranking_products_to_display = ranking_count
+  endif
 -%}
 
 {% comment %}
@@ -123,10 +258,14 @@
 
 <!-- Elegance -->
 <div class="item-list cpb-brand-page">
-  {% if filter_tag %}
+  {% if filter_tag or is_new_items_template %}
     <!-- Elegance商品一覧ここから -->
     <div class="page-width tw-my-5">
-      <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
+      {% if filter_tag %}
+        <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
+      {% elsif is_new_items_template %}
+        <h3 class="tw-text-center tw-text-3xl tw-mb-8 elegance-products-title">New Items & Colors</h3>
+      {% endif %}
     </div>
     <div id="Collection" class="section-{{ section.id }}-padding">
       {%- paginate collection.products by section.settings.products_per_page -%}
@@ -302,18 +441,19 @@
     <div class="page-width">
       {%- if section.settings.new_arrival_collection != blank -%}
       <div class="cpb-items tw-my-10">
-        <h3 class="tw-text-center tw-text-3xl tw-mb-8 elegance-products-title">NEW ARRIVALS</h3>
-        <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <h3 class="tw-text-center tw-text-3xl tw-mb-8 elegance-products-title">New Items & Colors</h3>
+        <slider-component class="brand-new-items slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_new_arrival_slider == false %} page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <ul
             id="Slider-{{ section.id }}-new-arrival"
-            class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.new_arrival_collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+            class="brand-new-items__grid{% unless show_new_arrival_slider %} brand-new-items__grid--compact{% endunless %} grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ new_arrival_desktop_cols }}-col-desktop{% if section.settings.new_arrival_collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ new_arrival_mobile_cols }}-col-tablet-down{% endif %}{% if show_new_arrival_slider %} slider slider--tablet grid--peek{% endif %}"
             role="list"
             aria-label="{{ 'general.slider.name' | t }}"
+            style="--brand-new-items-desktop-cols: {{ new_arrival_desktop_cols }};"
           >
             {%- for product in section.settings.new_arrival_collection.products limit: section.settings.products_to_show -%}
               <li
                 id="Slide-{{ section.id }}-new-arrival-{{ forloop.index }}"
-                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="grid__item{% if show_new_arrival_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
@@ -333,7 +473,7 @@
               </li>
             {%- endfor -%}
           </ul>
-          {%- if show_mobile_slider or show_desktop_slider -%}
+          {%- if show_new_arrival_slider -%}
             <div class="slider-buttons no-js-hidden">
               <button
                 type="button"
@@ -348,7 +488,7 @@
                 <span class="slider-counter--current">1</span>
                 <span aria-hidden="true"> / </span>
                 <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-                <span class="slider-counter--total">{{ products_to_display }}</span>
+                <span class="slider-counter--total">{{ new_arrival_products_to_display }}</span>
               </div>
               <button
                 type="button"
@@ -362,22 +502,28 @@
             </div>
           {%- endif -%}
         </slider-component>
+        {% if show_new_arrival_view_all %}
+          <div class="brand-new-items__actions">
+            <a class="brand-new-items__link" href="{{ section.settings.new_arrival_collection.url }}">一覧をみる</a>
+          </div>
+        {% endif %}
       </div>
       {%- endif -%}
       {%- if section.settings.ranking_collection != blank -%}
       <div class="cpb-items tw-my-10">
         <h3 class="tw-text-center tw-text-3xl tw-mb-8 elegance-products-title">RANKING</h3>
-        <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        <slider-component class="brand-new-items slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_ranking_slider == false %} page-width{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <ul
             id="Slider-{{ section.id }}-ranking"
-            class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.ranking_collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+            class="brand-new-items__grid{% unless show_ranking_slider %} brand-new-items__grid--compact{% endunless %} grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ ranking_desktop_cols }}-col-desktop{% if section.settings.ranking_collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ ranking_mobile_cols }}-col-tablet-down{% endif %}{% if show_ranking_slider %} slider slider--tablet grid--peek{% endif %}"
             role="list"
             aria-label="{{ 'general.slider.name' | t }}"
+            style="--brand-new-items-desktop-cols: {{ ranking_desktop_cols }};"
           >
             {%- for product in section.settings.ranking_collection.products limit: section.settings.products_to_show -%}
               <li
                 id="Slide-{{ section.id }}-ranking-{{ forloop.index }}"
-                class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.ranking %} ranking-item{% endif %}"
+                class="grid__item{% if show_ranking_slider %} slider__slide{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}{% if section.settings.ranking %} ranking-item{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
@@ -400,7 +546,7 @@
               </li>
             {%- endfor -%}
           </ul>
-          {%- if show_mobile_slider or show_desktop_slider -%}
+          {%- if show_ranking_slider -%}
             <div class="slider-buttons no-js-hidden">
               <button
                 type="button"
@@ -415,7 +561,7 @@
                 <span class="slider-counter--current">1</span>
                 <span aria-hidden="true"> / </span>
                 <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-                <span class="slider-counter--total">{{ products_to_display }}</span>
+                <span class="slider-counter--total">{{ ranking_products_to_display }}</span>
               </div>
               <button
                 type="button"
@@ -440,20 +586,20 @@
             <div>
               <p class="elegance-group-title">POINT MAKEUP</p>
               <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4">
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=アイ#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeenqj21.png' | file_url }}" alt="EYE" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=アイ#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_eye.png' | file_url }}" alt="EYE" width="280" height="220">
                   <p class="elegance-item-label">EYE</p>
                 </a>
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=リップ#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeentv09.png' | file_url }}" alt="LIP" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=リップ#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_lip.png' | file_url }}" alt="LIP" width="280" height="220">
                   <p class="elegance-item-label">LIP</p>
                 </a>
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=フェイスカラー#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeenqq05.png' | file_url }}" alt="FACE COLOR" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=フェイスカラー#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_face-color.png' | file_url }}" alt="FACE COLOR" width="280" height="220">
                   <p class="elegance-item-label">FACE COLOR</p>
                 </a>
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=ネイル#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeenqp20.png' | file_url }}" alt="NAIL" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=ネイル#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_nail.png' | file_url }}" alt="NAIL" width="280" height="220">
                   <p class="elegance-item-label">NAIL</p>
                 </a>
               </div>
@@ -462,16 +608,16 @@
             <div>
               <p class="elegance-group-title">BASE MAKEUP</p>
               <div class="tw-grid tw-grid-cols-3 tw-gap-4">
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=メイクアップベース#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_makeup-base.png' | file_url }}" alt="MAKEUP BASE" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=メイクアップベース#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_makeup-base.png' | file_url }}" alt="MAKEUP BASE" width="280" height="220">
                   <p class="elegance-item-label">MAKEUP BASE</p>
                 </a>
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=ファンデーション#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeenpb01.png' | file_url }}" alt="FOUNDATION" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=ファンデーション#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_foundation.png' | file_url }}" alt="FOUNDATION" width="280" height="220">
                   <p class="elegance-item-label">FOUNDATION</p>
                 </a>
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=フェイスパウダー#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_eyzt.png' | file_url }}" alt="FACE POWDER" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=フェイスパウダー#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_face-powder.png' | file_url }}" alt="FACE POWDER" width="280" height="220">
                   <p class="elegance-item-label">FACE POWDER</p>
                 </a>
               </div>
@@ -480,16 +626,16 @@
             <div>
               <p class="elegance-group-title">TOOL</p>
               <div class="tw-grid tw-grid-cols-3 tw-gap-4">
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=リムーバー#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeennj05.png' | file_url }}" alt="REMOVER" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=リムーバー#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_remover.png' | file_url }}" alt="REMOVER" width="280" height="220">
                   <p class="elegance-item-label">REMOVER</p>
                 </a>
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=ブラシ#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeenqs10.png' | file_url }}" alt="BRUSH" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=ブラシ#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_brush.png' | file_url }}" alt="BRUSH" width="280" height="220">
                   <p class="elegance-item-label">BRUSH</p>
                 </a>
-                <a class="tw-text-center tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=スポンジ,パフ#Collection">
-                  <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeenjqp102.png' | file_url }}" alt="PUFF・SPONGE" width="280" height="220">
+                <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=スポンジ,パフ#Collection">
+                  <img class="elegance-item-image" src="{{ 'elegance_category_puff-sponge.png' | file_url }}" alt="PUFF・SPONGE" width="280" height="220">
                   <p class="elegance-item-label">PUFF・SPONGE</p>
                 </a>
               </div>
@@ -497,18 +643,19 @@
 
             <div>
               <p class="elegance-group-title">SKINCARE</p>
-              <a class="tw-text-center tw-no-underline tw-text-current tw-block" href="{{ routes.collections_url }}/elegance?filter.p.tag=スキンケア#Collection">
-                <img class="tw-w-full elegance-item-image" src="{{ 'elegance_category_aeehyj.png' | file_url }}" alt="SKINCARE" width="280" height="220">
+              <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ routes.collections_url }}/elegance?filter.p.tag=スキンケア#Collection">
+                <img class="elegance-item-image" src="{{ 'elegance_category_skincare.png' | file_url }}" alt="SKINCARE" width="280" height="220">
+                <p class="elegance-item-label">SKINCARE</p>
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="tw-my-3 tw-flex tw-justify-center">
-        <a href="https://www.albion.co.jp/counseling/" target="_blank" rel="noopener" class="tw-block tw-w-1/2">
+      <div class="brand-counseling-banner">
+        <a href="https://www.albion.co.jp/counseling/" target="_blank" rel="noopener" class="brand-counseling-banner__link">
           <img
-            class="tw-w-full tw-h-auto"
+            class="brand-counseling-banner__image"
             src="{{ 'elegance_counseling_banner.jpg' | file_url }}"
             alt="ONLINE COUNSELING オンラインカウンセリング"
             width="1200"

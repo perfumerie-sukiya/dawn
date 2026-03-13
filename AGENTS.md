@@ -14,6 +14,7 @@
 - `npm run watch` — rebuild on file changes.
 - `npm test` — run Jest test suite.
 - `shopify theme check` — lint Liquid/theme files via Theme Check.
+- Frontend changes must always be followed by `npm run build` before handing work back.
 
 ## Coding Style & Naming Conventions
 - Indentation: 4 spaces by default; 2 spaces for `.liquid`, `.js`, and `.html` (see `.editorconfig`).

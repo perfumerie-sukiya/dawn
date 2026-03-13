@@ -6,14 +6,20 @@
   section: 親セクション（card-product 用の設定を渡す）
 {% endcomment %}
 {% if must_items_collection != blank and must_items_collection.products.size > 0 %}
+{% liquid
+  assign must_items_count = must_items_collection.products.size
+  if must_items_count > 5
+    assign must_items_count = 5
+  endif
+%}
 <div class="albion-must-items tw-my-10 tw-bg-white tw-py-6">
   <div class="c-heading">
     <h2 class="c-heading__main">Must Items</h2>
     <p class="c-heading__sub">マストアイテムを見る</p>
   </div>
-  <div class="page-width">
+  <div class="page-width brand-new-items">
     <ul
-      class="grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--2-col-tablet-down grid--5-col-desktop tw-list-none tw-pl-0 tw-m-0 tw-gap-4"
+      class="brand-new-items__grid grid product-grid contains-card contains-card--product{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--2-col-tablet-down grid--5-col-desktop tw-list-none tw-pl-0 tw-m-0 tw-gap-4"
       role="list"
     >
       {%- for product in must_items_collection.products limit: 5 -%}

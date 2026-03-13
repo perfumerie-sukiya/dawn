@@ -8,6 +8,12 @@
   .cpb-header a:hover {
     color: #000;
   }
+  @media screen and (min-width: 750px) {
+    .cpb-header__nav {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
   @media screen and (max-width: 749px) {
   .collection-hero--with-image .collection-hero__inner {
   padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
@@ -30,7 +36,9 @@
     >
   </h1>
 
-  {% render 'header-navigation-albion' %}
+  <div class="cpb-header__nav">
+    {% render 'header-navigation-albion' %}
+  </div>
 </div>
 <!--  Albionヘッダーここまで  -->
 
@@ -65,4 +73,3 @@
   ]
 }
 {% endschema %}
-
