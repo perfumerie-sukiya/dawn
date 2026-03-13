@@ -15,6 +15,14 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .cart__note label {
+    letter-spacing: 0.04em;
+  }
+
+  .cart__note .field__input::placeholder {
+    opacity: 0.5;
+  }
 {%- endstyle -%}
 
 <div
@@ -32,7 +40,7 @@
             name="note"
             form="cart"
             id="Cart-note"
-            placeholder="{{ 'sections.cart.note' | t }}"
+            placeholder="{{ 'sections.cart.note_placeholder' | t }}"
           >{{ cart.note }}</textarea>
         </cart-note>
       {%- endif -%}
