@@ -20,38 +20,6 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
-        "slide_BdQtHa": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/6JAZZR_ZEN_banner_PC_e223785f-906f-4b21-88da-f548736fd9dd.jpg",
-            "image_sp": "shopify://shop_images/6JAZZR_ZEN_banner_SP_4cddf107-538a-4a81-900c-93677b93992b.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-zen-wear-stay-2026-2-16"
-          }
-        },
-        "slide_R7DQhX": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/25CD_online_boutique_KIMONOSAKURA_PC.jpg",
-            "image_sp": "shopify://shop_images/25CD_online_boutique_KIMONOSAKURA_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-kimono-sakura-water-cologne-2026-2-16"
-          }
-        },
-        "slide_VnUATj": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/25CD_online_boutique_KIMONO_HIKARI_MAI_PC.jpg",
-            "image_sp": "shopify://shop_images/25CD_online_boutique_KIMONO_HIKARI_MAI_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-kimono-hikari-water-cologne-2026-2-16"
-          }
-        },
-        "slide_qdLMNh": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/6JAZZT_UV_Confort_banner_PC.jpg",
-            "image_sp": "shopify://shop_images/6JAZZT_UV_Confort_banner_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-uv-comfort-airy-transparent-2026-2-16"
-          }
-        },
         "slide_3q7ahC": {
           "type": "slide",
           "settings": {
@@ -59,14 +27,28 @@
             "image_sp": "shopify://shop_images/6JBZMZ_HYDRA_banner_SP-26.jpg",
             "link": "https://online.sukiya.biz/products/decorte-hydra-clarity-medicated-brightening-essence-water-2026-3-16"
           }
+        },
+        "slide_BdQtHa": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JBZMX_DAYMIST_banner_PC-11.jpg",
+            "image_sp": "shopify://shop_images/6JBZMX_DAYMIST_banner_SP-11.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-comfort-day-mist-makeup-fix-2026-4-16"
+          }
+        },
+        "slide_R7DQhX": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JBZMY_PointMake_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JBZMY_PointMake_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-rouge-decorte-cream-glow-2026-4-16"
+          }
         }
       },
       "block_order": [
+        "slide_3q7ahC",
         "slide_BdQtHa",
-        "slide_R7DQhX",
-        "slide_VnUATj",
-        "slide_qdLMNh",
-        "slide_3q7ahC"
+        "slide_R7DQhX"
       ],
       "settings": {}
     },
