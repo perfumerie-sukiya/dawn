@@ -81,12 +81,15 @@
   </div>
 
 {% elsif layout == 'sp' %}
-  <ul class="tw-bg-white tw-text-gray-900 tw-mb-10 tw-p-0 tw-border tw-border-gray-200">
+  <ul class="tw-bg-white tw-text-gray-900 tw-mb-10 tw-p-0 tw-border-x tw-border-b tw-border-gray-200">
     {% comment %} スキンケア {% endcomment %}
-    <li class="tw-w-full tw-border-b tw-border-gray-200">
+    <li class="tw-w-full tw-border-t tw-border-gray-200">
       <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
         <span>スキンケア</span>
-        <i class="mdi mdi-plus"></i>
+        <span class="accordion-icon tw-text-black" data-accordion-icon>
+          <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+          <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+        </span>
       </div>
       <div class="panel tw-bg-gray-50 tw-text-gray-900">
         <a href="{{ albion_collection_url }}?filter.p.tag=クレンジング#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black"><span>クレンジング</span><i class="mdi mdi-chevron-right"></i></a>
@@ -104,10 +107,13 @@
       </div>
     </li>
     {% comment %} ベースメイク {% endcomment %}
-    <li class="tw-w-full tw-border-b tw-border-gray-200">
+    <li class="tw-w-full tw-border-t tw-border-gray-200">
       <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
         <span>ベースメイク</span>
-        <i class="mdi mdi-plus"></i>
+        <span class="accordion-icon tw-text-black" data-accordion-icon>
+          <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+          <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+        </span>
       </div>
       <div class="panel tw-bg-gray-50 tw-text-gray-900">
         <a href="{{ albion_collection_url }}?filter.p.tag=ファンデーション#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black"><span>ファンデーション</span><i class="mdi mdi-chevron-right"></i></a>
@@ -117,10 +123,13 @@
       </div>
     </li>
     {% comment %} ポイントメイク {% endcomment %}
-    <li class="tw-w-full tw-border-b tw-border-gray-200">
+    <li class="tw-w-full tw-border-t tw-border-gray-200">
       <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
         <span>ポイントメイク</span>
-        <i class="mdi mdi-plus"></i>
+        <span class="accordion-icon tw-text-black" data-accordion-icon>
+          <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+          <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+        </span>
       </div>
       <div class="panel tw-bg-gray-50 tw-text-gray-900">
         <a href="{{ albion_collection_url }}?filter.p.tag=アイメイク#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black"><span>アイメイク</span><i class="mdi mdi-chevron-right"></i></a>
@@ -132,10 +141,13 @@
       </div>
     </li>
     {% comment %} UV・ボディ・その他 {% endcomment %}
-    <li class="tw-w-full tw-border-b tw-border-gray-200">
+    <li class="tw-w-full tw-border-t tw-border-gray-200">
       <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
         <span>UV・ボディ・その他</span>
-        <i class="mdi mdi-plus"></i>
+        <span class="accordion-icon tw-text-black" data-accordion-icon>
+          <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+          <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+        </span>
       </div>
       <div class="panel tw-bg-gray-50 tw-text-gray-900">
         <a href="{{ albion_collection_url }}?filter.p.tag=UVケア#Collection" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-black"><span>UVケア</span><i class="mdi mdi-chevron-right"></i></a>
