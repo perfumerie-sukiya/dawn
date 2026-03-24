@@ -274,9 +274,6 @@
   endif
 
   assign new_arrival_desktop_cols = section.settings.columns_desktop
-  if new_arrival_count > 0 and new_arrival_count < new_arrival_desktop_cols
-    assign new_arrival_desktop_cols = new_arrival_count
-  endif
   if new_arrival_desktop_cols == 0
     assign new_arrival_desktop_cols = 1
   endif
