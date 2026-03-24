@@ -27,7 +27,7 @@
             "image_file": "ignis_4__IG_PC_1.jpg",
             "image_sp": "shopify://shop_images/ignis_4__IG_SP_1.jpg",
             "image_sp_file": "ignis_4__IG_SP_1.jpg",
-            "link": ""
+            "link": "shopify://collections/ignis-new-items"
           }
         },
         "slide_AJkpVf": {
@@ -37,7 +37,7 @@
             "image_file": "ignis_4__IG_PC_2.jpg",
             "image_sp": "shopify://shop_images/ignis_4__IG_SP_2.jpg",
             "image_sp_file": "ignis_4__IG_SP_2.jpg",
-            "link": ""
+            "link": "shopify://products/ignis-bright-fforia-massage-and-cleansing-cream-2026-4-1"
           }
         }
       },
@@ -67,11 +67,11 @@
         "padding_bottom": 36,
         "new_arrival_collection": "ignis-new-items",
         "ranking_collection": "",
+        "ignis_io_all_url": "/collections/ignis-io",
         "ranking": true,
         "products_to_show": 4,
         "enable_desktop_slider": true,
-        "swipe_on_mobile": true,
-        "ignis_io_all_url": "/collections/ignis-io"
+        "swipe_on_mobile": true
       }
     }
   },
