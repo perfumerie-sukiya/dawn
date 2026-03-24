@@ -31,6 +31,18 @@
     },
     "52d3f9a0-27f4-4529-991a-a9c1c1af2739": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement_FqhWXN": {
+          "type": "announcement",
+          "settings": {
+            "text": "アルビオン・イグニス・エレガンスお取り扱い4月1日スタート",
+            "link": "shopify://collections/albion"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_FqhWXN"
+      ],
       "settings": {
         "color_scheme": "",
         "show_line_separator": true,
