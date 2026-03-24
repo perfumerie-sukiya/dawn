@@ -224,14 +224,6 @@
 {%- endstyle -%}
 
 {%- liquid
-  assign products_to_display = section.settings.products_to_show
-
-  assign show_mobile_slider = false
-  assign show_mobile_slider = true
-
-  assign show_desktop_slider = false
-  assign show_desktop_slider = true
-
   # Determine selected tag from Storefront Filtering (filter.p.tag) または旧来の current_tags
   assign filter_tag = ''
   for filter in collection.filters
