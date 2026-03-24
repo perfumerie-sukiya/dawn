@@ -254,8 +254,8 @@ class MyDialog extends HTMLElement {
     }
 
     this.counselingResult.forEach((result) => {
-          result.classList.remove('active');
-        });
+      result.classList.remove('active');
+    });
 
     const resultIndex = this.getResultIndex(q1Value, q2Value, q3Value);
     this.currentResultIndex = resultIndex;
