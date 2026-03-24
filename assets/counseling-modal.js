@@ -2,6 +2,95 @@
  * Brand-agnostic counseling modal component
  * Uses data attributes for configuration to support multiple brands
  */
+const COUNSELING_APPROVAL_WINDOW_MS = 24 * 60 * 60 * 1000;
+
+function getCounselingStorageKey(scope) {
+  return scope ? `counseling:${scope}` : null;
+}
+
+function readCounselingApproval(scope) {
+  const storageKey = getCounselingStorageKey(scope);
+  if (!storageKey) return null;
+
+  const safeRemove = () => {
+    try {
+      window.localStorage.removeItem(storageKey);
+    } catch (_) {
+      // ignore storage access errors
+    }
+  };
+
+  try {
+    const rawValue = window.localStorage.getItem(storageKey);
+    if (!rawValue) return null;
+
+    const parsedValue = JSON.parse(rawValue);
+    if (!parsedValue || typeof parsedValue !== 'object') {
+      safeRemove();
+      return null;
+    }
+
+    if (typeof parsedValue.approvedAt !== 'number' || typeof parsedValue.expiresAt !== 'number') {
+      safeRemove();
+      return null;
+    }
+
+    if (parsedValue.expiresAt <= Date.now()) {
+      safeRemove();
+      return null;
+    }
+
+    return parsedValue;
+  } catch (error) {
+    return null;
+  }
+}
+
+function persistCounselingApproval(scope) {
+  const storageKey = getCounselingStorageKey(scope);
+  if (!storageKey) return;
+
+  const approvedAt = Date.now();
+  const expiresAt = approvedAt + COUNSELING_APPROVAL_WINDOW_MS;
+
+  try {
+    window.localStorage.setItem(
+      storageKey,
+      JSON.stringify({
+        approvedAt,
+        expiresAt,
+      })
+    );
+  } catch (error) {
+    console.error('Failed to persist counseling approval state.', error);
+  }
+}
+
+function hasValidCounselingApproval(scope) {
+  return Boolean(readCounselingApproval(scope));
+}
+
+function submitAssociatedProductForm(triggerButton) {
+  const productForm = triggerButton.closest('product-form');
+  const form = productForm ? productForm.querySelector('form') : null;
+  if (!form) return;
+
+  const originalType = triggerButton.getAttribute('type') || 'submit';
+  triggerButton.dataset.skipCounselingIntercept = '1';
+  triggerButton.setAttribute('type', 'submit');
+
+  if (typeof form.requestSubmit === 'function') {
+    form.requestSubmit(triggerButton);
+  } else {
+    triggerButton.click();
+  }
+
+  window.setTimeout(() => {
+    delete triggerButton.dataset.skipCounselingIntercept;
+    triggerButton.setAttribute('type', originalType);
+  }, 0);
+}
+
 class MyDialog extends HTMLElement {
   constructor() {
     super();
@@ -26,6 +115,8 @@ class MyDialog extends HTMLElement {
     this.nextPageDisableButton = this.querySelector('.next-page-disable');
     this.submitButtons = this.querySelectorAll('button[type="submit"]');
     this.brand = this.getAttribute('data-brand') || 'default';
+    this.counselingScope = this.getAttribute('data-counseling-scope') || '';
+    this.currentResultIndex = null;
   }
 
   connectedCallback() {
@@ -39,6 +130,9 @@ class MyDialog extends HTMLElement {
 
     this.submitButtons.forEach((submitButton) => {
       submitButton.addEventListener('click', () => {
+        if (this.isPurchasableResult(this.currentResultIndex)) {
+          persistCounselingApproval(this.counselingScope);
+        }
         this.dialog.close();
       });
     });
@@ -54,6 +148,10 @@ class MyDialog extends HTMLElement {
       btn.addEventListener('click', () => {
         this.pages.forEach((p, i) => p.classList.toggle('active', i === 0));
         this.activePageIndex = 0;
+        this.currentResultIndex = null;
+        this.counselingResult.forEach((result) => {
+          result.classList.remove('active');
+        });
         if (this.useCheckbox && this.checkboxes.length === 3) {
           this.checkboxes.forEach((cb) => { cb.checked = false; });
           this.checkNextButtonActive();
@@ -102,11 +200,10 @@ class MyDialog extends HTMLElement {
       }
       return;
     }
-    // Assuming all questions have 2 choices, each question must have at least 1 selected
-    // Support both old format (q1, q2, q3) and new format (q1-{section_id}, q2-{section_id}, q3-{section_id})
-    let radioGroup1 = Array.from(this.querySelectorAll('input[name^="q1"]')).some((radio) => radio.checked);
-    let radioGroup2 = Array.from(this.querySelectorAll('input[name^="q2"]')).some((radio) => radio.checked);
-    let radioGroup3 = Array.from(this.querySelectorAll('input[name^="q3"]')).some((radio) => radio.checked);
+
+    const radioGroup1 = Array.from(this.querySelectorAll('input[name^="q1"]')).some((radio) => radio.checked);
+    const radioGroup2 = Array.from(this.querySelectorAll('input[name^="q2"]')).some((radio) => radio.checked);
+    const radioGroup3 = Array.from(this.querySelectorAll('input[name^="q3"]')).some((radio) => radio.checked);
     if (radioGroup1 && radioGroup2 && radioGroup3) {
       if (this.nextPageDisableButton) {
         this.nextPageDisableButton.style.display = 'none';
@@ -140,7 +237,9 @@ class MyDialog extends HTMLElement {
   }
 
   updateSecondPage() {
-    let q1Value, q2Value, q3Value;
+    let q1Value;
+    let q2Value;
+    let q3Value;
 
     if (this.useCheckbox && this.checkboxes.length === 3) {
       q1Value = this.checkboxes[0].checked ? 1 : 0;
@@ -148,23 +247,34 @@ class MyDialog extends HTMLElement {
       q3Value = this.checkboxes[2].checked ? 1 : 0;
     } else {
       if (this.radioButtons.length < 6) return;
-      // Get radio button values: q1, q2, q3 (YES=1, NO=0)
-      // Radio buttons are ordered: q1_YES, q1_NO, q2_YES, q2_NO, q3_YES, q3_NO
       q1Value = this.radioButtons[0].checked ? 1 : this.radioButtons[1].checked ? 0 : null;
       q2Value = this.radioButtons[2].checked ? 1 : this.radioButtons[3].checked ? 0 : null;
       q3Value = this.radioButtons[4].checked ? 1 : this.radioButtons[5].checked ? 0 : null;
       if (q1Value === null || q2Value === null || q3Value === null) return;
     }
 
-    // Reset all results first
-    this.counselingResult.forEach((result) => result.classList.remove('active'));
+    this.counselingResult.forEach((result) => {
+      result.classList.remove('active');
+    });
 
-    // Brand-specific result logic
-    let resultIndex = this.getResultIndex(q1Value, q2Value, q3Value);
+    const resultIndex = this.getResultIndex(q1Value, q2Value, q3Value);
+    this.currentResultIndex = resultIndex;
 
     if (this.counselingResult[resultIndex]) {
       this.counselingResult[resultIndex].classList.add('active');
     }
+  }
+
+  isPurchasableResult(resultIndex) {
+    if (resultIndex === null || resultIndex === undefined) {
+      return false;
+    }
+
+    if (this.brand === 'albion') {
+      return resultIndex === 0 || resultIndex === 1;
+    }
+
+    return resultIndex === 0 || resultIndex === 1;
   }
 
   /**
@@ -172,66 +282,61 @@ class MyDialog extends HTMLElement {
    * Override this method or extend the logic for brand-specific behavior
    */
   getResultIndex(q1, q2, q3) {
-    // Default logic (Decorte style)
-    // Result 0: All NO (q1=0, q2=0, q3=0) - 購入前カウンセリングが完了しました
-    // Result 1: q1=NO and (q2=YES or q3=YES) - ご購入にあたっては商品情報をご確認ください
-    // Result 2: q1=YES - 販売できません
-
     if (this.brand === 'albion') {
-      // Albion: 否定文でチェック=YES（当てはまる）. ガイドライン判定ロジック
-      // Q1=YES,Q2=YES,Q3=YES -> 購入可 | Q1=YESかつ(Q2=NO or Q3=NO) -> 注意喚起 | それ以外 -> 購入不可
       if (q1 === 1 && q2 === 1 && q3 === 1) {
-        return 0; // アルゴリズム① 購入可
+        return 0;
       }
       if (q1 === 1 && (q2 === 0 || q3 === 0)) {
-        return 1; // アルゴリズム② 注意喚起
+        return 1;
       }
-      return 2; // アルゴリズム③ 購入不可
+      return 2;
+    }
+
+    if (q1 === 0 && q2 === 0 && q3 === 0) {
+      return 0;
+    } else if (q1 === 0 && (q2 === 1 || q3 === 1)) {
+      return 1;
     } else {
-      // Decorte/default logic
-      if (q1 === 0 && q2 === 0 && q3 === 0) {
-        return 0; // All NO
-      } else if (q1 === 0 && (q2 === 1 || q3 === 1)) {
-        return 1; // q1=NO and (q2=YES or q3=YES)
-      } else {
-        return 2; // q1=YES (cannot sell)
-      }
+      return 2;
     }
   }
 }
 
 customElements.define('my-dialog', MyDialog);
 
-/**
- * Initialize counseling modal triggers
- * Looks for buttons with data-counseling-trigger attribute
- */
 (function () {
   function initCounselingTriggers() {
     const triggerButtons = document.querySelectorAll('[data-counseling-trigger]');
-    const dialog = document.querySelector('my-dialog');
-
-    if (!dialog) return;
 
     triggerButtons.forEach((button) => {
-      // Remove existing listeners by cloning
-      const newButton = button.cloneNode(true);
-      button.parentNode.replaceChild(newButton, button);
+      if (button.dataset.counselingTriggerBound === '1') return;
+      button.dataset.counselingTriggerBound = '1';
 
-      newButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        dialog.openDialog();
+      button.addEventListener('click', (event) => {
+        if (button.dataset.skipCounselingIntercept === '1') return;
+        event.preventDefault();
+
+        const productForm = button.closest('product-form');
+        const dialog = productForm ? productForm.querySelector('my-dialog') : null;
+        const counselingScope = productForm ? productForm.dataset.counselingScope : '';
+
+        if (counselingScope && hasValidCounselingApproval(counselingScope)) {
+          submitAssociatedProductForm(button);
+          return;
+        }
+
+        if (dialog) {
+          dialog.openDialog();
+        }
       });
     });
   }
 
-  // Initialize on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initCounselingTriggers);
   } else {
     initCounselingTriggers();
   }
 
-  // Also try after a short delay for dynamically loaded content
-  setTimeout(initCounselingTriggers, 500);
+  window.setTimeout(initCounselingTriggers, 500);
 })();

@@ -1,10 +1,100 @@
-class MyDialog extends HTMLElement {
+const COUNSELING_APPROVAL_WINDOW_MS = 24 * 60 * 60 * 1000;
 
+function getCounselingStorageKey(scope) {
+  return scope ? `counseling:${scope}` : null;
+}
+
+function readCounselingApproval(scope) {
+  const storageKey = getCounselingStorageKey(scope);
+  if (!storageKey) return null;
+
+  const safeRemove = () => {
+    try {
+      window.localStorage.removeItem(storageKey);
+    } catch (_) {
+      // ignore storage access errors
+    }
+  };
+
+  try {
+    const rawValue = window.localStorage.getItem(storageKey);
+    if (!rawValue) return null;
+
+    const parsedValue = JSON.parse(rawValue);
+    if (!parsedValue || typeof parsedValue !== 'object') {
+      safeRemove();
+      return null;
+    }
+
+    if (typeof parsedValue.approvedAt !== 'number' || typeof parsedValue.expiresAt !== 'number') {
+      safeRemove();
+      return null;
+    }
+
+    if (parsedValue.expiresAt <= Date.now()) {
+      safeRemove();
+      return null;
+    }
+
+    return parsedValue;
+  } catch (error) {
+    return null;
+  }
+}
+
+function persistCounselingApproval(scope) {
+  const storageKey = getCounselingStorageKey(scope);
+  if (!storageKey) return;
+
+  const approvedAt = Date.now();
+  const expiresAt = approvedAt + COUNSELING_APPROVAL_WINDOW_MS;
+
+  try {
+    window.localStorage.setItem(
+      storageKey,
+      JSON.stringify({
+        approvedAt,
+        expiresAt,
+      })
+    );
+  } catch (error) {
+    console.error('Failed to persist counseling approval state.', error);
+  }
+}
+
+function hasValidCounselingApproval(scope) {
+  return Boolean(readCounselingApproval(scope));
+}
+
+function submitAssociatedProductForm(triggerButton) {
+  const productForm = triggerButton.closest('product-form');
+  const form = productForm ? productForm.querySelector('form') : null;
+  if (!form) return;
+
+  const originalType = triggerButton.getAttribute('type') || 'submit';
+  triggerButton.dataset.skipCounselingIntercept = '1';
+  triggerButton.setAttribute('type', 'submit');
+
+  if (typeof form.requestSubmit === 'function') {
+    form.requestSubmit(triggerButton);
+  } else {
+    triggerButton.click();
+  }
+
+  window.setTimeout(() => {
+    delete triggerButton.dataset.skipCounselingIntercept;
+    triggerButton.setAttribute('type', originalType);
+  }, 0);
+}
+
+class MyDialog extends HTMLElement {
   constructor() {
     super();
     this.activePageIndex = 0;
     this.dialog = this.querySelector('dialog');
-    dialogPolyfill.registerDialog(this.dialog);
+    if (this.dialog && typeof dialogPolyfill !== 'undefined') {
+      dialogPolyfill.registerDialog(this.dialog);
+    }
     this.pages = this.querySelectorAll('.page');
     this.closeButtons = this.querySelectorAll('.close-button');
     this.nextPageButtons = this.querySelectorAll('.next-page');
@@ -14,6 +104,8 @@ class MyDialog extends HTMLElement {
     this.submitButtons = this.querySelectorAll('button[type="submit"]');
     this.q1_1 = this.querySelector('.q1_1');
     this.retryCounselingButton = this.querySelector('.retry-counseling');
+    this.counselingScope = this.getAttribute('data-counseling-scope') || '';
+    this.currentResultIndex = null;
   }
 
   connectedCallback() {
@@ -23,19 +115,22 @@ class MyDialog extends HTMLElement {
       }
     });
 
-    this.submitButtons.forEach(submitButton => {
+    this.submitButtons.forEach((submitButton) => {
       submitButton.addEventListener('click', () => {
+        if (this.isPurchasableResult(this.currentResultIndex)) {
+          persistCounselingApproval(this.counselingScope);
+        }
         this.dialog.close();
       });
     });
 
-    this.closeButtons.forEach(closeButton => {
+    this.closeButtons.forEach((closeButton) => {
       closeButton.addEventListener('click', () => {
         this.dialog.close();
       });
     });
 
-    this.nextPageButtons.forEach(nextPageButton => {
+    this.nextPageButtons.forEach((nextPageButton) => {
       nextPageButton.addEventListener('click', () => {
         this.nextPage();
       });
@@ -43,7 +138,7 @@ class MyDialog extends HTMLElement {
 
     this.pages[this.activePageIndex].classList.add('active');
 
-    Array.from(this.radioButtons).forEach(radioButton => {
+    Array.from(this.radioButtons).forEach((radioButton) => {
       radioButton.addEventListener('change', () => {
         this.checkNextButtonActive();
       });
@@ -55,14 +150,12 @@ class MyDialog extends HTMLElement {
   }
 
   checkNextButtonActive() {
-    // Assuming all questions have 2 choices, each question must have at least 1 selected
-    let radioGroup1 = Array.from(this.querySelectorAll('input[name="q1"]')).some(radio => radio.checked);
-    let radioGroup2 = Array.from(this.querySelectorAll('input[name="q2"]')).some(radio => radio.checked);
-    let radioGroup3 = Array.from(this.querySelectorAll('input[name="q3"]')).some(radio => radio.checked);
+    const radioGroup1 = Array.from(this.querySelectorAll('input[name="q1"]')).some((radio) => radio.checked);
+    const radioGroup2 = Array.from(this.querySelectorAll('input[name="q2"]')).some((radio) => radio.checked);
+    const radioGroup3 = Array.from(this.querySelectorAll('input[name="q3"]')).some((radio) => radio.checked);
     if (this.radioButtons[0].checked) {
-      // q1_1のtw-hiddenクラスを削除
       this.q1_1.classList.remove('tw-hidden');
-      if(radioGroup1 && radioGroup2) {
+      if (radioGroup1 && radioGroup2) {
         this.nextPageDisableButtons[0].style.display = 'none';
         this.nextPageButtons[0].style.display = 'block';
       } else {
@@ -70,7 +163,7 @@ class MyDialog extends HTMLElement {
         this.nextPageDisableButtons[0].style.display = 'block';
       }
 
-      if(radioGroup1 && radioGroup2 && radioGroup3) {
+      if (radioGroup1 && radioGroup2 && radioGroup3) {
         this.nextPageDisableButtons[1].style.display = 'none';
         this.nextPageButtons[1].style.display = 'block';
       } else {
@@ -78,16 +171,15 @@ class MyDialog extends HTMLElement {
         this.nextPageDisableButtons[1].style.display = 'block';
       }
     } else {
-      // q1_1のtw-hiddenクラスを追加
       this.q1_1.classList.add('tw-hidden');
-      if(radioGroup1) {
+      if (radioGroup1) {
         this.nextPageDisableButtons[0].style.display = 'none';
         this.nextPageButtons[0].style.display = 'block';
       } else {
         this.nextPageButtons[0].style.display = 'none';
         this.nextPageDisableButtons[0].style.display = 'block';
       }
-      if(radioGroup1 && radioGroup3) {
+      if (radioGroup1 && radioGroup3) {
         this.nextPageDisableButtons[1].style.display = 'none';
         this.nextPageButtons[1].style.display = 'block';
       } else {
@@ -100,14 +192,19 @@ class MyDialog extends HTMLElement {
   retryCounseling() {
     this.pages[this.activePageIndex].classList.remove('active');
     this.activePageIndex = 0;
+    this.currentResultIndex = null;
     this.pages[this.activePageIndex].classList.add('active');
-    this.radioButtons.forEach(radioButton => {
+    this.radioButtons.forEach((radioButton) => {
       radioButton.checked = false;
     });
-    this.counselingResult.forEach(counselingResult => {
+    this.counselingResult.forEach((counselingResult) => {
       counselingResult.classList.remove('active');
     });
     this.checkNextButtonActive();
+  }
+
+  isPurchasableResult(resultIndex) {
+    return resultIndex === 0 || resultIndex === 2;
   }
 
   openDialog() {
@@ -115,51 +212,68 @@ class MyDialog extends HTMLElement {
   }
 
   nextPage() {
-    if(this.activePageIndex + 1 < this.pages.length) {
+    if (this.activePageIndex + 1 < this.pages.length) {
       this.pages[this.activePageIndex].classList.remove('active');
       this.activePageIndex++;
       this.pages[this.activePageIndex].classList.add('active');
     }
-    if(this.activePageIndex === 2) {
+    if (this.activePageIndex === 2) {
       this.updateLastPage();
     }
   }
 
   updateLastPage() {
-    if(this.radioButtons[1].checked && this.radioButtons[5].checked) {
-      this.counselingResult[0].classList.add('active');
-    } else if(this.radioButtons[0].checked && this.radioButtons[3].checked) {
-      this.counselingResult[1].classList.add('active');
+    this.counselingResult.forEach((counselingResult) => {
+      counselingResult.classList.remove('active');
+    });
+
+    if (this.radioButtons[1].checked && this.radioButtons[5].checked) {
+      this.currentResultIndex = 0;
+    } else if (this.radioButtons[0].checked && this.radioButtons[3].checked) {
+      this.currentResultIndex = 1;
     } else {
-      this.counselingResult[2].classList.add('active');
+      this.currentResultIndex = 2;
     }
+
+    this.counselingResult[this.currentResultIndex].classList.add('active');
   }
 }
 
 customElements.define('my-dialog', MyDialog);
 
-// TODO:: 以下の処理を適切な形にリファクタリング
-let counter = 0;
-const maxIterations = 10;
-const interval = setInterval(() => {
-  console.log(counter);
-  const allButtons = Array.from(document.querySelectorAll('button[type="button"]'));
-  allButtons.filter(button => button.id.includes('ProductSubmitButton')).forEach(targetedButton => {
-    targetedButton.addEventListener('click', () => {
-      document.querySelector('my-dialog').openDialog();
+(function () {
+  function initCounselingTriggers() {
+    const triggerButtons = document.querySelectorAll('[data-counseling-trigger]');
+
+    triggerButtons.forEach((button) => {
+      if (button.dataset.counselingTriggerBound === '1') return;
+      button.dataset.counselingTriggerBound = '1';
+
+      button.addEventListener('click', (event) => {
+        if (button.dataset.skipCounselingIntercept === '1') return;
+        event.preventDefault();
+
+        const productForm = button.closest('product-form');
+        const dialog = productForm ? productForm.querySelector('my-dialog') : null;
+        const counselingScope = productForm ? productForm.dataset.counselingScope : '';
+
+        if (counselingScope && hasValidCounselingApproval(counselingScope)) {
+          submitAssociatedProductForm(button);
+          return;
+        }
+
+        if (dialog) {
+          dialog.openDialog();
+        }
+      });
     });
-  });
-  if (allButtons.filter(button => button.id.includes('ProductSubmitButton')).length >= 2) {
-    clearInterval(interval);
   }
-  if (counter >= maxIterations) {
-    clearInterval(interval);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCounselingTriggers);
+  } else {
+    initCounselingTriggers();
   }
-  counter++;
-}, 500);
-// const allButtons = Array.from(document.querySelectorAll('button[type="button"]'));
-// allButtons.filter(button => button.id.includes('ProductSubmitButton')).forEach(targetedButton => {
-//   targetedButton.addEventListener('click', () => {
-//     document.querySelector('my-dialog').openDialog();
-//   });
-// });
+
+  window.setTimeout(initCounselingTriggers, 500);
+})();
