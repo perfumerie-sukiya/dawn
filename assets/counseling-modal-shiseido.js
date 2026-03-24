@@ -8,29 +8,36 @@ function readCounselingApproval(scope) {
   const storageKey = getCounselingStorageKey(scope);
   if (!storageKey) return null;
 
+  const safeRemove = () => {
+    try {
+      window.localStorage.removeItem(storageKey);
+    } catch (_) {
+      // ignore storage access errors
+    }
+  };
+
   try {
     const rawValue = window.localStorage.getItem(storageKey);
     if (!rawValue) return null;
 
     const parsedValue = JSON.parse(rawValue);
     if (!parsedValue || typeof parsedValue !== 'object') {
-      window.localStorage.removeItem(storageKey);
+      safeRemove();
       return null;
     }
 
     if (typeof parsedValue.approvedAt !== 'number' || typeof parsedValue.expiresAt !== 'number') {
-      window.localStorage.removeItem(storageKey);
+      safeRemove();
       return null;
     }
 
     if (parsedValue.expiresAt <= Date.now()) {
-      window.localStorage.removeItem(storageKey);
+      safeRemove();
       return null;
     }
 
     return parsedValue;
   } catch (error) {
-    window.localStorage.removeItem(storageKey);
     return null;
   }
 }
@@ -65,6 +72,7 @@ function submitAssociatedProductForm(triggerButton) {
   if (!form) return;
 
   const originalType = triggerButton.getAttribute('type') || 'submit';
+  triggerButton.dataset.skipCounselingIntercept = '1';
   triggerButton.setAttribute('type', 'submit');
 
   if (typeof form.requestSubmit === 'function') {
@@ -74,6 +82,7 @@ function submitAssociatedProductForm(triggerButton) {
   }
 
   window.setTimeout(() => {
+    delete triggerButton.dataset.skipCounselingIntercept;
     triggerButton.setAttribute('type', originalType);
   }, 0);
 }
@@ -241,6 +250,7 @@ customElements.define('my-dialog', MyDialog);
       button.dataset.counselingTriggerBound = '1';
 
       button.addEventListener('click', (event) => {
+        if (button.dataset.skipCounselingIntercept === '1') return;
         event.preventDefault();
 
         const productForm = button.closest('product-form');
