@@ -136,9 +136,9 @@
     assign filter_tag = current_tags | first
   endif
 
-  assign is_new_items_template = false
-  if template.suffix contains 'new-items'
-    assign is_new_items_template = true
+  assign is_sub_template = false
+  if template.suffix contains 'sub'
+    assign is_sub_template = true
   endif
 
   assign new_arrival_count = 0
@@ -208,16 +208,13 @@
 
 <!-- Albion -->
 <div class="item-list cpb-brand-page">
-  {% if filter_tag or is_new_items_template %}
+  {% if filter_tag or is_sub_template %}
     <!-- Albion商品一覧ここから -->
     <div class="page-width tw-my-5">
       {% if filter_tag %}
         <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
-      {% elsif is_new_items_template %}
-        <div class="c-heading">
-          <h2 class="c-heading__main">New Items & Colors</h2>
-          <p class="c-heading__sub">新商品・新色情報</p>
-        </div>
+      {% elsif is_sub_template %}
+        <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ collection.title }}</h3>
       {% endif %}
     </div>
     <div id="Collection" class="section-{{ section.id }}-padding">
