@@ -1,3 +1,8 @@
+---
+name: testing-shopify-theme
+description: Test Shopify Dawn theme changes locally with theme dev, Theme Check, template assignment workarounds, and visual verification guidance for sections and page templates.
+---
+
 # Shopify Dawn Theme Testing
 
 ## Overview
