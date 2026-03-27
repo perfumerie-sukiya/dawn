@@ -113,7 +113,14 @@
                   </thead>
 
                   <tbody role="rowgroup">
+                    {%- comment -%} GWPアイテムをカートの末尾に表示するため、非GWP→GWPの順で2パス描画 {%- endcomment -%}
+                    {%- for gwp_pass in (0..1) -%}
                     {%- for item in cart.items -%}
+                      {%- if item.product.template_suffix == 'gwp' -%}
+                        {%- if gwp_pass == 0 -%}{%- continue -%}{%- endif -%}
+                      {%- else -%}
+                        {%- if gwp_pass == 1 -%}{%- continue -%}{%- endif -%}
+                      {%- endif -%}
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
@@ -434,6 +441,7 @@
                           </quantity-popover>
                         </td>
                       </tr>
+                    {%- endfor -%}
                     {%- endfor -%}
                   </tbody>
                 </table>
