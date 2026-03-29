@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_gwEUti": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/JS20260327.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/jill-stuart-blush-charm-2026-4-3"
+          }
+        },
         "column_GH3yqw": {
           "type": "column",
           "settings": {
@@ -319,16 +329,6 @@
             "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-serum-6ml-3"
           }
         },
-        "column_Wxtq6i": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/20260216.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-loose-powder-00-15g-2026-1-16"
-          }
-        },
         "column_L4NRke": {
           "type": "column",
           "settings": {
@@ -351,6 +351,7 @@
         }
       },
       "block_order": [
+        "column_gwEUti",
         "column_GH3yqw",
         "column_6GtwPe",
         "column_MXpFaE",
@@ -360,7 +361,6 @@
         "column_UX49z8",
         "column_LWCBiy",
         "column_Qe3nkk",
-        "column_Wxtq6i",
         "column_L4NRke",
         "column_x8Gdbk"
       ],
