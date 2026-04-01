@@ -309,8 +309,16 @@ customElements.define('my-dialog', MyDialog);
     const triggerButtons = document.querySelectorAll('[data-counseling-trigger]');
 
     triggerButtons.forEach((button) => {
-      if (button.dataset.counselingTriggerBound === '1') return;
-      button.dataset.counselingTriggerBound = '1';
+      // PreOrder Globo clones the original button (copying data-counseling-trigger-bound)
+      // but the clone has no actual event listeners. Detect and re-bind Globo clones.
+      const isGloboClone = button.classList.contains('gPreorderBtn');
+      if (isGloboClone) {
+        if (button.dataset.counselingGloboBound === '1') return;
+        button.dataset.counselingGloboBound = '1';
+      } else {
+        if (button.dataset.counselingTriggerBound === '1') return;
+        button.dataset.counselingTriggerBound = '1';
+      }
 
       button.addEventListener('click', (event) => {
         if (button.dataset.skipCounselingIntercept === '1') return;
@@ -339,4 +347,13 @@ customElements.define('my-dialog', MyDialog);
   }
 
   window.setTimeout(initCounselingTriggers, 500);
+
+  // Watch for PreOrder Globo dynamically inserting cloned buttons
+  var observer = new MutationObserver(function () {
+    initCounselingTriggers();
+  });
+  var formContainer = document.querySelector('product-form');
+  if (formContainer) {
+    observer.observe(formContainer, { childList: true, subtree: true });
+  }
 })();
