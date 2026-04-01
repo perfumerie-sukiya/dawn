@@ -20,6 +20,28 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_gUR3gt": {
+          "type": "slide",
+          "settings": {
+            "title": "すっと溶け込み、シルクのように\nなめらかで端正なつや肌へ。",
+            "image": "shopify://shop_images/offer_TranslucentLoosePowder_Mini_26SS_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_TranslucentLoosePowder_Mini_26SS_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-poudre-transparent-n-m-small-2026-3-21",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
+        "slide_aUmAzM": {
+          "type": "slide",
+          "settings": {
+            "title": "贅沢な色彩と輝きを、\nいつでも唇に纏わせて。",
+            "image": "shopify://shop_images/offer_LipstickShine_26SS_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_LipstickShine_26SS_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-rouge-alleve-briand-2026-3-21",
+            "is_title_white": true,
+            "is_text_right": true
+          }
+        },
         "slide_HWnFzk": {
           "type": "slide",
           "settings": {
@@ -38,28 +60,6 @@
             "image": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_pc.jpg",
             "image_sp": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_sp.jpg",
             "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-la-creme-l-2026-limited-edition-2026-1-21?_pos=1&_fid=80f42f6b4&_ss=c",
-            "is_title_white": true,
-            "is_text_right": false
-          }
-        },
-        "slide_hLR9ea": {
-          "type": "slide",
-          "settings": {
-            "title": "BUTTERFLY KISSES\nときめきの出会いへと導く\n自由な羽ばたき。",
-            "image": "shopify://shop_images/offer_LoveCollection_26ss_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_LoveCollection_26ss_sp.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-rouge-alleve-luminizing-love-collection-2026-2026-1-21?_pos=1&_fid=5714da13b&_ss=c",
-            "is_title_white": false,
-            "is_text_right": false
-          }
-        },
-        "slide_DYrgiw": {
-          "type": "slide",
-          "settings": {
-            "title": "さあ、秘めた力を解き放つ旅へ。\n DREAMS EXPRESS COLLECTION",
-            "image": "shopify://shop_images/offer_holiday_25aw_pc.webp",
-            "image_sp": "shopify://shop_images/offer_holiday_25aw_sp.webp",
-            "link": "shopify://collections/kuredopo-bote_2025_11_21_new",
             "is_title_white": true,
             "is_text_right": false
           }
@@ -88,10 +88,10 @@
         }
       },
       "block_order": [
+        "slide_gUR3gt",
+        "slide_aUmAzM",
         "slide_HWnFzk",
         "slide_3JGxbq",
-        "slide_hLR9ea",
-        "slide_DYrgiw",
         "slide_TpUYee",
         "slide_jdMnEt"
       ],
