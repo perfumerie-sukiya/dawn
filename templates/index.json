@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_BhxHtQ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20260401.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-atomizer-with-case-black-2026-4-1"
+          }
+        },
         "column_GH3yqw": {
           "type": "column",
           "settings": {
@@ -338,19 +348,10 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/addiction-original-pouch-2025-12-26"
           }
-        },
-        "column_x8Gdbk": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SI20251201.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/shiseido-shiseido-special-brush-case-2025-12-1"
-          }
         }
       },
       "block_order": [
+        "column_BhxHtQ",
         "column_GH3yqw",
         "column_gwEUti",
         "column_6GtwPe",
@@ -361,8 +362,7 @@
         "column_UX49z8",
         "column_LWCBiy",
         "column_Qe3nkk",
-        "column_L4NRke",
-        "column_x8Gdbk"
+        "column_L4NRke"
       ],
       "settings": {
         "title": "Campaign",
