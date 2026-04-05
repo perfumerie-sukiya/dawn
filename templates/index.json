@@ -279,6 +279,16 @@
             "link": "https://online.sukiya.biz/pages/nars-original-mirror-2026-3-6"
           }
         },
+        "column_6WpPYP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SI20260301.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/shiseido-ultimune-special-pouch-2026-3-1"
+          }
+        },
         "column_nkdVMc": {
           "type": "column",
           "settings": {
@@ -338,16 +348,6 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-serum-6ml-3"
           }
-        },
-        "column_L4NRke": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/AD20251226.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/addiction-original-pouch-2025-12-26"
-          }
         }
       },
       "block_order": [
@@ -356,13 +356,13 @@
         "column_gwEUti",
         "column_6GtwPe",
         "column_MXpFaE",
+        "column_6WpPYP",
         "column_nkdVMc",
         "column_hCW7AT",
         "column_RNMiH3",
         "column_UX49z8",
         "column_LWCBiy",
-        "column_Qe3nkk",
-        "column_L4NRke"
+        "column_Qe3nkk"
       ],
       "settings": {
         "title": "Campaign",
