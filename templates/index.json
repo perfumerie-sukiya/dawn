@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_BQdFmz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FM20260408_b51e6f6a-3709-4295-8673-24781ddbd792.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/frederic-mall-eau-de-magnolia-eau-de-toilette-7ml-2026-4-8"
+          }
+        },
         "column_BhxHtQ": {
           "type": "column",
           "settings": {
@@ -338,19 +348,10 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/decorte-aq-pore-cleansing-serum-mini-size-15ml"
           }
-        },
-        "column_Qe3nkk": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/20260316.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-serum-6ml-3"
-          }
         }
       },
       "block_order": [
+        "column_BQdFmz",
         "column_BhxHtQ",
         "column_GH3yqw",
         "column_gwEUti",
@@ -361,8 +362,7 @@
         "column_hCW7AT",
         "column_RNMiH3",
         "column_UX49z8",
-        "column_LWCBiy",
-        "column_Qe3nkk"
+        "column_LWCBiy"
       ],
       "settings": {
         "title": "Campaign",
