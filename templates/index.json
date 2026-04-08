@@ -309,16 +309,6 @@
             "link": "https://online.sukiya.biz/pages/paul-and-joe-original-round-pouch-2026-3"
           }
         },
-        "column_hCW7AT": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/CD20260301.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-original-pouch-2026-3-1"
-          }
-        },
         "column_RNMiH3": {
           "type": "column",
           "settings": {
@@ -359,7 +349,6 @@
         "column_MXpFaE",
         "column_6WpPYP",
         "column_nkdVMc",
-        "column_hCW7AT",
         "column_RNMiH3",
         "column_UX49z8",
         "column_LWCBiy"
