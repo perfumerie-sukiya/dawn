@@ -43,8 +43,8 @@
           "type": "slide",
           "settings": {
             "title": "NARS",
-            "image": "shopify://shop_images/sukiya_890_550_2603.png",
-            "image_sp": "shopify://shop_images/sukiya_828_1242_2603.png",
+            "image": "shopify://shop_images/sukiya_890_550_2.png",
+            "image_sp": "shopify://shop_images/sukiya_828_1242_2604.png",
             "link": "shopify://collections/nars"
           }
         },
@@ -61,8 +61,8 @@
           "type": "slide",
           "settings": {
             "title": "ADDICTION",
-            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_26Foundation.jpg",
-            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_26Foundation.jpg",
+            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_26Summer.jpg",
+            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_26Summer.jpg",
             "link": "shopify://collections/addiction"
           }
         },
