@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_Nj7W6G": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20260424.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/products/perfumerie-sukiya-online-store-nars-explicit-lipstick-803-body-heat-special-size-2026-4-24"
+          }
+        },
         "column_BQdFmz": {
           "type": "column",
           "settings": {
@@ -341,6 +351,7 @@
         }
       },
       "block_order": [
+        "column_Nj7W6G",
         "column_BQdFmz",
         "column_BhxHtQ",
         "column_GH3yqw",
