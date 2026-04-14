@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_Krqiwj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/FN20260417_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-blue-hydrangea-eau-de-parfum-18ml-2026-4-17"
+          }
+        },
         "column_Nj7W6G": {
           "type": "column",
           "settings": {
@@ -351,6 +361,7 @@
         }
       },
       "block_order": [
+        "column_Krqiwj",
         "column_Nj7W6G",
         "column_BQdFmz",
         "column_BhxHtQ",
