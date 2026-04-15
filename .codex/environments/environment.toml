@@ -9,3 +9,8 @@ script = ""
 name = "Run"
 icon = "run"
 command = "shopify theme dev -e dev"
+
+[[actions]]
+name = "build"
+icon = "run"
+command = "npm run build"
