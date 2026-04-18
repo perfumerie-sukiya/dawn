@@ -354,22 +354,39 @@
   {%- endcomment -%}
   <script>
     (function () {
+      var yenFormatMoney = function (cents) {
+        var value = (Number(cents) / 100).toLocaleString('ja-JP', {
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        });
+        return '¥' + value;
+      };
       function overrideFormatMoney() {
         if (!window.algoliaShopify) return false;
-        window.algoliaShopify.formatMoney = function (cents) {
-          var value = (Number(cents) / 100).toLocaleString('ja-JP', {
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
+        // アプリ拡張が formatMoney を定義するまで待機（先行で上書きしても
+        // 後から拡張が再代入して上書きが無効化されるため）。
+        if (typeof window.algoliaShopify.formatMoney !== 'function') return false;
+        try {
+          Object.defineProperty(window.algoliaShopify, 'formatMoney', {
+            configurable: true,
+            enumerable: true,
+            get: function () {
+              return yenFormatMoney;
+            },
+            set: function () {
+              /* 以後の再代入は無視して上書きを維持する */
+            },
           });
-          return '¥' + value;
-        };
+        } catch (e) {
+          window.algoliaShopify.formatMoney = yenFormatMoney;
+        }
         return true;
       }
       if (!overrideFormatMoney()) {
         var attempts = 0;
         var timer = setInterval(function () {
           attempts += 1;
-          if (overrideFormatMoney() || attempts > 100) {
+          if (overrideFormatMoney() || attempts > 200) {
             clearInterval(timer);
           }
         }, 50);
