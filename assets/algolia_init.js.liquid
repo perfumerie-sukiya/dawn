@@ -97,9 +97,6 @@
   algolia.money_format = algolia
     .getTemplate('money_format')
     .replace(/^\s+|\s+$/g, '');
-  // Force JPY (¥) display for predictive search suggestions regardless of the
-  // money_format template configured in the Algolia for Shopify app settings.
-  algolia.money_format = '¥{{amount}}';
   algolia.formatMoney = function formatMoney(cents, currency_code = false) {
     var priceInCents = cents;
 

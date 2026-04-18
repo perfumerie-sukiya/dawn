@@ -346,6 +346,36 @@
                         window.hulkappsWishlist.baseURL = '/apps/advanced-wishlist/api';
                         window.hulkappsWishlist.hasAppBlockSupport = '1';
                         </script>
+  {%- comment -%}
+    Algolia 予測検索ドロップダウンの価格を円（¥）・小数なしで表示するための
+    formatMoney 上書き。Algolia for Shopify アプリ拡張の formatMoney は
+    {{amount_no_decimals}} トークンに対応しておらず、フォールバックで
+    `$N,NNN.NN` を返してしまうため、拡張読込後にテーマ側で差し替える。
+  {%- endcomment -%}
+  <script>
+    (function () {
+      function overrideFormatMoney() {
+        if (!window.algoliaShopify) return false;
+        window.algoliaShopify.formatMoney = function (cents) {
+          var value = (Number(cents) / 100).toLocaleString('ja-JP', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+          });
+          return '¥' + value;
+        };
+        return true;
+      }
+      if (!overrideFormatMoney()) {
+        var attempts = 0;
+        var timer = setInterval(function () {
+          attempts += 1;
+          if (overrideFormatMoney() || attempts > 100) {
+            clearInterval(timer);
+          }
+        }, 50);
+      }
+    })();
+  </script>
 </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
