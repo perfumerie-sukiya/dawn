@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_9PxeJ9": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SL20260422.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/serge-lutens-leau-serge-lutens-5ml-2026-4-22"
+          }
+        },
         "column_Krqiwj": {
           "type": "column",
           "settings": {
@@ -329,16 +339,6 @@
             "link": "https://online.sukiya.biz/pages/inoui-original-foundation-brush-2026-2-21"
           }
         },
-        "column_UX49z8": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/AD2060213.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/addiction-the-mascara-color-nuance-017-mini-sample"
-          }
-        },
         "column_LWCBiy": {
           "type": "column",
           "settings": {
@@ -351,6 +351,7 @@
         }
       },
       "block_order": [
+        "column_9PxeJ9",
         "column_Krqiwj",
         "column_Nj7W6G",
         "column_BQdFmz",
@@ -361,7 +362,6 @@
         "column_6WpPYP",
         "column_nkdVMc",
         "column_RNMiH3",
-        "column_UX49z8",
         "column_LWCBiy"
       ],
       "settings": {
