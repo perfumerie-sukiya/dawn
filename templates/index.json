@@ -12,15 +12,6 @@
     "24868b4c-3917-47de-829e-304405793cbe": {
       "type": "top-slider",
       "blocks": {
-        "slide_brNxcD": {
-          "type": "slide",
-          "settings": {
-            "title": "FREDERIC MALLE",
-            "image": "shopify://shop_images/FY26_FM_ContreJour_SoMe_logo_KV1_1.618x1.jpg",
-            "image_sp": "shopify://shop_images/FY26_FM_ContreJour_SoMe_logo_KV1_2x3_8fa3f941-5f3e-407f-802c-c39fe4aeda99.jpg",
-            "link": "https://online.sukiya.biz/collections/frederic-malle"
-          }
-        },
         "aed8695d-1c8c-4faf-90e2-f9596f48623a": {
           "type": "slide",
           "settings": {
@@ -37,6 +28,15 @@
             "image": "shopify://shop_images/CPB_25SS_KeyRadianceCare.jpg",
             "image_sp": "shopify://shop_images/SP_CPB_25AW_KRC_DigitalKV_fa05a4d8-f37f-4f9f-a326-bd58253d69dd.jpg",
             "link": "shopify://collections/cle-de-peau-beaute"
+          }
+        },
+        "slide_brNxcD": {
+          "type": "slide",
+          "settings": {
+            "title": "FREDERIC MALLE",
+            "image": "shopify://shop_images/FY26_FM_ContreJour_SoMe_logo_KV1_1.618x1.jpg",
+            "image_sp": "shopify://shop_images/FY26_FM_ContreJour_SoMe_logo_KV1_2x3_8fa3f941-5f3e-407f-802c-c39fe4aeda99.jpg",
+            "link": "https://online.sukiya.biz/collections/frederic-malle"
           }
         },
         "df7f0c5b-43ad-426d-aae8-11c72a9455ed": {
@@ -104,9 +104,9 @@
         }
       },
       "block_order": [
-        "slide_brNxcD",
         "aed8695d-1c8c-4faf-90e2-f9596f48623a",
         "5614945f-e2ea-4edb-a296-37fe83d4bd86",
+        "slide_brNxcD",
         "df7f0c5b-43ad-426d-aae8-11c72a9455ed",
         "88f8f653-ead8-4ae6-b7fb-c0c277520c47",
         "661067f2-b6f0-4de4-9ae0-f8624f2add30",
