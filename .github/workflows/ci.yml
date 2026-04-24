@@ -1,7 +1,5 @@
 name: CI
 on: [push]
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   lhci:
     name: Lighthouse
@@ -24,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.2
+      - name: Install Theme Check
+        run: gem install theme-check
       - name: Theme Check
-        uses: shopify/theme-check-action@v2
-        with:
-          token: ${{ github.token }}
+        run: theme-check
