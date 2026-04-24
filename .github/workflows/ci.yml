@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6.0.2
-      - name: Install Theme Check
-        run: gem install theme-check
       - name: Theme Check
-        run: theme-check
+        uses: shopify/theme-check-action@v2
+        with:
+          token: ${{ github.token }}
