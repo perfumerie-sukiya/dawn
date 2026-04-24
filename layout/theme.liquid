@@ -42,22 +42,20 @@
       document.addEventListener('algolia.hooks.initialize', function () {
         if (!window.algoliaShopify || !window.algoliaShopify.hooks) return;
 
-        window.algoliaShopify.hooks.registerHook('beforeAutocompleteAsyncFunction', function () {
-          var originalFormatMoney = window.algoliaShopify.formatMoney;
+        var originalFormatMoney = window.algoliaShopify.formatMoney;
 
-          window.algoliaShopify.formatMoney = function (cents, currencyCode) {
-            if (currencyCode && String(currencyCode).toUpperCase() !== 'JPY' && typeof originalFormatMoney === 'function') {
-              return originalFormatMoney(cents, currencyCode);
-            }
+        window.algoliaShopify.formatMoney = function (cents, currencyCode) {
+          if (currencyCode && String(currencyCode).toUpperCase() !== 'JPY' && typeof originalFormatMoney === 'function') {
+            return originalFormatMoney(cents, currencyCode);
+          }
 
-            var value = (Number(cents) / 100).toLocaleString('ja-JP', {
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-            });
+          var value = (Number(cents) / 100).toLocaleString('ja-JP', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+          });
 
-            return '¥' + value;
-          };
-        });
+          return '¥' + value;
+        };
       });
     </script>
 
