@@ -229,6 +229,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_jjrLUb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PJ5_GWP.png",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paulandjoe-original-bottle-shaker-2026-6-1"
+          }
+        },
         "column_9PxeJ9": {
           "type": "column",
           "settings": {
@@ -341,6 +351,7 @@
         }
       },
       "block_order": [
+        "column_jjrLUb",
         "column_9PxeJ9",
         "column_Krqiwj",
         "column_Nj7W6G",
