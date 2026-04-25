@@ -40,7 +40,7 @@
 
     <script>
       document.addEventListener('algolia.hooks.initialize', function () {
-        if (!window.algoliaShopify || !window.algoliaShopify.hooks) return;
+        if (!window.algoliaShopify) return;
 
         var originalFormatMoney = window.algoliaShopify.formatMoney;
 
