@@ -10,3 +10,4 @@ ignore:
   - "assets/algolia_init.js.liquid"
   - "assets/algolia_instant_search.js.liquid"
   - "assets/algolia_helpers.js.liquid"
+  - "snippets/hulkapps-wishlist-*.liquid"

@@ -38,6 +38,27 @@
 
     {{ content_for_header }}
 
+    <script>
+      document.addEventListener('algolia.hooks.initialize', function () {
+        if (!window.algoliaShopify) return;
+
+        var originalFormatMoney = window.algoliaShopify.formatMoney;
+
+        window.algoliaShopify.formatMoney = function (cents, currencyCode) {
+          if (currencyCode && String(currencyCode).toUpperCase() !== 'JPY' && typeof originalFormatMoney === 'function') {
+            return originalFormatMoney(cents, currencyCode);
+          }
+
+          var value = (Number(cents) / 100).toLocaleString('ja-JP', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+          });
+
+          return '¥' + value;
+        };
+      });
+    </script>
+
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'

@@ -751,6 +751,9 @@
         "products_to_show": {
           "label": "Maximum products to show"
         },
+        "max_title_length": {
+          "label": "Maximum product title characters"
+        },
         "columns_desktop": {
           "label": "Number of columns on desktop"
         },
@@ -814,6 +817,9 @@
           },
           "options__2": {
             "label": "2 columns"
+          },
+          "options__3": {
+            "label": "3 columns"
           }
         },
         "swipe_on_mobile": {
@@ -1772,6 +1778,9 @@
         "columns_desktop": {
           "label": "Number of columns on desktop"
         },
+        "max_title_length": {
+          "label": "Maximum product title characters"
+        },
         "enable_filtering": {
           "label": "Enable filtering",
           "info": "Customize filters with the Search & Discovery app. [Learn more](https://help.shopify.com/manual/online-store/search-and-discovery/filters)"
@@ -1838,6 +1847,9 @@
           },
           "options__2": {
             "label": "2 columns"
+          },
+          "options__3": {
+            "label": "3 columns"
           }
         }
       }
@@ -1942,6 +1954,9 @@
               "options__3": {
                 "label": "Uppercase"
               }
+            },
+            "is_vendor": {
+              "label": "Vendor"
             }
           }
         },
@@ -2831,6 +2846,9 @@
         },
         "columns_desktop": {
           "label": "Number of columns on desktop"
+        },
+        "max_title_length": {
+          "label": "Maximum product title characters"
         },
         "paragraph__1": {
           "content": "Dynamic recommendations use order and product information to change and improve over time. [Learn more](https://help.shopify.com/themes/development/recommended-products)"
