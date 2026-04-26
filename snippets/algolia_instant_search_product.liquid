@@ -14,7 +14,13 @@
         data-variant-id="${hit.objectID}" 
         data-distinct="${hit._distinct}"
       >
-        <div class="ais-hit--picture" style="background-image: url('${algolia.helpers.mediumImage(hit)}')"></div>
+        <a
+          class="ais-hit--picture"
+          href="${algolia.helpers.instantsearchLink(hit)}"
+          aria-hidden="true"
+          tabindex="-1"
+          style="background-image: url('${algolia.helpers.mediumImage(hit)}')"
+        ></a>
 
         <div class="ais-hit--details">
           <p class="ais-hit--title">
