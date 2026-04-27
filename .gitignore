@@ -122,3 +122,6 @@ dist
 
 # playwright-cli generated files
 .playwright-cli/
+
+# Local agent settings
+.claude/settings.local.json
