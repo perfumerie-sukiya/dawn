@@ -1,6 +1,8 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const webpack = require("webpack");
 const path = require('path');
+const swiperVersion = require('swiper/package.json').version;
 // 'production' か 'development' を指定
 const MODE = process.env.NODE_ENV || "production";
 
@@ -73,7 +75,10 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env.SWIPER_VERSION': JSON.stringify(swiperVersion),
+    }),
   ],
   target: "web",
 };
