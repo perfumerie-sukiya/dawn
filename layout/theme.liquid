@@ -63,7 +63,22 @@
             configurable: true,
             enumerable: true,
             get: function () { return wrapped; },
-            set: function (next) { raw = next; }
+            set: function (next) {
+              raw = next;
+              wrapped = function (cents, currencyCode) {
+                var isNonJpy = currencyCode && String(currencyCode).toUpperCase() !== 'JPY';
+                var amount = Number(cents);
+                if (typeof raw === 'function' && (isNonJpy || !isFinite(amount))) {
+                  return raw.apply(this, arguments);
+                }
+                if (!isFinite(amount)) return '';
+                var value = (amount / 100).toLocaleString('ja-JP', {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 0,
+                });
+                return '¥' + value;
+              };
+            }
           });
         }
 
