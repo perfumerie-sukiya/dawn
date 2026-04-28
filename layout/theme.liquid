@@ -39,24 +39,56 @@
     {{ content_for_header }}
 
     <script>
-      document.addEventListener('algolia.hooks.initialize', function () {
-        if (!window.algoliaShopify) return;
-
-        var originalFormatMoney = window.algoliaShopify.formatMoney;
-
-        window.algoliaShopify.formatMoney = function (cents, currencyCode) {
-          if (currencyCode && String(currencyCode).toUpperCase() !== 'JPY' && typeof originalFormatMoney === 'function') {
-            return originalFormatMoney(cents, currencyCode);
+      (function () {
+        function jpyFormat(cents, currencyCode, originalFn) {
+          if (currencyCode && String(currencyCode).toUpperCase() !== 'JPY' && typeof originalFn === 'function') {
+            return originalFn(cents, currencyCode);
           }
-
           var value = (Number(cents) / 100).toLocaleString('ja-JP', {
             minimumFractionDigits: 0,
             maximumFractionDigits: 0,
           });
-
           return '¥' + value;
-        };
-      });
+        }
+
+        function installFormatMoneySetter(target) {
+          if (!target || target.__jpyFormatMoneyInstalled) return;
+          target.__jpyFormatMoneyInstalled = true;
+
+          var raw = target.formatMoney;
+          var wrapped = function (cents, currencyCode) {
+            return jpyFormat(cents, currencyCode, raw);
+          };
+
+          Object.defineProperty(target, 'formatMoney', {
+            configurable: true,
+            enumerable: true,
+            get: function () { return wrapped; },
+            set: function (next) {
+              raw = next;
+              wrapped = function (cents, currencyCode) {
+                return jpyFormat(cents, currencyCode, raw);
+              };
+            }
+          });
+        }
+
+        if (window.algoliaShopify) {
+          installFormatMoneySetter(window.algoliaShopify);
+          return;
+        }
+
+        var stored;
+        Object.defineProperty(window, 'algoliaShopify', {
+          configurable: true,
+          enumerable: true,
+          get: function () { return stored; },
+          set: function (next) {
+            stored = next;
+            installFormatMoneySetter(stored);
+          }
+        });
+      })();
     </script>
 
     {%- liquid
