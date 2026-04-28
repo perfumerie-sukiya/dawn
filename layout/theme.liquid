@@ -40,36 +40,30 @@
 
     <script>
       (function () {
-        function jpyFormat(cents, currencyCode, originalFn) {
-          if (currencyCode && String(currencyCode).toUpperCase() !== 'JPY' && typeof originalFn === 'function') {
-            return originalFn(cents, currencyCode);
-          }
-          var value = (Number(cents) / 100).toLocaleString('ja-JP', {
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
-          });
-          return '¥' + value;
-        }
-
         function installFormatMoneySetter(target) {
           if (!target || target.__jpyFormatMoneyInstalled) return;
           target.__jpyFormatMoneyInstalled = true;
 
           var raw = target.formatMoney;
           var wrapped = function (cents, currencyCode) {
-            return jpyFormat(cents, currencyCode, raw);
+            var isNonJpy = currencyCode && String(currencyCode).toUpperCase() !== 'JPY';
+            var amount = Number(cents);
+            if (typeof raw === 'function' && (isNonJpy || !isFinite(amount))) {
+              return raw.apply(this, arguments);
+            }
+            if (!isFinite(amount)) return '';
+            var value = (amount / 100).toLocaleString('ja-JP', {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            });
+            return '¥' + value;
           };
 
           Object.defineProperty(target, 'formatMoney', {
             configurable: true,
             enumerable: true,
             get: function () { return wrapped; },
-            set: function (next) {
-              raw = next;
-              wrapped = function (cents, currencyCode) {
-                return jpyFormat(cents, currencyCode, raw);
-              };
-            }
+            set: function (next) { raw = next; }
           });
         }
 
