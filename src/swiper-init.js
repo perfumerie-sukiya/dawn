@@ -10,9 +10,9 @@ swiperEls.forEach((swiperEl) => {
     const params = {
       modules: [Navigation, Pagination, EffectFade, Autoplay],
       injectStylesUrls: [
-        'https://cdn.jsdelivr.net/npm/swiper@10.3.1/modules/navigation-element.css',
-        'https://cdn.jsdelivr.net/npm/swiper@10.3.1/modules/pagination-element.css',
-        'https://cdn.jsdelivr.net/npm/swiper@10.3.1/modules/effect-fade-element.css',
+        'https://cdn.jsdelivr.net/npm/swiper@12.1.2/modules/navigation-element.css',
+        'https://cdn.jsdelivr.net/npm/swiper@12.1.2/modules/pagination-element.css',
+        'https://cdn.jsdelivr.net/npm/swiper@12.1.2/modules/effect-fade-element.css',
       ],
       pagination: {
         clickable: true,
