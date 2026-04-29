@@ -45,19 +45,21 @@
           target.__jpyFormatMoneyInstalled = true;
 
           var raw = target.formatMoney;
-          var wrapped = function (cents, currencyCode) {
-            var isNonJpy = currencyCode && String(currencyCode).toUpperCase() !== 'JPY';
-            var amount = Number(cents);
-            if (typeof raw === 'function' && (isNonJpy || !isFinite(amount))) {
-              return raw.apply(this, arguments);
-            }
-            if (!isFinite(amount)) return '';
-            var value = (amount / 100).toLocaleString('ja-JP', {
-              minimumFractionDigits: 0,
-              maximumFractionDigits: 0,
-            });
-            return '¥' + value;
-          };
+          var wrapped = (function (currentRaw) {
+            return function (cents, currencyCode) {
+              var isNonJpy = currencyCode && String(currencyCode).toUpperCase() !== 'JPY';
+              var amount = Number(cents);
+              if (typeof currentRaw === 'function' && (isNonJpy || !isFinite(amount))) {
+                return currentRaw.apply(this, arguments);
+              }
+              if (!isFinite(amount)) return '';
+              var value = (amount / 100).toLocaleString('ja-JP', {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              });
+              return '¥' + value;
+            };
+          })(raw);
 
           Object.defineProperty(target, 'formatMoney', {
             configurable: true,
@@ -65,19 +67,21 @@
             get: function () { return wrapped; },
             set: function (next) {
               raw = next;
-              wrapped = function (cents, currencyCode) {
-                var isNonJpy = currencyCode && String(currencyCode).toUpperCase() !== 'JPY';
-                var amount = Number(cents);
-                if (typeof raw === 'function' && (isNonJpy || !isFinite(amount))) {
-                  return raw.apply(this, arguments);
-                }
-                if (!isFinite(amount)) return '';
-                var value = (amount / 100).toLocaleString('ja-JP', {
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                });
-                return '¥' + value;
-              };
+              wrapped = (function (currentRaw) {
+                return function (cents, currencyCode) {
+                  var isNonJpy = currencyCode && String(currencyCode).toUpperCase() !== 'JPY';
+                  var amount = Number(cents);
+                  if (typeof currentRaw === 'function' && (isNonJpy || !isFinite(amount))) {
+                    return currentRaw.apply(this, arguments);
+                  }
+                  if (!isFinite(amount)) return '';
+                  var value = (amount / 100).toLocaleString('ja-JP', {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                  });
+                  return '¥' + value;
+                };
+              })(raw);
             }
           });
         }
