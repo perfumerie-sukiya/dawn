@@ -1,0 +1,132 @@
+<style>
+  .faq_page {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq_page--title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .faq_page--qa {
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+
+  .faq_page--question {
+    padding: 15px 40px 15px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    background-color: #f9f9f9;
+    list-style: none;
+  }
+
+  .faq_page--question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq_page--question::after {
+    content: '+';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  details[open] .faq_page--question::after {
+    content: '-';
+  }
+
+  .faq_page--answer {
+    padding: 15px;
+  }
+
+  .faq_page--answer p {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .faq_page {
+      padding: 30px 20px;
+    }
+
+    .faq_page--title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<div class="faq_page">
+  <div class="faq_page--title">{{ section.settings.title }}</div>
+  <div class="faq_page--content">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'qa' -%}
+        <details class="faq_page--qa" {{ block.shopify_attributes }}>
+          <summary class="faq_page--question">{{ block.settings.question }}</summary>
+          <div class="faq_page--answer">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "よくある質問",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "タイトル",
+      "default": "よくある質問"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Q&A",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "質問",
+          "default": "質問文をここに入力してください"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "回答",
+          "default": "<p>回答文をここに入力してください</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "よくある質問",
+      "blocks": [
+        {
+          "type": "qa"
+        },
+        {
+          "type": "qa"
+        },
+        {
+          "type": "qa"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
