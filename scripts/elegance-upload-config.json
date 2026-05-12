@@ -1,0 +1,92 @@
+{
+  "basePath": "docs/albion",
+  "prefix": "elegance_",
+  "mappingOutput": "scripts/elegance-upload-mapping.json",
+  "files": [
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/PC/EL/①EL26SS_FD_A：1280px × 640px.jpg",
+      "shopifyFilename": "elegance_4__EL_PC_1.jpg",
+      "usage": "TOPバナー PC 1枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/PC/EL/②EL26SS S1_PC1280px_640px.jpg",
+      "shopifyFilename": "elegance_4__EL_PC_2.jpg",
+      "usage": "TOPバナー PC 2枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/SP/EL/①EL26SS_FD_A ： 750px × 1008px.jpg",
+      "shopifyFilename": "elegance_4__EL_SP_1.jpg",
+      "usage": "TOPバナー SP 1枚目"
+    },
+    {
+      "localPath": "ブランドTOP_ビジュアル/4月/SP/EL/②EL26SS S1_SP750px_1008px.jpg",
+      "shopifyFilename": "elegance_4__EL_SP_2.jpg",
+      "usage": "TOPバナー SP 2枚目"
+    },
+    {
+      "localPath": "ブランドTOP/NEW認定ロゴ/elegance_nintei_logo_white.jpg",
+      "shopifyFilename": "elegance_nintei_logo_white.jpg",
+      "usage": "認定ロゴ（ホワイト）"
+    },
+    {
+      "localPath": "ブランドTOP/オンラインカウンセリングバナー/G25101273-online-EL.jpg",
+      "shopifyFilename": "elegance_counseling_banner.jpg",
+      "usage": "オンラインカウンセリングバナー"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/eye.png",
+      "shopifyFilename": "elegance_category_eye.png",
+      "usage": "カテゴリ画像 EYE"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/lip.png",
+      "shopifyFilename": "elegance_category_lip.png",
+      "usage": "カテゴリ画像 LIP"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/face-color.png",
+      "shopifyFilename": "elegance_category_face-color.png",
+      "usage": "カテゴリ画像 FACE COLOR"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/nail.png",
+      "shopifyFilename": "elegance_category_nail.png",
+      "usage": "カテゴリ画像 NAIL"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/makeupbase.png",
+      "shopifyFilename": "elegance_category_makeup-base.png",
+      "usage": "カテゴリ画像 MAKEUP BASE"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/faoundation.png",
+      "shopifyFilename": "elegance_category_foundation.png",
+      "usage": "カテゴリ画像 FOUNDATION"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/face-powder.png",
+      "shopifyFilename": "elegance_category_face-powder.png",
+      "usage": "カテゴリ画像 FACE POWDER"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/remover.png",
+      "shopifyFilename": "elegance_category_remover.png",
+      "usage": "カテゴリ画像 REMOVER"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/brush.png",
+      "shopifyFilename": "elegance_category_brush.png",
+      "usage": "カテゴリ画像 BRUSH"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/puff-sponge.png",
+      "shopifyFilename": "elegance_category_puff-sponge.png",
+      "usage": "カテゴリ画像 PUFF・SPONGE"
+    },
+    {
+      "localPath": "ブランドTOP/エレガンス_カテゴリ画像/skincare.png",
+      "shopifyFilename": "elegance_category_skincare.png",
+      "usage": "カテゴリ画像 SKINCARE"
+    }
+  ]
+}

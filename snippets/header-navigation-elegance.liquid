@@ -1,0 +1,49 @@
+{% assign elegance_collection_url = routes.collections_url | append: '/elegance' %}
+{% assign counseling_url = 'https://www.albion.co.jp/counseling/' %}
+
+<div class="tw-hidden md:tw-flex md:tw-justify-center tw-min-w-max tw-border-t tw-border-x-0 tw-border-b-0 tw-border-t-black tw-border-solid">
+  <div class="tw-group tw-relative tw-text-left hover:tw-bg-slate-50">
+    <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/ポイントメイク#Collection">
+      ポイントメイク
+      <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
+    </a>
+    <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-white">
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/アイ#Collection">アイ</a>
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/リップ#Collection">リップ</a>
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/フェイスカラー#Collection">フェイスカラー</a>
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/ネイル#Collection">ネイル</a>
+    </div>
+  </div>
+
+  <div class="tw-group tw-relative tw-text-left hover:tw-bg-slate-50">
+    <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/ベースメイク#Collection">
+      ベースメイク
+      <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
+    </a>
+    <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-white">
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/メイクアップベース#Collection">メイクアップベース</a>
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/ファンデーション#Collection">ファンデーション</a>
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/フェイスパウダー#Collection">フェイスパウダー</a>
+    </div>
+  </div>
+
+  <div class="tw-group tw-relative tw-text-left hover:tw-bg-slate-50">
+    <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/アクセサリー#Collection">
+      ツール
+      <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
+    </a>
+    <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-white">
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/リムーバー#Collection">リムーバー</a>
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/ブラシ#Collection">ブラシ</a>
+      <a class="tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/スポンジ・パフ#Collection">パフ・スポンジ</a>
+    </div>
+  </div>
+
+  <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50" href="{{ elegance_collection_url }}/スキンケア#Collection">スキンケア</a>
+  <a
+    class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current hover:tw-bg-slate-50"
+    href="{{ counseling_url }}"
+    target="_blank"
+    rel="noopener"
+  >オンラインカウンセリング</a>
+</div>

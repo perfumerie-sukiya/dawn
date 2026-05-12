@@ -1,0 +1,20 @@
+{
+  "basePath": "docs/albion",
+  "files": [
+    {
+      "localPath": "ブランドTOP/NEW認定ロゴ/albion_nintei_logo_white.jpg",
+      "shopifyFilename": "albion_nintei_logo_white.jpg",
+      "usage": "認定ロゴ（ブランド認定正規品取扱店舗 ALBION）"
+    },
+    {
+      "localPath": "ブランドTOP/NEW認定ロゴ/elegance_nintei_logo_white.jpg",
+      "shopifyFilename": "elegance_nintei_logo_white.jpg",
+      "usage": "認定ロゴ（ホワイト）"
+    },
+    {
+      "localPath": "ブランドTOP/NEW認定ロゴ/ignis_nintei_logo_white.jpg",
+      "shopifyFilename": "ignis_nintei_logo_white.jpg",
+      "usage": "認定ロゴ（ホワイト）"
+    }
+  ]
+}

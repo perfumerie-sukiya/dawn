@@ -1,5 +1,5 @@
 {%- layout none -%}
-{%- paginate search.results by 100 -%}
+{%- paginate search.results by 50 -%}
 [
   {%- for product in search.results -%}
     {%- unless forloop.first -%},{%- endunless -%}

@@ -31,10 +31,18 @@ class FacetFiltersForm extends HTMLElement {
 
   static renderPage(searchParams, event, updateURLHash = true) {
     FacetFiltersForm.searchParamsPrev = searchParams;
+    const currentView = new URLSearchParams(window.location.search).get('view') || '';
+    const nextView = new URLSearchParams(searchParams).get('view') || '';
+    if (currentView !== nextView) {
+      window.location.assign(`${window.location.pathname}${searchParams ? '?' + searchParams : ''}`);
+      return;
+    }
     const sections = FacetFiltersForm.getSections();
     const countContainer = document.getElementById('ProductCount');
     const countContainerDesktop = document.getElementById('ProductCountDesktop');
-    const loadingSpinners = document.querySelectorAll('.facets-container .loading__spinner, facet-filters-form .loading__spinner');
+    const loadingSpinners = document.querySelectorAll(
+      '.facets-container .loading__spinner, facet-filters-form .loading__spinner'
+    );
     loadingSpinners.forEach((spinner) => spinner.classList.remove('hidden'));
     document.getElementById('ProductGridContainer').querySelector('.collection').classList.add('loading');
     if (countContainer) {
@@ -78,29 +86,62 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static renderProductGridContainer(html) {
-    document.getElementById('ProductGridContainer').innerHTML = new DOMParser()
-      .parseFromString(html, 'text/html')
-      .getElementById('ProductGridContainer').innerHTML;
+    const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
+    const productGridContainer = parsedHTML.getElementById('ProductGridContainer');
 
-    document
-      .getElementById('ProductGridContainer')
-      .querySelectorAll('.scroll-trigger')
-      .forEach((element) => {
-        element.classList.add('scroll-trigger--cancel');
-      });
+    // ProductGridContainer が存在しない場合はフルリロードにフォールバック
+    if (!productGridContainer) {
+      const currentContainer = document.getElementById('ProductGridContainer');
+      if (!currentContainer) {
+        // 現在のページにも ProductGridContainer が存在しない場合はフルリロード
+        const searchParams = FacetFiltersForm.searchParamsPrev || FacetFiltersForm.searchParamsInitial;
+        window.location.assign(window.location.pathname + (searchParams ? '?' + searchParams : ''));
+        return;
+      }
+      // 現在のページには存在するが、fetch結果に無い場合はフルリロード（テンプレ/セクション不一致の可能性）
+      const searchParams = FacetFiltersForm.searchParamsPrev || FacetFiltersForm.searchParamsInitial;
+      window.location.assign(window.location.pathname + (searchParams ? '?' + searchParams : ''));
+      return;
+    }
+
+    const currentContainer = document.getElementById('ProductGridContainer');
+    if (!currentContainer) {
+      // 現在のページに ProductGridContainer が存在しない場合はフルリロード
+      const searchParams = FacetFiltersForm.searchParamsPrev || FacetFiltersForm.searchParamsInitial;
+      window.location.assign(window.location.pathname + (searchParams ? '?' + searchParams : ''));
+      return;
+    }
+
+    currentContainer.innerHTML = productGridContainer.innerHTML;
+
+    currentContainer.querySelectorAll('.scroll-trigger').forEach((element) => {
+      element.classList.add('scroll-trigger--cancel');
+    });
   }
 
   static renderProductCount(html) {
-    const count = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductCount').innerHTML;
+    const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
+    const countElement = parsedHTML.getElementById('ProductCount');
+    const countDesktopElement = parsedHTML.getElementById('ProductCountDesktop');
+
     const container = document.getElementById('ProductCount');
     const containerDesktop = document.getElementById('ProductCountDesktop');
+    if (!countElement || !container) {
+      const searchParams = FacetFiltersForm.searchParamsPrev || FacetFiltersForm.searchParamsInitial;
+      window.location.assign(window.location.pathname + (searchParams ? '?' + searchParams : ''));
+      return;
+    }
+
+    const count = countElement.innerHTML;
     container.innerHTML = count;
     container.classList.remove('loading');
     if (containerDesktop) {
-      containerDesktop.innerHTML = count;
+      containerDesktop.innerHTML = countDesktopElement ? countDesktopElement.innerHTML : count;
       containerDesktop.classList.remove('loading');
     }
-    const loadingSpinners = document.querySelectorAll('.facets-container .loading__spinner, facet-filters-form .loading__spinner');
+    const loadingSpinners = document.querySelectorAll(
+      '.facets-container .loading__spinner, facet-filters-form .loading__spinner'
+    );
     loadingSpinners.forEach((spinner) => spinner.classList.add('hidden'));
   }
 

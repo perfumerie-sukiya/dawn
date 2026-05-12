@@ -34,6 +34,18 @@ img {
   display: block;
 }
 
+swiper-container:not(:defined) {
+  display: block;
+}
+
+swiper-container:not(:defined) swiper-slide {
+  display: none;
+}
+
+swiper-container:not(:defined) swiper-slide:first-child {
+  display: block;
+}
+
 video {
   max-width: 100%;
 }

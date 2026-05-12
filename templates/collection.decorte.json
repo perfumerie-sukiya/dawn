@@ -20,44 +20,35 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
-        "slide_tWFPcx": {
+        "slide_3q7ahC": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/DC_LIPOFM_1_online_TOP_4971710379860_PC.jpg",
-            "image_sp": "shopify://shop_images/DC_LIPOFM_1_online_TOP_4971710379860_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-liposome-advanced-repair-serum-color-dreams-2025-6-1"
+            "image": "shopify://shop_images/LIPOSOME_ootani_banner_Sukiya_PC_1280x400_94799ac9-944b-4938-9eb1-35a6397265a3.jpg",
+            "image_sp": "shopify://shop_images/LIPOSOME_ootani_banner_Sukiya_SP_750x392_3c3cd84e-1d23-4a09-9999-86222e172b75.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-hydra-clarity-medicated-brightening-essence-water-2026-3-16"
           }
         },
-        "slide_VnUATj": {
+        "slide_BdQtHa": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/25AQ_oil_PC.jpg",
-            "image_sp": "shopify://shop_images/25AQ_oil_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-aq-pore-serum-oil-2025-5-16"
+            "image": "shopify://shop_images/6JBZMX_DAYMIST_banner_PC-11.jpg",
+            "image_sp": "shopify://shop_images/6JBZMX_DAYMIST_banner_SP-11.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-comfort-day-mist-makeup-fix-2026-4-16"
           }
         },
-        "slide_4NPcQK": {
+        "slide_R7DQhX": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/25AQ_hair_mist_PC.jpg",
-            "image_sp": "shopify://shop_images/25AQ_hair_mist_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-aq-perfumed-hair-mist-2025-5-16"
-          }
-        },
-        "slide_4cQQ86": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/25_WL_Top_PC.jpg",
-            "image_sp": "shopify://shop_images/25_WL_Top_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-whitelogist-neogenesis-brightening-concentrate-limited-size-2025-5-16"
+            "image": "shopify://shop_images/6JBZMY_PointMake_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JBZMY_PointMake_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-rouge-decorte-cream-glow-2026-4-16"
           }
         }
       },
       "block_order": [
-        "slide_tWFPcx",
-        "slide_VnUATj",
-        "slide_4NPcQK",
-        "slide_4cQQ86"
+        "slide_3q7ahC",
+        "slide_BdQtHa",
+        "slide_R7DQhX"
       ],
       "settings": {}
     },
@@ -72,6 +63,7 @@
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
+        "max_title_length": 28,
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
@@ -80,7 +72,8 @@
         "padding_bottom": 36,
         "products_to_show": 4,
         "enable_desktop_slider": true,
-        "swipe_on_mobile": true
+        "swipe_on_mobile": true,
+        "force_product_grid": false
       }
     }
   },

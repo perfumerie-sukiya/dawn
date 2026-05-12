@@ -7,9 +7,10 @@
   - enable_sorting: {Boolean} Show sorting when true
   - filter_type: {String} Type of filter
   - paginate: {Object}
+  - view_param: {String} Optional view parameter to preserve in URLs (e.g., 'decorte-products')
 
   Usage:
-  {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %}
+  {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate, view_param: 'decorte-products' %}
 {% endcomment %}
 
 {{ 'component-show-more.css' | asset_url | stylesheet_tag }}
@@ -24,6 +25,18 @@
     assign terms = results.terms | escape
     assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
   endif
+  
+  # view_param が指定されている場合、URL に追加する関数を定義
+  if view_param != blank
+    # results_url に view パラメータを追加（既に含まれている場合は追加しない）
+    unless results_url contains 'view='
+      if results_url contains '?'
+        assign results_url = results_url | append: '&view=' | append: view_param
+      else
+        assign results_url = results_url | append: '?view=' | append: view_param
+      endif
+    endunless
+  endif
 -%}
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
@@ -36,6 +49,9 @@
         {%- if results.terms -%}
           <input type="hidden" name="q" value="{{ results.terms | escape }}">
           <input name="options[prefix]" type="hidden" value="last">
+        {%- endif -%}
+        {%- if view_param != blank -%}
+          <input type="hidden" name="view" value="{{ view_param | escape }}">
         {%- endif -%}
 
         {% if enable_filtering %}
@@ -70,10 +86,37 @@
                     </a>
                   </facet-remove>
                 </div>
+                {%- if fallback_filter_label != blank -%}
+                  <facet-remove
+                    class="tw-hidden"
+                    data-fallback-filter-pill
+                    data-fallback-filter-label="{{ fallback_filter_label | escape }}"
+                  >
+                    <a href="{{ results_url }}" class="active-facets__button active-facets__button--light" data-fallback-filter-link>
+                      <span class="active-facets__button-inner button button--tertiary">
+                        <span data-fallback-filter-text></span>
+                        {% render 'icon-close-small' %}
+                        <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+                      </span>
+                    </a>
+                  </facet-remove>
+                {%- endif -%}
                 {%- for filter in results.filters -%}
                   {%- for value in filter.active_values -%}
+                    {%- liquid
+                      assign remove_url = value.url_to_remove
+                      if view_param != blank
+                        unless remove_url contains 'view='
+                          if remove_url contains '?'
+                            assign remove_url = remove_url | append: '&view=' | append: view_param
+                          else
+                            assign remove_url = remove_url | append: '?view=' | append: view_param
+                          endif
+                        endunless
+                      endif
+                    -%}
                     <facet-remove>
-                      <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                      <a href="{{ remove_url }}" class="active-facets__button active-facets__button--light">
                         <span class="active-facets__button-inner button button--tertiary">
                           {{ filter.label }}: {{ value.label | escape }}
                           {% render 'icon-close-small' %}
@@ -84,8 +127,20 @@
                   {%- endfor -%}
                   {% if filter.type == 'price_range' %}
                     {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+                      {%- liquid
+                        assign remove_url = filter.url_to_remove
+                        if view_param != blank
+                          unless remove_url contains 'view='
+                            if remove_url contains '?'
+                              assign remove_url = remove_url | append: '&view=' | append: view_param
+                            else
+                              assign remove_url = remove_url | append: '?view=' | append: view_param
+                            endif
+                          endunless
+                        endif
+                      -%}
                       <facet-remove>
-                        <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                        <a href="{{ remove_url }}" class="active-facets__button active-facets__button--light">
                           <span class="active-facets__button-inner button button--tertiary">
                             {%- if filter.min_value.value -%}
                               {{ filter.min_value.value | money }}
@@ -465,10 +520,37 @@
           {% comment %} Pills after filtes on filter type horizontal {% endcomment %}
           {%- if filter_type == 'horizontal' -%}
             <div class="active-facets active-facets-desktop">
+              {%- if fallback_filter_label != blank -%}
+                <facet-remove
+                  class="tw-hidden"
+                  data-fallback-filter-pill
+                  data-fallback-filter-label="{{ fallback_filter_label | escape }}"
+                >
+                  <a href="{{ results_url }}" class="active-facets__button active-facets__button--light" data-fallback-filter-link>
+                    <span class="active-facets__button-inner button button--tertiary">
+                      <span data-fallback-filter-text></span>
+                      {% render 'icon-close-small' %}
+                      <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+                    </span>
+                  </a>
+                </facet-remove>
+              {%- endif -%}
               {%- for filter in results.filters -%}
                 {%- for value in filter.active_values -%}
+                  {%- liquid
+                    assign remove_url = value.url_to_remove
+                    if view_param != blank
+                      unless remove_url contains 'view='
+                        if remove_url contains '?'
+                          assign remove_url = remove_url | append: '&view=' | append: view_param
+                        else
+                          assign remove_url = remove_url | append: '?view=' | append: view_param
+                        endif
+                      endunless
+                    endif
+                  -%}
                   <facet-remove>
-                    <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                    <a href="{{ remove_url }}" class="active-facets__button active-facets__button--light">
                       <span class="active-facets__button-inner button button--tertiary">
                         {{ filter.label }}: {{ value.label | escape }}
                         {% render 'icon-close-small' %}
@@ -479,8 +561,20 @@
                 {%- endfor -%}
                 {% if filter.type == 'price_range' %}
                   {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+                    {%- liquid
+                      assign remove_url = filter.url_to_remove
+                      if view_param != blank
+                        unless remove_url contains 'view='
+                          if remove_url contains '?'
+                            assign remove_url = remove_url | append: '&view=' | append: view_param
+                          else
+                            assign remove_url = remove_url | append: '?view=' | append: view_param
+                          endif
+                        endunless
+                      endif
+                    -%}
                     <facet-remove>
-                      <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                      <a href="{{ remove_url }}" class="active-facets__button active-facets__button--light">
                         <span class="active-facets__button-inner button button--tertiary">
                           {%- if filter.min_value.value -%}
                             {{ filter.min_value.value | money }}
@@ -816,8 +910,20 @@
                           </ul>
 
                           <div class="no-js-hidden mobile-facets__footer gradient">
+                            {%- liquid
+                              assign clear_url = filter.url_to_remove
+                              if view_param != blank
+                                unless clear_url contains 'view='
+                                  if clear_url contains '?'
+                                    assign clear_url = clear_url | append: '&view=' | append: view_param
+                                  else
+                                    assign clear_url = clear_url | append: '?view=' | append: view_param
+                                  endif
+                                endunless
+                              endif
+                            -%}
                             <facet-remove class="mobile-facets__clear-wrapper">
-                              <a href="{{ filter.url_to_remove }}" class="mobile-facets__clear underlined-link">
+                              <a href="{{ clear_url }}" class="mobile-facets__clear underlined-link">
                                 {{- 'products.facets.clear' | t -}}
                               </a>
                             </facet-remove>
@@ -933,8 +1039,20 @@
                             </div>
                           </price-range>
                           <div class="no-js-hidden mobile-facets__footer">
+                            {%- liquid
+                              assign clear_url = filter.url_to_remove
+                              if view_param != blank
+                                unless clear_url contains 'view='
+                                  if clear_url contains '?'
+                                    assign clear_url = clear_url | append: '&view=' | append: view_param
+                                  else
+                                    assign clear_url = clear_url | append: '?view=' | append: view_param
+                                  endif
+                                endunless
+                              endif
+                            -%}
                             <facet-remove class="mobile-facets__clear-wrapper">
-                              <a href="{{ filter.url_to_remove }}" class="mobile-facets__clear underlined-link">
+                              <a href="{{ clear_url }}" class="mobile-facets__clear underlined-link">
                                 {{- 'products.facets.clear' | t -}}
                               </a>
                             </facet-remove>
@@ -1017,6 +1135,9 @@
               <input type="hidden" name="q" value="{{ results.terms | escape }}">
               <input name="options[prefix]" type="hidden" value="last">
             {%- endif -%}
+            {%- if view_param != blank -%}
+              <input type="hidden" name="view" value="{{ view_param | escape }}">
+            {%- endif -%}
           </div>
         </form>
       </facet-filters-form>
@@ -1024,10 +1145,37 @@
   </menu-drawer>
 
   <div class="active-facets active-facets-mobile medium-hide large-up-hide">
+    {%- if fallback_filter_label != blank -%}
+      <facet-remove
+        class="tw-hidden"
+        data-fallback-filter-pill
+        data-fallback-filter-label="{{ fallback_filter_label | escape }}"
+      >
+        <a href="{{ results_url }}" class="active-facets__button active-facets__button--light" data-fallback-filter-link>
+          <span class="active-facets__button-inner button button--tertiary">
+            <span data-fallback-filter-text></span>
+            {% render 'icon-close-small' %}
+            <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+          </span>
+        </a>
+      </facet-remove>
+    {%- endif -%}
     {%- for filter in results.filters -%}
       {%- for value in filter.active_values -%}
+        {%- liquid
+          assign remove_url = value.url_to_remove
+          if view_param != blank
+            unless remove_url contains 'view='
+              if remove_url contains '?'
+                assign remove_url = remove_url | append: '&view=' | append: view_param
+              else
+                assign remove_url = remove_url | append: '?view=' | append: view_param
+              endif
+            endunless
+          endif
+        -%}
         <facet-remove>
-          <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
+          <a href="{{ remove_url }}" class="active-facets__button active-facets__button--light">
             <span class="active-facets__button-inner button button--tertiary">
               {{ filter.label }}: {{ value.label | escape }}
               {% render 'icon-close-small' %}
@@ -1039,8 +1187,20 @@
 
       {%- if filter.type == 'price_range' -%}
         {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+          {%- liquid
+            assign remove_url = filter.url_to_remove
+            if view_param != blank
+              unless remove_url contains 'view='
+                if remove_url contains '?'
+                  assign remove_url = remove_url | append: '&view=' | append: view_param
+                else
+                  assign remove_url = remove_url | append: '?view=' | append: view_param
+                endif
+              endunless
+            endif
+          -%}
           <facet-remove>
-            <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
+            <a href="{{ remove_url }}" class="active-facets__button active-facets__button--light">
               <span class="active-facets__button-inner button button--tertiary">
                 {%- if filter.min_value.value -%}
                   {{ filter.min_value.value | money }}
@@ -1114,6 +1274,9 @@
           <input type="hidden" name="q" value="{{ results.terms | escape }}">
           <input name="options[prefix]" type="hidden" value="last">
         {%- endif -%}
+        {%- if view_param != blank -%}
+          <input type="hidden" name="view" value="{{ view_param | escape }}">
+        {%- endif -%}
       </form>
     </facet-filters-form>
   {%- endif -%}
@@ -1143,8 +1306,20 @@
         <div class="active-facets active-facets-desktop">
           {%- for filter in results.filters -%}
             {%- for value in filter.active_values -%}
+              {%- liquid
+                assign remove_url = value.url_to_remove
+                if view_param != blank
+                  unless remove_url contains 'view='
+                    if remove_url contains '?'
+                      assign remove_url = remove_url | append: '&view=' | append: view_param
+                    else
+                      assign remove_url = remove_url | append: '?view=' | append: view_param
+                    endif
+                  endunless
+                endif
+              -%}
               <facet-remove>
-                <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                <a href="{{ remove_url }}" class="active-facets__button active-facets__button--light">
                   <span class="active-facets__button-inner button button--tertiary">
                     {{ filter.label }}: {{ value.label | escape }}
                     {% render 'icon-close-small' %}
@@ -1156,8 +1331,20 @@
 
             {%- if filter.type == 'price_range' -%}
               {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+                {%- liquid
+                  assign remove_url = filter.url_to_remove
+                  if view_param != blank
+                    unless remove_url contains 'view='
+                      if remove_url contains '?'
+                        assign remove_url = remove_url | append: '&view=' | append: view_param
+                      else
+                        assign remove_url = remove_url | append: '?view=' | append: view_param
+                      endif
+                    endunless
+                  endif
+                -%}
                 <facet-remove>
-                  <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                  <a href="{{ remove_url }}" class="active-facets__button active-facets__button--light">
                     <span class="active-facets__button-inner button button--tertiary">
                       {%- if filter.min_value.value -%}
                         {{ filter.min_value.value | money }}

@@ -1,3 +1,7 @@
+{%- liquid
+  assign icon_width = width | default: 10 | plus: 0 | at_least: 1
+  assign icon_height = height | default: 2 | plus: 0 | at_least: 1
+-%}
 <svg
   xmlns="http://www.w3.org/2000/svg"
   aria-hidden="true"
@@ -5,8 +9,9 @@
   class="icon icon-minus"
   fill="none"
   viewBox="0 0 10 2"
+  width="{{ icon_width }}"
+  height="{{ icon_height }}"
+  style="width: {{ icon_width }}px !important; height: {{ icon_height }}px !important;"
 >
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="currentColor">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="currentColor"></path>
 </svg>
-
-<!-- GPO installed -->

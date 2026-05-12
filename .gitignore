@@ -119,3 +119,9 @@ dist
 
 .DS_Store
 .shopify
+
+# playwright-cli generated files
+.playwright-cli/
+
+# Local agent settings
+.claude/settings.local.json

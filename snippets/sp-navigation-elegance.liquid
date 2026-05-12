@@ -1,0 +1,75 @@
+{% assign elegance_collection_url = routes.collections_url | append: '/elegance' %}
+
+<div class="sp-only tw-mt-8">
+  <h3 class="tw-text-center tw-text-xl tw-font-bold tw-mb-6">PRODUCTS</h3>
+
+  <div class="elegance-products-board">
+    <div class="tw-grid tw-gap-y-8">
+      <div>
+        <p class="elegance-group-title">POINT MAKEUP</p>
+        <div class="tw-grid tw-grid-cols-2 tw-gap-4">
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/アイ#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_eye.png' | file_url }}" alt="EYE" width="280" height="220">
+            <p class="elegance-item-label">EYE</p>
+          </a>
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/リップ#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_lip.png' | file_url }}" alt="LIP" width="280" height="220">
+            <p class="elegance-item-label">LIP</p>
+          </a>
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/フェイスカラー#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_face-color.png' | file_url }}" alt="FACE COLOR" width="280" height="220">
+            <p class="elegance-item-label">FACE COLOR</p>
+          </a>
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/ネイル#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_nail.png' | file_url }}" alt="NAIL" width="280" height="220">
+            <p class="elegance-item-label">NAIL</p>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="elegance-group-title">BASE MAKEUP</p>
+        <div class="tw-grid tw-grid-cols-3 tw-gap-4">
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/メイクアップベース#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_makeup-base.png' | file_url }}" alt="MAKEUP BASE" width="280" height="220">
+            <p class="elegance-item-label">MAKEUP BASE</p>
+          </a>
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/ファンデーション#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_foundation.png' | file_url }}" alt="FOUNDATION" width="280" height="220">
+            <p class="elegance-item-label">FOUNDATION</p>
+          </a>
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/フェイスパウダー#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_face-powder.png' | file_url }}" alt="FACE POWDER" width="280" height="220">
+            <p class="elegance-item-label">FACE POWDER</p>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="elegance-group-title">TOOL</p>
+        <div class="tw-grid tw-grid-cols-3 tw-gap-4">
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/リムーバー#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_remover.png' | file_url }}" alt="REMOVER" width="280" height="220">
+            <p class="elegance-item-label">REMOVER</p>
+          </a>
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/ブラシ#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_brush.png' | file_url }}" alt="BRUSH" width="280" height="220">
+            <p class="elegance-item-label">BRUSH</p>
+          </a>
+          <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/スポンジ・パフ#Collection">
+            <img class="elegance-item-image" src="{{ 'elegance_category_puff-sponge.png' | file_url }}" alt="PUFF・SPONGE" width="280" height="220">
+            <p class="elegance-item-label">PUFF・SPONGE</p>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="elegance-group-title">SKINCARE</p>
+        <a class="elegance-item-card tw-no-underline tw-text-current" href="{{ elegance_collection_url }}/スキンケア#Collection">
+          <img class="elegance-item-image" src="{{ 'elegance_category_skincare.png' | file_url }}" alt="SKINCARE" width="280" height="220">
+          <p class="elegance-item-label">SKINCARE</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

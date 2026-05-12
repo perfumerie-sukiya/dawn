@@ -1,0 +1,26 @@
+{% liquid
+  if request.host == 'perfumerie-sukiya-online-test.myshopify.com'
+    assign bsi_api_shop_id = '627714'
+    assign bsi_api_base_url = 'https://cjsvch9nga.execute-api.ap-northeast-1.amazonaws.com/prod/proxy'
+    assign bsi_api_check_id_url = 'https://test5.www.shiseido.co.jp/sw/api/auth/V1/SWFR010620.seam'
+    assign bsi_api_get_otp_url = 'https://test5.www.shiseido.co.jp/sw/api/auth/V1/SWFR010650.seam'
+    assign bsi_api_site_serial = 'goJFnRadgCtAYhwndQdIRX3TwQToi9K66vmre2ICGNmZy8gVxT'
+  else
+    assign bsi_api_shop_id = '627714'
+    assign bsi_api_base_url = 'https://cjsvch9nga.execute-api.ap-northeast-1.amazonaws.com/prod/proxy'
+    assign bsi_api_check_id_url = 'https://www.shiseido.co.jp/sw/api/auth/V1/SWFR010620.seam'
+    assign bsi_api_get_otp_url = 'https://www.shiseido.co.jp/sw/api/auth/V1/SWFR010650.seam'
+    assign bsi_api_site_serial = 'gzvDb2Qk5Yvp2Glxg3fqsBPmElb8uo58xMHC4BCevfHlV640pi'
+  endif
+%}
+
+<script src="{{ 'shiseido-connect.js' | asset_url }}" defer="defer"></script>
+
+<span
+  class="tw-hidden"
+  bsi-api-shop-id="{{ bsi_api_shop_id }}"
+  bsi-api-base-url="{{ bsi_api_base_url }}"
+  bsi-api-site-serial="{{ bsi_api_site_serial }}"
+  bsi-api-check-id-url="{{ bsi_api_check_id_url }}"
+  bsi-api-get-otp-url="{{ bsi_api_get_otp_url }}"
+></span>

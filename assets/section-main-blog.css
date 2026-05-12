@@ -5,6 +5,10 @@
   row-gap: var(--grid-mobile-vertical-spacing);
 }
 
+.blog-articles__article {
+  min-width: 0;
+}
+
 .blog-articles .card-wrapper {
   width: 100%;
 }

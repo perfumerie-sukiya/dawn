@@ -1,0 +1,395 @@
+{% liquid
+  if request.host == 'perfumerie-sukiya-online-test.myshopify.com'
+    assign decorte_connect_url = ''
+  else
+    assign decorte_connect_url = ''
+  endif
+
+  assign decorte_company_name = section.settings.company_name | default: '株式会社粧苑すきや'
+%}
+
+<style>
+  .decorte-connect {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+    color: #3c3c3c;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .decorte-connect__title {
+    display: table;
+    margin: 30px auto 0;
+    text-align: center;
+  }
+
+  .decorte-connect__title h2 {
+    margin: 0;
+    padding: 10px 20px 16px;
+    border-bottom: 1px solid #3c3c3c;
+    font-family: Quicksand, "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+  }
+
+  .decorte-connect__lead {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
+  .decorte-connect__subtitle {
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .decorte-connect__section {
+    margin-top: 30px;
+  }
+
+  .decorte-connect__heading {
+    position: relative;
+    margin: 0 0 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .decorte-connect__heading::before {
+    content: "";
+    position: absolute;
+    top: 0.15em;
+    left: -8px;
+    width: 2px;
+    height: 22px;
+    background-color: #5185c5;
+  }
+
+  .decorte-connect__notice {
+    margin-top: 12px;
+    color: #d9534f;
+    font-size: 14px;
+  }
+
+  .decorte-connect__button-wrap {
+    margin: 20px 0 30px;
+    text-align: center;
+  }
+
+  .decorte-connect__button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    min-height: 42px;
+    padding: 8px 28px 8px 16px;
+    border: 1px solid #5185c5;
+    border-radius: 13px;
+    background-color: #5185c5;
+    color: #fff;
+    font: inherit;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .decorte-connect__button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 0;
+    height: 0;
+    margin-top: -6px;
+    border-color: transparent transparent transparent #fff;
+    border-style: solid;
+    border-width: 6px 0 6px 8px;
+  }
+
+  .decorte-connect__button:hover {
+    color: #fff;
+    opacity: 0.8;
+  }
+
+  .decorte-connect__button--disabled {
+    border-color: #b4b4b4;
+    background-color: #b4b4b4;
+    cursor: not-allowed;
+  }
+
+  .decorte-connect__notes {
+    color: #888;
+    font-size: 13px;
+  }
+
+  .decorte-connect__separator {
+    margin-top: 40px;
+    border-top: 2px solid #5185c5;
+  }
+
+  .decorte-connect__flow {
+    margin: 20px 0 0;
+    padding: 0 10px 20px;
+  }
+
+  .decorte-connect__step {
+    margin-top: 40px;
+  }
+
+  .decorte-connect__step:first-child {
+    margin-top: 20px;
+  }
+
+  .decorte-connect__step-title {
+    display: flex;
+    gap: 8px;
+    margin: 0 0 10px;
+    font-weight: 700;
+  }
+
+  .decorte-connect__step-title::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 6px;
+    height: 6px;
+    margin-top: 0.7em;
+    border-radius: 50%;
+    background-color: #5185c5;
+  }
+
+  .decorte-connect__step-text {
+    margin: 0;
+  }
+
+  .decorte-connect__image-wrap {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .decorte-connect__guide-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .decorte-connect__list {
+    margin: 20px 0 0;
+    padding-left: 1.5em;
+    list-style: disc;
+  }
+
+  .decorte-connect__list li {
+    margin: 0.5em 0;
+  }
+
+  @media screen and (min-width: 769px) {
+    .decorte-connect__title {
+      margin-top: 40px;
+    }
+
+    .decorte-connect__title h2 {
+      font-size: 26px;
+    }
+
+    .decorte-connect__button {
+      width: 256px;
+      min-height: 46px;
+      border-radius: 16px;
+    }
+
+    .decorte-connect__flow {
+      margin-left: 14px;
+      padding: 0;
+    }
+
+    .decorte-connect__image-wrap {
+      margin-top: 10px;
+    }
+  }
+</style>
+
+{% capture decorte_connect_button %}
+  <div class="decorte-connect__button-wrap">
+    {% if decorte_connect_url != blank %}
+      <a
+        href="{{ decorte_connect_url }}"
+        class="decorte-connect__button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        情報提供に同意し連携する
+      </a>
+    {% else %}
+      <span
+        class="decorte-connect__button decorte-connect__button--disabled"
+        role="link"
+        aria-disabled="true"
+      >
+        情報提供に同意し連携する
+      </span>
+    {% endif %}
+  </div>
+{% endcapture %}
+
+<div class="decorte-connect">
+  <div class="decorte-connect__title">
+    <h2>
+      CLUB DECORTÉ<br>
+      （DECORTÉのメンバーシッププログラム）と<br>
+      Perfumerie Sukiya Online StoreのID連携について
+    </h2>
+    <p class="decorte-connect__subtitle">KOSE IDへの連携手続きのご案内</p>
+  </div>
+
+  <section class="decorte-connect__section">
+    <h3 class="decorte-connect__heading">Perfumerie Sukiya Online StoreとKOSE IDの連携</h3>
+    <p class="decorte-connect__lead">
+      Perfumerie Sukiya Online Store会員IDとCLUB DECORTÉの会員IDを連携していただくことでパーソナルなブランド体験をお楽しみいただけます。<br>
+      Perfumerie Sukiya Online Storeでの購入でCLUB DECORTÉポイントが付与されますので、ぜひ連携ください。
+    </p>
+    <p class="decorte-connect__notice">
+      連携した場合、{{ decorte_company_name }}はお客様のユーザーIDと購入履歴をインターネットを利用した通信手段により株式会社コーセーに提供します。
+    </p>
+    {{ decorte_connect_button }}
+    <p class="decorte-connect__notes">
+      ※KOSE IDで未ログインの場合：ログイン画面が表示されますので、CLUB DECORTÉで作成したKOSE IDにてログインしてください。<br>
+      ※KOSE IDをお持ちでない場合：ログイン画面にて新規会員登録からKOSE IDの作成（無料）をお願いします。<br>
+      {% if decorte_connect_url == blank %}
+        ※現在、連携先URLを確認中のため、連携ボタンはご利用いただけません。
+      {% endif %}
+    </p>
+  </section>
+
+  <div class="decorte-connect__separator"></div>
+
+  <section class="decorte-connect__section">
+    <h3 class="decorte-connect__heading">ID連携の流れ</h3>
+    <div class="decorte-connect__flow">
+      <div class="decorte-connect__step">
+        <h4 class="decorte-connect__step-title">1. ID連携の案内画面からKOSEオフィシャルサイトへ遷移</h4>
+        <p class="decorte-connect__step-text">
+          「情報提供に同意し連携する」ボタンをクリックするとKOSEオフィシャルサイトへ遷移します。
+        </p>
+        <picture class="decorte-connect__image-wrap">
+          <source
+            media="(min-width: 769px)"
+            srcset="{{ 'decorte-connect_pc_guide2-1.png' | file_url }}"
+          >
+          <img
+            src="{{ 'decorte-connect_sp_guide2-1.png' | file_url }}"
+            alt="ID連携の案内画面"
+            class="decorte-connect__guide-image"
+            width="400"
+            height="550"
+            loading="lazy"
+          >
+        </picture>
+      </div>
+
+      <div class="decorte-connect__step">
+        <h4 class="decorte-connect__step-title">2. KOSE IDへログインまたは新規作成</h4>
+        <p class="decorte-connect__step-text">
+          KOSE IDへ未ログインの場合にはログインページが表示されますので、ログインまたはKOSE IDを新規作成してください。
+        </p>
+        <picture class="decorte-connect__image-wrap">
+          <source
+            media="(min-width: 769px)"
+            srcset="{{ 'decorte-connect_pc_guide2-2.png' | file_url }}"
+          >
+          <img
+            src="{{ 'decorte-connect_sp_guide2-2.png' | file_url }}"
+            alt="KOSE IDログイン画面"
+            class="decorte-connect__guide-image"
+            width="400"
+            height="500"
+            loading="lazy"
+          >
+        </picture>
+      </div>
+
+      <div class="decorte-connect__step">
+        <h4 class="decorte-connect__step-title">3. 利用規約に同意</h4>
+        <p class="decorte-connect__step-text">
+          「ID連携を実行する」ページへ遷移後、ID連携 利用規約に同意の上、「同意する」ボタンをクリックしてください。
+        </p>
+        <picture class="decorte-connect__image-wrap">
+          <source
+            media="(min-width: 769px)"
+            srcset="{{ 'decorte-connect_pc_guide2-3.png' | file_url }}"
+          >
+          <img
+            src="{{ 'decorte-connect_sp_guide2-3.png' | file_url }}"
+            alt="ID連携利用規約の同意画面"
+            class="decorte-connect__guide-image"
+            width="413"
+            height="710"
+            loading="lazy"
+          >
+        </picture>
+      </div>
+
+      <div class="decorte-connect__step">
+        <h4 class="decorte-connect__step-title">4. 登録完了</h4>
+        <p class="decorte-connect__step-text">登録完了ページが表示されます。</p>
+        <picture class="decorte-connect__image-wrap">
+          <source
+            media="(min-width: 769px)"
+            srcset="{{ 'decorte-connect_pc_guide2-4.png' | file_url }}"
+          >
+          <img
+            src="{{ 'decorte-connect_sp_guide2-4.png' | file_url }}"
+            alt="ID連携登録完了画面"
+            class="decorte-connect__guide-image"
+            width="367"
+            height="345"
+            loading="lazy"
+          >
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  {{ decorte_connect_button }}
+
+  <section class="decorte-connect__section">
+    <h3 class="decorte-connect__heading">ID連携の注意事項</h3>
+    <ul class="decorte-connect__list">
+      <li>ID連携はKOSEオフィシャルサイト内で実施いただきます。（Perfumerie Sukiya Online Store内でID連携はできません）</li>
+      <li>Perfumerie Sukiya Online Store会員登録およびKOSE IDのどちらも会員登録が必要となります。</li>
+      <li>Perfumerie Sukiya Online Storeの会員ページとKOSE IDへログインしている状態で進めていただく必要がございます。</li>
+      <li>KOSEオフィシャルサイト内にてID連携登録前に利用規約（KOSEのID連携利用規約）へ同意が必要です。KOSEのID連携利用規約は、KOSEオフィシャルサイト内「ID連携を実行する」ページでご確認ください。</li>
+      <li>ID連携をしていただくと、Perfumerie Sukiya Online StoreでDECORTÉ商品をご購入になった場合、「購入履歴」がKOSE IDに連携されます。</li>
+      <li>お買い物当日中にKOSE ID連携をしていただくと、当日のお買い物からCLUB DECORTÉポイントが付与されます。</li>
+      <li>ご購入日の翌日以降にKOSE IDと連携された場合は、年内の購入に遡って購入ポイントのみ付与させていただきます。</li>
+      <li>CLUB DECORTÉポイント数は、CLUB DECORTÉマイページにてご確認いただけます。</li>
+      <li>購入履歴およびCLUB DECORTÉポイントの反映までには商品購入から1週間程度かかります。また、予約商品の場合は予約商品の発売日から1週間程度かかりますのであらかじめご了承ください。</li>
+    </ul>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "decorte-connect",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "company_name",
+      "label": "情報提供元の企業名",
+      "default": "株式会社粧苑すきや"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    }
+  ]
+}
+{% endschema %}

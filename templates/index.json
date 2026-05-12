@@ -21,30 +21,30 @@
             "link": "shopify://collections/decorte"
           }
         },
-        "228b3023-7ae7-439e-8bb4-ebd68c6d489f": {
-          "type": "slide",
-          "settings": {
-            "title": "INOUI",
-            "image": "shopify://shop_images/in_1_890_550_7400afc6-c6f0-46d6-8dd8-81aa2aade0a4.jpg",
-            "image_sp": "shopify://shop_images/in_1_828_1242_114b2b68-7964-4fcc-8cb9-a12a46434197.jpg",
-            "link": "shopify://collections/inoui"
-          }
-        },
         "5614945f-e2ea-4edb-a296-37fe83d4bd86": {
           "type": "slide",
           "settings": {
             "title": "クレ・ド・ポー ボーテ",
-            "image": "shopify://shop_images/CPB_Sukiya_Banner_01.1_PC_890x550_2x_B.jpg",
-            "image_sp": "shopify://shop_images/CPB_Sukiya_Banner_01.1_SP_828x1242_B.jpg",
+            "image": "shopify://shop_images/CPB_25SS_KeyRadianceCare.jpg",
+            "image_sp": "shopify://shop_images/SP_CPB_25AW_KRC_DigitalKV_fa05a4d8-f37f-4f9f-a326-bd58253d69dd.jpg",
             "link": "shopify://collections/cle-de-peau-beaute"
+          }
+        },
+        "slide_brNxcD": {
+          "type": "slide",
+          "settings": {
+            "title": "FREDERIC MALLE",
+            "image": "shopify://shop_images/FY26_FM_ContreJour_SoMe_logo_KV1_1.618x1.jpg",
+            "image_sp": "shopify://shop_images/FY26_FM_ContreJour_SoMe_logo_KV1_2x3_8fa3f941-5f3e-407f-802c-c39fe4aeda99.jpg",
+            "link": "https://online.sukiya.biz/collections/frederic-malle"
           }
         },
         "df7f0c5b-43ad-426d-aae8-11c72a9455ed": {
           "type": "slide",
           "settings": {
             "title": "NARS",
-            "image": "shopify://shop_images/NARS_HotEscape_Sukiya_890_550.png",
-            "image_sp": "shopify://shop_images/NARS_HotEscape_Sukiya_828_1242.png",
+            "image": "shopify://shop_images/sukiya_890_550_2.png",
+            "image_sp": "shopify://shop_images/sukiya_828_1242_2604.png",
             "link": "shopify://collections/nars"
           }
         },
@@ -52,8 +52,8 @@
           "type": "slide",
           "settings": {
             "title": "JILL STUART",
-            "image": "shopify://shop_images/JS24_10th_CB_SU_W890_H550px.jpg",
-            "image_sp": "shopify://shop_images/JS24_10th_CB_SU_W828_H1242px.jpg",
+            "image": "shopify://shop_images/transparency_A_B1_yoko_26Summer_890x550-03.jpg",
+            "image_sp": "shopify://shop_images/transparency_A_B1_26Summer_828x1242-02.jpg",
             "link": "shopify://collections/jillstuart"
           }
         },
@@ -61,8 +61,8 @@
           "type": "slide",
           "settings": {
             "title": "ADDICTION",
-            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_25Summer.jpg",
-            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_25Summer.jpg",
+            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_26Summer.jpg",
+            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_26Summer.jpg",
             "link": "shopify://collections/addiction"
           }
         },
@@ -97,16 +97,16 @@
           "type": "slide",
           "settings": {
             "title": "セルジュ・ルタンス",
-            "image": "shopify://shop_images/SL_slide_pc.jpg",
-            "image_sp": "shopify://shop_images/SL_slide_sp.jpg",
+            "image": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_1.618x1.jpg",
+            "image_sp": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_828x1242_d9c1bf42-16c0-4beb-8c38-17cd2ee28cb5.jpg",
             "link": "shopify://collections/serge-lutens"
           }
         }
       },
       "block_order": [
         "aed8695d-1c8c-4faf-90e2-f9596f48623a",
-        "228b3023-7ae7-439e-8bb4-ebd68c6d489f",
         "5614945f-e2ea-4edb-a296-37fe83d4bd86",
+        "slide_brNxcD",
         "df7f0c5b-43ad-426d-aae8-11c72a9455ed",
         "88f8f653-ead8-4ae6-b7fb-c0c277520c47",
         "661067f2-b6f0-4de4-9ae0-f8624f2add30",
@@ -117,6 +117,21 @@
       ],
       "settings": {}
     },
+    "image_text_link_grid_PUAaAR": {
+      "type": "image-text-link-grid",
+      "disabled": true,
+      "name": "t:sections.image-text-link-grid.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "columns_desktop": 4,
+        "item_alignment": "center",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "4e924789-09e2-4d09-b5ac-1841525ecc15": {
       "type": "featured-collection",
       "settings": {
@@ -125,7 +140,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "new-arrival",
+        "collection": "new-arrival2",
         "products_to_show": 16,
         "columns_desktop": 4,
         "full_width": false,
@@ -140,7 +155,7 @@
         "ranking": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "max_title_length": 26,
+        "max_title_length": 28,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -204,7 +219,7 @@
         "ranking": true,
         "show_rating": false,
         "enable_quick_add": false,
-        "max_title_length": 26,
+        "max_title_length": 28,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -214,129 +229,140 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
-        "column_394aLb": {
+        "column_jjrLUb": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/LM20250606.jpg",
+            "image": "shopify://shop_images/PJ5_GWP.png",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/laura-mercier-original-oil-blotting-paper-2025-6-6"
+            "link": "https://online.sukiya.biz/pages/paulandjoe-original-bottle-shaker-2026-6-1"
           }
         },
-        "column_Ya9iab": {
+        "column_9PxeJ9": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/FN_0606.jpg",
+            "image": "shopify://shop_images/SL20260422.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-set-of-2-hand-creams"
+            "link": "https://online.sukiya.biz/pages/serge-lutens-leau-serge-lutens-5ml-2026-4-22"
           }
         },
-        "column_f9iW4M": {
+        "column_Krqiwj": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/CD20250601.jpg",
+            "image": "shopify://shop_images/FN20260417_2.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-2025-6-1"
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-blue-hydrangea-eau-de-parfum-18ml-2026-4-17"
           }
         },
-        "column_UVigRp": {
+        "column_Nj7W6G": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PJ20250601.jpg",
+            "image": "shopify://shop_images/NA20260424.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-pouch-2-body-primer-clear-sample-packs"
+            "link": "https://online.sukiya.biz/pages/nars-explicit-lipstick-803-body-heat-special-size-2026-4-24"
           }
         },
-        "column_xpi4cJ": {
+        "column_BhxHtQ": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PJ6_GWP.jpg",
+            "image": "shopify://shop_images/FN20260401_4c161d17-4948-40f4-9436-55bf1965cab8.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-fixing-mist-trial-size"
+            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-atomizer-with-case-black-2026-4-1"
           }
         },
-        "column_PHmCcb": {
+        "column_gwEUti": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/NA20250528.jpg",
+            "image": "shopify://shop_images/JS20260327.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-original-red-pouch"
+            "link": "https://online.sukiya.biz/pages/jill-stuart-blush-charm-2026-4-3"
           }
         },
-        "column_WLVQBN": {
+        "column_6GtwPe": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/LM20250523.jpg",
+            "image": "shopify://shop_images/SL20260320.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/laura-mercier-souffle-hand-cream-midi-neroli-30g"
+            "link": "https://online.sukiya.biz/pages/serge-lutens-collection-noir-1ml-2026-3-20"
           }
         },
-        "column_qqwXRx": {
+        "column_MXpFaE": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/CD20250516_2.jpg",
+            "image": "shopify://shop_images/NA20260306.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-aq-bright-emulsion-and-lotion-14ml-bottle-sample-set"
+            "link": "https://online.sukiya.biz/pages/nars-original-mirror-2026-3-6"
           }
         },
-        "column_DL9hB4": {
+        "column_6WpPYP": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/CD20250516.jpg",
+            "image": "shopify://shop_images/SI20260301.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-aq-radiance-watery-gel-cleansing-15g-aq-radiance-airy-cream-wash-15g-2"
+            "link": "https://online.sukiya.biz/pages/shiseido-ultimune-special-pouch-2026-3-1"
           }
         },
-        "column_BEMd8X": {
+        "column_nkdVMc": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/5_GWP_805a3dbc-f01b-4042-b652-48aa44f1495d.jpg",
+            "image": "shopify://shop_images/PJ20260301.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-clear-shoulder-pouch"
+            "link": "https://online.sukiya.biz/pages/paul-and-joe-original-round-pouch-2026-3"
           }
         },
-        "column_D3KcAj": {
+        "column_RNMiH3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/999d9e34f9571723c33317ac4bb11f16.jpg",
+            "image": "shopify://shop_images/IN20260221.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/le-couvent-trial-set-floral"
+            "link": "https://online.sukiya.biz/pages/inoui-original-foundation-brush-2026-2-21"
+          }
+        },
+        "column_LWCBiy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20260316_2.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-aq-pore-cleansing-serum-mini-size-15ml"
           }
         }
       },
       "block_order": [
-        "column_394aLb",
-        "column_Ya9iab",
-        "column_f9iW4M",
-        "column_UVigRp",
-        "column_xpi4cJ",
-        "column_PHmCcb",
-        "column_WLVQBN",
-        "column_qqwXRx",
-        "column_DL9hB4",
-        "column_BEMd8X",
-        "column_D3KcAj"
+        "column_jjrLUb",
+        "column_9PxeJ9",
+        "column_Krqiwj",
+        "column_Nj7W6G",
+        "column_BhxHtQ",
+        "column_gwEUti",
+        "column_6GtwPe",
+        "column_MXpFaE",
+        "column_6WpPYP",
+        "column_nkdVMc",
+        "column_RNMiH3",
+        "column_LWCBiy"
       ],
       "settings": {
         "title": "Campaign",
@@ -375,6 +401,7 @@
   },
   "order": [
     "24868b4c-3917-47de-829e-304405793cbe",
+    "image_text_link_grid_PUAaAR",
     "4e924789-09e2-4d09-b5ac-1841525ecc15",
     "7e633bcc-ce15-4de6-ac72-96f7eff1c483",
     "9b8922e2-5e36-4a67-acad-ca3d2ec85a82",

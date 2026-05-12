@@ -28,7 +28,7 @@
     assign option_disabled = true
     assign variant = product.variants | where: 'option1', value | first
     if variant.metafields.my_fields.select_variation_img_src == blank
-      assign variant_img_src = variant.featured_image | img_url: width: 50
+      assign variant_img_src = variant.featured_image | image_url: width: 50
     else
       assign variant_img_src = variant.metafields.my_fields.select_variation_img_src
     endif
@@ -66,6 +66,7 @@
       {% endif %}
     >
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+    {%- comment -%} theme-check-disable RemoteAsset {%- endcomment -%}
       <img src="{{ variant_img_src }}" alt="{{ value -}}" width="50" height="50" class="tw-mx-auto">
       {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>

@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "settings_schema": {
     "global": {
@@ -742,6 +751,9 @@
         "products_to_show": {
           "label": "Maximum products to show"
         },
+        "max_title_length": {
+          "label": "Maximum product title characters"
+        },
         "columns_desktop": {
           "label": "Number of columns on desktop"
         },
@@ -805,6 +817,9 @@
           },
           "options__2": {
             "label": "2 columns"
+          },
+          "options__3": {
+            "label": "3 columns"
           }
         },
         "swipe_on_mobile": {
@@ -1763,6 +1778,9 @@
         "columns_desktop": {
           "label": "Number of columns on desktop"
         },
+        "max_title_length": {
+          "label": "Maximum product title characters"
+        },
         "enable_filtering": {
           "label": "Enable filtering",
           "info": "Customize filters with the Search & Discovery app. [Learn more](https://help.shopify.com/manual/online-store/search-and-discovery/filters)"
@@ -1829,6 +1847,9 @@
           },
           "options__2": {
             "label": "2 columns"
+          },
+          "options__3": {
+            "label": "3 columns"
           }
         }
       }
@@ -1933,6 +1954,9 @@
               "options__3": {
                 "label": "Uppercase"
               }
+            },
+            "is_vendor": {
+              "label": "Vendor"
             }
           }
         },
@@ -2549,6 +2573,75 @@
         "name": "Multicolumn"
       }
     },
+    "image-text-link-grid": {
+      "name": "Image Text Link Grid",
+      "settings": {
+        "title": {
+          "label": "Heading"
+        },
+        "image_ratio": {
+          "label": "Image ratio",
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Portrait"
+          },
+          "options__3": {
+            "label": "Square"
+          }
+        },
+        "columns_desktop": {
+          "label": "Number of columns on desktop"
+        },
+        "item_alignment": {
+          "label": "Item alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          }
+        },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        },
+        "columns_mobile": {
+          "label": "Number of columns on mobile",
+          "options__1": {
+            "label": "1 column"
+          },
+          "options__2": {
+            "label": "2 columns"
+          },
+          "options__3": {
+            "label": "3 columns"
+          }
+        },
+        "swipe_on_mobile": {
+          "label": "Enable swipe on mobile"
+        }
+      },
+      "blocks": {
+        "item": {
+          "name": "Item",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "text": {
+              "label": "Text"
+            },
+            "link": {
+              "label": "Link"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Image Text Link Grid"
+      }
+    },
     "newsletter": {
       "name": "Email signup",
       "settings": {
@@ -2753,6 +2846,9 @@
         },
         "columns_desktop": {
           "label": "Number of columns on desktop"
+        },
+        "max_title_length": {
+          "label": "Maximum product title characters"
         },
         "paragraph__1": {
           "content": "Dynamic recommendations use order and product information to change and improve over time. [Learn more](https://help.shopify.com/themes/development/recommended-products)"

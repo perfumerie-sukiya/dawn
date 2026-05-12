@@ -5,6 +5,16 @@ class MyAccordion extends HTMLElement {
         transition: 0.4s;
       }
 
+      .my-accordion svg {
+        width: 14px !important;
+        height: 14px !important;
+        display: block;
+      }
+
+      .my-accordion .icon-minus {
+        height: 3px !important;
+      }
+
       .panel {
         transition: max-height 0.2s ease-out;
         overflow: hidden;
@@ -12,34 +22,39 @@ class MyAccordion extends HTMLElement {
       }
 
       .panel.show {
-        max-height: 500px; /* Quick fix: hardcode the approximate expanded panel's total height including the children panels and text */
+        max-height: 9999px; /* Fallback max-height (JavaScript dynamically calculates actual height) */
       }
 
-      .mdi {
-        transition: transform 0.2s ease-in-out;
-      }
-
-      .mdi.rotate {
-        transform: rotate(180deg);
+      .accordion-icon {
+        display: inline-flex;
+        align-items: center;
       }
     </style>` + this.innerHTML;
 
     let acc = this.querySelectorAll(".my-accordion");
     acc.forEach((el) => {
-      const icon = el.querySelector('.mdi');
+      const icon = el.querySelector('[data-accordion-icon]');
+      const iconClosed = icon ? icon.querySelector('[data-accordion-icon-closed]') : null;
+      const iconOpen = icon ? icon.querySelector('[data-accordion-icon-open]') : null;
+
+      const setIconState = (isOpen) => {
+        if (!iconClosed || !iconOpen) return;
+        iconClosed.hidden = isOpen;
+        iconOpen.hidden = !isOpen;
+      };
+
+      setIconState(false);
 
       el.addEventListener("click", function() {
         this.classList.toggle("active");
         let panel = this.nextElementSibling;
 
         if (panel.style.maxHeight) {
-          icon.classList.remove('mdi-minus', 'rotate');
-          icon.classList.add('mdi-plus');
+          setIconState(false);
           panel.style.maxHeight = null;
           panel.classList.remove('show');
         } else {
-          icon.classList.remove('mdi-plus');
-          icon.classList.add('mdi-minus', 'rotate');
+          setIconState(true);
           // Temporarily expand the panel to calculate the maximum height
           panel.style.maxHeight = 'none';
           let expandedHeight = panel.scrollHeight;

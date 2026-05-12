@@ -11,6 +11,16 @@
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true %}
 {% endcomment %}
 {% assign slug = product.metafields.my_fields.vendor_slug %}
+{%- liquid
+  assign counseling_scope = ''
+  if slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui'
+    assign counseling_scope = 'shiseido-group'
+  elsif slug == 'decorte' or slug == 'predia'
+    assign counseling_scope = 'decorte-group'
+  elsif slug == 'albion' or slug == 'elegance' or slug == 'ignis'
+    assign counseling_scope = 'albion-group'
+  endif
+-%}
 
 <div {{ block.shopify_attributes }}>
   {%- if product != blank -%}
@@ -30,6 +40,9 @@
         class="product-form"
         data-hide-errors="{{ gift_card_recipient_feature_active }}"
         data-section-id="{{ section.id }}"
+        {% if counseling_scope != blank %}
+          data-counseling-scope="{{ counseling_scope }}"
+        {% endif %}
     >
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <svg
@@ -80,7 +93,7 @@
             if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
               assign quantity_rule_soldout = true
             endif
-            if slug == 'decorte' or slug == 'predia' or slug == 'predia' or slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui'
+            if slug == 'decorte' or slug == 'predia' or slug == 'predia' or slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui' or slug == 'albion' or slug == 'elegance' or slug == 'ignis'
               assign counseling_product = true
             endif
           -%}
@@ -88,6 +101,7 @@
               id="ProductSubmitButton-{{ section_id }}"
               {% if counseling_product %}
                 type="button"
+                data-counseling-trigger
               {% else %}
                 type="submit"
               {% endif %}
@@ -110,6 +124,8 @@
             {% render 'cart-question-decorte', section_id: section_id %}
           {% elsif slug == 'predia' %}
             {% render 'cart-question-predia', section_id: section_id %}
+          {% elsif slug == 'albion' or slug == 'elegance' or slug == 'ignis' %}
+            {% render 'cart-question-albion', section_id: section_id %}
           {% elsif slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui' %}
             {% render 'cart-question-cpb', section_id: section_id, product: product %}
           {% endif %}

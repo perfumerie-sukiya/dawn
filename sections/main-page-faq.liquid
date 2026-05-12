@@ -1,0 +1,353 @@
+<style>
+  .faq_page {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq_page--title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .faq_page--qa {
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+
+  .faq_page--question {
+    padding: 15px 40px 15px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    background-color: #f9f9f9;
+    list-style: none;
+  }
+
+  .faq_page--question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq_page--question::after {
+    content: '+';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  details[open] .faq_page--question::after {
+    content: '-';
+  }
+
+  .faq_page--answer {
+    padding: 15px;
+  }
+
+  .faq_page--answer p {
+    margin: 0 0 1em;
+  }
+
+  .faq_page--answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq_page--answer a {
+    color: inherit;
+    text-decoration: underline;
+    word-break: break-all;
+  }
+
+  @media screen and (max-width: 768px) {
+    .faq_page {
+      padding: 30px 20px;
+    }
+
+    .faq_page--title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+</style>
+
+<div class="faq_page">
+  <div class="faq_page--title">よくある質問</div>
+  <div class="faq_page--content">
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">日時指定について</summary>
+      <div class="faq_page--answer">
+        <p>
+          商品発送後、発送完了通知をお送りしております。<br>
+          メール内に追跡番号を記載しておりますので、そちらよりお客様ご自身で日時指定のお手続きをお願いいたします。
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">送り先の住所変更について</summary>
+      <div class="faq_page--answer">
+        <p>
+          ご注文から1時間以内でしたら、配送先ご住所の変更が可能です。<br>
+          チャットにて下記内容をご記入のうえ、ご連絡ください。
+        </p>
+        <p>
+          ・ご注文番号<br>
+          ・お名前<br>
+          ・新しいご住所
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">ラッピングについて</summary>
+      <div class="faq_page--answer">
+        <p>ラッピングをご希望の場合は、eギフトをご利用ください。</p>
+        <p><a href="https://online.sukiya.biz/pages/about-e-gift">eギフトについて</a></p>
+        <p>
+          カート内の「eギフトで贈る」ボタンよりご選択のうえ、ご購入をお願いいたします。<br>
+          ラッピング済みの状態でのお届けをご希望の場合は、必ずeギフトをご利用ください。
+        </p>
+        <p>なお、手渡し用としてラッピング材をご希望の場合は、チャット欄にて下記内容をご記入ください。</p>
+        <p>
+          ・ご注文番号<br>
+          ・お名前
+        </p>
+        <p>ご記入いただいたお客様には、無料のラッピング材を同梱させていただきます。</p>
+        <p>
+          なお、一部ブランドではショッパー・ラッピング材のご用意がない場合がございます。<br>
+          その際は、弊社オリジナルのショッパー・ラッピング材をご用意させていただきます。
+        </p>
+        <p>あらかじめご了承ください。</p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">ギフトカード、ギフト券は利用について</summary>
+      <div class="faq_page--answer">
+        <p>オンラインストアでは、ギフトカード・ギフト券はご利用いただけません。</p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">キャンセルについて</summary>
+      <div class="faq_page--answer">
+        <p>
+          キャンセルをご希望の場合は、ご注文から1時間以内まで承っております。<br>
+          チャットにて下記内容をご記入のうえ、ご連絡ください。
+        </p>
+        <p>
+          ・ご注文番号<br>
+          ・お名前
+        </p>
+        <p>ご注文から1時間を過ぎた場合は、キャンセルをお受けいたしかねますので、あらかじめご了承ください。</p>
+        <p>
+          また、下記の場合は弊社にてキャンセル処理をさせていただく場合がございます。<br>
+          ・購入制限がある商品にもかかわらず、複数回に分けてご購入された場合<br>
+          ・決済が完了しなかった場合<br>
+          ・メーカー欠品となってしまった場合
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">メルシーポイントについて</summary>
+      <div class="faq_page--answer">
+        <p>
+          現在、オンラインストア独自のポイント付与は行っておりません。<br>
+          発送時に同封の納品書を店頭にお持ちいただくと、メルシーポイントを付与いたします。<br>
+          ※ポイント付与は納品書記載の注文日から1年以内が対象となりますのでご注意ください。
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">自宅に届くDMをストップについて</summary>
+      <div class="faq_page--answer">
+        <p>
+          封書・お手紙でのダイレクトメール（DM）の配信停止をご希望のお客様は、以下のフォームよりお手続きをお願いいたします。<br>
+          📨<a href="https://x.gd/yPhEI">https://x.gd/yPhEI</a>
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">退会について</summary>
+      <div class="faq_page--answer">
+        <p>
+          退会をご希望の場合は、チャットにてその旨をお申し付けください。<br>
+          確認後、退会手続きをさせていただきます。
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">配送料について</summary>
+      <div class="faq_page--answer">
+        <p>
+          配送料は3,300円(税込)以上のお買い上げで全国一律無料。<br>
+          3,300円未満のお客様は全国一律500円です。<br>
+          ※海外への配送は承っておりません。
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">注文内容の変更について</summary>
+      <div class="faq_page--answer">
+        <p>
+          変更をご希望の場合は、ご注文から1時間以内でしたら承っております。<br>
+          チャットにて変更内容をご記入のうえ、ご連絡ください。
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">注文の配送状況について</summary>
+      <div class="faq_page--answer">
+        <p>
+          商品発送後、発送完了通知をお送りしております。<br>
+          メール内に追跡番号を記載しておりますので、そちらよりお客様ご自身で配送状況のご確認をお願いいたします。
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">メルマガの停止について</summary>
+      <div class="faq_page--answer">
+        <p>Sukiya Online Storeのメールマガジンから配信される、メールの本文下部にある「配信停止」リンクよりお手続きが可能です。</p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">支払い方法について</summary>
+      <div class="faq_page--answer">
+        <p>
+          現在決済手段は以下のものをご用意しております。<br>
+          ○クレジットカード<br>
+          ・VISA<br>
+          ・Mastercard<br>
+          ・American Express<br>
+          ・JCB<br>
+          ○Shop Pay<br>
+          ○Apple Pay<br>
+          ○Google Pay<br>
+          ○楽天Pay<br>
+          ○PayPay<br>
+          ○メルペイ<br>
+          ○Paidy後払い
+        </p>
+        <p>
+          なお、クレジットは一回払いのみとなっております。<br>
+          Paidy後払いは3回まで分割でお支払いが可能です。
+        </p>
+        <p>予約注文時の決済タイミングですが、ご予約された時に決済がされます。</p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">領収書の発行について</summary>
+      <div class="faq_page--answer">
+        <p>
+          当店では納品書のみの発行となります。<br>
+          領収書が必要な場合は、ご利用の決済事業者（クレジットカード会社など）にご確認ください。<br>
+          カード会社のご利用明細なども併せてご活用ください。
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">納品書を紛失について</summary>
+      <div class="faq_page--answer">
+        <p>納品書を紛失された場合は、チャットにて下記内容をご記入のうえ、ご連絡ください。</p>
+        <p>
+          ・ご注文番号<br>
+          ・お名前<br>
+          ・お電話番号
+        </p>
+        <p>確認後、PDFデータをメールにてお送りいたします。</p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">納品書の同梱不要について</summary>
+      <div class="faq_page--answer">
+        <p>プレゼント用などで、金額記載のある納品書の同梱が不要な場合は、カート画面内の【ショップスタッフへのメッセージ（任意）】欄へ、「納品書同梱不要」とご記入ください。</p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">店舗について</summary>
+      <div class="faq_page--answer">
+        <p>
+          【一番町店】10:15~19:45<br>
+          宮城県仙台市青葉区一番町3丁目6-11<br>
+          022-221-5588
+        </p>
+        <p>
+          【エスパル店1F】10:00~20:00（金・土・祝前日は21:00まで営業）<br>
+          宮城県仙台市青葉区中央1丁目1-1 エスパル本館 1F<br>
+          022-214-3777
+        </p>
+        <p>
+          【エスパル店2F】10:00~20:00（金・土・祝前日は21:00まで営業）<br>
+          宮城県仙台市青葉区中央1丁目1-1 エスパル本館 2F<br>
+          022-796-5121
+        </p>
+        <p>
+          【セルバ店】10:00~20:00<br>
+          宮城県仙台市泉区中央1丁目4-1 セルバ 2F<br>
+          022-371-0135
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">配送業者について</summary>
+      <div class="faq_page--answer">
+        <p>ヤマト運輸にてお送りいたします。</p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">返品・交換について</summary>
+      <div class="faq_page--answer">
+        <p>お客様のご都合による返品・交換は受け付けておりませんので、商品名、色番号、数量をお確かめのうえ、ご注文いただけますようお願い致します。商品を返送された場合も、返金は致しかねますのでご了承ください。</p>
+        <p>
+          ※次の場合の交換はお受けいたしかねますので、ご了承ください。<br>
+          ・当社の責めに帰すべからざる事由により、キズや破損が生じた商品<br>
+          ・商品到着後、いかなるご連絡もいただかないまま9日以上経過した商品。また当社へご連絡をいただいてから15日を過ぎても商品の返送が無い場合
+        </p>
+      </div>
+    </details>
+
+    <details class="faq_page--qa">
+      <summary class="faq_page--question">配送までの時間について</summary>
+      <div class="faq_page--answer">
+        <p>
+          最短でご注文の翌営業日に発送いたします。<br>
+          土日祝日の発送は行っておりません。翌営業日の発送となります。<br>
+          予約商品の発売日が土日祝日の場合も、翌営業日の発送となります。<br>
+          ご注文商品がすべて揃い次第の発送となります。<br>
+          予約商品と通常商品を同時にご注文いただいた場合は、予約商品の発売日以降にまとめて発送いたします。
+        </p>
+      </div>
+    </details>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "よくある質問",
+  "settings": [],
+  "presets": [
+    {
+      "name": "よくある質問"
+    }
+  ]
+}
+{% endschema %}

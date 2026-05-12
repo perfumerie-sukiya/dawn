@@ -1,3 +1,21 @@
+// LINEログインスキップ機能: skip_line_login=1 パラメータでスキップ可能
+const url = new URL(window.location.href);
+const skipLineLogin = url.searchParams.get('skip_line_login') === '1';
+
+if (skipLineLogin) {
+  // スキップ時は既存のlocalStorage値を設定してLINEログイン済み状態にする
+  localStorage.setItem('lineAccessToken', 'bypass');
+  localStorage.setItem('isLineLogin', 'true');
+  // 成功状態のUIを表示
+  document.querySelector('.line-login-success')?.classList.remove('tw-hidden');
+  document.querySelector('.line-connect-success')?.classList.remove('tw-hidden');
+  document.getElementById('open-modal')?.classList.add('tw-hidden');
+  // URLからクエリパラメータを削除
+  url.searchParams.delete('skip_line_login');
+  window.history.replaceState({}, '', url);
+  console.log('LINE login bypassed via skip_line_login parameter');
+}
+
 const lineAccessToken = localStorage.getItem('lineAccessToken');
 const isLineLogin = localStorage.getItem('isLineLogin');
 
@@ -15,7 +33,7 @@ async function verifyAccessToken(accessToken) {
 }
 
 async function getAccessToken(code) {
-  const redirect_uri = window.location.origin + window.location.pathname
+  const redirect_uri = window.location.origin + window.location.pathname;
   const params = new URLSearchParams();
   params.append('grant_type', 'authorization_code');
   params.append('code', code);
@@ -26,9 +44,9 @@ async function getAccessToken(code) {
   const response = await fetch('https://api.line.me/oauth2/v2.1/token', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: params.toString()
+    body: params.toString(),
   });
 
   if (!response.ok) {
@@ -41,8 +59,8 @@ async function getAccessToken(code) {
 async function getUserProfile(accessToken) {
   const response = await fetch('https://api.line.me/v2/profile', {
     headers: {
-      Authorization: `Bearer ${accessToken}`
-    }
+      Authorization: `Bearer ${accessToken}`,
+    },
   });
 
   if (!response.ok) {
@@ -86,47 +104,54 @@ async function verifyLineApp(access_token) {
   return await getConnectStatus(lineUser.userId, access_token);
 }
 
-if (!lineAccessToken || lineAccessToken === 'undefined' || lineAccessToken === 'true') {
+// スキップ処理が実行された場合は既存の検証ロジックをスキップ
+if (lineAccessToken === 'bypass') {
+  console.log('LINE login bypassed - skipping verification');
+} else if (!lineAccessToken || lineAccessToken === 'undefined' || lineAccessToken === 'true') {
   console.log('no token');
   const url = new URL(window.location.href);
-  const code = url.searchParams.get("code");
+  const code = url.searchParams.get('code');
   if (code) {
-    verifyLineLogin(code).then(r => {
-      console.log('verifyLineLogin === true', r);
-      document.querySelector('.line-login-success').classList.remove('tw-hidden');
-      if (r) {
-        document.querySelector('.line-connect-success').classList.remove('tw-hidden');
-        document.getElementById('open-modal').classList.add('tw-hidden');
-        localStorage.setItem('isLineLogin', 'true');
-      } else {
-        document.querySelector('.line-connect-required').classList.remove('tw-hidden');
+    verifyLineLogin(code)
+      .then((r) => {
+        console.log('verifyLineLogin === true', r);
+        document.querySelector('.line-login-success').classList.remove('tw-hidden');
+        if (r) {
+          document.querySelector('.line-connect-success').classList.remove('tw-hidden');
+          document.getElementById('open-modal').classList.add('tw-hidden');
+          localStorage.setItem('isLineLogin', 'true');
+        } else {
+          document.querySelector('.line-connect-required').classList.remove('tw-hidden');
+          changeToDummyImage();
+        }
+      })
+      .catch((e) => {
+        console.error('verifyLineLogin === false', e);
         changeToDummyImage();
-      }
-    }).catch(e => {
-      console.error('verifyLineLogin === false', e);
-      changeToDummyImage();
-    });
+      });
   } else {
     document.querySelector('.line-login-required').classList.remove('tw-hidden');
     changeToDummyImage();
   }
 } else {
   console.log('has token');
-  verifyLineApp(lineAccessToken).then(r => {
-    console.log('response is ', r)
-    // ユーザーが存在しない場合はID連携を促す
-    if (!r) {
+  verifyLineApp(lineAccessToken)
+    .then((r) => {
+      console.log('response is ', r);
+      // ユーザーが存在しない場合はID連携を促す
+      if (!r) {
+        changeToDummyImage();
+        document.querySelector('.line-connect-required').classList.remove('tw-hidden');
+      } else {
+        document.querySelector('.line-connect-success').classList.remove('tw-hidden');
+        document.getElementById('open-modal').classList.add('tw-hidden');
+        localStorage.setItem('isLineLogin', 'true');
+      }
+    })
+    .catch((e) => {
       changeToDummyImage();
-      document.querySelector('.line-connect-required').classList.remove('tw-hidden');
-    } else {
-      document.querySelector('.line-connect-success').classList.remove('tw-hidden');
-      document.getElementById('open-modal').classList.add('tw-hidden');
-      localStorage.setItem('isLineLogin', 'true');
-    }
-  }).catch(e => {
-    changeToDummyImage();
-    console.error('verifyLineApp === false', e);
-  });
+      console.error('verifyLineApp === false', e);
+    });
 }
 
 if (isLineLogin !== 'true') {
@@ -134,11 +159,11 @@ if (isLineLogin !== 'true') {
 }
 
 function changeToDummyImage() {
-  // lineLoginRequiredクラスを思つimg要素のsrc属性を'https://via.placeholder.com/600x600?text=Secret'に変更する
+  // lineLoginRequiredクラスを思つimg要素のsrc属性を'https://cdn.shopify.com/s/files/1/0496/5436/6365/files/secret-product.jpg?v=1763088092'に変更する
   document.querySelectorAll('.line-login-required').forEach((element) => {
     // srcset属性を削除
     element.removeAttribute('srcset');
-    element.src = 'https://via.placeholder.com/600x600?text=Secret';
+    element.src = 'https://cdn.shopify.com/s/files/1/0496/5436/6365/files/secret-product.jpg?v=1763088092';
   });
 }
 

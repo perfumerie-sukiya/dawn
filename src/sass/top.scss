@@ -17,12 +17,29 @@
 }
 
 .top-main-visual {
-  .swiper-container {
+  swiper-container {
+    overflow: hidden;
+  }
+
+  swiper-container:not(:defined) {
     width: 890px;
     height: 550px;
 
     @include mq() {
       width: 100%;
+      height: calc((100vw - 72px) / 2 * 3);
+    }
+  }
+
+  swiper-container {
+    width: 100%;
+    max-width: 890px;
+    height: 550px;
+    margin: 0 auto;
+
+    @include mq() {
+      width: 100%;
+      max-width: 100%;
       height: calc((100vw - 72px) / 2 * 3);
     }
   }

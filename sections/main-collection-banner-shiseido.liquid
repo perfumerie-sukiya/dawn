@@ -14,9 +14,7 @@
 
 {%- liquid
   assign products_to_display = section.settings.products_to_show
-  assign more_in_collection = true
 
-  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign show_mobile_slider = false
   assign show_mobile_slider = true
 
@@ -27,7 +25,7 @@
 <div class="page-width">
   <ul class="tw-flex tw-items-center tw-flex-wrap tw-flex-auto tw-list-none tw-m-0 tw-py-4 tw-px-0">
     <li class="tw-items-center tw-inline-flex tw-text-sm">
-      <a href="/" class="tw-text-black">TOP</a>
+      <a href="{{ routes.root_url }}" class="tw-text-black">TOP</a>
     </li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-px-3">|</li>
     <li class="tw-items-center tw-inline-flex tw-text-sm tw-text-gray-400">
@@ -48,19 +46,13 @@
           height="90"
         >
       {% else %}
-        <img
-          src="https://d36vh7pxyzmz4l.cloudfront.net/images/logo/{{ collection.handle }}.svg"
-          alt="{{ collection.title }} | Perfumerie Sukiya"
-          class="tw-mx-auto"
-          width="300"
-          height="90"
-        >
+        {{ collection.title }}
       {% endif %}
     </h1>
     <div class="brand-description">{{ collection.description }}</div>
     <div class="campaign">
       <div class="tw-flex tw-flex-wrap tw-max-w-[800px] tw-mx-auto">
-        <div class="tw-w-full md:tw-w-3/4">
+        <div class="tw-w-full">
           <div class="main-campaign">
             {% if collection.metafields.my_fields.main_banner_link %}
               <a href="{{ collection.metafields.my_fields.main_banner_link }}">
@@ -72,50 +64,6 @@
               height="500"
             >
             {% if collection.metafields.my_fields.main_banner_link %}</a>{% endif %}
-          </div>
-        </div>
-        <div class="tw-w-full md:tw-w-1/4">
-          <div class="sub-campaigns tw-flex tw-justify-between tw-flex-wrap md:tw-ml-4">
-            <picture class="tw-w-[45px] md:tw-w-auto">
-              <source
-                srcset="https://d36vh7pxyzmz4l.cloudfront.net/images/brand/campaign-sp.svg"
-                media="(max-width: 750px)"
-              >
-              <img
-                src="https://d36vh7pxyzmz4l.cloudfront.net/images/brand/campaign.svg"
-                alt="FEATURE"
-                width="176"
-                height="55"
-              >
-            </picture>
-            <div
-              class="tw-flex tw-justify-between tw-flex-auto max-md:tw-basis-0 max-md:tw-space-x-2.5 md:tw-flex-wrap"
-            >
-              <div class="md:tw-mb-4 tw-flex-grow tw-bg-white">
-                {% if collection.metafields.my_fields.feature1_banner_link %}
-                  <a href="{{ collection.metafields.my_fields.feature1_banner_link }}">
-                {%- endif %}
-                <img
-                  src="{{ collection.metafields.my_fields.feature1_banner | image_url }}"
-                  alt="{{ collection.metafields.my_fields.feature1_banner.alt }}"
-                  width="178"
-                  height="178"
-                >
-                {% if collection.metafields.my_fields.feature1_banner_link %}</a>{% endif %}
-              </div>
-              <div class="tw-flex-grow tw-bg-white">
-                {% if collection.metafields.my_fields.feature2_banner_link %}
-                  <a href="{{ collection.metafields.my_fields.feature2_banner_link }}">
-                {%- endif %}
-                <img
-                  src="{{ collection.metafields.my_fields.feature2_banner | image_url }}"
-                  alt="{{ collection.metafields.my_fields.feature2_banner.alt }}"
-                  width="178"
-                  height="178"
-                >
-                {% if collection.metafields.my_fields.feature2_banner_link %}</a>{% endif %}
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -326,7 +274,7 @@
           生命感あふれるつややかな肌へ導く。
         </p>
         <a
-          href="/collections/shiseido/?filter.p.tag=スキンケア#Collection"
+          href="{{ routes.collections_url }}/shiseido/?filter.p.tag=スキンケア#Collection"
           class="tw-block tw-bg-black tw-text-white tw-no-underline tw-px-4 tw-py-4 tw-mt-4 tw-text-center "
           >詳しくはこちら＞</a
         >
@@ -347,7 +295,7 @@
           ふれるたび、思いがけない美しさが生まれる。
         </p>
         <a
-          href="/collections/shiseido/?filter.p.tag=メイクアップ#Collection"
+          href="{{ routes.collections_url }}/shiseido/?filter.p.tag=メイクアップ#Collection"
           class="tw-block tw-bg-black tw-text-white tw-no-underline tw-px-4 tw-py-4 tw-mt-4 tw-text-center"
           >詳しくはこちら＞</a
         >
@@ -400,7 +348,7 @@
           <li class="tw-shadow-md">
             <a
               class="scroll_item_inr tw-no-underline"
-              href="/collections/{{ collection.handle }}/?filter.p.tag={{ category.tag_name.value }}#Collection"
+              href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ category.tag_name.value }}#Collection"
             >
               <img
                 class="tw-mx-auto"
@@ -427,7 +375,7 @@
           <li>
             <a
               class="scroll_item_inr tw-no-underline"
-              href="/collections/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
+              href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
             >
               <img
                 class="tw-mx-auto"

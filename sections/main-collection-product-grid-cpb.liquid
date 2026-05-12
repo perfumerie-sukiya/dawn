@@ -31,9 +31,7 @@
 
 {%- liquid
   assign products_to_display = section.settings.products_to_show
-  assign more_in_collection = true
 
-  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign show_mobile_slider = false
   assign show_mobile_slider = true
 
@@ -223,6 +221,7 @@
                       show_rating: section.settings.show_rating,
                       lazy_load: lazy_load,
                       show_quick_add: section.settings.enable_quick_add,
+                      max_title_length: section.settings.max_title_length,
                       section_id: section.id
                     %}
                   </li>
@@ -244,10 +243,29 @@
     {% render 'sp-navigation-cpb' %}
   </div>
 {% else %}
+  {% comment %}
+    filter.p.tag パラメータがURLに存在するがLiquidで検出できなかった場合、
+    旧形式のURL(/collections/cle-de-peau-beaute/タグ名)にリダイレクトする
+    これはShopifyのStorefront Filter APIの制限によるワークアラウンド
+  {% endcomment %}
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var tagParam = params.get('filter.p.tag');
+      if (tagParam) {
+        var newUrl = window.location.pathname + '/' + encodeURIComponent(tagParam);
+        var viewParam = params.get('view');
+        if (viewParam) {
+          newUrl += '?view=' + encodeURIComponent(viewParam);
+        }
+        window.location.replace(newUrl);
+      }
+    })();
+  </script>
   <div class="page-width mt-4">
     <div class="cpb-detail">
-      <div class="cpb-featured ">
-        <div class="explanation">
+      <div class="tw-relative tw-mb-[45px]">
+        <div class="tw-bg-black tw-text-white tw-pb-[15px]">
           <picture>
             <source
               media="(max-width: 768px)"
@@ -260,9 +278,9 @@
               height="1200"
             >
           </picture>
-          <div class="textarea">
-            <div class="text_inner ">
-              <div class="text tw-mb-4 ">
+          <div class="tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-m-[15px] md:tw-absolute md:tw-top-0 md:tw-right-0 md:tw-p-[30px] md:tw-w-1/2 md:tw-h-full md:tw-flex md:tw-items-center md:tw-justify-center">
+            <div>
+              <div class="tw-mb-4">
                 <p>
                   肌には知性があるという発見。<br class>
                   独自の最新の肌サイエンス研究から生まれた<br>
@@ -278,8 +296,13 @@
                   目指す女性たちに、最高のときめきを届けます。
                 </p>
               </div>
-              <a href="/pages/cle-de-peau-beaute-story">
-                <div class="btn">詳細はこちらから</div>
+              <a
+                href="/pages/cle-de-peau-beaute-story"
+                class="tw-block tw-mx-auto tw-w-[300px] tw-no-underline tw-text-black"
+              >
+                <div class="tw-border tw-border-solid tw-border-black tw-bg-white tw-text-center tw-py-[5px] tw-px-[15px] tw-mt-[15px]">
+                  詳細はこちらから
+                </div>
               </a>
             </div>
           </div>
@@ -291,7 +314,7 @@
       <div class="pc-only">
         <ul class="tw-tracking-wide tw-grid tw-grid-cols-2 tw-gap-4">
           <li class="tw-relative">
-            <a href="/collections/cle-de-peau-beaute?filter.p.tag=スキンケア">
+            <a href="{{ routes.collections_url }}/cle-de-peau-beaute?filter.p.tag=スキンケア">
               <img
                 src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/bg_pageheading_20ss_skincare_lotion.jpg?v=1733189755"
                 alt=""
@@ -305,7 +328,7 @@
             </a>
           </li>
           <li class="tw-relative">
-            <a href="/collections/cle-de-peau-beaute?filter.p.tag=メイクアップ">
+            <a href="{{ routes.collections_url }}/cle-de-peau-beaute?filter.p.tag=メイクアップ">
               <img
                 src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/bg_pageheading_20ss_makeup_lip.jpg?v=1733189979"
                 alt=""
@@ -320,7 +343,7 @@
           </li>
           <li class="tw-bg-black tw-p-6 tw-text-center">
             <a
-              href="/collections/all?filter.v.price.gte=&filter.v.price.lte=&filter.p.vendor=%E3%82%AF%E3%83%AC%E3%83%BB%E3%83%89%E3%83%BB%E3%83%9D%E3%83%BC+%E3%83%9C%E3%83%BC%E3%83%86&sort_by=created-descending"
+              href="{{ routes.all_products_collection_url }}?filter.v.price.gte=&filter.v.price.lte=&filter.p.vendor=%E3%82%AF%E3%83%AC%E3%83%BB%E3%83%89%E3%83%BB%E3%83%9D%E3%83%BC+%E3%83%9C%E3%83%BC%E3%83%86&sort_by=created-descending"
               class="tw-no-underline"
             >
               <p class="tw-text-white">このブランドの商品はこちら</p>
@@ -371,6 +394,7 @@
                 show_vendor: section.settings.show_vendor,
                 show_rating: section.settings.show_rating,
                 show_quick_add: section.settings.enable_quick_add,
+                max_title_length: section.settings.max_title_length,
                 section_id: section.id
               %}
             </li>
@@ -441,6 +465,7 @@
                 show_vendor: section.settings.show_vendor,
                 show_rating: section.settings.show_rating,
                 show_quick_add: section.settings.enable_quick_add,
+                max_title_length: section.settings.max_title_length,
                 section_id: section.id
               %}
             </li>
@@ -484,110 +509,195 @@
           >クローズアップ</span
         >
       </h3>
-      <div class="cpb-featured cpb-closeup-item">
-        <picture>
+      {%- comment -%} Priority items from closeup_priority_1_2.json {%- endcomment -%}
+      {%- assign today_date = 'now' | date: '%Y-%m-%d' -%}
+
+      {%- comment -%} Priority 1: Gift Collection 2026 {%- endcomment -%}
+      {%- assign expires_on_1 = '2026-06-30' | date: '%Y-%m-%d' -%}
+      {%- if today_date <= expires_on_1 -%}
+        <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
+          <picture class="tw-w-full md:tw-w-1/2">
+            <source
+              media="(max-width: 768px)"
+              srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_26SS_GIFTCollection_closeup.jpg?v=1778127194"
+            >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_26SS_GIFTCollection_closeup.jpg?v=1778127194"
+              alt=""
+              width="1242"
+              height="932"
+            >
+          </picture>
+          <div class="textarea area-right tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-my-[15px] md:tw-my-0 md:tw-w-1/2 md:tw-flex md:tw-items-center md:tw-justify-center md:tw-p-[30px] md:tw-static">
+            <div class="text_inner">
+              <div class="text tw-mb-5">
+                <h5 class="tw-font-bold tw-mb-4">
+                  SPARK EXCITEMENT<br>
+                  ギフトコレクション2026
+                </h5>
+                <p>
+                  特別なひとときを祝福する、<br>
+                  天空の花束。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Priority 2: Translucent Loose Powder Mini 26SS {%- endcomment -%}
+      {%- assign expires_on_2 = '2099-12-31' | date: '%Y-%m-%d' -%}
+      {%- if today_date <= expires_on_2 -%}
+        <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
+          <picture class="tw-w-full md:tw-w-1/2">
+            <source
+              media="(max-width: 768px)"
+              srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_TranslucentLoosePowder_Mini_26SS_closeup.jpg?v=1778127211"
+            >
+            <img
+              src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_TranslucentLoosePowder_Mini_26SS_closeup.jpg?v=1778127211"
+              alt=""
+              width="1242"
+              height="932"
+            >
+          </picture>
+          <div class="textarea area-right tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-my-[15px] md:tw-my-0 md:tw-w-1/2 md:tw-flex md:tw-items-center md:tw-justify-center md:tw-p-[30px] md:tw-static">
+            <div class="text_inner">
+              <div class="text tw-mb-5">
+                <h5 class="tw-font-bold tw-mb-4">プードルトランスパラントｎ Ｍ（スモール）</h5>
+                <p>
+                  すっと溶け込み、シルクのように<br>
+                  なめらかで端正なつや肌へ。
+                </p>
+                <a
+                  class="tw-block tw-mx-auto tw-w-[300px] tw-no-underline tw-text-black"
+                  href="https://online.sukiya.biz/products/cle-de-peau-beaute-poudre-transparent-n-m-small-2026-3-21"
+                >
+                  <div class="btn tw-border tw-border-solid tw-border-black tw-bg-white tw-text-center tw-py-[5px] tw-px-[15px] tw-mt-[15px]">
+                    詳細はこちらから
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Priority 3: ルージュアレーブル ブリアン新カラー追加 26SS {%- endcomment -%}
+      <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
+        <picture class="tw-w-full md:tw-w-1/2">
           <source
             media="(max-width: 768px)"
-            srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_PreciousGoldVitalitySerum_sp.jpg?v=1738830475"
+            srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_LipstickShine_26SS_closeup.jpg?v=1778127227"
           >
           <img
-            src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_PreciousGoldVitalitySerum_sp.jpg?v=1738830475"
+            src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_LipstickShine_26SS_closeup.jpg?v=1778127227"
             alt=""
             width="1242"
             height="932"
           >
         </picture>
-        <div class="textarea area-right">
+        <div class="textarea area-right tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-my-[15px] md:tw-my-0 md:tw-w-1/2 md:tw-flex md:tw-items-center md:tw-justify-center md:tw-p-[30px] md:tw-static">
           <div class="text_inner">
             <div class="text tw-mb-5">
-              <h5 class="tw-font-bold tw-mb-4">その瞬間、澄みきった輝きがあふれ出す。</h5>
+              <h5 class="tw-font-bold tw-mb-4">ルージュアレーブル ブリアン新カラー追加</h5>
               <p>
-                ゴールドの輝きで奮い立つ、チャージ美容液。<br>
-                ゴールドの輝きを閉じ込めた<br>
-                エイジングケア*のための美容液。<br>
-                なめらかなテクスチャーで包み込み、<br>
-                ふっくらとしたハリ感をもたらす。<br>
-                澄みきった輝きに満ち、新たな気持ちがみなぎる明日へ。<br>
-                <span class="cpb-caption"> ＊年齢に応じたうるおいによるお手入れのこと<br></span>
+                贅沢な色彩と輝きを、<br>
+                いつでも唇に纏わせて。
               </p>
-              <a href="/products/cle-de-peau-beaute-ceram-vitalite-eau-precieux-2025-1-21">
-                <div class="btn">詳細はこちらから</div>
+              <a
+                class="tw-block tw-mx-auto tw-w-[300px] tw-no-underline tw-text-black"
+                href="https://online.sukiya.biz/products/cle-de-peau-beaute-rouge-alleve-briand-2026-3-21"
+              >
+                <div class="btn tw-border tw-border-solid tw-border-black tw-bg-white tw-text-center tw-py-[5px] tw-px-[15px] tw-mt-[15px]">
+                  詳細はこちらから
+                </div>
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div class="cpb-featured cpb-closeup-item">
-        <picture>
+      {%- comment -%} Priority 4: セラムエクラS Ⅱ 26SS {%- endcomment -%}
+      <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
+        <picture class="tw-w-full md:tw-w-1/2">
           <source
             media="(max-width: 768px)"
-            srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_25SS_LunarNewYear_LaCreme_sp.jpg?v=1738830449"
+            srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/CPB_26SS_BrighteningSerum_closeup.jpg?v=1778127441"
           >
           <img
-            src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_25SS_LunarNewYear_LaCreme_sp.jpg?v=1738830449"
+            src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/CPB_26SS_BrighteningSerum_closeup.jpg?v=1778127441"
             alt=""
             width="1242"
             height="932"
           >
         </picture>
-        <div class="textarea area-right">
+        <div class="textarea area-right tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-my-[15px] md:tw-my-0 md:tw-w-1/2 md:tw-flex md:tw-items-center md:tw-justify-center md:tw-p-[30px] md:tw-static">
           <div class="text_inner">
             <div class="text tw-mb-5">
-              <h5 class="tw-font-bold tw-mb-4">HAPPY NEW YEAR 2025</h5>
+              <h5 class="tw-font-bold tw-mb-4">セラムエクラS Ⅱ</h5>
               <p>
-                神々しいほどに華やかな幕開け。<br>
-                伝統のエナメルアート"琺瑯彩"をモチーフに、<br>
-                幸運を呼ぶ吉祥文様をあしらった限定デザイン。<br>
-                ハイジュエリーのような輝きを放つラ・クレームで、<br>
-                さらなる美しさを磨きあげる年に。<br>
-                唯一無二のハイパフォーマンスクリームを、<br>
-                贅沢に堪能できるラージサイズが登場。<br>
-                夜の肌メカニズムを追究し、<br>
-                美とサイエンスを結集した<br>
-                クレ・ド・ポー ボーテの最高傑作が、<br>
-                たっぷり贅沢に楽しめるラージサイズで登場。<br>
-                触れた瞬間とろけるようになじみ、<br>
-                豊かなうるおいとハリ、透明感あふれる<br>
-                至高の輝きへ。
+                宿命さえ超えてゆく、<br>
+                革新の根源美白ケア。
               </p>
-              <a href="/products/cle-de-peau-beaute-la-creme-l-2025-limited-edition-2025-1-21?variant=49521137647894">
-                <div class="btn">詳細はこちらから</div>
+              <a
+                class="tw-block tw-mx-auto tw-w-[300px] tw-no-underline tw-text-black"
+                href="https://online.sukiya.biz/products/cle-de-peau-beaute-serum-eclat-s-ii-2026-2-21"
+              >
+                <div class="btn tw-border tw-border-solid tw-border-black tw-bg-white tw-text-center tw-py-[5px] tw-px-[15px] tw-mt-[15px]">
+                  詳細はこちらから
+                </div>
               </a>
             </div>
           </div>
         </div>
       </div>
-      <div class="cpb-featured cpb-closeup-item tw-pointer-events-none">
-        <picture>
+      <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
+        <picture class="tw-w-full md:tw-w-1/2">
           <source
             media="(max-width: 768px)"
-            srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_25SS_LOVECollection_sp.jpg?v=1738830580"
+            srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/CPB_25SS_KeyRadianceCare_sp_aafac0af-e8ca-4763-a614-1fd39a9a23e6.jpg?v=1757058828"
           >
           <img
-            src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_25SS_LOVECollection_sp.jpg?v=1738830580"
+            src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/CPB_25SS_KeyRadianceCare_sp_aafac0af-e8ca-4763-a614-1fd39a9a23e6.jpg?v=1757058828"
             alt=""
             width="1242"
             height="932"
           >
         </picture>
-        <div class="textarea area-right">
+        <div class="textarea area-right tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-my-[15px] md:tw-my-0 md:tw-w-1/2 md:tw-flex md:tw-items-center md:tw-justify-center md:tw-p-[30px] md:tw-static">
           <div class="text_inner">
             <div class="text tw-mb-5">
-              <h5 class="tw-font-bold tw-mb-4">UNLOCK THE HEART</h5>
-              <p>
-                深まる絆、あふれる愛の輝き。<br>
-                運命の人とのめぐり逢い、<br>
-                途切れることのない絆を象徴する赤い糸。<br>
-                その深まりとともに心の鍵があき、<br>
-                あふれ出すのは、<br class="pc-only">
-                まばゆいほどの愛と永遠に続く幸せ。<br>
-              </p>
+              <h5 class="tw-font-bold tw-mb-4">
+                新キーラディアンスケア誕生。<br>
+                積み重ねた輝きを、超えていく。
+              </h5>
+              <div class="pc-only">
+                <p>
+                  先端の角層細胞研究の、その先を。本物を知る肌に。<br>
+                  輝きを生み出し、育み、高める３ステップ。<br>
+                  40年以上の皮ふ科学研究と世界中から探求しこだわり抜いた独自成分。<br>
+                  時をかけて磨き上げた本物の輝きをまた超えて、次なる新たな美へ。<br>
+                </p>
+              </div>
+              <div class="sp-only">
+                <p>
+                  先端の角層細胞研究の、その先を。<br>
+                  本物を知る肌に。<br>
+                  輝きを生み出し、育み、高める３ステップ。<br>
+                  40年以上の皮ふ科学研究と<br>
+                  世界中から探求しこだわり抜いた独自成分。<br>
+                  時をかけて磨き上げた<br>
+                  本物の輝きをまた超えて、<br>
+                  次なる新たな美へ。<br>
+                </p>
+              </div>
+              <!-- 遷移なし（ボタン無し） -->
             </div>
           </div>
         </div>
       </div>
-      <div class="cpb-featured cpb-closeup-item">
-        <picture>
+      <div class="cpb-closeup-item tw-relative md:tw-flex md:tw-py-[45px]">
+        <picture class="tw-w-full md:tw-w-1/2">
           <source
             media="(max-width: 768px)"
             srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_the-serum-2_24aw_sp.jpg?v=1723512885"
@@ -599,7 +709,7 @@
             height="932"
           >
         </picture>
-        <div class="textarea area-right">
+        <div class="textarea area-right tw-text-center tw-text-[12px] tw-tracking-[0.1em] tw-leading-[1.8] tw-my-[15px] md:tw-my-0 md:tw-w-1/2 md:tw-flex md:tw-items-center md:tw-justify-center md:tw-p-[30px] md:tw-static">
           <div class="text_inner">
             <div class="text tw-mb-5">
               <h5 class="tw-font-bold tw-mb-4">本物を知る肌に。</h5>
@@ -610,41 +720,17 @@
                 世界中から探求しこだわり抜いた<br>
                 独自成分ラディアントリリーコンセントレート*配合。<br>
                 輝きがプランプして感動あふれる、新たな美容へ。<br>
-                <span class="cpb-caption"> ＊マドンナリリー花エキス、グリセリン<br></span>
+                <span class="cpb-caption tw-inline-block tw-text-[10px] tw-pt-[15px]">
+                  ＊マドンナリリー花エキス、グリセリン<br>
+                </span>
               </p>
-              <a href="/products/cle-de-peau-beautel-serum-ii-2024-9-1">
-                <div class="btn">詳細はこちらから</div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="cpb-featured cpb-closeup-item">
-        <picture>
-          <source
-            media="(max-width: 768px)"
-            srcset="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_teint-pudre-eclat-2_24aw_sp_9782240f-6ce5-4c70-86f3-32410641559b.jpg?v=1723512860"
-          >
-          <img
-            src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/offer_teint-pudre-eclat-2_24aw_sp_9782240f-6ce5-4c70-86f3-32410641559b.jpg?v=1723512860"
-            alt=""
-            width="1242"
-            height="932"
-          >
-        </picture>
-        <div class="textarea area-right">
-          <div class="text_inner">
-            <div class="text tw-mb-5">
-              <h5 class="tw-font-bold tw-mb-4">パウダーの常識は、くつがえされた。</h5>
-              <p>
-                スキンケア成分をまとったパウダーがうるおいを引き寄せ、<br>
-                肌にとどまり続けるから、素肌までも美しく。<br>
-                内側からふんわり輝くような透明感のシルキーマットな仕上がり。<br>
-                パウダーでは成し得なかった、<br>
-                信じられないほどのうるおい、続く。<br>
-              </p>
-              <a href="/products/cle-de-peau-beaute-tan-poudre-eclat-ii-refill-2024-7-21">
-                <div class="btn">詳細はこちらから</div>
+              <a
+                class="tw-block tw-mx-auto tw-w-[300px] tw-no-underline tw-text-black"
+                href="/products/cle-de-peau-beautel-serum-ii-2024-9-1"
+              >
+                <div class="btn tw-border tw-border-solid tw-border-black tw-bg-white tw-text-center tw-py-[5px] tw-px-[15px] tw-mt-[15px]">
+                  詳細はこちらから
+                </div>
               </a>
             </div>
           </div>
@@ -766,6 +852,13 @@
       "id": "enable_quick_add",
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "number",
+      "id": "max_title_length",
+      "default": 28,
+      "label": "t:sections.main-collection-product-grid.settings.max_title_length.label",
+      "info": "指定した最大文字数には省略記号（…）1文字も含まれます。したがって実際の本文はその分短く表示されます。さらにHTMLエスケープ（例: & → &amp;）の影響で、見た目の文字数が1〜数文字少なくなる場合があります。"
     },
     {
       "type": "header",
