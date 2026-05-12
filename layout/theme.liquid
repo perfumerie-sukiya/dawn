@@ -39,24 +39,57 @@
     {{ content_for_header }}
 
     <script>
-      document.addEventListener('algolia.hooks.initialize', function () {
-        if (!window.algoliaShopify) return;
+      (function () {
+        function createFormatMoneyWrapper(currentRaw) {
+          return function (cents, currencyCode) {
+            var isNonJpy = currencyCode && String(currencyCode).toUpperCase() !== 'JPY';
+            var amount = Number(cents);
+            if (typeof currentRaw === 'function' && (isNonJpy || !isFinite(amount))) {
+              return currentRaw.apply(this, arguments);
+            }
+            if (!isFinite(amount)) return '';
+            var value = (amount / 100).toLocaleString('ja-JP', {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            });
+            return '¥' + value;
+          };
+        }
 
-        var originalFormatMoney = window.algoliaShopify.formatMoney;
+        function installFormatMoneySetter(target) {
+          if (!target || target.__jpyFormatMoneyInstalled) return;
+          target.__jpyFormatMoneyInstalled = true;
 
-        window.algoliaShopify.formatMoney = function (cents, currencyCode) {
-          if (currencyCode && String(currencyCode).toUpperCase() !== 'JPY' && typeof originalFormatMoney === 'function') {
-            return originalFormatMoney(cents, currencyCode);
-          }
+          var raw = target.formatMoney;
+          var wrapped = createFormatMoneyWrapper(raw);
 
-          var value = (Number(cents) / 100).toLocaleString('ja-JP', {
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
+          Object.defineProperty(target, 'formatMoney', {
+            configurable: true,
+            enumerable: true,
+            get: function () { return wrapped; },
+            set: function (next) {
+              raw = next;
+              wrapped = createFormatMoneyWrapper(raw);
+            }
           });
+        }
 
-          return '¥' + value;
-        };
-      });
+        if (window.algoliaShopify) {
+          installFormatMoneySetter(window.algoliaShopify);
+          return;
+        }
+
+        var stored;
+        Object.defineProperty(window, 'algoliaShopify', {
+          configurable: true,
+          enumerable: true,
+          get: function () { return stored; },
+          set: function (next) {
+            stored = next;
+            installFormatMoneySetter(stored);
+          }
+        });
+      })();
     </script>
 
     {%- liquid
