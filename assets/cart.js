@@ -190,7 +190,7 @@ class CartItems extends HTMLElement {
   }
   async sendCartToApp(cart) {
     try {
-      const response = await fetch('https://shopify-gwp-app.onrender.com/api/getcart', {
+      const response = await fetch('/apps/gwp/getcart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
