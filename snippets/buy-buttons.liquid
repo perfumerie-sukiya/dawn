@@ -13,12 +13,16 @@
 {% assign slug = product.metafields.my_fields.vendor_slug %}
 {%- liquid
   assign counseling_scope = ''
+  assign addiction_counseling_skus = '4971710638387,4971710638394' | split: ','
+  assign current_sku = product.selected_or_first_available_variant.sku
   if slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui'
     assign counseling_scope = 'shiseido-group'
   elsif slug == 'decorte' or slug == 'predia'
     assign counseling_scope = 'decorte-group'
   elsif slug == 'albion' or slug == 'elegance' or slug == 'ignis'
     assign counseling_scope = 'albion-group'
+  elsif addiction_counseling_skus contains current_sku
+    assign counseling_scope = 'addiction-group'
   endif
 -%}
 
@@ -95,6 +99,8 @@
             endif
             if slug == 'decorte' or slug == 'predia' or slug == 'predia' or slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui' or slug == 'albion' or slug == 'elegance' or slug == 'ignis'
               assign counseling_product = true
+            elsif addiction_counseling_skus contains current_sku
+              assign counseling_product = true
             endif
           -%}
           <button
@@ -128,6 +134,8 @@
             {% render 'cart-question-albion', section_id: section_id %}
           {% elsif slug == 'cle-de-peau-beaute' or slug == 'shiseido' or slug == 'benefique' or slug == 'shiseido-men' or slug == 'inoui' %}
             {% render 'cart-question-cpb', section_id: section_id, product: product %}
+          {% elsif addiction_counseling_skus contains current_sku %}
+            {% render 'cart-question-addiction', section_id: section_id %}
           {% endif %}
           {%- if show_dynamic_checkout -%}
             {{ form | payment_button }}
