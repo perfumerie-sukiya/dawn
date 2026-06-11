@@ -8,6 +8,10 @@
     @include mq() {
       display: block;
     }
+
+    @include mq-up() {
+      table-layout: auto !important;
+    }
   }
 
   tbody {
