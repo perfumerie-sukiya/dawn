@@ -168,12 +168,6 @@ class CartItems extends HTMLElement {
         }
 
         publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState, variantId: variantId });
-        const cart = this.getCartFromCookies();
-        if (cart) {
-          this.sendCartToApp(cart);
-        } else {
-          console.log('Failed to get cart Id');
-        }
       })
       .catch(() => {
         this.querySelectorAll('.loading__spinner').forEach((overlay) => overlay.classList.add('hidden'));
@@ -183,29 +177,6 @@ class CartItems extends HTMLElement {
       .finally(() => {
         this.disableLoading(line);
       });
-  }
-  getCartFromCookies() {
-    const cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)cart\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    return cookieValue ? decodeURIComponent(cookieValue) : null;
-  }
-  async sendCartToApp(cart) {
-    try {
-      const response = await fetch('/apps/gwp/getcart', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ cartId: cart }),
-      });
-  
-      if (response.ok) {
-        this.onCartUpdate();
-      } else {
-        console.error('app error');
-      }
-    } catch (error) {
-      console.error('sending error:', error);
-    }
   }
 
   updateLiveRegions(line, message) {
