@@ -7,6 +7,102 @@
     display: block !important;
     visibility: visible !important;
   }
+
+  my-dialog[data-brand="addiction"] dialog {
+    position: fixed;
+    top: 16px;
+    bottom: 16px;
+    margin: auto;
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+  }
+
+  .addiction-counseling-item {
+    display: block;
+    margin-right: 0 !important;
+    padding: 16px;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+  }
+
+  .addiction-counseling-item__header {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .addiction-counseling-item__number {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .addiction-counseling-item__title {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .addiction-counseling-item__detail {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .addiction-counseling-item__checkbox {
+    width: 22px;
+    height: 22px;
+    margin: 3px 0 0;
+    accent-color: #111827;
+    cursor: pointer;
+  }
+
+  .addiction-counseling-item__body {
+    display: block;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  @media screen and (max-width: 767px) {
+    my-dialog[data-brand="addiction"] dialog {
+      padding: 10px;
+    }
+
+    .addiction-counseling-intro {
+      padding: 16px;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+      text-align: left;
+    }
+
+    .addiction-counseling-item {
+      padding: 14px 12px;
+    }
+
+    .addiction-counseling-item__header {
+      grid-template-columns: 28px 1fr;
+      gap: 8px;
+    }
+
+    .addiction-counseling-item__detail {
+      grid-template-columns: 26px minmax(0, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .addiction-counseling-item__checkbox {
+      width: 24px;
+      height: 24px;
+      margin-top: 2px;
+    }
+
+    .addiction-counseling-item__body {
+      line-height: 1.75;
+    }
+  }
 </style>
 
 <my-dialog id="myDialog" data-brand="addiction" data-counseling-scope="addiction-group" data-input-type="checkbox">
@@ -16,45 +112,70 @@
         <div>
           <h4 class="md:tw-text-xl tw-mb-4 tw-tracking-wider tw-text-center">ご購入前にご確認ください</h4>
           <div class="tw-bg-gray-100 tw-mb-5 tw-p-5 tw-text-xs">
-            <p class="md:tw-leading-8 tw-tracking-widest tw-text-center">
+            <p class="addiction-counseling-intro md:tw-leading-8 tw-tracking-widest tw-text-center">
               安心して商品をお使いいただくために、商品をショッピングカートに<br class="tw-hidden md:tw-inline">入れる際は下記の項目を確認いただいております。<br>
               内容を確認いただき項目をチェックして、次へお進みください。
             </p>
           </div>
           <p class="tw-text-sm tw-text-center tw-mb-4">以下1-5を確認いただきチェックを入れてください</p>
           <div class="tw-mb-3">
-            <label class="tw-flex tw-items-center tw-gap-3 tw-border tw-border-gray-300 tw-p-3 tw-cursor-pointer">
-              <span class="tw-text-2xl tw-font-bold tw-w-8 tw-flex-shrink-0 tw-text-center">1</span>
-              <input type="checkbox" id="q1-{{ section_id }}" name="q1-{{ section_id }}" value="1" class="tw-flex-shrink-0">
-              <span class="tw-text-sm">■ 初めてご使用の場合<br>最初の2週間は2〜3日間隔で、次の2週間は少しずつ使用回数を増やしてご使用ください。</span>
+            <label class="addiction-counseling-item">
+              <span class="addiction-counseling-item__header">
+                <span class="addiction-counseling-item__number">1</span>
+                <span class="addiction-counseling-item__title">初めてご使用の場合</span>
+              </span>
+              <span class="addiction-counseling-item__detail">
+                <input class="addiction-counseling-item__checkbox" type="checkbox" id="q1-{{ section_id }}" name="q1-{{ section_id }}" value="1">
+                <span class="addiction-counseling-item__body">最初の2週間は2〜3日間隔で、次の2週間は少しずつ使用回数を増やしてご使用ください。</span>
+              </span>
             </label>
           </div>
           <div class="tw-mb-3">
-            <label class="tw-flex tw-items-center tw-gap-3 tw-border tw-border-gray-300 tw-p-3 tw-cursor-pointer">
-              <span class="tw-text-2xl tw-font-bold tw-w-8 tw-flex-shrink-0 tw-text-center">2</span>
-              <input type="checkbox" id="q2-{{ section_id }}" name="q2-{{ section_id }}" value="1" class="tw-flex-shrink-0">
-              <span class="tw-text-sm">■ スキンケアについて<br>・使用した翌日の日中は、UVケアを十分に行ってください。<br>・ご使用後は乾燥を避けるため、保湿効果のある化粧品をお使いください。</span>
+            <label class="addiction-counseling-item">
+              <span class="addiction-counseling-item__header">
+                <span class="addiction-counseling-item__number">2</span>
+                <span class="addiction-counseling-item__title">スキンケアについて</span>
+              </span>
+              <span class="addiction-counseling-item__detail">
+                <input class="addiction-counseling-item__checkbox" type="checkbox" id="q2-{{ section_id }}" name="q2-{{ section_id }}" value="1">
+                <span class="addiction-counseling-item__body">・使用した翌日の日中は、UVケアを十分に行ってください。<br>・ご使用後は乾燥を避けるため、保湿効果のある化粧品をお使いください。</span>
+              </span>
             </label>
           </div>
           <div class="tw-mb-3">
-            <label class="tw-flex tw-items-center tw-gap-3 tw-border tw-border-gray-300 tw-p-3 tw-cursor-pointer">
-              <span class="tw-text-2xl tw-font-bold tw-w-8 tw-flex-shrink-0 tw-text-center">3</span>
-              <input type="checkbox" id="q3-{{ section_id }}" name="q3-{{ section_id }}" value="1" class="tw-flex-shrink-0">
-              <span class="tw-text-sm">■ 肌変化について<br>肌はピリピリ・ヒリヒリすることがあります。<br>違和感がある場合は、回数を減らす・使用を一時中止するなど肌状態に応じてお使いください。</span>
+            <label class="addiction-counseling-item">
+              <span class="addiction-counseling-item__header">
+                <span class="addiction-counseling-item__number">3</span>
+                <span class="addiction-counseling-item__title">肌変化について</span>
+              </span>
+              <span class="addiction-counseling-item__detail">
+                <input class="addiction-counseling-item__checkbox" type="checkbox" id="q3-{{ section_id }}" name="q3-{{ section_id }}" value="1">
+                <span class="addiction-counseling-item__body">肌はピリピリ・ヒリヒリすることがあります。<br>違和感がある場合は、回数を減らす・使用を一時中止するなど肌状態に応じてお使いください。</span>
+              </span>
             </label>
           </div>
           <div class="tw-mb-3">
-            <label class="tw-flex tw-items-center tw-gap-3 tw-border tw-border-gray-300 tw-p-3 tw-cursor-pointer">
-              <span class="tw-text-2xl tw-font-bold tw-w-8 tw-flex-shrink-0 tw-text-center">4</span>
-              <input type="checkbox" id="q4-{{ section_id }}" name="q4-{{ section_id }}" value="1" class="tw-flex-shrink-0">
-              <span class="tw-text-sm">■ 使用休止する目安<br>・いつもより強く乾燥を感じるとき<br>・ピリピリ・ヒリヒリが続く時<br>⇒上記症状がみられた際は、状態を確認しながらしっかり保湿ケアをおこなってください。</span>
+            <label class="addiction-counseling-item">
+              <span class="addiction-counseling-item__header">
+                <span class="addiction-counseling-item__number">4</span>
+                <span class="addiction-counseling-item__title">使用休止する目安</span>
+              </span>
+              <span class="addiction-counseling-item__detail">
+                <input class="addiction-counseling-item__checkbox" type="checkbox" id="q4-{{ section_id }}" name="q4-{{ section_id }}" value="1">
+                <span class="addiction-counseling-item__body">・いつもより強く乾燥を感じるとき<br>・ピリピリ・ヒリヒリが続く時<br>⇒上記症状がみられた際は、状態を確認しながらしっかり保湿ケアをおこなってください。</span>
+              </span>
             </label>
           </div>
           <div class="tw-mb-3">
-            <label class="tw-flex tw-items-center tw-gap-3 tw-border tw-border-gray-300 tw-p-3 tw-cursor-pointer">
-              <span class="tw-text-2xl tw-font-bold tw-w-8 tw-flex-shrink-0 tw-text-center">5</span>
-              <input type="checkbox" id="q5-{{ section_id }}" name="q5-{{ section_id }}" value="1" class="tw-flex-shrink-0">
-              <span class="tw-text-sm">■ 下記アイテムとの併用はお避けください。<br>・AHAを使用した化粧品<br>・ふき取りタイプの製品<br>・スクラブ配合の製品<br>・酵素洗顔<br>・毛穴パック<br>・レチノール（レチノイドなど）配合の製品<br>・高濃度ビタミンC配合の製品<br>・医薬部外品</span>
+            <label class="addiction-counseling-item">
+              <span class="addiction-counseling-item__header">
+                <span class="addiction-counseling-item__number">5</span>
+                <span class="addiction-counseling-item__title">下記アイテムとの併用はお避けください。</span>
+              </span>
+              <span class="addiction-counseling-item__detail">
+                <input class="addiction-counseling-item__checkbox" type="checkbox" id="q5-{{ section_id }}" name="q5-{{ section_id }}" value="1">
+                <span class="addiction-counseling-item__body">・AHAを使用した化粧品<br>・ふき取りタイプの製品<br>・スクラブ配合の製品<br>・酵素洗顔<br>・毛穴パック<br>・レチノール（レチノイドなど）配合の製品<br>・高濃度ビタミンC配合の製品<br>・医薬部外品</span>
+              </span>
             </label>
           </div>
           <p class="tw-text-xs tw-text-red-500 tw-mb-4">マイクロピーリング トナーはAHAが高濃度配合のため、赤みやかぶれなどが生じる可能性がございます。<br>違和感を感じた場合はすぐに使用を中止し、皮膚科専門医またはお客様相談室にご相談ください。</p>
