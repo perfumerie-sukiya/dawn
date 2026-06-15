@@ -186,8 +186,8 @@ class MyDialog extends HTMLElement {
 
   checkNextButtonActive() {
     if (this.useCheckbox && this.checkboxes.length > 0) {
-      const allChecked = this.checkboxes.every((cb) => cb.checked);
-      if (allChecked) {
+      const canProceed = this.brand !== 'addiction' || this.checkboxes.every((cb) => cb.checked);
+      if (canProceed) {
         if (this.nextPageDisableButton) this.nextPageDisableButton.style.display = 'none';
         if (this.nextPageButton) this.nextPageButton.style.display = 'block';
       } else {
