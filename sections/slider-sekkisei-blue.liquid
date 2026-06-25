@@ -1,0 +1,106 @@
+<script src="{{ 'swiper-init.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  # 商品一覧ページ（view=sekkisei-blue-products）ではスライダーを表示しない
+  assign show_slider = true
+  if template.suffix == 'sekkisei-blue-products'
+    assign show_slider = false
+  else
+    # フィルタがアクティブな場合もスライダーを表示しない
+    assign has_active_filters = false
+    for filter in collection.filters
+      if filter.active_values != blank
+        assign has_active_filters = true
+        break
+      endif
+    endfor
+    if current_tags != blank
+      assign has_active_filters = true
+    endif
+
+    assign has_filtered_results = false
+    if collection.products_count != collection.all_products_count
+      assign has_filtered_results = true
+    endif
+
+    if has_active_filters or has_filtered_results
+      assign show_slider = false
+    endif
+  endif
+-%}
+
+{% if show_slider %}
+  <div class="page-width">
+    <div class="tw-my-6">
+      <swiper-container
+        space-between="30"
+        effect="fade"
+        loop="true"
+        autoplay="true"
+        init="false"
+      >
+        {% for block in section.blocks %}
+          <swiper-slide class="!tw-h-auto tw-bg-white">
+            {% if block.settings.link %}<a href="{{ block.settings.link }}" class="tw-text-current">{% endif %}
+            <div class="cpb-main-visual__item">
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcset="{{ block.settings.image_sp | image_url: width: 750, height: 470 }}"
+                >
+                <img
+                  src="{{ block.settings.image | image_url: width: 2200, height: 800 }}"
+                  alt="{{ block.settings.title }}"
+                  width="2200"
+                  height="800"
+                >
+              </picture>
+            </div>
+            {% if block.settings.link %}</a>{% endif %}
+          </swiper-slide>
+        {% endfor %}
+        <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
+      </swiper-container>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "雪肌精BLUEスライダー",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.slideshow.blocks.slide.name",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.slideshow.blocks.slide.settings.image.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_sp",
+          "label": "SP画像"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.slideshow.blocks.slide.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "雪肌精BLUEスライダー"
+    }
+  ]
+}
+{% endschema %}
