@@ -40,6 +40,7 @@
         init="false"
       >
         {% for block in section.blocks %}
+          {%- assign slide_alt = block.settings.title | default: block.settings.image.alt -%}
           <swiper-slide class="!tw-h-auto tw-bg-white">
             {% if block.settings.link %}<a href="{{ block.settings.link }}" class="tw-text-current">{% endif %}
             <div class="cpb-main-visual__item">
@@ -50,7 +51,7 @@
                 >
                 <img
                   src="{{ block.settings.image | image_url: width: 2200, height: 800 }}"
-                  alt="{{ block.settings.title }}"
+                  alt="{{ slide_alt | escape }}"
                   width="2200"
                   height="800"
                 >
@@ -79,6 +80,12 @@
       "name": "t:sections.slideshow.blocks.slide.name",
       "limit": 10,
       "settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "default": "雪肌精BLUE メインビジュアル",
+          "label": "画像代替テキスト"
+        },
         {
           "type": "image_picker",
           "id": "image",
