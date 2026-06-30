@@ -1,61 +1,59 @@
 {% comment %}
   PrédiaBLUE SPアコーディオンナビゲーション
-  メニュー(linklist): predia-blue-category-menu （Shopify管理画面で設定）
-  my-accordion.jsの読み込み
+  仕様書のカテゴリを固定表示し、各リンクはタグフィルタURLへ遷移する。
 {% endcomment %}
+{%- assign predia_blue_url = routes.collections_url | append: '/predia-blue' -%}
 <script src="{{ 'my-accordion.js' | asset_url }}" defer="defer"></script>
 
-<!-- SP ナビメニュー -->
 <div class="sp-only">
   <my-accordion>
     <ul class="tw-bg-[#13509b] tw-text-white tw-mb-10 tw-p-0">
-      {%- for link in linklists['predia-blue-category-menu'].links -%}
-        <li class="tw-w-full tw-border-b tw-border-[#2f6cb5]">
-          {%- if link.links.size == 0 -%}
-            <a href="{{ link.url }}" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current">
-              <span>{{ link.title }}</span>
-              <span class="tw-inline-flex tw-text-white">{% render 'icon-chevron-right', width: 14, height: 14 %}</span>
-            </a>
-          {%- else -%}
-            <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
-              <span>{{ link.title }}</span>
-              <span class="tw-inline-flex tw-text-white" data-accordion-icon>
-                <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
-                <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
-              </span>
-            </div>
-
-            <div class="panel tw-bg-[#eef4fb] tw-text-black">
-              {%- for child_link in link.links -%}
-                {%- if child_link.links.size == 0 -%}
-                  <a href="{{ child_link.url }}" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current">
-                    <span>{{ child_link.title }}</span>
-                    <span class="tw-inline-flex tw-text-current">{% render 'icon-chevron-right', width: 14, height: 14 %}</span>
-                  </a>
-                {%- else -%}
-                  <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
-                    <span>{{ child_link.title }}</span>
-                    <span class="tw-inline-flex tw-text-current" data-accordion-icon>
-                      <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
-                      <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
-                    </span>
-                  </div>
-
-                  <div class="panel tw-bg-white tw-grid tw-grid-cols-2">
-                    {%- for grandchild_link in child_link.links -%}
-                      <a href="{{ grandchild_link.url }}" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">
-                        <span>{{ grandchild_link.title }}</span>
-                        <span class="tw-inline-flex tw-text-current">{% render 'icon-chevron-right', width: 14, height: 14 %}</span>
-                      </a>
-                    {%- endfor -%}
-                  </div>
-                {%- endif -%}
-              {%- endfor -%}
-            </div>
-          {%- endif -%}
-        </li>
-      {%- endfor -%}
+      <li class="tw-w-full tw-border-b tw-border-[#2f6cb5]">
+        <a href="{{ predia_blue_url }}#about-us" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current"><span>ABOUT US</span><span class="tw-inline-flex tw-text-white">{% render 'icon-chevron-right', width: 14, height: 14 %}</span></a>
+      </li>
+      <li class="tw-w-full tw-border-b tw-border-[#2f6cb5]">
+        <a href="{{ predia_blue_url }}#new-arrival" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current"><span>NEW ARRIVAL</span><span class="tw-inline-flex tw-text-white">{% render 'icon-chevron-right', width: 14, height: 14 %}</span></a>
+      </li>
+      <li class="tw-w-full tw-border-b tw-border-[#2f6cb5]">
+        <a href="{{ predia_blue_url }}#campaign" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current"><span>CAMPAIGN</span><span class="tw-inline-flex tw-text-white">{% render 'icon-chevron-right', width: 14, height: 14 %}</span></a>
+      </li>
+      <li class="tw-w-full tw-border-b tw-border-[#2f6cb5]">
+        <a href="{{ predia_blue_url }}#ranking" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current"><span>RANKING</span><span class="tw-inline-flex tw-text-white">{% render 'icon-chevron-right', width: 14, height: 14 %}</span></a>
+      </li>
+      <li class="tw-w-full tw-border-b tw-border-[#2f6cb5]">
+        <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
+          <span>PRODUCTS</span>
+          <span class="tw-inline-flex tw-text-white" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+        <div class="panel tw-bg-[#eef4fb] tw-text-black">
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
+            <span>スキンケア</span>
+            <span class="tw-inline-flex tw-text-current" data-accordion-icon><span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span><span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span></span>
+          </div>
+          <div class="panel tw-bg-white tw-grid tw-grid-cols-2">
+            <a href="{{ predia_blue_url }}/クレンジング" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">クレンジング</a>
+            <a href="{{ predia_blue_url }}/洗顔" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">洗顔</a>
+            <a href="{{ predia_blue_url }}/限定品" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">限定品</a>
+            <a href="{{ predia_blue_url }}/スキンケア" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">すべて</a>
+          </div>
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-p-4">
+            <span>ヘア＆ボディ</span>
+            <span class="tw-inline-flex tw-text-current" data-accordion-icon><span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span><span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span></span>
+          </div>
+          <div class="panel tw-bg-white tw-grid tw-grid-cols-2">
+            <a href="{{ predia_blue_url }}/ヘアケア" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">ヘアケア</a>
+            <a href="{{ predia_blue_url }}/ボディケア" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">ボディケア</a>
+            <a href="{{ predia_blue_url }}/ハンドケア" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">ハンドケア</a>
+            <a href="{{ predia_blue_url }}/限定品" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">限定品</a>
+            <a href="{{ predia_blue_url }}/ヘア＆ボディ" class="tw-block tw-p-4 tw-border tw-border-[#eef4fb] tw-no-underline tw-text-current">すべて</a>
+          </div>
+          <a href="{{ predia_blue_url }}/限定品" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current"><span>限定品</span><span class="tw-inline-flex tw-text-current">{% render 'icon-chevron-right', width: 14, height: 14 %}</span></a>
+          <a href="{{ predia_blue_url }}/その他" class="tw-flex tw-justify-between tw-items-center tw-p-4 tw-no-underline tw-text-current"><span>その他</span><span class="tw-inline-flex tw-text-current">{% render 'icon-chevron-right', width: 14, height: 14 %}</span></a>
+        </div>
+      </li>
     </ul>
   </my-accordion>
 </div>
-<!-- SP ナビメニュー end -->
