@@ -100,26 +100,24 @@
 {% comment %}
   filter.p.tag パラメータが Shopify の Storefront Filter API で認識されない場合、
   旧形式の URL (/collections/predia-blue/tag-name) にリダイレクトする
-  force_product_grid が true の場合はリダイレクトしない（常に一覧表示のため）
+  view パラメータを引き継ぐため、一覧表示強制時（-products テンプレート等）でも実行する
 {% endcomment %}
 {% if filter_tag == '' and current_tags == blank %}
-  {% unless section.settings.force_product_grid %}
-    <script>
-      (function() {
-        var params = new URLSearchParams(window.location.search);
-        var tagParam = params.get('filter.p.tag');
-        if (tagParam) {
-          // filter.p.tag が URL にあるが Liquid で検出できなかった場合、旧形式にリダイレクト
-          var newUrl = window.location.pathname + '/' + encodeURIComponent(tagParam);
-          var viewParam = params.get('view');
-          if (viewParam) {
-            newUrl += '?view=' + encodeURIComponent(viewParam);
-          }
-          window.location.replace(newUrl);
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var tagParam = params.get('filter.p.tag');
+      if (tagParam) {
+        // filter.p.tag が URL にあるが Liquid で検出できなかった場合、旧形式にリダイレクト
+        var newUrl = window.location.pathname + '/' + encodeURIComponent(tagParam);
+        var viewParam = params.get('view');
+        if (viewParam) {
+          newUrl += '?view=' + encodeURIComponent(viewParam);
         }
-      })();
-    </script>
-  {% endunless %}
+        window.location.replace(newUrl);
+      }
+    })();
+  </script>
 {% endif %}
 
 <!-- PrédiaBLUE -->
