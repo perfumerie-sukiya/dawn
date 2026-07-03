@@ -1,11 +1,8 @@
 {%- if customer == null -%}
   <script>
-    const currentUrl = window.location.pathname + window.location.search + window.location.hash;
-    const loginUrl = "/account/login?return_url=" + encodeURIComponent(currentUrl);
-    const isThemeEditor = window.frameElement && window.frameElement.id && window.frameElement.id === 'theme-editor-iframe';
-    const isLocalDevHost = ['127.0.0.1', 'localhost', '::1'].includes(window.location.hostname);
-
-    if (!isThemeEditor && !isLocalDevHost) {
+    const currentUrl = window.location.href;
+    const loginUrl = window.location.origin + "/account/login?return_url=" + encodeURIComponent(currentUrl);
+    if (!(window.frameElement && window.frameElement.id && window.frameElement.id === 'theme-editor-iframe')) {
       window.location.href = loginUrl;
     }
   </script>
