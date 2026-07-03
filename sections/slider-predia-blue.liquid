@@ -40,17 +40,25 @@
         init="false"
       >
         {% for block in section.blocks %}
-          {%- assign slide_alt = block.settings.title | default: block.settings.image.alt -%}
+          {%- liquid
+            # 画像未設定のスライドは表示しない（テンプレート初期状態で壊れた画像を出さないため）
+            if block.settings.image == blank and block.settings.image_sp == blank
+              continue
+            endif
+            assign slide_image = block.settings.image | default: block.settings.image_sp
+            assign slide_image_sp = block.settings.image_sp | default: block.settings.image
+            assign slide_alt = block.settings.title | default: slide_image.alt
+          -%}
           <swiper-slide class="!tw-h-auto tw-bg-white">
             {% if block.settings.link %}<a href="{{ block.settings.link }}" class="tw-text-current">{% endif %}
             <div class="cpb-main-visual__item">
               <picture>
                 <source
                   media="(max-width: 768px)"
-                  srcset="{{ block.settings.image_sp | image_url: width: 750, height: 470 }}"
+                  srcset="{{ slide_image_sp | image_url: width: 750, height: 470 }}"
                 >
                 <img
-                  src="{{ block.settings.image | image_url: width: 2200, height: 800 }}"
+                  src="{{ slide_image | image_url: width: 2200, height: 800 }}"
                   alt="{{ slide_alt | escape }}"
                   width="2200"
                   height="800"

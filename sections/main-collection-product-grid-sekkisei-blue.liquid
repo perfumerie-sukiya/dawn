@@ -100,26 +100,24 @@
 {% comment %}
   filter.p.tag パラメータが Shopify の Storefront Filter API で認識されない場合、
   旧形式の URL (/collections/sekkisei-blue/tag-name) にリダイレクトする
-  force_product_grid が true の場合はリダイレクトしない（常に一覧表示のため）
+  view パラメータを引き継ぐため、一覧表示強制時（-products テンプレート等）でも実行する
 {% endcomment %}
 {% if filter_tag == '' and current_tags == blank %}
-  {% unless section.settings.force_product_grid %}
-    <script>
-      (function() {
-        var params = new URLSearchParams(window.location.search);
-        var tagParam = params.get('filter.p.tag');
-        if (tagParam) {
-          // filter.p.tag が URL にあるが Liquid で検出できなかった場合、旧形式にリダイレクト
-          var newUrl = window.location.pathname + '/' + encodeURIComponent(tagParam);
-          var viewParam = params.get('view');
-          if (viewParam) {
-            newUrl += '?view=' + encodeURIComponent(viewParam);
-          }
-          window.location.replace(newUrl);
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var tagParam = params.get('filter.p.tag');
+      if (tagParam) {
+        // filter.p.tag が URL にあるが Liquid で検出できなかった場合、旧形式にリダイレクト
+        var newUrl = window.location.pathname + '/' + encodeURIComponent(tagParam);
+        var viewParam = params.get('view');
+        if (viewParam) {
+          newUrl += '?view=' + encodeURIComponent(viewParam);
         }
-      })();
-    </script>
-  {% endunless %}
+        window.location.replace(newUrl);
+      }
+    })();
+  </script>
 {% endif %}
 
 <!-- 雪肌精BLUE -->
@@ -312,7 +310,7 @@
     <!-- 雪肌精BLUEブランドトップ -->
     <div class="page-width">
       {% comment %} ④ブランド・シリーズコンセプト {% endcomment %}
-      <div class="cpb-concept tw-my-10 tw-text-center tw-text-[#13509b]">
+      <div id="about-us" class="cpb-concept tw-my-10 tw-text-center tw-text-[#13509b]">
         <h2 class="tw-text-2xl md:tw-text-3xl tw-font-bold tw-mb-2">雪肌精BLUEとは</h2>
         <p class="tw-text-lg md:tw-text-xl tw-tracking-widest tw-mb-6">めぐり巡る美の循環</p>
         <p class="tw-text-sm md:tw-text-base tw-leading-loose tw-text-black tw-max-w-[760px] tw-mx-auto">
@@ -328,6 +326,7 @@
         </p>
       </div>
 
+      <div id="new-arrival"></div>
       {%- if new_arrival_products_to_display > 0 -%}
         <div class="cpb-items tw-my-10">
           <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">NEW ARRIVALS</h3>
@@ -395,6 +394,8 @@
           </slider-component>
         </div>
       {%- endif -%}
+      <div id="campaign"></div>
+      <div id="ranking"></div>
       {%- if ranking_products_to_display > 0 -%}
         <div class="cpb-items tw-my-10">
           <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">RANKING</h3>
@@ -463,68 +464,10 @@
         </div>
       {%- endif -%}
 
-      <div class="cpb-contents-nav mb-10">
+      <div id="products" class="cpb-contents-nav mb-10">
         <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">CATEGORY</h3>
 
-        <div class="tw-hidden md:tw-grid md:tw-grid-cols-3 md:tw-gap-1">
-          {%- for link in linklists['sekkisei-blue-category-menu'].links -%}
-            {%- if link.links != empty -%}
-              <div class="tw-group tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-bg-[#13509b] tw-text-white">
-                <a
-                  class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-justify-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline"
-                  href="{{ link.url }}"
-                >
-                  {{ link.title }}
-                  <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
-                </a>
-                <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-[#13509b] tw-text-white tw-absolute tw-z-10 tw-w-full">
-                  {%- for child_link in link.links -%}
-                    {%- if child_link.links != empty -%}
-                      <div class="tw-group/nest2 tw-h-10 tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4]">
-                        <a
-                          href="{{ child_link.url }}"
-                          class="tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline"
-                        >
-                          {{ child_link.title }}
-                          <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
-                        </a>
-                        <div class="nested-menu group-hover/nest2:tw-block tw-hidden tw-bg-[#13509b] tw-text-white">
-                          {%- for grandchild_link in child_link.links -%}
-                            <a href="{{ grandchild_link.url }}" class="tw-text-current tw-no-underline">
-                              <div
-                                class="tw-h-10 tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest"
-                              >
-                                {{ grandchild_link.title }}
-                              </div>
-                            </a>
-                          {%- endfor -%}
-                        </div>
-                      </div>
-                    {%- else -%}
-                      <a
-                        class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline"
-                        href="{{ child_link.url }}"
-                      >
-                        {{ child_link.title }}
-                      </a>
-                    {%- endif -%}
-                  {%- endfor -%}
-                </div>
-              </div>
-            {%- else -%}
-              <a
-                class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-[#13509b] tw-text-white tw-no-underline"
-                href="{{ link.url }}"
-                {%- unless link.url contains 'https://online.sukiya.biz' -%}
-                  target="_blank"
-                {%- endunless -%}
-              >
-                {{ link.title }}
-                <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
-              </a>
-            {%- endif -%}
-          {%- endfor -%}
-        </div>
+        {% render 'category-navigation-sekkisei-blue' %}
 
         {% render 'sp-navigation-sekkisei-blue' %}
       </div>
