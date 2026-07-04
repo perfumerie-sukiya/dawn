@@ -43,11 +43,18 @@ a.pagination__item:hover::after {
   height: 0.6rem;
 }
 
-.pagination__item--current::after {
-  height: 0.1rem;
+.pagination__item--current {
+  background-color: #ccc;
+  color: #fff;
+  border-radius: 4px;
+  pointer-events: none;
+  cursor: default;
 }
 
-.pagination__item--current::after,
+.pagination__item--current::after {
+  display: none;
+}
+
 .pagination__item:hover::after {
   content: '';
   display: block;
