@@ -1,0 +1,40 @@
+{%- comment -%}
+  BLUEコレクション共通のキャンペーンバナー。
+  コレクションのメタフィールド custom.campaigns（list.metaobject_reference）に
+  紐づいたキャンペーンメタオブジェクト（type: campaign）を描画する。
+  未設定時はアンカー用の空divのみ残す。
+{%- endcomment -%}
+{%- assign campaigns = collection.metafields.custom.campaigns.value -%}
+<div id="campaign">
+  {%- if campaigns.count > 0 -%}
+    <div class="cpb-items tw-my-10">
+      <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">CAMPAIGN</h3>
+      <div class="tw-grid tw-grid-cols-1 md:tw-grid-cols-2 tw-gap-4">
+        {%- for campaign in campaigns -%}
+          {%- assign image_pc = campaign.image.value -%}
+          {%- assign image_sp = campaign.image_sp.value | default: image_pc -%}
+          {%- if image_pc -%}
+            <div>
+              {% if campaign.link.value %}<a href="{{ campaign.link.value }}" class="tw-text-current">{% endif %}
+              <picture>
+                <source
+                  media="(max-width: 767px)"
+                  srcset="{{ image_sp | image_url: width: 750 }}"
+                >
+                <img
+                  src="{{ image_pc | image_url: width: 1230 }}"
+                  alt="{{ campaign.title.value | escape }}"
+                  width="{{ image_pc.width }}"
+                  height="{{ image_pc.height }}"
+                  loading="lazy"
+                  class="tw-block tw-w-full"
+                >
+              </picture>
+              {% if campaign.link.value %}</a>{% endif %}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
