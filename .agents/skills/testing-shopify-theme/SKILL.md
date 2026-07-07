@@ -12,8 +12,11 @@ This skill covers how to test Shopify Dawn theme changes locally, including page
 - `SHOPIFY_ACCESS_TOKEN` - Shopify Admin API access token (loaded via `.envrc` / direnv)
 - `SHOPIFY_CLI_THEME_TOKEN` - Shopify CLI theme token for dev server authentication
 - `SHOPIFY_FLAG_STORE` - Shopify store URL (e.g., `store-name.myshopify.com`)
+- `SHOPIFY_CLI_THEME_TOKEN_TEST` - Theme Access Token for test store (org-scoped)
+- `SHOPIFY_STORE_PASSWORD_TEST` - Storefront password for password-protected test store (org-scoped)
 
-These are typically configured in the repo's `.envrc` file and loaded automatically by direnv.
+Primary store secrets are configured in the repo's `.envrc` file and loaded automatically by direnv.
+Test store secrets are org-scoped and loaded via `/run/secrets/`.
 
 ## Local Development Server
 
@@ -66,8 +69,42 @@ When you cannot change template assignments (no admin access, no API scope):
 - Styling uses a mix of Tailwind CSS utility classes (`tw-` prefix) and scoped CSS (BEM naming)
 - Content is often hardcoded in sections (not using `{{ page.content }}`)
 
+## Testing Collection/Brand Pages
+
+### Brand top pages vs category pages
+- Brand top pages (e.g., `/collections/sekkisei-blue`) show a different layout than category pages (e.g., `/collections/sekkisei-blue/スキンケア`)
+- Brand top sections render when `current_tags == blank` (no tag filter)
+- Category pages use Shopify's standard faceted filtering UI
+- Test both views separately when making changes to brand-specific sections
+
+### Product grid testing limitations
+- Test stores may not have products in all collections
+- Verify the HTML structure is correct even if no products render (check for `product-grid` and `grid__item` classes in HTML source)
+- For full product grid verification, use a store with actual product data
+
+### Multiple test stores
+- Primary test store credentials are in `.envrc` (loaded via direnv)
+- Additional test stores may need separate tokens stored as secrets (e.g., `SHOPIFY_CLI_THEME_TOKEN_TEST`)
+- When switching stores, pass `--store` and `--password` flags to `shopify theme dev`
+
+### Password-protected test stores
+- Password-protected stores require TWO separate credentials:
+  1. `--password` — Theme Access Token (from Shopify Admin → Themes → Theme access)
+  2. `--store-password` — Storefront password (from Shopify Admin → Online Store → Preferences → Password protection)
+- Both must be passed as command-line flags to avoid interactive prompts:
+  ```bash
+  shopify theme dev --store STORE_URL --password "$THEME_TOKEN" --store-password "$STORE_PASSWORD" --live-reload=off
+  ```
+- Theme Access Token is NOT the same as Admin API Access Token (`shpat_` prefix = Admin API token, not Theme Access Token)
+- If you get a 401 error, verify the token type is correct
+- Use `--live-reload=off` to reduce noise in automated testing
+
 ## Tips
 - Always run `shopify theme check` before committing - it catches syntax errors and best practice violations
 - The dev server creates a temporary theme with ID visible in the output (e.g., `preview_theme_id=185110298902`)
 - For visual comparison, open the reference design and your preview side-by-side
 - Test mobile responsive by using Chrome DevTools device toolbar (F12 → toggle device toolbar)
+- Use `ctrl+shift+m` in Chrome DevTools to toggle device toolbar for mobile viewport testing
+- Check HTML source with curl when visual elements might not render due to missing data (e.g., `curl -s URL | grep 'class-name'`)
+- When a test store has no product data, verify HTML structure via curl and then use a store with real data for visual verification
+- Run `shopify theme dev --help` to discover available flags when troubleshooting authentication issues
