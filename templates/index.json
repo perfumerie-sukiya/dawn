@@ -330,16 +330,6 @@
             "link": "https://online.sukiya.biz/pages/shiseido-men-uv-protector-holder-2026-5-21"
           }
         },
-        "column_Jpytpb": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FN20260520.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-atomizer-with-case-black-2026-4-1"
-          }
-        },
         "column_AwYDze": {
           "type": "column",
           "settings": {
@@ -362,7 +352,6 @@
         "column_UFHRwR",
         "column_k8Ewjb",
         "column_MtVgph",
-        "column_Jpytpb",
         "column_AwYDze"
       ],
       "settings": {
