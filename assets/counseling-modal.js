@@ -105,11 +105,7 @@ class MyDialog extends HTMLElement {
     this.radioButtons = this.querySelectorAll('input[type="radio"]');
     this.useCheckbox = this.getAttribute('data-input-type') === 'checkbox';
     this.checkboxes = this.useCheckbox
-      ? [
-          this.querySelector('input[type="checkbox"][name^="q1"]'),
-          this.querySelector('input[type="checkbox"][name^="q2"]'),
-          this.querySelector('input[type="checkbox"][name^="q3"]')
-        ].filter(Boolean)
+      ? Array.from(this.querySelectorAll('input[type="checkbox"]'))
       : [];
     this.counselingResult = this.querySelectorAll('.counseling-result');
     this.nextPageDisableButton = this.querySelector('.next-page-disable');
@@ -152,7 +148,7 @@ class MyDialog extends HTMLElement {
         this.counselingResult.forEach((result) => {
           result.classList.remove('active');
         });
-        if (this.useCheckbox && this.checkboxes.length === 3) {
+        if (this.useCheckbox && this.checkboxes.length > 0) {
           this.checkboxes.forEach((cb) => { cb.checked = false; });
           this.checkNextButtonActive();
         } else {
@@ -178,7 +174,7 @@ class MyDialog extends HTMLElement {
       });
     });
 
-    if (this.useCheckbox && this.checkboxes.length === 3) {
+    if (this.useCheckbox && this.checkboxes.length > 0) {
       this.checkboxes.forEach((cb) => {
         cb.addEventListener('change', () => {
           this.checkNextButtonActive();
@@ -189,9 +185,9 @@ class MyDialog extends HTMLElement {
   }
 
   checkNextButtonActive() {
-    if (this.useCheckbox && this.checkboxes.length === 3) {
-      const allAnswered = this.checkboxes.every((cb) => cb !== null);
-      if (allAnswered) {
+    if (this.useCheckbox && this.checkboxes.length > 0) {
+      const canProceed = this.brand !== 'addiction' || this.checkboxes.every((cb) => cb.checked);
+      if (canProceed) {
         if (this.nextPageDisableButton) this.nextPageDisableButton.style.display = 'none';
         if (this.nextPageButton) this.nextPageButton.style.display = 'block';
       } else {
@@ -241,10 +237,10 @@ class MyDialog extends HTMLElement {
     let q2Value;
     let q3Value;
 
-    if (this.useCheckbox && this.checkboxes.length === 3) {
-      q1Value = this.checkboxes[0].checked ? 1 : 0;
-      q2Value = this.checkboxes[1].checked ? 1 : 0;
-      q3Value = this.checkboxes[2].checked ? 1 : 0;
+    if (this.useCheckbox && this.checkboxes.length > 0) {
+      q1Value = this.checkboxes.length > 0 && this.checkboxes[0].checked ? 1 : 0;
+      q2Value = this.checkboxes.length > 1 && this.checkboxes[1].checked ? 1 : 0;
+      q3Value = this.checkboxes.length > 2 && this.checkboxes[2].checked ? 1 : 0;
     } else {
       if (this.radioButtons.length < 6) return;
       q1Value = this.radioButtons[0].checked ? 1 : this.radioButtons[1].checked ? 0 : null;
@@ -270,6 +266,10 @@ class MyDialog extends HTMLElement {
       return false;
     }
 
+    if (this.brand === 'addiction') {
+      return resultIndex === 0;
+    }
+
     if (this.brand === 'albion') {
       return resultIndex === 0 || resultIndex === 1;
     }
@@ -282,6 +282,10 @@ class MyDialog extends HTMLElement {
    * Override this method or extend the logic for brand-specific behavior
    */
   getResultIndex(q1, q2, q3) {
+    if (this.brand === 'addiction') {
+      return 0;
+    }
+
     if (this.brand === 'albion') {
       if (q1 === 1 && q2 === 1 && q3 === 1) {
         return 0;
