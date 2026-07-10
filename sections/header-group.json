@@ -34,6 +34,7 @@
       "blocks": {
         "announcement_FqhWXN": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "text": "アルビオン・イグニス・エレガンスお取扱い4月1日〜",
             "link": "shopify://collections/albion"

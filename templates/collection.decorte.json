@@ -20,35 +20,62 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
-        "slide_3q7ahC": {
+        "slide_Lnqd4P": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/LIPOSOME_ootani_banner_Sukiya_PC_1280x400_94799ac9-944b-4938-9eb1-35a6397265a3.jpg",
-            "image_sp": "shopify://shop_images/LIPOSOME_ootani_banner_Sukiya_SP_750x392_3c3cd84e-1d23-4a09-9999-86222e172b75.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-hydra-clarity-medicated-brightening-essence-water-2026-3-16"
+            "image": "shopify://shop_images/6JDZZY_CreamSatin_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JDZZY_CreamSatin_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-rouge-decorte-cream-satin-2026-7-16?_pos=2&_fid=bfedfcc97&_ss=c"
           }
         },
-        "slide_BdQtHa": {
+        "slide_Wxyb8Y": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/6JBZMX_DAYMIST_banner_PC-11.jpg",
-            "image_sp": "shopify://shop_images/6JBZMX_DAYMIST_banner_SP-11.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-comfort-day-mist-makeup-fix-2026-4-16"
+            "image": "shopify://shop_images/6JDZZY_Rouge_eyeplatte_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JDZZY_Rouge_eyeplatte_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-skin-shadow-designing-palette-2026-7-16"
           }
         },
-        "slide_R7DQhX": {
+        "slide_3e4EPF": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/6JBZMY_PointMake_banner_PC.jpg",
-            "image_sp": "shopify://shop_images/6JBZMY_PointMake_banner_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-rouge-decorte-cream-glow-2026-4-16"
+            "image": "shopify://shop_images/6JDZZX_CONCEALER_PC.jpg",
+            "image_sp": "shopify://shop_images/6JDZZX_CONCEALER_SP-16.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-tone-and-flat-perfecting-palette-2026-8-21"
+          }
+        },
+        "slide_Q8yhg4": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JDZZW_CleansingWater_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JDZZW_CleansingWater_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cleansing-beauty-water-2026-8-21?_pos=1&_fid=9c6352f8f&_ss=c"
+          }
+        },
+        "slide_g4imYi": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZZ_YOUTH_POWER-new_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JFZZZ_YOUTH_POWER-new_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-youth-power-essence-lotion-2026-7-1"
+          }
+        },
+        "slide_XePcNt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JDZZZ_HYDRA-large_banner_PC-15.jpg",
+            "image_sp": "shopify://shop_images/6JDZZZ_HYDRA-large_banner_SP-15.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-hydraclarity-medicated-brightening-essence-water-2026-7-1"
           }
         }
       },
       "block_order": [
-        "slide_3q7ahC",
-        "slide_BdQtHa",
-        "slide_R7DQhX"
+        "slide_Lnqd4P",
+        "slide_Wxyb8Y",
+        "slide_3e4EPF",
+        "slide_Q8yhg4",
+        "slide_g4imYi",
+        "slide_XePcNt"
       ],
       "settings": {}
     },

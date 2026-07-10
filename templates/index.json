@@ -230,6 +230,26 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_dfApNw": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/20260701.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2026-7-1"
+          }
+        },
+        "column_d66NT6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PJ7_GWP_62fdf422-92ef-4fba-9f76-3a507f0782cf.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paulandjoe-original-summer-tote-bag-2026-7-1"
+          }
+        },
         "column_ajPrHK": {
           "type": "column",
           "settings": {
@@ -258,16 +278,6 @@
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/decorte-youth-power-essence-lotion-9ml-2026-6-16"
-          }
-        },
-        "column_8MdaQ7": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ20260601.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-hair-brush-2026-6-1"
           }
         },
         "column_KekDbW": {
@@ -300,16 +310,6 @@
             "link": "https://online.sukiya.biz/pages/nars-original-fan-folding-fan-2026-5-29"
           }
         },
-        "column_gpCd7K": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FN20260526.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-hand-cream-15g-scent-will-be-random-2026-5-26"
-          }
-        },
         "column_k8Ewjb": {
           "type": "column",
           "settings": {
@@ -320,16 +320,6 @@
             "link": "https://online.sukiya.biz/pages/addiction-blur-and-lock-primer-75g-mini-sample-2026-5-22"
           }
         },
-        "column_Jpytpb": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FN20260520.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/flora-notis-jill-stuart-atomizer-with-case-black-2026-4-1"
-          }
-        },
         "column_MtVgph": {
           "type": "column",
           "settings": {
@@ -338,16 +328,6 @@
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/shiseido-men-uv-protector-holder-2026-5-21"
-          }
-        },
-        "column_XFC3eK": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20260522.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-original-color-hairpins-2026-5-22"
           }
         },
         "column_AwYDze": {
@@ -362,18 +342,16 @@
         }
       },
       "block_order": [
+        "column_dfApNw",
+        "column_d66NT6",
         "column_ajPrHK",
         "column_AWmHhB",
         "column_ePHi67",
-        "column_8MdaQ7",
         "column_KekDbW",
         "column_8cfzAF",
         "column_UFHRwR",
-        "column_gpCd7K",
         "column_k8Ewjb",
-        "column_Jpytpb",
         "column_MtVgph",
-        "column_XFC3eK",
         "column_AwYDze"
       ],
       "settings": {

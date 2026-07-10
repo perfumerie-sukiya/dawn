@@ -31,15 +31,37 @@
             "is_text_right": false
           }
         },
-        "slide_aUmAzM": {
+        "slide_k74EAW": {
           "type": "slide",
           "settings": {
-            "title": "贅沢な色彩と輝きを、\nいつでも唇に纏わせて。",
-            "image": "shopify://shop_images/offer_LipstickShine_26SS_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_LipstickShine_26SS_sp.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-rouge-alleve-briand-2026-3-21",
-            "is_title_white": true,
+            "title": "肌をすこやかに保ち、若々しい印象へ導く\nファーストステップ美容液\nル・セラムⅡの特別キット",
+            "image": "shopify://shop_images/offer_TheSerumII_Kit_26SS_pc_02.jpg",
+            "image_sp": "shopify://shop_images/offer_TheSerumII_Kit_26SS_sp.jpg",
+            "link": "https://online.sukiya.biz/products/luceram-ii-kit-3",
+            "is_title_white": false,
             "is_text_right": true
+          }
+        },
+        "slide_j4MfLE": {
+          "type": "slide",
+          "settings": {
+            "title": "夏の太陽から肌を守る日焼け止めと、\nなめらかなつや肌に導くスモールサイズの\nフェイスパウダーの特別なキット",
+            "image": "shopify://shop_images/offer_UVcare_Kit_26SS_pc_02.jpg",
+            "image_sp": "shopify://shop_images/offer_UVcare_Kit_26SS_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-creme-uv-n",
+            "is_title_white": false,
+            "is_text_right": true
+          }
+        },
+        "slide_jkxT4C": {
+          "type": "slide",
+          "settings": {
+            "title": "光をまとい、輝きを育む、\n絶世の美しさへ。",
+            "image": "shopify://shop_images/offer_RadiantBasemake_26SS_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_RadiantBasemake_26SS_sp.jpg",
+            "link": "https://online.sukiya.biz/collections/cle-de-peau-beaute?filter.p.tag=%E3%83%A1%E3%82%A4%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97",
+            "is_title_white": false,
+            "is_text_right": false
           }
         },
         "slide_HWnFzk": {
@@ -50,17 +72,6 @@
             "image_sp": "shopify://shop_images/offer_brightening_serum_26SS_sp_44a2eabe-8678-4f51-8c9b-86bc2d9f796c.jpg",
             "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-serum-eclat-s-ii-2026-2-21",
             "is_title_white": false,
-            "is_text_right": false
-          }
-        },
-        "slide_3JGxbq": {
-          "type": "slide",
-          "settings": {
-            "title": "HAPPY RADIANT\nNEW YEAR",
-            "image": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_HappyRadiantNewYear_26ss_sp.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-la-creme-l-2026-limited-edition-2026-1-21?_pos=1&_fid=80f42f6b4&_ss=c",
-            "is_title_white": true,
             "is_text_right": false
           }
         },
@@ -89,9 +100,10 @@
       },
       "block_order": [
         "slide_gUR3gt",
-        "slide_aUmAzM",
+        "slide_k74EAW",
+        "slide_j4MfLE",
+        "slide_jkxT4C",
         "slide_HWnFzk",
-        "slide_3JGxbq",
         "slide_TpUYee",
         "slide_jdMnEt"
       ],
