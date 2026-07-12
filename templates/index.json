@@ -240,16 +240,6 @@
             "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2026-7-1"
           }
         },
-        "column_d66NT6": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ7_GWP_62fdf422-92ef-4fba-9f76-3a507f0782cf.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-summer-tote-bag-2026-7-1"
-          }
-        },
         "column_ajPrHK": {
           "type": "column",
           "settings": {
@@ -343,7 +333,6 @@
       },
       "block_order": [
         "column_dfApNw",
-        "column_d66NT6",
         "column_ajPrHK",
         "column_AWmHhB",
         "column_ePHi67",
