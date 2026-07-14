@@ -240,16 +240,6 @@
             "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2026-7-1"
           }
         },
-        "column_ajPrHK": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FM20260624.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/frederic-mall-rose-tonnerre-eau-de-toilette-7ml-2026-6-24"
-          }
-        },
         "column_AWmHhB": {
           "type": "column",
           "settings": {
@@ -333,7 +323,6 @@
       },
       "block_order": [
         "column_dfApNw",
-        "column_ajPrHK",
         "column_AWmHhB",
         "column_ePHi67",
         "column_KekDbW",
