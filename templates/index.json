@@ -230,6 +230,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_MTGB7U": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20260717.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-original-pouch-light-reflecting-multi-action-treatment-lotion-special-size-2026-7-17"
+          }
+        },
         "column_dfApNw": {
           "type": "column",
           "settings": {
@@ -238,26 +248,6 @@
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2026-7-1"
-          }
-        },
-        "column_d66NT6": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ7_GWP_62fdf422-92ef-4fba-9f76-3a507f0782cf.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-summer-tote-bag-2026-7-1"
-          }
-        },
-        "column_ajPrHK": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/FM20260624.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/frederic-mall-rose-tonnerre-eau-de-toilette-7ml-2026-6-24"
           }
         },
         "column_AWmHhB": {
@@ -342,9 +332,8 @@
         }
       },
       "block_order": [
+        "column_MTGB7U",
         "column_dfApNw",
-        "column_d66NT6",
-        "column_ajPrHK",
         "column_AWmHhB",
         "column_ePHi67",
         "column_KekDbW",
