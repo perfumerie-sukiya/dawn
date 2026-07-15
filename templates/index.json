@@ -230,6 +230,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_MTGB7U": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20260717.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-original-pouch-light-reflecting-multi-action-treatment-lotion-special-size-2026-7-17"
+          }
+        },
         "column_dfApNw": {
           "type": "column",
           "settings": {
@@ -322,6 +332,7 @@
         }
       },
       "block_order": [
+        "column_MTGB7U",
         "column_dfApNw",
         "column_AWmHhB",
         "column_ePHi67",
