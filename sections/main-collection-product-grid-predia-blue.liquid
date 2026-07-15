@@ -129,7 +129,7 @@
       data-filter-tag-heading
       data-filter-tag-label="{{ filter_tag_label | escape }}"
     >
-      <h3 class="tw-text-2xl tw-font-bold tw-my-2">{{ filter_tag }}</h3>
+      <h3 class="blue-brand-font blue-brand-title tw-text-2xl tw-my-2">{{ filter_tag }}</h3>
     </div>
     <div class="section-{{ section.id }}-padding">
       {%- paginate collection.products by section.settings.products_per_page -%}
@@ -301,7 +301,7 @@
       {%- endif -%}
 
       <div class="tw-mt-8 sp-only">
-        <h3 class="tw-text-center tw-text-xl tw-font-bold tw-mb-6">PRODUCTS</h3>
+        <h3 class="blue-brand-font blue-brand-title tw-text-center tw-text-xl tw-mb-6">PRODUCTS</h3>
         {% render 'category-navigation-predia-blue' %}
       </div>
     </div>
@@ -310,10 +310,10 @@
     <!-- PrédiaBLUEブランドトップ -->
     <div class="page-width">
       {% comment %} ④ブランド・シリーズコンセプト {% endcomment %}
-      <div id="about-us" class="cpb-concept tw-my-10 tw-text-center tw-text-[#13509b]">
-        <h2 class="tw-text-2xl md:tw-text-3xl tw-font-bold tw-mb-2">PrédiaBLUEとは</h2>
+      <div id="about-us" class="cpb-concept blue-brand-font tw-my-10 tw-text-center tw-text-[#13509b]">
+        <h2 class="blue-brand-title tw-text-2xl md:tw-text-3xl tw-mb-2">PrédiaBLUEとは</h2>
         <p class="tw-text-lg md:tw-text-xl tw-tracking-widest tw-mb-6">Refresh w/SEA</p>
-        <p class="tw-text-sm md:tw-text-base tw-leading-loose tw-text-black tw-max-w-[760px] tw-mx-auto">
+        <p class="blue-brand-description tw-text-sm md:tw-text-base tw-leading-loose tw-text-black tw-max-w-[760px] tw-mx-auto">
           ブランド誕生から海の恵みを形にしてきたプレディアから<br>
           人と海をつなげる新たなシリーズ、Prédia BLUE 誕生。<br>
           様々な表情を持つ海のように<br>
@@ -328,10 +328,9 @@
         </p>
       </div>
 
-      <div id="new-arrival"></div>
       {%- if new_arrival_products_to_display > 0 -%}
-        <div class="cpb-items tw-my-10">
-          <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">NEW ARRIVALS</h3>
+        <div id="new-arrival" class="cpb-items tw-my-10">
+          <h3 class="blue-brand-font blue-brand-title tw-text-center tw-text-3xl tw-mb-6">NEW ARRIVALS</h3>
           <slider-component class="slider-mobile-gutter{% unless show_mobile_slider %} page-width{% endunless %}{% unless show_desktop_slider %} page-width-desktop{% endunless %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
             <ul
               id="Slider-{{ section.id }}"
@@ -397,10 +396,9 @@
         </div>
       {%- endif -%}
       <div id="campaign"></div>
-      <div id="ranking"></div>
       {%- if ranking_products_to_display > 0 -%}
-        <div class="cpb-items tw-my-10">
-          <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">RANKING</h3>
+        <div id="ranking" class="cpb-items tw-my-10">
+          <h3 class="blue-brand-font blue-brand-title tw-text-center tw-text-3xl tw-mb-6">RANKING</h3>
           <slider-component class="slider-mobile-gutter{% unless show_mobile_slider %} page-width{% endunless %}{% unless show_desktop_slider %} page-width-desktop{% endunless %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
             <ul
               id="Slider-{{ section.id }}-ranking"
@@ -467,7 +465,7 @@
       {%- endif -%}
 
       <div id="products" class="cpb-contents-nav mb-10">
-        <h3 class="tw-text-center tw-text-3xl tw-font-bold tw-mb-6">PRODUCTS</h3>
+        <h3 class="blue-brand-font blue-brand-title tw-text-center tw-text-3xl tw-mb-6">PRODUCTS</h3>
 
         {% render 'category-navigation-predia-blue' %}
 
