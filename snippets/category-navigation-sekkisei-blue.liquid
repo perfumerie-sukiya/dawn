@@ -11,39 +11,85 @@
           <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 16, height: 3 %}</span>
         </span>
       </div>
-      <div class="panel">
-        <ul class="tw-list-none tw-p-0 tw-m-0 tw-border-t tw-border-[#13509b]">
-          <li class="tw-border-b tw-border-[#e5e7eb]">
-            <a href="{{ sekkisei_blue_url }}/スキンケア" class="tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-no-underline tw-text-current hover:tw-bg-[#f0f5ff]">
-              <span>スキンケア</span>
-              <span class="tw-inline-flex tw-text-[#13509b]">{% render 'icon-chevron-right', width: 12, height: 12 %}</span>
-            </a>
-          </li>
-          <li class="tw-border-b tw-border-[#e5e7eb]">
-            <a href="{{ sekkisei_blue_url }}/ベースメイク" class="tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-no-underline tw-text-current hover:tw-bg-[#f0f5ff]">
-              <span>ベースメイク</span>
-              <span class="tw-inline-flex tw-text-[#13509b]">{% render 'icon-chevron-right', width: 12, height: 12 %}</span>
-            </a>
-          </li>
-          <li class="tw-border-b tw-border-[#e5e7eb]">
-            <a href="{{ sekkisei_blue_url }}/ボディ" class="tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-no-underline tw-text-current hover:tw-bg-[#f0f5ff]">
-              <span>ボディ</span>
-              <span class="tw-inline-flex tw-text-[#13509b]">{% render 'icon-chevron-right', width: 12, height: 12 %}</span>
-            </a>
-          </li>
-          <li class="tw-border-b tw-border-[#e5e7eb]">
-            <a href="{{ sekkisei_blue_url }}/ライフスタイル" class="tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-no-underline tw-text-current hover:tw-bg-[#f0f5ff]">
-              <span>ライフスタイル</span>
-              <span class="tw-inline-flex tw-text-[#13509b]">{% render 'icon-chevron-right', width: 12, height: 12 %}</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ sekkisei_blue_url }}/アクセサリー" class="tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-no-underline tw-text-current hover:tw-bg-[#f0f5ff]">
-              <span>その他</span>
-              <span class="tw-inline-flex tw-text-[#13509b]">{% render 'icon-chevron-right', width: 12, height: 12 %}</span>
-            </a>
-          </li>
-        </ul>
+      <div class="panel tw-border-t tw-border-[#13509b]">
+        <div>
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-cursor-pointer tw-border-b tw-border-[#e5e7eb]">
+          <span>スキンケア</span>
+          <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+          <div class="panel tw-bg-[#f0f5ff] tw-grid tw-grid-cols-2">
+          <a href="{{ sekkisei_blue_url }}/クレンジング" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">クレンジング</a>
+          <a href="{{ sekkisei_blue_url }}/洗顔料" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">洗顔</a>
+          <a href="{{ sekkisei_blue_url }}/化粧水" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">化粧水</a>
+          <a href="{{ sekkisei_blue_url }}/美容液_オイル" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">美容液/オイル</a>
+          <a href="{{ sekkisei_blue_url }}/クリーム" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">クリーム</a>
+          <a href="{{ sekkisei_blue_url }}/UVケア" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">UVケア</a>
+          <a href="{{ sekkisei_blue_url }}/トライアル" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">トライアル</a>
+          <a href="{{ sekkisei_blue_url }}/スキンケア_限定品" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">限定品</a>
+          <a href="{{ sekkisei_blue_url }}/スキンケア" class="tw-block tw-px-5 tw-py-3 tw-border-r tw-border-white tw-no-underline tw-text-current">すべて</a>
+          </div>
+
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-cursor-pointer tw-border-b tw-border-[#e5e7eb]">
+          <span>ベースメイク</span>
+          <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+          <div class="panel tw-bg-[#f0f5ff] tw-grid tw-grid-cols-2">
+          <a href="{{ sekkisei_blue_url }}/化粧下地" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">化粧下地</a>
+          <a href="{{ sekkisei_blue_url }}/ファンデーション" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">ファンデーション</a>
+          <a href="{{ sekkisei_blue_url }}/コンシーラー" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">コンシーラー</a>
+          <a href="{{ sekkisei_blue_url }}/フェイスパウダー" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">フェイスパウダー</a>
+          <a href="{{ sekkisei_blue_url }}/ベースメイク_限定品" class="tw-block tw-px-5 tw-py-3 tw-border-r tw-border-white tw-no-underline tw-text-current">限定品</a>
+          <a href="{{ sekkisei_blue_url }}/ベースメイク" class="tw-block tw-px-5 tw-py-3 tw-no-underline tw-text-current">すべて</a>
+          </div>
+
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-cursor-pointer tw-border-b tw-border-[#e5e7eb]">
+          <span>ボディ</span>
+          <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+          <div class="panel tw-bg-[#f0f5ff] tw-grid tw-grid-cols-2">
+          <a href="{{ sekkisei_blue_url }}/ボディケア" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">ボディケア</a>
+          <a href="{{ sekkisei_blue_url }}/ハンドケア" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">ハンドケア</a>
+          <a href="{{ sekkisei_blue_url }}/ボディ_限定品" class="tw-block tw-px-5 tw-py-3 tw-border-r tw-border-white tw-no-underline tw-text-current">限定品</a>
+          <a href="{{ sekkisei_blue_url }}/ボディ" class="tw-block tw-px-5 tw-py-3 tw-no-underline tw-text-current">すべて</a>
+          </div>
+
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-cursor-pointer tw-border-b tw-border-[#e5e7eb]">
+          <span>ライフスタイル</span>
+          <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+          <div class="panel tw-bg-[#f0f5ff] tw-grid tw-grid-cols-2">
+          <a href="{{ sekkisei_blue_url }}/フレグランスミスト" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">フレグランスミスト</a>
+          <a href="{{ sekkisei_blue_url }}/ボディケア" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">ボディケア</a>
+          <a href="{{ sekkisei_blue_url }}/ハンドケア" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">ハンドケア</a>
+          <a href="{{ sekkisei_blue_url }}/ライフスタイル_限定品" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">限定品</a>
+          <a href="{{ sekkisei_blue_url }}/ライフスタイル" class="tw-block tw-px-5 tw-py-3 tw-border-r tw-border-white tw-no-underline tw-text-current">すべて</a>
+          </div>
+
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-cursor-pointer">
+          <span>その他</span>
+          <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+          <div class="panel tw-bg-[#f0f5ff] tw-grid tw-grid-cols-2">
+          <a href="{{ sekkisei_blue_url }}/限定品" class="tw-block tw-px-5 tw-py-3 tw-border-r tw-border-white tw-no-underline tw-text-current">限定品</a>
+          <a href="{{ sekkisei_blue_url }}/アクセサリー" class="tw-block tw-px-5 tw-py-3 tw-no-underline tw-text-current">その他</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </my-accordion>
