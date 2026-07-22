@@ -230,6 +230,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_Cgem8P": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20260805.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-natural-longwear-foundation-04788-mont-blanc-special-size-finger-puff-2026-8-5"
+          }
+        },
         "column_NbrYLD": {
           "type": "column",
           "settings": {
@@ -332,6 +342,7 @@
         }
       },
       "block_order": [
+        "column_Cgem8P",
         "column_NbrYLD",
         "column_dfApNw",
         "column_AWmHhB",
