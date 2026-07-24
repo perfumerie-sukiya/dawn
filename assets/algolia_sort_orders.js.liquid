@@ -9,6 +9,13 @@
     { value: sort_order_base, label: '' + `${relevantSortOrderLabel ? relevantSortOrderLabel.title : algolia.translations.relevance}` },
   ];
 
+  // 新着順（created_at降順）を追加
+  var newestSortOrderLabel = translations?.sort_orders?.find(sortOrder => sortOrder.key === 'created_at_desc');
+  algolia.sortOrders.push({
+    value: sort_order_base + '_created_at_desc',
+    label: '' + `${newestSortOrderLabel ? newestSortOrderLabel.title : algolia.translations.newest}`,
+  });
+
   algolia.config.sort_orders.forEach(function(sort_order) {
     if (
       sort_order.asc &&

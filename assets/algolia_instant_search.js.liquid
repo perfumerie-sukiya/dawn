@@ -324,10 +324,10 @@
           var $facets = document.querySelector('.ais-facets');
 
           if ($facets.classList.contains('ais-facets__shown')) {
-            $button.textContent = 'Show filters';
+            $button.textContent = algolia.translations.showFilters || 'フィルターを表示';
             $facets.classList.remove('ais-facets__shown');
           } else {
-            $button.textContent = 'Hide filters';
+            $button.textContent = algolia.translations.hideFilters || 'フィルターを非表示';
             $facets.classList.add('ais-facets__shown');
           }
         });
@@ -495,7 +495,7 @@
     var widgetParams = renderOptions.widgetParams;
 
     widgetParams.container.innerHTML =
-      '<div class="ais-current-refined-values--header ais-facet--header ais-header">Selected filters</div>' +
+      '<div class="ais-current-refined-values--header ais-facet--header ais-header">' + (algolia.translations.selectedFilter || '選択中のフィルター') + '</div>' +
       '<div class="ais-root ais-current-refined-values ais-facet">' +
       '  <ul class="ais-current-refined-values--list">' +
       items.map(renderListItem).join('') +
