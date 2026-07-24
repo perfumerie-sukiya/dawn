@@ -1,2 +1,5 @@
-[environments.dev]
+[environments.prod]
 store = "perfumerie-sukiya-test.myshopify.com"
+
+[environments.dev]
+store = "perfumerie-sukiya-online-test.myshopify.com"

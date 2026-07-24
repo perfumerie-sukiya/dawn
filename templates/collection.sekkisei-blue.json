@@ -19,15 +19,6 @@
     },
     "slider": {
       "type": "slider-sekkisei-blue",
-      "blocks": {
-        "slide_default": {
-          "type": "slide",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "slide_default"
-      ],
       "settings": {}
     },
     "product-grid": {
