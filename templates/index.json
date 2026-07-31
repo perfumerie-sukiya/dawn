@@ -220,6 +220,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_8MVDay": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PJ8_GWP.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paulandjoe-original-plush-tint-holder-2026-8-1"
+          }
+        },
         "column_Cgem8P": {
           "type": "column",
           "settings": {
@@ -312,6 +322,7 @@
         }
       },
       "block_order": [
+        "column_8MVDay",
         "column_Cgem8P",
         "column_NbrYLD",
         "column_dfApNw",
