@@ -220,6 +220,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_N4wBhb": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/PJ8_GWP_c2827cde-df7f-4001-a464-c5229cd53e6c.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paulandjoe-gel-tint-rouge-02-mini-size-2026-8-1"
+          }
+        },
         "column_8MVDay": {
           "type": "column",
           "settings": {
@@ -322,6 +332,7 @@
         }
       },
       "block_order": [
+        "column_N4wBhb",
         "column_8MVDay",
         "column_Cgem8P",
         "column_NbrYLD",
