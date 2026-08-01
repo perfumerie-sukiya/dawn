@@ -27,7 +27,7 @@
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "mini-css-extract-plugin": "^2.5.3",
-    "postcss": "^8.4.30",
+    "postcss": "^8.5.25",
     "postcss-loader": "^7.3.3",
     "sass": "~1.32",
     "sass-loader": "^12.3.0",
