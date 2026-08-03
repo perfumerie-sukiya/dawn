@@ -11,6 +11,13 @@
   if must_items_count > 5
     assign must_items_count = 5
   endif
+  assign card_media_aspect_ratio = media_aspect_ratio | default: 'adapt'
+  assign card_image_shape = image_shape | default: 'default'
+  assign card_show_secondary_image = show_secondary_image | default: false
+  assign card_show_vendor = show_vendor | default: false
+  assign card_show_rating = show_rating | default: false
+  assign card_show_quick_add = show_quick_add | default: false
+  assign card_max_title_length = max_title_length | default: 28
 %}
 <div class="albion-must-items tw-my-10 tw-bg-white tw-py-6">
   <div class="c-heading">
@@ -26,14 +33,14 @@
         <li class="grid__item tw-m-0{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"{% if settings.animations_reveal_on_scroll %} data-cascade style="--animation-order: {{ forloop.index }};"{% endif %}>
           {% render 'card-product',
             card_product: product,
-            media_aspect_ratio: media_aspect_ratio | default: 'adapt',
-            image_shape: image_shape | default: 'default',
-            show_secondary_image: show_secondary_image | default: false,
-            show_vendor: show_vendor | default: false,
-            show_rating: show_rating | default: false,
+            media_aspect_ratio: card_media_aspect_ratio,
+            image_shape: card_image_shape,
+            show_secondary_image: card_show_secondary_image,
+            show_vendor: card_show_vendor,
+            show_rating: card_show_rating,
             lazy_load: true,
-            show_quick_add: show_quick_add | default: false,
-            max_title_length: max_title_length | default: 28,
+            show_quick_add: card_show_quick_add,
+            max_title_length: card_max_title_length,
             section_id: section_id
           %}
         </li>
