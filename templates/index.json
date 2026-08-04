@@ -220,6 +220,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_w3yLTk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SL20260801.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/store-serge-lutens-eau-de-parfum-5ml-brand-specific-pouch-2026-8-1"
+          }
+        },
         "column_N4wBhb": {
           "type": "column",
           "settings": {
@@ -332,6 +342,7 @@
         }
       },
       "block_order": [
+        "column_w3yLTk",
         "column_N4wBhb",
         "column_8MVDay",
         "column_Cgem8P",
