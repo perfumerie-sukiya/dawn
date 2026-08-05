@@ -20,6 +20,17 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_qzagaE": {
+          "type": "slide",
+          "settings": {
+            "title": "積み重ねた輝きを、超えていく。\n光放つ肌へ。\n先端の角層細胞研究の、その先を。",
+            "image": "shopify://shop_images/332371eb-fbb4-4205-aa9e-1ccc8264037c.jpg",
+            "image_sp": "shopify://shop_images/CPB_25SS_KeyRadianceCare_sp_22bab863-c535-4b72-9e4c-753785dfc8c5.jpg",
+            "link": "",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
         "slide_gUR3gt": {
           "type": "slide",
           "settings": {
@@ -75,17 +86,6 @@
             "is_text_right": false
           }
         },
-        "slide_TpUYee": {
-          "type": "slide",
-          "settings": {
-            "title": "自ら輝きつづける肌、頂点へ。",
-            "image": "shopify://shop_images/CPB_25SS_KeyRadianceCare_pc.jpg",
-            "image_sp": "shopify://shop_images/CPB_25SS_KeyRadianceCare_sp_788abf3c-8541-42cf-bfb5-4c5ebf340c87.jpg",
-            "link": "",
-            "is_title_white": false,
-            "is_text_right": false
-          }
-        },
         "slide_jdMnEt": {
           "type": "slide",
           "settings": {
@@ -99,12 +99,12 @@
         }
       },
       "block_order": [
+        "slide_qzagaE",
         "slide_gUR3gt",
         "slide_k74EAW",
         "slide_j4MfLE",
         "slide_jkxT4C",
         "slide_HWnFzk",
-        "slide_TpUYee",
         "slide_jdMnEt"
       ],
       "settings": {}
