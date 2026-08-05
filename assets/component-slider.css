@@ -139,8 +139,24 @@ slider-component.slider-component-full-width {
 }
 
 @media screen and (min-width: 990px) {
-  .slider-component-desktop.page-width {
+  .slider-component-desktop:not(.slider-component-full-width) {
+    --desktop-margin-left-first-item: 0rem;
+    width: calc(100% - 10rem);
+    max-width: calc(var(--page-width) - 10rem);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .page-width .slider-component-desktop:not(.slider-component-full-width) {
+    width: 100%;
     max-width: none;
+  }
+
+  .slider-component-desktop.page-width:not(.slider-component-full-width) {
+    width: calc(100% - 10rem);
+    max-width: calc(var(--page-width) - 10rem);
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .slider--desktop {
@@ -158,7 +174,7 @@ slider-component.slider-component-full-width {
   .slider--desktop:after {
     content: '';
     width: 0;
-    padding-left: 5rem;
+    padding-left: var(--desktop-margin-left-first-item);
     margin-left: calc(-1 * var(--grid-desktop-horizontal-spacing));
   }
 

@@ -514,15 +514,22 @@
       {% comment %}
         ⑨ Find Balance（雪肌精BLUEのみ）
         雪肌精公式ブランドサイトのカウンセリングページ「Find Balance」へ遷移。
-        バナー画像はKOSÉ提供素材に差し替え可（差し替える場合は下記aリンク内にimgを配置）。
       {% endcomment %}
       <div class="tw-my-3">
         <a
-          class="blue-brand-font tw-text-white tw-bg-[#13509b] hover:tw-bg-[#1d63c4] tw-font-bold tw-block tw-text-center tw-p-5 tw-no-underline"
+          class="tw-block"
           href="https://sekkisei.jp/site/p/sekkiseiblue_counseling.aspx"
           target="_blank"
           rel="noopener"
-          >Find Balance ｜ オンラインカウンセリング
+        >
+          <img
+            class="tw-block tw-w-full tw-h-auto"
+            src="{{ 'sekkisei_fb_bnr_1500x500.png' | asset_url }}"
+            width="1500"
+            height="500"
+            loading="lazy"
+            alt="雪肌精BLUE Find Balance オンラインカウンセリング"
+          >
         </a>
       </div>
     </div>

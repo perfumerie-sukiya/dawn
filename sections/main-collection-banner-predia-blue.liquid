@@ -2,6 +2,9 @@
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 {% render 'blue-google-fonts' %}
 
+{%- assign brand_top_logo = collection.metafields.my_fields.brand_top_logo.value -%}
+{%- assign brand_logo_alt = brand_top_logo.alt | default: 'Prédia BLUE | Perfumerie Sukiya' -%}
+
 {%- style -%}
   @media screen and (max-width: 749px) {
   .collection-hero--with-image .collection-hero__inner {
@@ -13,10 +16,28 @@
 <!--  PrédiaBLUEヘッダーここから  -->
 <div class="cpb-header blue-brand-font">
   <h1 class="brand-logo tw-relative tw-mt-4 md:tw-max-w-[900px] md:tw-mx-auto">
-    <a href="{{ routes.collections_url }}/predia-blue"><img
+    <a href="{{ routes.collections_url }}/predia-blue">
+      {%- if brand_top_logo != blank -%}
+        {{
+          brand_top_logo
+          | image_url: width: 520
+          | image_tag:
+            class: 'tw-mx-auto tw-w-[200px] md:tw-w-[260px]',
+            widths: '200, 260, 400, 520',
+            sizes: '(min-width: 768px) 260px, 200px',
+            alt: brand_logo_alt,
+            loading: 'eager'
+        }}
+      {%- else -%}
+        <img
           class="tw-mx-auto tw-w-[200px] md:tw-w-[260px]"
           src="{{ 'predia-blue.svg' | file_url }}"
-          alt="Prédia BLUE | Perfumerie Sukiya" width="260" height="78"></a>
+          alt="Prédia BLUE | Perfumerie Sukiya"
+          width="260"
+          height="78"
+        >
+      {%- endif -%}
+    </a>
     <img class="tw-absolute tw-top-1/2 -tw-translate-y-1/2 tw-w-[60px] md:tw-w-[80px] tw-right-5 md:tw-right-[20%]"
          src="{{ 'predia-blue-authorized-retailer-logo.png' | asset_url }}"
          alt="ブランド認定正規品取扱店舗 Prédia BLUE"
