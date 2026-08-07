@@ -260,16 +260,6 @@
             "link": "https://online.sukiya.biz/pages/nars-natural-longwear-foundation-04788-mont-blanc-special-size-finger-puff-2026-8-5"
           }
         },
-        "column_NbrYLD": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20260717_bb95370c-cabc-40df-a514-d077b6a3ac97.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-original-pouch-light-reflecting-multi-action-treatment-lotion-special-size-2026-7-17"
-          }
-        },
         "column_dfApNw": {
           "type": "column",
           "settings": {
@@ -278,16 +268,6 @@
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2026-7-1"
-          }
-        },
-        "column_AWmHhB": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20260619.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-original-color-hairpin-light-reflecting-serum-cushion-foundation-sample-18g-2026-6-19"
           }
         },
         "column_ePHi67": {
@@ -346,9 +326,7 @@
         "column_N4wBhb",
         "column_8MVDay",
         "column_Cgem8P",
-        "column_NbrYLD",
         "column_dfApNw",
-        "column_AWmHhB",
         "column_ePHi67",
         "column_KekDbW",
         "column_8cfzAF",
