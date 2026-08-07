@@ -1,0 +1,33 @@
+{% doc %}
+  Loads the Google Fonts required by the BLUE brand guidelines and defines scoped typography helpers.
+{% enddoc %}
+{% comment %}theme-check-disable RemoteAsset{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+  .blue-brand-font,
+  .blue-brand-font :where(a, button, h1, h2, h3, h4, p, span, small) {
+    font-family: 'Jost', 'Zen Kaku Gothic New', sans-serif;
+  }
+
+  .blue-brand-title {
+    font-weight: 400;
+  }
+
+  .blue-brand-description {
+    text-align: left;
+  }
+
+  @media screen and (min-width: 769px) {
+    .blue-brand-description {
+      text-align: center;
+    }
+  }
+</style>
+{% comment %}theme-check-enable RemoteAsset{% endcomment %}

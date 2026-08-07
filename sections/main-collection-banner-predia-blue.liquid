@@ -1,5 +1,6 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+{% render 'blue-google-fonts' %}
 
 {%- style -%}
   @media screen and (max-width: 749px) {
@@ -10,7 +11,7 @@
 {%- endstyle -%}
 
 <!--  PrédiaBLUEヘッダーここから  -->
-<div class="cpb-header">
+<div class="cpb-header blue-brand-font">
   <h1 class="brand-logo tw-relative tw-mt-4 md:tw-max-w-[900px] md:tw-mx-auto">
     <a href="{{ routes.collections_url }}/predia-blue"><img
           class="tw-mx-auto tw-w-[200px] md:tw-w-[260px]"

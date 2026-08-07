@@ -1,36 +1,76 @@
 {% comment %}
   雪肌精BLUE PCグローバルナビゲーション
-  仕様書の表示項目を固定表示し、PRODUCTS配下はタグフィルタURLへ遷移する。
+  仕様書の表示項目を固定表示し、PRODUCTS配下は詳細カテゴリ（3段階）を表示してタグフィルタURLへ遷移する。
 {% endcomment %}
 {%- assign sekkisei_blue_url = routes.collections_url | append: '/sekkisei-blue' -%}
 
 <div class="tw-hidden md:tw-flex md:tw-justify-center tw-min-w-max">
-  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-[#13509b] tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#about-us">
+  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-black tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#about-us">
     ABOUT US
   </a>
-  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-[#13509b] tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#new-arrival">
+  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-black tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#new-arrival">
     NEW ARRIVAL
   </a>
-  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-[#13509b] tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#campaign">
+  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-black tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#campaign">
     CAMPAIGN
   </a>
-  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-[#13509b] tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#ranking">
+  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-black tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#ranking">
     RANKING
   </a>
-  <div class="tw-group tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-bg-[#13509b] tw-text-white">
+  <div class="tw-group tw-relative tw-text-left hover:tw-bg-gray-300 tw-bg-black tw-text-white">
     <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-white tw-no-underline" href="{{ sekkisei_blue_url }}#products">
       PRODUCTS
       <span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span>
     </a>
-    <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-[#13509b] tw-text-white">
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/スキンケア">スキンケア</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ベースメイク">ベースメイク</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ボディ">ボディ</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ライフスタイル">ライフスタイル</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/その他">その他</a>
+    <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-black tw-text-white">
+      <div class="tw-group/nest2 tw-relative tw-text-left hover:tw-bg-gray-300">
+        <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/スキンケア">スキンケア<span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span></a>
+        <div class="nested-menu group-hover/nest2:tw-block tw-hidden tw-bg-black tw-text-white">
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/クレンジング">クレンジング</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/洗顔料">洗顔</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/化粧水">化粧水</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/美容液_オイル">美容液/オイル</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/クリーム">クリーム</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/UVケア">UVケア</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/トライアル">トライアル</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/スキンケア_限定品">限定品</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/スキンケア">すべて</a>
+        </div>
+      </div>
+      <div class="tw-group/nest2 tw-relative tw-text-left hover:tw-bg-gray-300">
+        <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ベースメイク">ベースメイク<span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span></a>
+        <div class="nested-menu group-hover/nest2:tw-block tw-hidden tw-bg-black tw-text-white">
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/化粧下地">化粧下地</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ファンデーション">ファンデーション</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/コンシーラー">コンシーラー</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/フェイスパウダー">フェイスパウダー</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ベースメイク_限定品">限定品</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ベースメイク">すべて</a>
+        </div>
+      </div>
+      <div class="tw-group/nest2 tw-relative tw-text-left hover:tw-bg-gray-300">
+        <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ボディ">ボディ<span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span></a>
+        <div class="nested-menu group-hover/nest2:tw-block tw-hidden tw-bg-black tw-text-white">
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ボディケア">ボディケア</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ハンドケア">ハンドケア</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ボディ_限定品">限定品</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ボディ">すべて</a>
+        </div>
+      </div>
+      <div class="tw-group/nest2 tw-relative tw-text-left hover:tw-bg-gray-300">
+        <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ライフスタイル">ライフスタイル<span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span></a>
+        <div class="nested-menu group-hover/nest2:tw-block tw-hidden tw-bg-black tw-text-white">
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/フレグランスミスト">フレグランスミスト</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ボディケア">ボディケア</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ハンドケア">ハンドケア</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ライフスタイル_限定品">限定品</a>
+          <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/ライフスタイル">すべて</a>
+        </div>
+      </div>
+      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-no-underline tw-text-current" href="{{ sekkisei_blue_url }}/アクセサリー">その他</a>
     </div>
   </div>
-  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-[#13509b] tw-text-white tw-no-underline" href="https://sekkisei.jp/site/p/sekkiseiblue_counseling.aspx" target="_blank" rel="noopener">
+  <a class="tw-px-4 tw-py-2 tw-h-10 tw-relative tw-text-left hover:tw-bg-gray-300 tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-black tw-text-white tw-no-underline" href="https://sekkisei.jp/site/p/sekkiseiblue_counseling.aspx" target="_blank" rel="noopener">
     Find Balance
   </a>
 </div>

@@ -1,24 +1,62 @@
 {%- assign predia_blue_url = routes.collections_url | append: '/predia-blue' -%}
+<script src="{{ 'my-accordion.js' | asset_url }}" defer="defer"></script>
 
-<div class="tw-hidden md:tw-grid md:tw-grid-cols-3 md:tw-gap-1">
-  <div class="tw-group tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-bg-[#13509b] tw-text-white">
-    <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-justify-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/スキンケア">スキンケア<span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span></a>
-    <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-[#13509b] tw-text-white tw-absolute tw-z-10 tw-w-full">
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/クレンジング">クレンジング</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/洗顔">洗顔</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/限定品">限定品</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/スキンケア">すべて</a>
+<div class="blue-brand-font tw-max-w-[760px] tw-mx-auto">
+  <my-accordion>
+    <div class="tw-border tw-border-[#13509b] tw-rounded">
+      <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-4 tw-cursor-pointer tw-text-[#13509b] tw-font-bold tw-tracking-widest">
+        <span>絞り込み</span>
+        <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+          <span data-accordion-icon-closed>{% render 'icon-plus', width: 16, height: 16 %}</span>
+          <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 16, height: 3 %}</span>
+        </span>
+      </div>
+      <div class="panel tw-border-t tw-border-[#13509b]">
+        <div>
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-cursor-pointer tw-border-b tw-border-[#e5e7eb]">
+          <span>スキンケア</span>
+          <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+          <div class="panel tw-bg-[#f0f5ff] tw-grid tw-grid-cols-2">
+          <a href="{{ predia_blue_url }}/クレンジング" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">クレンジング</a>
+          <a href="{{ predia_blue_url }}/洗顔料" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">洗顔</a>
+          <a href="{{ predia_blue_url }}/スキンケア_限定品" class="tw-block tw-px-5 tw-py-3 tw-border-r tw-border-white tw-no-underline tw-text-current">限定品</a>
+          <a href="{{ predia_blue_url }}/スキンケア" class="tw-block tw-px-5 tw-py-3 tw-no-underline tw-text-current">すべて</a>
+          </div>
+
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-cursor-pointer tw-border-b tw-border-[#e5e7eb]">
+          <span>ヘア＆ボディ</span>
+          <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+          <div class="panel tw-bg-[#f0f5ff] tw-grid tw-grid-cols-2">
+          <a href="{{ predia_blue_url }}/ヘアケア" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">ヘアケア</a>
+          <a href="{{ predia_blue_url }}/ボディケア" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">ボディケア</a>
+          <a href="{{ predia_blue_url }}/ハンドケア" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-r tw-border-white tw-no-underline tw-text-current">ハンドケア</a>
+          <a href="{{ predia_blue_url }}/トライアル" class="tw-block tw-px-5 tw-py-3 tw-border-b tw-border-white tw-no-underline tw-text-current">トライアル</a>
+          <a href="{{ predia_blue_url }}/ヘア＆ボディ_限定品" class="tw-block tw-px-5 tw-py-3 tw-border-r tw-border-white tw-no-underline tw-text-current">限定品</a>
+          <a href="{{ predia_blue_url }}/ヘア＆ボディ" class="tw-block tw-px-5 tw-py-3 tw-no-underline tw-text-current">すべて</a>
+          </div>
+
+          <div class="my-accordion tw-w-full tw-text-left tw-flex tw-justify-between tw-items-center tw-px-5 tw-py-3 tw-cursor-pointer">
+          <span>その他</span>
+          <span class="tw-inline-flex tw-text-[#13509b]" data-accordion-icon>
+            <span data-accordion-icon-closed>{% render 'icon-plus', width: 14, height: 14 %}</span>
+            <span data-accordion-icon-open hidden>{% render 'icon-minus', width: 14, height: 3 %}</span>
+          </span>
+        </div>
+          <div class="panel tw-bg-[#f0f5ff] tw-grid tw-grid-cols-2">
+          <a href="{{ predia_blue_url }}/限定品" class="tw-block tw-px-5 tw-py-3 tw-border-r tw-border-white tw-no-underline tw-text-current">限定品</a>
+          <a href="{{ predia_blue_url }}/アクセサリー" class="tw-block tw-px-5 tw-py-3 tw-no-underline tw-text-current">その他</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-  <div class="tw-group tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-bg-[#13509b] tw-text-white">
-    <a class="tw-h-10 tw-px-4 tw-py-2 tw-flex tw-items-center tw-justify-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/ヘア＆ボディ">ヘア＆ボディ<span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span></a>
-    <div class="nested-menu group-hover:tw-block tw-hidden tw-bg-[#13509b] tw-text-white tw-absolute tw-z-10 tw-w-full">
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/ヘアケア">ヘアケア</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/ボディケア">ボディケア</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/ハンドケア">ハンドケア</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/限定品">限定品</a>
-      <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-text-current tw-no-underline" href="{{ predia_blue_url }}/ヘア＆ボディ">すべて</a>
-    </div>
-  </div>
-  <a class="tw-px-4 tw-py-2 tw-relative tw-text-left hover:tw-bg-[#1d63c4] tw-flex tw-items-center tw-text-sm tw-tracking-widest tw-bg-[#13509b] tw-text-white tw-no-underline" href="{{ predia_blue_url }}/その他">その他<span class="tw-inline-flex tw-text-lg tw-leading-none tw-text-current">{% render 'icon-chevron-right' %}</span></a>
+  </my-accordion>
 </div>
