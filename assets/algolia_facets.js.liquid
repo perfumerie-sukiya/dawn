@@ -117,8 +117,8 @@
 
     if (facet.searchable) {
       params.searchable = true;
-      params.searchablePlaceholder = 'Search for ' + facet.title;
-      params.templates.searchableNoResults = '<div> No matching for ' + facet.title + '</div>';
+      params.searchablePlaceholder = facet.title + 'を検索';
+      params.templates.searchableNoResults = '<div>' + facet.title + 'の一致する項目がありません</div>';
     }
 
     params.templates.header = function() {
