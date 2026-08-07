@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-page-banner-decorte",
+      "settings": {}
+    },
+    "redirect": {
+      "type": "redirect-page",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page-decorte-connect",
+      "settings": {}
+    }
+  },
+  "order": [
+    "redirect",
+    "banner",
+    "main"
+  ]
+}
