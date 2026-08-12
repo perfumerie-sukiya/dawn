@@ -220,6 +220,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_bVJ4gN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/CA20260812.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/caron-muguet-de-bonheur-eau-de-toilette-2ml-2026-8-12"
+          }
+        },
         "column_w3yLTk": {
           "type": "column",
           "settings": {
@@ -322,6 +332,7 @@
         }
       },
       "block_order": [
+        "column_bVJ4gN",
         "column_w3yLTk",
         "column_N4wBhb",
         "column_8MVDay",
