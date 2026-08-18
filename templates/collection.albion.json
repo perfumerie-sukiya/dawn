@@ -20,30 +20,52 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-albion",
       "blocks": {
-        "slide_tWFPcx": {
+        "slide_ec6CLr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/albion_4__AL_PC_1.jpg",
-            "image_file": "albion_4__AL_PC_1.jpg",
-            "image_sp": "shopify://shop_images/albion_4__AL_SP_1.jpg",
-            "image_sp_file": "albion_4__AL_SP_1.jpg",
-            "link": "shopify://collections/al-flarune-bright"
+            "image": "shopify://shop_images/Albion_A-pc.jpg",
+            "image_file": "Albion_A-pc",
+            "image_sp": "shopify://shop_images/Albion_A-sp.jpg",
+            "image_sp_file": "Albion_A-sp",
+            "link": "https://online.sukiya.biz/products/albion-studio-milk-foundation-2026-8-18"
           }
         },
-        "slide_4NPcQK": {
+        "slide_tRdnYp": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/albion_4__AL_PC_2.jpg",
-            "image_file": "albion_4__AL_PC_2.jpg",
-            "image_sp": "shopify://shop_images/albion_4__AL_SP_2.jpg",
-            "image_sp_file": "albion_4__AL_SP_2.jpg",
-            "link": "shopify://products/albion-exia-sirius-starbright-serum-2026-3-17"
+            "image": "shopify://shop_images/Albion-Flarune_Apc.jpg",
+            "image_file": "Albion-Flarune_Apc",
+            "image_sp": "shopify://shop_images/Albion-Flarune_Asp.jpg",
+            "image_sp_file": "Albion-Flarune_Asp",
+            "link": "https://online.sukiya.biz/products/albion-flarne-fully-refine-milk-f-m-2026-4-1"
+          }
+        },
+        "slide_H3k9bk": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AL26Bskicon_EC_1280_40.jpg",
+            "image_file": "AL26Bskicon_EC_1280ﾃ・40.jpg",
+            "image_sp": "shopify://shop_images/AL26Bskicon_EC_750_008.jpg",
+            "image_sp_file": "AL26Bskicon_EC_750ﾃ・008.jpg",
+            "link": "https://online.sukiya.biz/products/albion-medicated-skin-conditioner-essential-n-2026-4-1"
+          }
+        },
+        "slide_CWPGYA": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/EA26B__A_PC_1280x640_ebf5f4a3-d82c-442c-9988-6fa3507c7a42.jpg",
+            "image_file": "EA26Bイマキュ_A_PC_1280×640.jpg",
+            "image_sp": "shopify://shop_images/EA26B__A_SP_750x1008_3fce6c2f-b928-4775-976e-3706e9dff1c0.jpg",
+            "image_sp_file": "EA26Bイマキュ_A_SP_750×1008.jpg",
+            "link": "https://online.sukiya.biz/products/albion-excia-brightening-immaculate-serum-z-2026-4-1"
           }
         }
       },
       "block_order": [
-        "slide_tWFPcx",
-        "slide_4NPcQK"
+        "slide_ec6CLr",
+        "slide_tRdnYp",
+        "slide_H3k9bk",
+        "slide_CWPGYA"
       ],
       "settings": {}
     },
