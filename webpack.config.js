@@ -46,8 +46,11 @@ module.exports = {
               // オプションでCSS内のurl()メソッドの取り込みを禁止する
               url: false,
               sourceMap: enabledSourceMap,
-              importLoaders: 3
+              importLoaders: 2,
             }
+          },
+          {
+            loader: path.resolve(__dirname, 'strip-bom-loader.js'),
           },
           {
             loader: "sass-loader",
