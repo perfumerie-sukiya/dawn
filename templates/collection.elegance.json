@@ -20,30 +20,30 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-albion",
       "blocks": {
-        "slide_jnaYUk": {
+        "slide_XbK6fw": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/elegance_4__EL_PC_1.jpg",
-            "image_file": "elegance_4__EL_PC_1.jpg",
-            "image_sp": "shopify://shop_images/elegance_4__EL_SP_1.jpg",
-            "image_sp_file": "elegance_4__EL_SP_1.jpg",
-            "link": "shopify://products/elegance-paris-airy-liquid-foundation-2026-2-17"
+            "image": "shopify://shop_images/Elegance-AW_Apc.jpg",
+            "image_file": "Elegance-AW_Apc",
+            "image_sp": "shopify://shop_images/Elegance-AW_Asp_3f9bd54b-446b-4049-8c18-55e75f0a9eb3.jpg",
+            "image_sp_file": "Elegance-AW_Asp",
+            "link": "https://online.sukiya.biz/products/elegance-paris-parfait-couleur-palette-2026-8-18"
           }
         },
-        "slide_jAYATw": {
+        "slide_QFaE7M": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/elegance_4__EL_PC_2.jpg",
-            "image_file": "elegance_4__EL_PC_2.jpg",
-            "image_sp": "shopify://shop_images/elegance_4__EL_SP_2.jpg",
-            "image_sp_file": "elegance_4__EL_SP_2.jpg",
-            "link": "shopify://products/elegance-paris-silky-liquid-eyes-n-2026-2-17"
+            "image": "shopify://shop_images/Elegance-FD_Apc.jpg",
+            "image_file": "Elegance-FD_Apc",
+            "image_sp": "shopify://shop_images/Elegance-FD_Asp.jpg",
+            "image_sp_file": "Elegance-FD_Asp",
+            "link": "https://online.sukiya.biz/products/elegance-paris-airy-liquid-foundation-2026-2-17"
           }
         }
       },
       "block_order": [
-        "slide_jnaYUk",
-        "slide_jAYATw"
+        "slide_XbK6fw",
+        "slide_QFaE7M"
       ],
       "settings": {}
     },
