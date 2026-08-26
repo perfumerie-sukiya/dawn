@@ -220,6 +220,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_WzdiDd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20260911.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-original-mirror-2026-9-11"
+          }
+        },
         "column_yEgYRk": {
           "type": "column",
           "settings": {
@@ -342,6 +352,7 @@
         }
       },
       "block_order": [
+        "column_WzdiDd",
         "column_yEgYRk",
         "column_mgYxnD",
         "column_bVJ4gN",
