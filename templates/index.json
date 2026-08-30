@@ -319,46 +319,6 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2026-7-1"
           }
-        },
-        "column_KekDbW": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SL20260601_b8fe262c-c4f1-4e4d-985d-94384bb2b7d6.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/serge-lutens-la-nuit-tombe-5ml-2026-6-1"
-          }
-        },
-        "column_8cfzAF": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SL20260601.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/serge-lutens-la-nuit-tombe-1ml-2026-6-1"
-          }
-        },
-        "column_MtVgph": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SIM20260521.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/shiseido-men-uv-protector-holder-2026-5-21"
-          }
-        },
-        "column_AwYDze": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/KA202605.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/kanebo-on-skin-essence-v-15ml-2026-5-12"
-          }
         }
       },
       "block_order": [
@@ -371,11 +331,7 @@
         "column_N4wBhb",
         "column_8MVDay",
         "column_Cgem8P",
-        "column_dfApNw",
-        "column_KekDbW",
-        "column_8cfzAF",
-        "column_MtVgph",
-        "column_AwYDze"
+        "column_dfApNw"
       ],
       "settings": {
         "title": "Campaign　",
