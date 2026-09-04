@@ -283,6 +283,7 @@
       "estimated_total": "Estimated total",
       "new_estimated_total": "New estimated total",
       "note": "Order special instructions",
+      "note_caution_html": "* We do not deliver items gift-wrapped.<br>For standard shipping, only wrapping materials are included.<br>If you would like your items delivered gift-wrapped, please use eGift.",
       "note_placeholder": "e.g.) No invoice needed, etc.",
       "checkout": "Check out",
       "empty": "Your cart is empty",

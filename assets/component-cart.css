@@ -96,6 +96,27 @@ cart-items {
   color: rgba(var(--color-foreground), 0.75);
 }
 
+.cart__footer .cart__note {
+  display: block;
+  top: 0;
+}
+
+.cart__footer .cart__note label {
+  display: block;
+  position: static;
+  height: auto;
+  margin-bottom: 1.2rem;
+}
+
+.cart__note-caution {
+  margin: 0 0 1.2rem;
+  padding-left: 1em;
+  text-indent: -1em;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(var(--color-foreground), 0.75);
+}
+
 .cart__note .field__input {
   height: 100%;
   position: relative;
@@ -107,10 +128,10 @@ cart-items {
   resize: vertical;
 }
 
-.cart__note:after,
-.cart__note:hover.cart__note:after,
-.cart__note:before,
-.cart__note:hover.cart__note:before,
+.cart__note .field:after,
+.cart__note .field:hover.field:after,
+.cart__note .field:before,
+.cart__note .field:hover.field:before,
 .cart__note .field__input:focus,
 .cart__note .field__input {
   border-bottom-right-radius: 0;
