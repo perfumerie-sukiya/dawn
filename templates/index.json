@@ -309,16 +309,6 @@
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/nars-natural-longwear-foundation-04788-mont-blanc-special-size-finger-puff-2026-8-5"
           }
-        },
-        "column_dfApNw": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/20260701.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2026-7-1"
-          }
         }
       },
       "block_order": [
@@ -330,8 +320,7 @@
         "column_w3yLTk",
         "column_N4wBhb",
         "column_8MVDay",
-        "column_Cgem8P",
-        "column_dfApNw"
+        "column_Cgem8P"
       ],
       "settings": {
         "title": "Campaign　",
