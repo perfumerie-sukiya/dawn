@@ -220,6 +220,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_RJdMFm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20260911_954fbd39-8ac8-40df-a7e5-506fb02e7d69.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-stray-kids-han-message-postcard-a-2026-9-11"
+          }
+        },
         "column_zBQyGJ": {
           "type": "column",
           "settings": {
@@ -312,6 +322,7 @@
         }
       },
       "block_order": [
+        "column_RJdMFm",
         "column_zBQyGJ",
         "column_HndRxi",
         "column_WzdiDd",
