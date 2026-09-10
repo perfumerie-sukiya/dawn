@@ -220,6 +220,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_r9BGbi": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NA20260911_56798391-cf43-4b85-9179-05bb0bcea0f3.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/nars-setting-powder-pressed-n-special-size-precision-cushion-sponge-applicator-not-for-sale-2026-9-11"
+          }
+        },
         "column_RJdMFm": {
           "type": "column",
           "settings": {
@@ -322,6 +332,7 @@
         }
       },
       "block_order": [
+        "column_r9BGbi",
         "column_RJdMFm",
         "column_zBQyGJ",
         "column_HndRxi",
