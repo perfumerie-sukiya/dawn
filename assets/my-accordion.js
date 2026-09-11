@@ -31,6 +31,15 @@ class MyAccordion extends HTMLElement {
       }
     </style>` + this.innerHTML;
 
+    const updateAncestorPanelHeights = (panel, additionalHeight = 0) => {
+      let ancestorPanel = panel.parentElement?.closest('.panel');
+
+      while (ancestorPanel) {
+        ancestorPanel.style.maxHeight = `${ancestorPanel.scrollHeight + additionalHeight}px`;
+        ancestorPanel = ancestorPanel.parentElement?.closest('.panel');
+      }
+    };
+
     let acc = this.querySelectorAll(".my-accordion");
     acc.forEach((el) => {
       const icon = el.querySelector('[data-accordion-icon]');
@@ -53,22 +62,20 @@ class MyAccordion extends HTMLElement {
           setIconState(false);
           panel.style.maxHeight = null;
           panel.classList.remove('show');
+          panel.addEventListener('transitionend', () => updateAncestorPanelHeights(panel), { once: true });
         } else {
           setIconState(true);
           // Temporarily expand the panel to calculate the maximum height
           panel.style.maxHeight = 'none';
           let expandedHeight = panel.scrollHeight;
 
-          // If the parent Node is also a panel, increase its max height to accommodate this panel
-          if (panel.parentNode.classList.contains('panel')) {
-            panel.parentNode.style.maxHeight = `${panel.parentNode.scrollHeight + expandedHeight}px`;
-          }
-
           // Reset and then set the max-height
           panel.style.maxHeight = null;
           window.getComputedStyle(panel).maxHeight; // Force a reflow
+          updateAncestorPanelHeights(panel, expandedHeight);
           panel.style.maxHeight = `${expandedHeight}px`;
           panel.classList.add('show');
+          panel.addEventListener('transitionend', () => updateAncestorPanelHeights(panel), { once: true });
         }
       });
     });
