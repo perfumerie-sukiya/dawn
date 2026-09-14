@@ -1,31 +1,34 @@
-# Repository Guidelines
+# リポジトリの作業ガイド
 
-## Theme Conventions
-- Favor server-rendered Liquid and progressive enhancement (HTML first, JS as needed).
-- Brand variants use template/section/snippet suffixes such as `*-cpb`, `*-decorte`, and `*-shiseido`; follow the relevant brand's existing pattern.
-- `src/` contains build sources; `assets/` contains both compiled output and standalone brand/page assets. Check how an asset is produced before editing it.
-- Tailwind utilities use the `tw-` prefix. Formatting is defined in `.editorconfig` and `.prettierrc.json`.
-- Zeno pages use `zeno-page-[ID].liquid` and related assets.
+## テーマの実装方針
 
-## Build, Test, and Development Commands
-- `npm run build` — build assets with Webpack (development defaults).
-- `npm run prod` — production build with optimizations.
-- `npm run watch` — rebuild on file changes.
-- `npm test` — run Jest test suite.
-- `shopify theme check` — lint Liquid/theme files via Theme Check.
-- Frontend changes must always be followed by `npm run build` before handing work back.
+- サーバー側で描画する Liquid を基本とし、HTML を中心に、必要に応じて JavaScript で機能を追加する。
+- ブランド別のテンプレート・セクション・スニペットには `*-cpb`、`*-decorte`、`*-shiseido` などの接尾辞を使う。対象ブランドの既存パターンに従う。
+- `src/` はビルド元のソース、`assets/` はビルド成果物とブランド・ページ固有の独立したアセットを含む。編集前に対象アセットの生成方法を確認する。
+- Tailwind のユーティリティには `tw-` 接頭辞を使う。書式は `.editorconfig` と `.prettierrc.json` に従う。
+- Zeno ページには `zeno-page-[ID].liquid` と関連アセットを使う。
 
-## Validation and Preview
-- Add or update `test/*.test.js` for behavior changes (Jest with jsdom).
-- Before opening a PR, run the relevant checks listed above. After they pass, repeat only when further changes or failures require it.
-- Run preview commands from the current checkout using the intended store's current authentication settings. `shopify theme dev` uploads files to a development theme on that store.
-- Page template assignment is a store-level content change, separate from theme preview. Change it only on a test store/page within the authorized scope; a development theme does not make a production page assignment temporary.
-- Standalone HTML can verify static appearance, but does not verify Liquid, Shopify data, or storefront behavior. Report which checks passed and any unverified behavior.
+## ビルド・テスト・開発コマンド
 
-- For brand collection changes, verify both the unfiltered brand top and tag-filtered category views. Empty test collections cannot verify populated product grids.
-- Theme access credentials and storefront passwords are distinct. For authentication issues, check current `shopify theme dev --help` and the intended store's configuration.
+- `npm run build` — Webpack でアセットをビルドする（既定は開発用）。
+- `npm run prod` — 最適化した本番用ビルドを実行する。
+- `npm run watch` — ファイルの変更を監視して再ビルドする。
+- `npm test` — Jest のテストを実行する。
+- `shopify theme check` — Theme Check で Liquid とテーマファイルを静的検査する。
+- フロントエンドを変更した場合は、作業完了を報告する前に必ず `npm run build` を実行する。
 
-## Commit & Pull Request Guidelines
-- Commit messages are short, sentence-case, and verb-led (e.g., “Add …”, “Remove …”, “Update from Shopify …”).
-- PRs should include: a concise summary, linked issue/ticket if applicable, and screenshots for UI changes.
-- If using GitHub CLI, write PR bodies to a temp file and pass it via `gh pr create --body-file` (or `gh pr edit --body-file`), then delete the temp file.
+## 検証とプレビュー
+
+- 挙動を変更した場合は `test/*.test.js` のテストを追加・更新する（Jest と jsdom）。
+- PR 作成前に、上記のうち変更に関連する検証を実行する。成功後の再実行は、追加変更や失敗への対応で必要な場合に限る。
+- プレビューコマンドは現在の作業ディレクトリで、対象ストアの現在の認証設定を使って実行する。`shopify theme dev` は、そのストアの開発テーマへファイルをアップロードする。
+- ページへのテンプレート割り当ては、テーマのプレビューとは別のストア側コンテンツ変更である。許可された範囲のテストストア・ページでのみ変更する。開発テーマを使っていても、本番ページへの割り当て変更が一時的になるわけではない。
+- 単体の HTML で確認できるのは静的な見た目であり、Liquid、Shopify のデータ、ストアフロントの挙動は検証できない。成功した検証と未確認の挙動を報告する。
+- ブランドのコレクションを変更した場合は、絞り込みのないブランドトップと、タグで絞り込んだカテゴリ表示の両方を確認する。商品がないテストコレクションでは、商品が並んだ状態のグリッドは検証できない。
+- テーマアクセス用の認証情報とストアフロントのパスワードは別物である。認証に問題がある場合は、現在の `shopify theme dev --help` と対象ストアの設定を確認する。
+
+## コミットと Pull Request
+
+- コミットメッセージは短い英語で、動詞から始め、文頭を大文字にする（例：`Add …`、`Remove …`、`Update from Shopify …`）。
+- PR には簡潔な概要、該当する Issue・チケットへのリンク、UI 変更がある場合はスクリーンショットを含める。
+- GitHub CLI を使う場合は、PR 本文を一時ファイルに書き、`gh pr create --body-file` または `gh pr edit --body-file` で渡す。使用後に一時ファイルを削除する。
