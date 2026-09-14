@@ -1,12 +1,11 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
-- `layout/`, `templates/`, `sections/`, `snippets/`: Shopify theme structure (Liquid + JSON templates).
-- `assets/`: compiled theme assets plus brand- and page-specific JS/CSS.
-- `src/`: source JS/Sass/Tailwind (`src/index.js`, `src/sass/`, `src/css/`).
-- `config/` and `locales/`: theme settings and translations.
-- `test/`: Jest tests (e.g., `test/line-login.test.js`).
-- `scripts/` and `docs/`: project utilities and documentation.
+## Theme Conventions
+- Favor server-rendered Liquid and progressive enhancement (HTML first, JS as needed).
+- Brand variants use template/section/snippet suffixes such as `*-cpb`, `*-decorte`, and `*-shiseido`; follow the relevant brand's existing pattern.
+- `src/` contains build sources; `assets/` contains both compiled output and standalone brand/page assets. Check how an asset is produced before editing it.
+- Tailwind utilities use the `tw-` prefix. Formatting is defined in `.editorconfig` and `.prettierrc.json`.
+- Zeno pages use `zeno-page-[ID].liquid` and related assets.
 
 ## Build, Test, and Development Commands
 - `npm run build` — build assets with Webpack (development defaults).
@@ -16,24 +15,17 @@
 - `shopify theme check` — lint Liquid/theme files via Theme Check.
 - Frontend changes must always be followed by `npm run build` before handing work back.
 
-## Coding Style & Naming Conventions
-- Indentation: 4 spaces by default; 2 spaces for `.liquid`, `.js`, and `.html` (see `.editorconfig`).
-- Prettier: `printWidth` 120, single quotes in JS; Liquid uses double quotes (`.prettierrc.json`).
-- Tailwind: uses a `tw-` prefix for utilities.
-- Brand-specific files follow suffixes like `*-cpb.liquid`, `*-decorte.liquid`, `*-shiseido.liquid` and related JS (e.g., `cpb-connect.js`).
-- Zeno pages use `zeno-page-[ID].liquid` and related assets.
+## Validation and Preview
+- Add or update `test/*.test.js` for behavior changes (Jest with jsdom).
+- Before opening a PR, run the relevant checks listed above. After they pass, repeat only when further changes or failures require it.
+- Run preview commands from the current checkout using the intended store's current authentication settings. `shopify theme dev` uploads files to a development theme on that store.
+- Page template assignment is a store-level content change, separate from theme preview. Change it only on a test store/page within the authorized scope; a development theme does not make a production page assignment temporary.
+- Standalone HTML can verify static appearance, but does not verify Liquid, Shopify data, or storefront behavior. Report which checks passed and any unverified behavior.
 
-## Testing Guidelines
-- Framework: Jest with `jsdom` environment.
-- Location and naming: `test/*.test.js`.
-- Expectation: add or update tests for behavior changes; no explicit coverage target defined.
+- For brand collection changes, verify both the unfiltered brand top and tag-filtered category views. Empty test collections cannot verify populated product grids.
+- Theme access credentials and storefront passwords are distinct. For authentication issues, check current `shopify theme dev --help` and the intended store's configuration.
 
 ## Commit & Pull Request Guidelines
 - Commit messages are short, sentence-case, and verb-led (e.g., “Add …”, “Remove …”, “Update from Shopify …”).
 - PRs should include: a concise summary, linked issue/ticket if applicable, and screenshots for UI changes.
-- Before opening a PR, run relevant checks (`npm test`, `npm run build`, `shopify theme check`).
 - If using GitHub CLI, write PR bodies to a temp file and pass it via `gh pr create --body-file` (or `gh pr edit --body-file`), then delete the temp file.
-
-## Architecture Notes
-- Multi-brand variants are implemented via template/section/snippet variants per brand.
-- The theme favors progressive enhancement (HTML-first, JS as needed) and server-rendered Liquid.
