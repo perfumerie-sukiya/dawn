@@ -283,6 +283,26 @@
           >
         </div>
       </div>
+      {% if series %}
+        <ul class="tw-list-none tw-p-0 tw-mt-12 tw-grid tw-grid-cols-3 tw-gap-2 md:tw-gap-4">
+          {% for s in series.value %}
+            <li>
+              <a
+                class="tw-block tw-no-underline"
+                href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
+              >
+                <img
+                  class="tw-block tw-w-full tw-h-auto"
+                  src="{{ s.image.value.image | image_url }}"
+                  alt="{{ s.name.value }}"
+                  width="244"
+                  height="100"
+                >
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
 
     {%- comment -%} MAKE UP {%- endcomment -%}
@@ -318,10 +338,10 @@
       <div class="md:tw-flex md:tw-items-center md:tw-gap-10">
         <img
           class="pointmake-img tw-block tw-mx-auto md:tw-w-1/2 tw-max-w-full tw-h-auto"
-          src="{{ 'bg_texture_makeup_2603_01_pc.jpg' | asset_url }}"
+          src="{{ 'shiseido_point_make_2609.jpg' | asset_url }}"
           alt="POINT MAKE"
-          width="492"
-          height="492"
+          width="793"
+          height="833"
         >
         <div class="pointmake-text md:tw-w-1/2 tw-px-8 max-md:tw-text-center max-md:tw-mt-8">
           <p class="tw-font-bold tw-text-sm tw-mb-1">POINT MAKE</p>
@@ -401,34 +421,6 @@
       </ul>
     </div>
   </div>
-{% endif %}
-
-{% if series %}
-  <div class="page-width tw-my-5">
-    <h3 class="tw-mb-2 tw-text-lg tw-underline">SERIES - シリーズ</h3>
-    <div class="category-navigation">
-      <ul class="category-navigation-list tw-p-0 tw-grid tw-items-center tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-2 md:tw-gap-4">
-        {% for s in series.value %}
-          <li>
-            <a
-              class="scroll_item_inr tw-no-underline"
-              href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
-            >
-              <img
-                class="tw-mx-auto"
-                src="{{ s.image.value.image | image_url}}"
-                alt="{{ s.name.value }}"
-                width="244"
-                height="100"
-              >
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-{% else %}
-
 {% endif %}
 
 {% schema %}
