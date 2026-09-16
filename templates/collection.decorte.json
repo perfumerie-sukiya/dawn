@@ -23,23 +23,14 @@
         "slide_3e4EPF": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/6JDZZX_CONCEALER_PC.jpg",
-            "image_sp": "shopify://shop_images/6JDZZX_CONCEALER_SP-16.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-tone-and-flat-perfecting-palette-2026-8-21"
-          }
-        },
-        "slide_Q8yhg4": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/6JDZZW_CleansingWater_banner_PC.jpg",
-            "image_sp": "shopify://shop_images/6JDZZW_CleansingWater_banner_SP.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-cleansing-beauty-water-2026-8-21?_pos=1&_fid=9c6352f8f&_ss=c"
+            "image": "shopify://shop_images/24LIPO_serum_online_boutique_PC.jpg",
+            "image_sp": "shopify://shop_images/24LIPO_serum_online_boutique_PC.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-liploid-advanced-repair-serum"
           }
         }
       },
       "block_order": [
-        "slide_3e4EPF",
-        "slide_Q8yhg4"
+        "slide_3e4EPF"
       ],
       "settings": {}
     },
