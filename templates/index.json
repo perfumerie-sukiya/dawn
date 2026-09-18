@@ -250,16 +250,6 @@
             "link": "https://online.sukiya.biz/pages/https-online-sukiya-biz-products-perfumerie-sukiya-online-store-caron-atoma-eau-de-parfum-2ml-2026-9-1"
           }
         },
-        "column_HndRxi": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ9_GWP.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-vanity-pouch2026-9-1"
-          }
-        },
         "column_WzdiDd": {
           "type": "column",
           "settings": {
@@ -335,7 +325,6 @@
         "column_r9BGbi",
         "column_RJdMFm",
         "column_zBQyGJ",
-        "column_HndRxi",
         "column_WzdiDd",
         "column_yEgYRk",
         "column_mgYxnD",
