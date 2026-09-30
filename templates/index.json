@@ -220,6 +220,16 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_9WaFRR": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/2_ac2010c9-9768-443f-b4d6-2307ab84805d.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/paulandjoe-erboristerie-small-sample-set-2026-10-1"
+          }
+        },
         "column_76W98M": {
           "type": "column",
           "settings": {
@@ -332,6 +342,7 @@
         }
       },
       "block_order": [
+        "column_9WaFRR",
         "column_76W98M",
         "column_r9BGbi",
         "column_RJdMFm",
