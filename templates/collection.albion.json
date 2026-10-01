@@ -20,16 +20,6 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-albion",
       "blocks": {
-        "slide_9BFc3t": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Excia_A_PC.jpg",
-            "image_file": "Excia_A_PC",
-            "image_sp": "shopify://shop_images/Excia_A_SP.jpg",
-            "image_sp_file": "Excia_A_SP",
-            "link": ""
-          }
-        },
         "slide_ec6CLr": {
           "type": "slide",
           "settings": {
@@ -49,12 +39,22 @@
             "image_sp_file": "Albion-Flarune_Asp",
             "link": "https://online.sukiya.biz/products/albion-flarne-fully-refine-milk-f-m-2026-4-1"
           }
+        },
+        "slide_9BFc3t": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Excia_A_PC.jpg",
+            "image_file": "Excia_A_PC",
+            "image_sp": "shopify://shop_images/Excia_A_SP.jpg",
+            "image_sp_file": "Excia_A_SP",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "slide_9BFc3t",
         "slide_ec6CLr",
-        "slide_tRdnYp"
+        "slide_tRdnYp",
+        "slide_9BFc3t"
       ],
       "settings": {}
     },
