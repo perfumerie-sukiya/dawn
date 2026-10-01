@@ -47,14 +47,25 @@
             "image_file": "Excia_A_PC",
             "image_sp": "shopify://shop_images/Excia_A_SP.jpg",
             "image_sp_file": "Excia_A_SP",
-            "link": ""
+            "link": "https://online.sukiya.biz/products/albion-excia-radiance-renew-rich-milk-e-2026-9-18"
+          }
+        },
+        "slide_qymWhp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ExciaRouge_A_PC.jpg",
+            "image_file": "ExciaRouge_A_PC",
+            "image_sp": "shopify://shop_images/ExciaRouge_A_SP.jpg",
+            "image_sp_file": "ExciaRouge_A_SP",
+            "link": "https://online.sukiya.biz/products/albion-excia-rouge-miel-2026-9-18"
           }
         }
       },
       "block_order": [
         "slide_ec6CLr",
         "slide_tRdnYp",
-        "slide_9BFc3t"
+        "slide_9BFc3t",
+        "slide_qymWhp"
       ],
       "settings": {}
     },
