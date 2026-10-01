@@ -12,14 +12,11 @@
     "24868b4c-3917-47de-829e-304405793cbe": {
       "type": "top-slider",
       "blocks": {
-        "slide_pDdaJU": {
+        "slide_fd9wX4": {
           "type": "slide",
-          "name": "ALBION",
           "settings": {
-            "title": "ALBION",
-            "image": "shopify://shop_images/banner_sukiya_1618x1000_a34ac729-adb1-4fd5-9929-b2e916a7515c.jpg",
-            "image_sp": "shopify://shop_images/banner_sukiya_828x1242_c41121fd-a8af-4232-a9e3-4e84564b9a97.jpg",
-            "link": "https://online.sukiya.biz/collections/albion"
+            "title": "スライド",
+            "link": ""
           }
         },
         "aed8695d-1c8c-4faf-90e2-f9596f48623a": {
@@ -96,7 +93,7 @@
         }
       },
       "block_order": [
-        "slide_pDdaJU",
+        "slide_fd9wX4",
         "aed8695d-1c8c-4faf-90e2-f9596f48623a",
         "5614945f-e2ea-4edb-a296-37fe83d4bd86",
         "slide_brNxcD",
