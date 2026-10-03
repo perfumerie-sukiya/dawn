@@ -219,16 +219,6 @@
             "link": "https://online.sukiya.biz/pages/paulandjoe-erboristerie-small-sample-set-2026-10-1"
           }
         },
-        "column_76W98M": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/KL20261001.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/products/perfumerie-sukiya-online-store-kiehls-original-holiday-trunk-pouch-2026-10-1"
-          }
-        },
         "column_r9BGbi": {
           "type": "column",
           "settings": {
@@ -332,7 +322,6 @@
       },
       "block_order": [
         "column_9WaFRR",
-        "column_76W98M",
         "column_r9BGbi",
         "column_RJdMFm",
         "column_zBQyGJ",
