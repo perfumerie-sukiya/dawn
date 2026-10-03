@@ -12,6 +12,15 @@
     "24868b4c-3917-47de-829e-304405793cbe": {
       "type": "top-slider",
       "blocks": {
+        "slide_nnbgzr": {
+          "type": "slide",
+          "settings": {
+            "title": "アルビオン",
+            "image": "shopify://shop_images/ALB-MilkFd-S_PC1618_1000.jpg",
+            "image_sp": "shopify://shop_images/ALB-MilkFd-S_SP828_1242.jpg",
+            "link": "https://online.sukiya.biz/collections/albion"
+          }
+        },
         "aed8695d-1c8c-4faf-90e2-f9596f48623a": {
           "type": "slide",
           "settings": {
@@ -86,6 +95,7 @@
         }
       },
       "block_order": [
+        "slide_nnbgzr",
         "aed8695d-1c8c-4faf-90e2-f9596f48623a",
         "5614945f-e2ea-4edb-a296-37fe83d4bd86",
         "slide_brNxcD",
