@@ -64,17 +64,6 @@
             "is_text_right": false
           }
         },
-        "slide_xbc8ti": {
-          "type": "slide",
-          "settings": {
-            "title": "ヴォワールコレクチュールnと\n併せてお使いいただけるファンデーションの\nトライアルサンプル2色付き",
-            "image": "shopify://shop_images/offer_CorrectingCreamVeil_26SS_pc_02.jpg",
-            "image_sp": "shopify://shop_images/offer_26SS_CorrectingCreamVeil_closeup.jpg",
-            "link": "https://online.sukiya.biz/products/voile-correcteur-n-kit-3",
-            "is_title_white": false,
-            "is_text_right": true
-          }
-        },
         "slide_jkxT4C": {
           "type": "slide",
           "settings": {
@@ -92,7 +81,6 @@
         "slide_gUR3gt",
         "slide_p86FJQ",
         "slide_HWnFzk",
-        "slide_xbc8ti",
         "slide_jkxT4C"
       ],
       "settings": {}
