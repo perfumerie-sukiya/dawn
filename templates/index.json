@@ -239,6 +239,16 @@
             "link": "https://online.sukiya.biz/pages/paulandjoe-erboristerie-small-sample-set-2026-10-1"
           }
         },
+        "column_4Yqtyg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/SL20260928.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/serge-lutens-collection-noir-5ml-brand-exclusive-pouch-2026-9-28"
+          }
+        },
         "column_r9BGbi": {
           "type": "column",
           "settings": {
@@ -332,6 +342,7 @@
       },
       "block_order": [
         "column_9WaFRR",
+        "column_4Yqtyg",
         "column_r9BGbi",
         "column_RJdMFm",
         "column_WzdiDd",
