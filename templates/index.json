@@ -229,6 +229,15 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
+        "column_tk6YXX": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
         "column_9WaFRR": {
           "type": "column",
           "settings": {
@@ -341,6 +350,7 @@
         }
       },
       "block_order": [
+        "column_tk6YXX",
         "column_9WaFRR",
         "column_4Yqtyg",
         "column_r9BGbi",
