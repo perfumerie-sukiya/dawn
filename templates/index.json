@@ -239,6 +239,16 @@
             "link": "https://online.sukiya.biz/pages/nars-original-pouch-2026-10-9"
           }
         },
+        "column_8R6VeL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/KL20261001.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/pages/kiehls-original-holiday-trunk-pouch-2026-10-1"
+          }
+        },
         "column_9WaFRR": {
           "type": "column",
           "settings": {
@@ -352,6 +362,7 @@
       },
       "block_order": [
         "column_tk6YXX",
+        "column_8R6VeL",
         "column_9WaFRR",
         "column_4Yqtyg",
         "column_r9BGbi",
