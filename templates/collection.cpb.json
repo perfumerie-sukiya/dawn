@@ -20,6 +20,17 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_8RemEU": {
+          "type": "slide",
+          "settings": {
+            "title": "最高峰の輝きと品格を宿す、\n5種のプレメイクアップ。",
+            "image": "shopify://shop_images/offer_26AW_SkinBeautyEnhancer_closeup_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_26AW_SkinBeautyEnhancer_closeup_sp.jpg",
+            "link": "https://online.sukiya.biz/collections/cle-de-peau-beaute?filter.p.tag=%E5%8C%96%E7%B2%A7%E4%B8%8B%E5%9C%B0",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
         "slide_qzagaE": {
           "type": "slide",
           "settings": {
@@ -63,25 +74,14 @@
             "is_title_white": false,
             "is_text_right": false
           }
-        },
-        "slide_jkxT4C": {
-          "type": "slide",
-          "settings": {
-            "title": "光をまとい、輝きを育む、\n絶世の美しさへ。",
-            "image": "shopify://shop_images/offer_RadiantBasemake_26SS_pc.jpg",
-            "image_sp": "shopify://shop_images/offer_RadiantBasemake_26SS_sp.jpg",
-            "link": "https://online.sukiya.biz/collections/cle-de-peau-beaute?filter.p.tag=%E3%83%A1%E3%82%A4%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97",
-            "is_title_white": false,
-            "is_text_right": false
-          }
         }
       },
       "block_order": [
+        "slide_8RemEU",
         "slide_qzagaE",
         "slide_gUR3gt",
         "slide_p86FJQ",
-        "slide_HWnFzk",
-        "slide_jkxT4C"
+        "slide_HWnFzk"
       ],
       "settings": {}
     },
