@@ -20,17 +20,62 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
-        "slide_3e4EPF": {
+        "slide_MJ8njA": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/24LIPO_serum_online_boutique_PC.jpg",
-            "image_sp": "shopify://shop_images/24LIPO_serum_online_boutique_PC.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-liploid-advanced-repair-serum"
+            "image": "shopify://shop_images/6JFZZX_AQ_Coffret_banner_1280x640_820e6684-36e2-4a23-ad36-59c5aa61cfe5.jpg",
+            "image_sp": "shopify://shop_images/6JFZZX_AQ_Coffret_banner_750x1008_feceed2f-142e-448d-8a43-837b4a887059.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-aq-radiance-coffret-iii-2026-11-16"
+          }
+        },
+        "slide_k7fExW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZX_AQ_Coffret_banner_1280x640_bright.jpg",
+            "image_sp": "shopify://shop_images/6JFZZX_AQ_Coffret_banner_750x1008_bright.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-aq-bright-radiance-coffret-iii-2026-11-16"
+          }
+        },
+        "slide_B7PtXt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZF_LIPO_PPR26_mori_banner_1280x640_serum.jpg",
+            "image_sp": "shopify://shop_images/6JFZZF_LIPO_PPR26_mori_banner_750x1008_serum.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-liposome-advanced-repair-serum-purple-ribbon-set-2026-2026-11-1"
+          }
+        },
+        "slide_AhNCNE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZF_LIPO_PPR26_mori_banner_1280x640_cream.jpg",
+            "image_sp": "shopify://shop_images/6JFZZF_LIPO_PPR26_mori_banner_750x1008_cream.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-liposome-advanced-repair-cream-purple-ribbon-set-2026-2026-11-1"
+          }
+        },
+        "slide_Ayb8xC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZU_Advent_calendar_banner_1280x640_b701f337-abd4-49ea-9a92-27296115ec32.jpg",
+            "image_sp": "shopify://shop_images/6JFZZU_Advent_calendar_banner_750x1008_d2665a9a-598d-4cb3-bb2c-dae844b81dfb.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-advent-calendar-2026-2026-10-28"
+          }
+        },
+        "slide_fTWwQC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZW_MakeCoffret_banner_1280x640_797a2cf9-c31d-44dc-b74e-aa52da4ad809.jpg",
+            "image_sp": "shopify://shop_images/6JFZZW_MakeCoffret_banner_750x1008_4afd3dc3-b42c-4f6b-b2c4-5bd1e50c0f62.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-makeup-collection-2026-alice-in-decorte-wonderland-2026-10-28"
           }
         }
       },
       "block_order": [
-        "slide_3e4EPF"
+        "slide_MJ8njA",
+        "slide_k7fExW",
+        "slide_B7PtXt",
+        "slide_AhNCNE",
+        "slide_Ayb8xC",
+        "slide_fTWwQC"
       ],
       "settings": {}
     },
