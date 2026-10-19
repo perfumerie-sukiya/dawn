@@ -20,7 +20,7 @@
           aria-hidden="true"
           tabindex="-1"
           style="background-image: url('${algolia.helpers.mediumImage(hit)}')"
-        ></a>
+        >${hit.inventory_available === false && html`<span class="ais-hit--sold-badge">${algolia.translations.soldOut}</span>`}</a>
 
         <div class="ais-hit--details">
           <p class="ais-hit--title">
