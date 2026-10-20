@@ -249,16 +249,6 @@
             "link": "https://online.sukiya.biz/pages/kiehls-original-holiday-trunk-pouch-2026-10-1"
           }
         },
-        "column_y3nyfm": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/KL20261001_2.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/kiehls-original-holiday-eye-mask-2026-10-1"
-          }
-        },
         "column_9WaFRR": {
           "type": "column",
           "settings": {
@@ -323,7 +313,6 @@
       "block_order": [
         "column_tk6YXX",
         "column_8R6VeL",
-        "column_y3nyfm",
         "column_9WaFRR",
         "column_4Yqtyg",
         "column_yEgYRk",
