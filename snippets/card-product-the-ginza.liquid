@@ -1,0 +1,32 @@
+{% doc %}
+  Renders a monochrome THE GINZA product card linked to its standard product page.
+
+  @param {product} product - Product to render.
+{% enddoc %}
+{%- if product != blank and product.vendor == 'ザ・ギンザ' -%}
+  <li class="the-ginza__product">
+    <a href="{{ product.url }}" class="the-ginza__product-link">
+      <div class="the-ginza__product-image">
+        {%- if product.featured_image != blank -%}
+          {{-
+            product.featured_image
+            | image_url: width: 640
+            | image_tag:
+              widths: '240, 360, 480, 640',
+              sizes: '(min-width: 990px) 25vw, 50vw',
+              alt: product.title,
+              loading: 'lazy'
+          -}}
+        {%- endif -%}
+      </div>
+      <p class="the-ginza__product-vendor">{{ product.vendor | escape }}</p>
+      <h3>{{ product.title | escape }}</h3>
+      <p class="the-ginza__price">
+        {{ product.price | money -}}
+        {%- if product.price_varies %}{{ 'the_ginza.labels.from_price' | t }}{% endif %}
+        <span>{{ 'the_ginza.labels.tax' | t }}</span>
+      </p>
+      <span class="the-ginza__product-action">{{ 'the_ginza.labels.details' | t }}</span>
+    </a>
+  </li>
+{%- endif -%}

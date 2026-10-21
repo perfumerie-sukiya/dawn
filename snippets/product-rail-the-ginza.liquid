@@ -1,0 +1,29 @@
+{% doc %}
+  Renders a fixed, merchant-ordered selection of up to four THE GINZA products.
+
+  @param {product[]} products - Ordered product selection.
+  @param {string} title - Section heading.
+  @param {string} subtitle - Japanese section heading.
+{% enddoc %}
+{%- capture product_cards -%}
+  {%- for product in products limit: 4 -%}
+    {% render 'card-product-the-ginza', product: product %}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign product_cards = product_cards | strip -%}
+{%- if product_cards != blank -%}
+  <section class="the-ginza__section">
+    <h2 class="the-ginza__heading">
+      {{ title | escape }}
+      <span>{{ subtitle | escape }}</span>
+    </h2>
+    <ul
+      class="the-ginza__products the-ginza__products--rail"
+      role="list"
+      tabindex="0"
+      aria-label="{{ title | escape }}"
+    >
+      {{ product_cards }}
+    </ul>
+  </section>
+{%- endif -%}

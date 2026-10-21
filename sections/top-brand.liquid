@@ -6,6 +6,23 @@
       BRAND
     </h3>
     <div class="tw-flex tw-flex-wrap">
+
+      {%- assign the_ginza_collection = section.settings.the_ginza_collection -%}
+      {%- if section.settings.show_the_ginza and the_ginza_collection != blank -%}
+        <div class="tw-w-1/2 md:tw-w-1/4 tw-mb-4 tw-px-2">
+          <a href="{{ the_ginza_collection.url }}" class="tw-flex tw-items-center tw-justify-center tw-aspect-[3.1] tw-bg-white">
+            <img
+              src="{{ 'the-ginza-logo.png' | asset_url }}"
+              alt="{{ 'the_ginza.labels.brand' | t }}"
+              class="tw-w-auto tw-h-full tw-object-contain"
+              loading="lazy"
+              width="2000"
+              height="2000"
+              style="max-height: 90px; width: auto;"
+            >
+          </a>
+        </div>
+      {%- endif -%}
       <div class="tw-w-1/2 md:tw-w-1/4 tw-mb-4 tw-px-2">
         <a href="{{ collections['acca-kappa'].url }}"
           ><img
@@ -652,6 +669,10 @@
 {% schema %}
 {
   "name": "TOP BRAND LIST",
+  "settings": [
+    {"type": "checkbox", "id": "show_the_ginza", "label": "THE GINZAの入口を表示", "default": false},
+    {"type": "collection", "id": "the_ginza_collection", "label": "THE GINZAコレクション"}
+  ],
   "presets": [
     {
       "name": "TOP BRAND LIST"

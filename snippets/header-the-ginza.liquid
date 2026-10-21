@@ -1,0 +1,46 @@
+{% doc %}
+  Renders THE GINZA breadcrumbs, square logo and desktop navigation.
+
+  @param {collection} brand_collection - Brand collection.
+  @param {page} [story_page] - Story page.
+  @param {image} [logo] - Custom square brand logo.
+  @param {string} [current_title] - Title of the current listing or story.
+  @param {string} [active_category] - Selected category tag.
+{% enddoc %}
+<header class="the-ginza__header">
+  <nav class="the-ginza__breadcrumbs" aria-label="{{ 'the_ginza.labels.breadcrumbs' | t }}">
+    <ol role="list">
+      <li><a href="{{ routes.root_url }}">TOP</a></li>
+      <li>
+        {%- if brand_collection != blank -%}
+          <a href="{{ brand_collection.url }}">{{ 'the_ginza.labels.brand' | t }}</a>
+        {%- else -%}
+          {{ 'the_ginza.labels.brand' | t }}
+        {%- endif -%}
+      </li>
+      {%- if current_title != blank -%}
+        <li aria-current="page">{{ current_title | escape }}</li>
+      {%- endif -%}
+    </ol>
+  </nav>
+  <div class="the-ginza__logo">
+    {%- if brand_collection != blank -%}<a href="{{ brand_collection.url }}">{%- endif -%}
+    {%- assign logo_alt = 'the_ginza.labels.brand' | t -%}
+    {% render 'image-the-ginza',
+      image: logo,
+      asset: 'the-ginza-logo.png',
+      width: 2000,
+      height: 2000,
+      alt: logo_alt,
+      loading: 'eager'
+    %}
+    {%- if brand_collection != blank -%}</a>{%- endif -%}
+  </div>
+  <nav class="the-ginza__desktop-menu" aria-label="{{ 'the_ginza.labels.menu' | t }}">
+    {% render 'navigation-the-ginza',
+      brand_collection: brand_collection,
+      story_page: story_page,
+      active_category: active_category
+    %}
+  </nav>
+</header>

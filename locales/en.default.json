@@ -509,5 +509,34 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "the_ginza": {
+    "labels": {
+      "brand": "THE GINZA",
+      "breadcrumbs": "Breadcrumbs",
+      "menu": "Brand menu",
+      "story": "Story",
+      "all_products": "All products",
+      "all": "All",
+      "categories": "Shop by category",
+      "best_seller": "Best sellers",
+      "new_arrivals": "New arrivals",
+      "tax": "(tax included)",
+      "from_price": " and up",
+      "details": "View details",
+      "view_all": "View all products",
+      "back_to_brand": "Back to THE GINZA",
+      "products": "Our products",
+      "apply": "Apply",
+      "empty": "No products found.",
+      "other_products": "Other products"
+    },
+    "categories": {
+      "skincare": "Skincare",
+      "protection": "Protection",
+      "body": "Body",
+      "fragrance": "Fragrance",
+      "sets": "Sets and other"
+    }
   }
 }
