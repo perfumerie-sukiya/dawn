@@ -1,0 +1,96 @@
+{
+    "sections": {
+        "main": {
+            "type": "main-collection-the-ginza",
+            "blocks": {
+                "skincare": {
+                    "type": "category",
+                    "settings": {
+                        "key": "skincare",
+                        "tag": "スキンケア",
+                        "asset": "the-ginza-category-skincare.jpg"
+                    }
+                },
+                "protection": {
+                    "type": "category",
+                    "settings": {
+                        "key": "protection",
+                        "tag": "プロテクション",
+                        "asset": "the-ginza-category-protection.jpg"
+                    }
+                },
+                "body": {
+                    "type": "category",
+                    "settings": {
+                        "key": "body",
+                        "tag": "ボディ",
+                        "asset": "the-ginza-category-body.jpg"
+                    }
+                },
+                "fragrance": {
+                    "type": "category",
+                    "settings": {
+                        "key": "fragrance",
+                        "tag": "フレグランス",
+                        "asset": "the-ginza-category-fragrance.jpg"
+                    }
+                },
+                "sets": {
+                    "type": "category",
+                    "settings": {
+                        "key": "sets",
+                        "tag": "セット・その他",
+                        "asset": "the-ginza-category-sets.jpg"
+                    }
+                },
+                "close_core": {
+                    "type": "close_up",
+                    "settings": {
+                        "title": "コアエッセンスケア",
+                        "asset": "the-ginza-close-up-core.jpg",
+                        "enabled": true
+                    }
+                },
+                "close_linden": {
+                    "type": "close_up",
+                    "settings": {
+                        "title": "THE GINZA リンデンアロマ",
+                        "asset": "the-ginza-close-up-linden.jpg",
+                        "enabled": true
+                    }
+                },
+                "close_trial": {
+                    "type": "close_up",
+                    "settings": {
+                        "title": "はじめての方へ",
+                        "asset": "the-ginza-close-up-trial.jpg",
+                        "enabled": true
+                    }
+                },
+                "close_special": {
+                    "type": "close_up",
+                    "settings": {
+                        "title": "スペシャルケア",
+                        "asset": "the-ginza-close-up-special.jpg",
+                        "enabled": false
+                    }
+                }
+            },
+            "block_order": [
+                "skincare",
+                "protection",
+                "body",
+                "fragrance",
+                "sets",
+                "close_core",
+                "close_linden",
+                "close_trial",
+                "close_special"
+            ],
+            "settings": {
+                "show_hero": false
+            }
+        }
+    },
+    "order": ["main"]
+}

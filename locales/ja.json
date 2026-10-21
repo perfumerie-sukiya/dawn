@@ -509,5 +509,34 @@
       "expanded": "ギフトカードカードの受取人フォームを展開しました",
       "collapsed": "ギフトカードカードの受取人フォームを折りたたみました"
     }
+  },
+  "the_ginza": {
+    "labels": {
+      "brand": "ザ・ギンザ",
+      "breadcrumbs": "パンくずリスト",
+      "menu": "ブランドメニュー",
+      "story": "ストーリー",
+      "all_products": "すべての商品",
+      "all": "すべて",
+      "categories": "カテゴリから探す",
+      "best_seller": "ベストセラー",
+      "new_arrivals": "新製品",
+      "tax": "（税込）",
+      "from_price": "〜",
+      "details": "詳細を見る",
+      "view_all": "すべての商品を見る",
+      "back_to_brand": "ザ・ギンザ トップへ戻る",
+      "products": "商品のご紹介",
+      "apply": "適用",
+      "empty": "商品が見つかりません。",
+      "other_products": "その他の商品"
+    },
+    "categories": {
+      "skincare": "スキンケア",
+      "protection": "プロテクション",
+      "body": "ボディ",
+      "fragrance": "フレグランス",
+      "sets": "セット・その他"
+    }
   }
 }

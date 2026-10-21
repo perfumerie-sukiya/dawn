@@ -1,0 +1,46 @@
+{
+    "sections": {
+        "main": {
+            "type": "main-page-the-ginza-story",
+            "blocks": {
+                "1975": {
+                    "type": "chapter",
+                    "settings": {
+                        "year": "1975",
+                        "title": "",
+                        "asset": "the-ginza-story-1975.jpg"
+                    }
+                },
+                "2002": {
+                    "type": "chapter",
+                    "settings": {
+                        "year": "2002",
+                        "title": "",
+                        "asset": "the-ginza-story-2002.jpg"
+                    }
+                },
+                "aesthetics": {
+                    "type": "chapter",
+                    "settings": {
+                        "year": "",
+                        "title": "",
+                        "asset": "the-ginza-story-aesthetics.jpg"
+                    }
+                },
+                "2025": {
+                    "type": "chapter",
+                    "settings": {
+                        "year": "2025",
+                        "title": "",
+                        "asset": "the-ginza-story-2025.jpg"
+                    }
+                }
+            },
+            "block_order": ["1975", "2002", "aesthetics", "2025"],
+            "settings": {
+                "brand_collection": "the-ginza"
+            }
+        }
+    },
+    "order": ["main"]
+}
