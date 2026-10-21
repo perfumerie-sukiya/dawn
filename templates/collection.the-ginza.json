@@ -7,7 +7,6 @@
                     "type": "category",
                     "settings": {
                         "key": "skincare",
-                        "tag": "スキンケア",
                         "asset": "the-ginza-category-skincare.jpg"
                     }
                 },
@@ -15,7 +14,6 @@
                     "type": "category",
                     "settings": {
                         "key": "protection",
-                        "tag": "プロテクション",
                         "asset": "the-ginza-category-protection.jpg"
                     }
                 },
@@ -23,7 +21,6 @@
                     "type": "category",
                     "settings": {
                         "key": "body",
-                        "tag": "ボディ",
                         "asset": "the-ginza-category-body.jpg"
                     }
                 },
@@ -31,7 +28,6 @@
                     "type": "category",
                     "settings": {
                         "key": "fragrance",
-                        "tag": "フレグランス",
                         "asset": "the-ginza-category-fragrance.jpg"
                     }
                 },
@@ -39,7 +35,6 @@
                     "type": "category",
                     "settings": {
                         "key": "sets",
-                        "tag": "セット・その他",
                         "asset": "the-ginza-category-sets.jpg"
                     }
                 },

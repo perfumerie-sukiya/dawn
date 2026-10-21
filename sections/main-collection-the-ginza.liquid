@@ -24,7 +24,15 @@
   {%- if show_listing -%}
     {%- assign has_category_banner = false -%}
     {%- for block in section.blocks -%}
-      {%- if block.type == 'category' and block.settings.tag == selected_tag -%}
+      {%- if block.type != 'category' -%}{%- continue -%}{%- endif -%}
+      {%- assign block_category_tag = '' -%}
+      {%- for category_key in category_keys -%}
+        {%- if category_key == block.settings.key -%}
+          {%- assign block_category_tag = category_tags[forloop.index0] -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if block_category_tag == selected_tag -%}
         {%- assign has_category_banner = true -%}
         {%- assign category_translation = 'the_ginza.categories.' | append: block.settings.key -%}
         {%- assign category_title = category_translation | t -%}
@@ -184,8 +192,15 @@
           {%- if block.type != 'category' -%}{%- continue -%}{%- endif -%}
           {%- assign category_translation = 'the_ginza.categories.' | append: block.settings.key -%}
           {%- assign category_title = category_translation | t -%}
+          {%- assign block_category_tag = '' -%}
+          {%- for category_key in category_keys -%}
+            {%- if category_key == block.settings.key -%}
+              {%- assign block_category_tag = category_tags[forloop.index0] -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
           <li {{ block.shopify_attributes }}>
-            <a href="{{ collection.url }}/{{ block.settings.tag | handleize }}?view=the-ginza-products">
+            <a href="{{ collection.url }}/{{ block_category_tag | handleize }}?view=the-ginza-products">
               {% render 'image-the-ginza',
                 image: block.settings.image,
                 asset: block.settings.asset,
@@ -425,10 +440,8 @@
           "default": "skincare"
         },
         {
-          "type": "text",
-          "id": "tag",
-          "label": "商品タグ",
-          "default": "スキンケア"
+          "type": "paragraph",
+          "content": "商品タグは選択したカテゴリと同じ固定名称を使います（スキンケア／プロテクション／ボディ／フレグランス／セット・その他）。"
         },
         {
           "type": "select",

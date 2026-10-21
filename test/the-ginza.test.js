@@ -1,4 +1,4 @@
-const { renderCollection, renderStory, product, createRenderer } = require('./the-ginza-renderer');
+const { renderCollection, renderStory, product, createRenderer, sectionFromTemplate } = require('./the-ginza-renderer');
 
 function mount(html) {
   document.body.innerHTML = html;
@@ -31,6 +31,23 @@ describe('THE GINZA brand pages', () => {
       (s) => s.querySelector('h2').textContent === 'その他の商品',
     );
     expect(other.querySelector('a[href="/products/ginza-2"]')).not.toBeNull();
+  });
+
+  it('keeps category tiles, menus, banners and groups on the fixed category tag', async () => {
+    const section = sectionFromTemplate('collection.the-ginza.json');
+    section.blocks.find((block) => block.settings.key === 'skincare').settings.tag = '保湿';
+    const doc = mount((await renderCollection({ blocks: section.blocks })).html);
+    const expected = '/collections/the-ginza/スキンケア?view=the-ginza-products';
+    expect(doc.querySelector('.the-ginza__categories a').getAttribute('href')).toBe(expected);
+    expect(doc.querySelector('.the-ginza__navigation a').getAttribute('href')).toBe(expected);
+    const listing = mount(
+      (await renderCollection({ blocks: section.blocks, products: [product(1)], listing: true })).html,
+    );
+    expect(listing.querySelector('.the-ginza__section h2').textContent).toBe('スキンケア');
+    const category = mount(
+      (await renderCollection({ blocks: section.blocks, products: [product(1)], tags: ['スキンケア'] })).html,
+    );
+    expect(category.querySelector('.the-ginza__category-banner h1').textContent).toBe('スキンケア');
   });
 
   it('renders category results without the brand TOP promotion sections', async () => {

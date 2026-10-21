@@ -72,9 +72,10 @@ function sectionFromTemplate(name) {
   };
 }
 
-async function renderCollection({ products = [], tags = [], listing = false, settings = {} } = {}) {
+async function renderCollection({ products = [], tags = [], listing = false, settings = {}, blocks } = {}) {
   const section = sectionFromTemplate('collection.the-ginza.json');
   section.settings = { ...section.settings, ...settings };
+  if (blocks) section.blocks = blocks;
   const context = {
     routes: { root_url: '/' },
     section,
