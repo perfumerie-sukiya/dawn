@@ -249,16 +249,6 @@
             "link": "https://online.sukiya.biz/pages/kiehls-original-holiday-trunk-pouch-2026-10-1"
           }
         },
-        "column_9WaFRR": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/2_ac2010c9-9768-443f-b4d6-2307ab84805d.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-erboristerie-small-sample-set-2026-10-1"
-          }
-        },
         "column_4Yqtyg": {
           "type": "column",
           "settings": {
@@ -313,7 +303,6 @@
       "block_order": [
         "column_tk6YXX",
         "column_8R6VeL",
-        "column_9WaFRR",
         "column_4Yqtyg",
         "column_yEgYRk",
         "column_mgYxnD",
