@@ -20,6 +20,17 @@
     "1370e1df-9a35-4ec8-a3e6-3f25f07847b3": {
       "type": "slider-cpb",
       "blocks": {
+        "slide_QNAdaM": {
+          "type": "slide",
+          "settings": {
+            "title": "願う力で、私を、世界を輝かせよう。\nCOURAGE TO WISH COLLECTION",
+            "image": "shopify://shop_images/offer_Holiday_26AW_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_Holiday_26AW_sp.jpg",
+            "link": "",
+            "is_title_white": false,
+            "is_text_right": false
+          }
+        },
         "slide_8RemEU": {
           "type": "slide",
           "settings": {
@@ -31,14 +42,25 @@
             "is_text_right": false
           }
         },
-        "slide_qzagaE": {
+        "slide_6jhV78": {
           "type": "slide",
           "settings": {
-            "title": "積み重ねた輝きを、超えていく。\n光放つ肌へ。\n先端の角層細胞研究の、その先を。",
-            "image": "shopify://shop_images/332371eb-fbb4-4205-aa9e-1ccc8264037c.jpg",
-            "image_sp": "shopify://shop_images/CPB_25SS_KeyRadianceCare_sp_22bab863-c535-4b72-9e4c-753785dfc8c5.jpg",
+            "title": "先進のサイエンスで輝く。\nクレ・ド・ポー ボーテの高機能スペシャルケア \nシュプリーム",
+            "image": "shopify://shop_images/offer_Supreme_26AW_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_Supreme_26AW_sp.jpg",
             "link": "",
             "is_title_white": false,
+            "is_text_right": false
+          }
+        },
+        "slide_nBXEGR": {
+          "type": "slide",
+          "settings": {
+            "title": "クレ・ド・ポー ボーテの美の英知を結集。\n至高の逸品、ラ・クレーム。",
+            "image": "shopify://shop_images/offer_LaCreme_26AW_pc.jpg",
+            "image_sp": "shopify://shop_images/offer_LaCreme_26AW_sp.jpg",
+            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-la-creme-2024-01-21-2",
+            "is_title_white": true,
             "is_text_right": false
           }
         },
@@ -63,25 +85,15 @@
             "is_title_white": false,
             "is_text_right": false
           }
-        },
-        "slide_HWnFzk": {
-          "type": "slide",
-          "settings": {
-            "title": "宿命さえ超えてゆく、\n革新の根源美白ケア。",
-            "image": "shopify://shop_images/offer_brightening_serum_26SS_pc_30bfa007-9c04-4222-968f-d83f008c2fb3.jpg",
-            "image_sp": "shopify://shop_images/offer_brightening_serum_26SS_sp_44a2eabe-8678-4f51-8c9b-86bc2d9f796c.jpg",
-            "link": "https://online.sukiya.biz/products/cle-de-peau-beaute-serum-eclat-s-ii-2026-2-21",
-            "is_title_white": false,
-            "is_text_right": false
-          }
         }
       },
       "block_order": [
+        "slide_QNAdaM",
         "slide_8RemEU",
-        "slide_qzagaE",
+        "slide_6jhV78",
+        "slide_nBXEGR",
         "slide_gUR3gt",
-        "slide_p86FJQ",
-        "slide_HWnFzk"
+        "slide_p86FJQ"
       ],
       "settings": {}
     },
