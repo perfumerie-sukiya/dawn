@@ -256,49 +256,106 @@
     </slider-component>
   </div>
 
-  <div class="categories tw-mx-auto tw-max-w-7xl">
-    <div class="categorie-skincare md:tw-flex tw-flex-row-reverse tw-mt-14 tw-m-2">
-      <img
-        class="skincare-img md:tw-w-1/2 max-md:tw-mx-auto"
-        src="https://cdn.shopify.com/s/files/1/0496/5436/6365/files/ASR_0206_Digital_ol_1080x1080_3fe9ec4f-d669-4705-9db7-16c05b369276.png?v=1744864495"
-        width="512"
-        height="512"
-      >
-      <div class="skincare-text md:tw-w-1/2 tw-px-8 max-md:tw-text-center max-md:tw-w-11/12 tw-mx-auto max-md:tw-mb-12">
-        <h2 class="tw-font-black tw-text-5xl">SKINCARE</h2>
-        <h3 class="tw-font-bold">美のめぐり3ステップ</h3>
-        <h3 class="tw-font-bold">赤の循環で、ゆらがない強さを</h3>
-        <p>
-          ３つのめぐりが、透明感あふれる輝き、<br>
-          なめらかさ、ハリ・弾力が備わった、<br>
-          生命感あふれるつややかな肌へ導く。
-        </p>
-        <a
-          href="{{ routes.collections_url }}/shiseido/?filter.p.tag=スキンケア#Collection"
-          class="tw-block tw-bg-black tw-text-white tw-no-underline tw-px-4 tw-py-4 tw-mt-4 tw-text-center "
-          >詳しくはこちら＞</a
+  <div class="categories tw-mx-auto tw-max-w-7xl tw-my-14 tw-px-4">
+    {%- comment -%} SKINCARE {%- endcomment -%}
+    <div class="categorie-skincare tw-mb-20">
+      <h2 class="tw-text-center tw-mb-10">
+        <span class="tw-inline-block tw-font-black tw-text-5xl tw-pb-1 tw-border-b-4 tw-border-solid tw-border-[#e60012] tw-border-t-0 tw-border-x-0">SKINCARE</span>
+      </h2>
+      <div class="md:tw-flex md:tw-items-center md:tw-gap-10">
+        <img
+          class="skincare-img tw-block tw-mx-auto md:tw-w-1/2 md:tw-order-2 tw-max-w-full tw-h-auto"
+          src="{{ 'ASR_Product_Key_Visual_300x250_26SS.jpg' | asset_url }}"
+          alt="SKINCARE"
+          width="300"
+          height="250"
         >
+        <div class="skincare-text md:tw-w-1/2 md:tw-order-1 md:tw-px-8 tw-px-2 max-md:tw-text-center max-md:tw-mt-8">
+          <h3 class="tw-font-bold tw-text-lg tw-mb-4">素肌の限りない可能性を引き出す、<br>先端のスキンケアサイエンス。</h3>
+          <p class="tw-text-sm">
+            素肌美を引き出し、想像以上の可能性が未来への期待をもたらすスキンケア。<br>
+            肌と触れ合うたびに、SHISEIDOの先端サイエンスを実感できます。
+          </p>
+          <a
+            href="{{ routes.collections_url }}/shiseido/?filter.p.tag=スキンケア#Collection"
+            class="tw-inline-block tw-border tw-border-solid tw-border-black tw-text-black tw-no-underline tw-px-10 tw-py-3 tw-mt-4 tw-text-center tw-text-sm"
+            >詳しくはこちら</a
+          >
+        </div>
       </div>
+      {% if series %}
+        <ul class="tw-list-none tw-p-0 tw-mt-12 tw-grid tw-grid-cols-3 tw-gap-2 md:tw-gap-4">
+          {% for s in series.value %}
+            <li>
+              <a
+                class="tw-block tw-no-underline"
+                href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
+              >
+                <img
+                  class="tw-block tw-w-full tw-h-auto"
+                  src="{{ s.image.value.image | image_url }}"
+                  alt="{{ s.name.value }}"
+                  width="244"
+                  height="100"
+                >
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     </div>
-    <div class="categorie-makeup md:tw-flex tw-mb-14">
-      <img
-        class="makeup-img md:tw-w-1/2 max-md:tw-mx-auto"
-        src="{{ 'bg_texture_makeup_2603_01_pc.jpg' | asset_url }}"
-        width="492"
-        height="492"
-      >
-      <div class="makeup-text tw-px-8 max-md:tw-text-center max-md:tw-w-11/12 tw-mx-auto">
-        <h2 class="tw-font-black tw-text-5xl">MAKE UP</h2>
-        <h3 class="tw-font-bold">スキンケアベースメイク、という</h3>
-        <h3 class="tw-font-bold">新発想。</h3>
-        <p>
-          一人ひとりが生まれ持った素肌の美しさを高め、瞬時に理想の素肌感に仕上げます。まるでスキンケアをしているような、先端テクノロジー搭載のベースメイク。
-        </p>
-        <a
-          href="{{ routes.collections_url }}/shiseido/?filter.p.tag=メイクアップ#Collection"
-          class="tw-block tw-bg-black tw-text-white tw-no-underline tw-px-4 tw-py-4 tw-mt-4 tw-text-center"
-          >詳しくはこちら＞</a
+
+    {%- comment -%} MAKE UP {%- endcomment -%}
+    <div class="categorie-makeup">
+      <h2 class="tw-text-center tw-mb-10">
+        <span class="tw-inline-block tw-font-black tw-text-5xl tw-pb-1 tw-border-b-4 tw-border-solid tw-border-[#e60012] tw-border-t-0 tw-border-x-0">MAKE UP</span>
+      </h2>
+
+      {%- comment -%} BASE MAKE {%- endcomment -%}
+      <div class="md:tw-flex md:tw-items-center md:tw-gap-10 tw-mb-16">
+        <img
+          class="makeup-img tw-block tw-mx-auto md:tw-w-1/2 tw-max-w-full tw-h-auto"
+          src="{{ 'bg_texture_makeup_2603_01_pc.jpg' | asset_url }}"
+          alt="BASE MAKE"
+          width="492"
+          height="492"
         >
+        <div class="makeup-text md:tw-w-1/2 md:tw-px-8 tw-px-2 max-md:tw-text-center max-md:tw-mt-8">
+          <p class="tw-font-bold tw-text-lg tw-mb-1">BASE MAKE</p>
+          <h3 class="tw-font-bold tw-text-lg tw-mb-4">スキンケアベースメイク、という<br>新発想。</h3>
+          <p class="tw-text-sm">
+            一人ひとりが生まれ持った素肌の美しさを高め、瞬時に理想の素肌感に仕上げます。まるでスキンケアをしているような、先端テクノロジー搭載のベースメイク。
+          </p>
+          <a
+            href="{{ routes.collections_url }}/shiseido/?filter.p.tag=メイクアップ#Collection"
+            class="tw-inline-block tw-border tw-border-solid tw-border-black tw-text-black tw-no-underline tw-px-10 tw-py-3 tw-mt-4 tw-text-center tw-text-sm"
+            >詳しくはこちら</a
+          >
+        </div>
+      </div>
+
+      {%- comment -%} POINT MAKE {%- endcomment -%}
+      <div class="md:tw-flex md:tw-items-center md:tw-gap-10">
+        <img
+          class="pointmake-img tw-block tw-mx-auto md:tw-w-1/2 tw-max-w-full tw-h-auto"
+          src="{{ 'shiseido_point_make_2609.jpg' | asset_url }}"
+          alt="POINT MAKE"
+          width="793"
+          height="833"
+        >
+        <div class="pointmake-text md:tw-w-1/2 md:tw-px-8 tw-px-2 max-md:tw-text-center max-md:tw-mt-8">
+          <p class="tw-font-bold tw-text-lg tw-mb-1">POINT MAKE</p>
+          <h3 class="tw-font-bold tw-text-lg tw-mb-4">アバンギャルドを満喫する<br>メイクアップ。</h3>
+          <p class="tw-text-sm">
+            ショーのバックステージでも使われるアイテムで、日常にトレンドを。<br>
+            今までにない彩りが一瞬にして世界を変えるような刺激をもたらします。
+          </p>
+          <a
+            href="{{ routes.collections_url }}/shiseido/?filter.p.tag=チークカラー#Collection"
+            class="tw-inline-block tw-border tw-border-solid tw-border-black tw-text-black tw-no-underline tw-px-10 tw-py-3 tw-mt-4 tw-text-center tw-text-sm"
+            >詳しくはこちら</a
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -364,34 +421,6 @@
       </ul>
     </div>
   </div>
-{% endif %}
-
-{% if series %}
-  <div class="page-width tw-my-5">
-    <h3 class="tw-mb-2 tw-text-lg tw-underline">SERIES - シリーズ</h3>
-    <div class="category-navigation">
-      <ul class="category-navigation-list tw-p-0 tw-grid tw-items-center tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-2 md:tw-gap-4">
-        {% for s in series.value %}
-          <li>
-            <a
-              class="scroll_item_inr tw-no-underline"
-              href="{{ routes.collections_url }}/{{ collection.handle }}/?filter.p.tag={{ s.tag_name.value }}#Collection"
-            >
-              <img
-                class="tw-mx-auto"
-                src="{{ s.image.value.image | image_url}}"
-                alt="{{ s.name.value }}"
-                width="244"
-                height="100"
-              >
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-{% else %}
-
 {% endif %}
 
 {% schema %}
