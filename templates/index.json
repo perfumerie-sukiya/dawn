@@ -12,14 +12,22 @@
     "24868b4c-3917-47de-829e-304405793cbe": {
       "type": "top-slider",
       "blocks": {
-        "slide_pDdaJU": {
+        "slide_nnbgzr": {
           "type": "slide",
-          "name": "ALBION",
           "settings": {
-            "title": "ALBION",
-            "image": "shopify://shop_images/banner_sukiya_1618x1000_a34ac729-adb1-4fd5-9929-b2e916a7515c.jpg",
-            "image_sp": "shopify://shop_images/banner_sukiya_828x1242_c41121fd-a8af-4232-a9e3-4e84564b9a97.jpg",
+            "title": "アルビオン",
+            "image": "shopify://shop_images/ALB-MilkFd-S_PC1618_1000.jpg",
+            "image_sp": "shopify://shop_images/ALB-MilkFd-S_SP828_1242.jpg",
             "link": "https://online.sukiya.biz/collections/albion"
+          }
+        },
+        "slide_njnFU6": {
+          "type": "slide",
+          "settings": {
+            "title": "エレガンス",
+            "image": "shopify://shop_images/ELG-Mp-S_PC1618_1000.jpg",
+            "image_sp": "shopify://shop_images/ELG-Mp-S_SP828_1242.jpg",
+            "link": "https://online.sukiya.biz/collections/elegance"
           }
         },
         "aed8695d-1c8c-4faf-90e2-f9596f48623a": {
@@ -53,8 +61,8 @@
           "type": "slide",
           "settings": {
             "title": "NARS",
-            "image": "shopify://shop_images/sukiya_890_550_0805.png",
-            "image_sp": "shopify://shop_images/sukiya_828_1242_2608.png",
+            "image": "shopify://shop_images/Sukiya_890x550_2dbbaf49-2dc3-4130-94c6-7e5bed6d1e48.jpg",
+            "image_sp": "shopify://shop_images/Sukiya_828x1242_7962c815-af69-4c45-b734-25259deba26a.jpg",
             "link": "shopify://collections/nars"
           }
         },
@@ -84,27 +92,18 @@
             "image_sp": "shopify://shop_images/KA_slide_sp.jpg",
             "link": "shopify://collections/kanebo"
           }
-        },
-        "09e6a20b-5b0f-4d1a-8e8d-35d867d49fae": {
-          "type": "slide",
-          "settings": {
-            "title": "セルジュ・ルタンス",
-            "image": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_1.618x1.jpg",
-            "image_sp": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_828x1242_d9c1bf42-16c0-4beb-8c38-17cd2ee28cb5.jpg",
-            "link": "shopify://collections/serge-lutens"
-          }
         }
       },
       "block_order": [
-        "slide_pDdaJU",
+        "slide_nnbgzr",
+        "slide_njnFU6",
         "aed8695d-1c8c-4faf-90e2-f9596f48623a",
         "5614945f-e2ea-4edb-a296-37fe83d4bd86",
         "slide_brNxcD",
         "df7f0c5b-43ad-426d-aae8-11c72a9455ed",
         "88f8f653-ead8-4ae6-b7fb-c0c277520c47",
         "a1cc6b99-2ae6-47b8-b02b-6fe593d572d7",
-        "52bf3442-8879-4745-833f-93a39618b6aa",
-        "09e6a20b-5b0f-4d1a-8e8d-35d867d49fae"
+        "52bf3442-8879-4745-833f-93a39618b6aa"
       ],
       "settings": {}
     },
@@ -220,54 +219,34 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
-        "column_r9BGbi": {
+        "column_tk6YXX": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/NA20260911_56798391-cf43-4b85-9179-05bb0bcea0f3.jpg",
+            "image": "shopify://shop_images/NA20261009.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-setting-powder-pressed-n-special-size-precision-cushion-sponge-applicator-not-for-sale-2026-9-11"
+            "link": "https://online.sukiya.biz/pages/nars-original-pouch-2026-10-9"
           }
         },
-        "column_RJdMFm": {
+        "column_8R6VeL": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/NA20260911_954fbd39-8ac8-40df-a7e5-506fb02e7d69.jpg",
+            "image": "shopify://shop_images/KL20261001.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-stray-kids-han-message-postcard-a-2026-9-11"
+            "link": "https://online.sukiya.biz/pages/kiehls-original-holiday-trunk-pouch-2026-10-1"
           }
         },
-        "column_zBQyGJ": {
+        "column_4Yqtyg": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/CA20260901.jpg",
+            "image": "shopify://shop_images/SL20260928.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/https-online-sukiya-biz-products-perfumerie-sukiya-online-store-caron-atoma-eau-de-parfum-2ml-2026-9-1"
-          }
-        },
-        "column_HndRxi": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ9_GWP.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-vanity-pouch2026-9-1"
-          }
-        },
-        "column_WzdiDd": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20260911.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-original-mirror-2026-9-11"
+            "link": "https://online.sukiya.biz/pages/serge-lutens-collection-noir-5ml-brand-exclusive-pouch-2026-9-28"
           }
         },
         "column_yEgYRk": {
@@ -300,26 +279,6 @@
             "link": "https://online.sukiya.biz/pages/store-serge-lutens-eau-de-parfum-5ml-brand-specific-pouch-2026-8-1"
           }
         },
-        "column_N4wBhb": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ8_GWP_c2827cde-df7f-4001-a464-c5229cd53e6c.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-gel-tint-rouge-02-mini-size-2026-8-1"
-          }
-        },
-        "column_8MVDay": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/PJ8_GWP.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-plush-tint-holder-2026-8-1"
-          }
-        },
         "column_Cgem8P": {
           "type": "column",
           "settings": {
@@ -332,16 +291,12 @@
         }
       },
       "block_order": [
-        "column_r9BGbi",
-        "column_RJdMFm",
-        "column_zBQyGJ",
-        "column_HndRxi",
-        "column_WzdiDd",
+        "column_tk6YXX",
+        "column_8R6VeL",
+        "column_4Yqtyg",
         "column_yEgYRk",
         "column_mgYxnD",
         "column_w3yLTk",
-        "column_N4wBhb",
-        "column_8MVDay",
         "column_Cgem8P"
       ],
       "settings": {

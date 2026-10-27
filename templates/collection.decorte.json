@@ -20,17 +20,62 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-decorte",
       "blocks": {
-        "slide_3e4EPF": {
+        "slide_MJ8njA": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/24LIPO_serum_online_boutique_PC.jpg",
-            "image_sp": "shopify://shop_images/24LIPO_serum_online_boutique_PC.jpg",
-            "link": "https://online.sukiya.biz/products/decorte-liploid-advanced-repair-serum"
+            "image": "shopify://shop_images/6JFZZX_AQ_Coffret_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JFZZX_AQ_Coffret_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-aq-radiance-coffret-iii-2026-11-16"
+          }
+        },
+        "slide_k7fExW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZX_AQ__Coffret_banner_PC-18.jpg",
+            "image_sp": "shopify://shop_images/6JFZZX_AQ__Coffret_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-aq-bright-radiance-coffret-iii-2026-11-16"
+          }
+        },
+        "slide_B7PtXt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZF_LIPO__PPR26_mori_banner_PC-17.jpg",
+            "image_sp": "shopify://shop_images/6JFZZF_LIPO__PPR26_mori_banner_SP-17.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-liposome-advanced-repair-serum-purple-ribbon-set-2026-2026-11-1"
+          }
+        },
+        "slide_AhNCNE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZF_LIPO__PPR26_mori_banner_PC-18.jpg",
+            "image_sp": "shopify://shop_images/6JFZZF_LIPO__PPR26_mori_banner_SP-18.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-liposome-advanced-repair-cream-purple-ribbon-set-2026-2026-11-1"
+          }
+        },
+        "slide_Ayb8xC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZU_Advent_calendar_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JFZZU_Advent_calendar_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-advent-calendar-2026-2026-10-28"
+          }
+        },
+        "slide_fTWwQC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZW_MakeCoffret_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JFZZW_MakeCoffret_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-makeup-collection-2026-alice-in-decorte-wonderland-2026-10-28"
           }
         }
       },
       "block_order": [
-        "slide_3e4EPF"
+        "slide_MJ8njA",
+        "slide_k7fExW",
+        "slide_B7PtXt",
+        "slide_AhNCNE",
+        "slide_Ayb8xC",
+        "slide_fTWwQC"
       ],
       "settings": {}
     },
