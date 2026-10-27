@@ -92,15 +92,6 @@
             "image_sp": "shopify://shop_images/KA_slide_sp.jpg",
             "link": "shopify://collections/kanebo"
           }
-        },
-        "09e6a20b-5b0f-4d1a-8e8d-35d867d49fae": {
-          "type": "slide",
-          "settings": {
-            "title": "セルジュ・ルタンス",
-            "image": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_1.618x1.jpg",
-            "image_sp": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_828x1242_d9c1bf42-16c0-4beb-8c38-17cd2ee28cb5.jpg",
-            "link": "shopify://collections/serge-lutens"
-          }
         }
       },
       "block_order": [
@@ -112,8 +103,7 @@
         "df7f0c5b-43ad-426d-aae8-11c72a9455ed",
         "88f8f653-ead8-4ae6-b7fb-c0c277520c47",
         "a1cc6b99-2ae6-47b8-b02b-6fe593d572d7",
-        "52bf3442-8879-4745-833f-93a39618b6aa",
-        "09e6a20b-5b0f-4d1a-8e8d-35d867d49fae"
+        "52bf3442-8879-4745-833f-93a39618b6aa"
       ],
       "settings": {}
     },
