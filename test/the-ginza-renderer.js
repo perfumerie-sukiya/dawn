@@ -36,6 +36,7 @@ function createRenderer() {
     const options = Object.fromEntries(pairs);
     return `<img src="${escape(src)}" alt="${escape(options.alt || '')}" width="640" height="640" loading="${options.loading || 'lazy'}">`;
   });
+  engine.registerFilter('metafield_tag', (field) => field?.value || '');
   engine.registerFilter('money', (amount) => `¥${(amount / 100).toLocaleString('ja-JP')}`);
   engine.registerFilter('handleize', (tag) => tag.toLowerCase().replace(/\s+/g, '-'));
   engine.registerTag('paginate', {
@@ -72,7 +73,7 @@ function sectionFromTemplate(name) {
   };
 }
 
-async function renderCollection({ products = [], tags = [], listing = false, settings = {}, blocks } = {}) {
+async function renderCollection({ products = [], tags = [], listing = false, settings = {}, blocks, metafields = {} } = {}) {
   const section = sectionFromTemplate('collection.the-ginza.json');
   section.settings = { ...section.settings, ...settings };
   if (blocks) section.blocks = blocks;
@@ -81,6 +82,7 @@ async function renderCollection({ products = [], tags = [], listing = false, set
     section,
     collection: {
       url: '/collections/the-ginza',
+      metafields,
       products,
       default_sort_by: 'manual',
       sort_options: [{ name: 'おすすめ順', value: 'manual' }],

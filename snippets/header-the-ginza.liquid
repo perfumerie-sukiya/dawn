@@ -3,7 +3,6 @@
 
   @param {collection} brand_collection - Brand collection.
   @param {page} [story_page] - Story page.
-  @param {image} [logo] - Custom square brand logo.
   @param {string} [current_title] - Title of the current listing or story.
   @param {string} [active_category] - Selected category tag.
 {% enddoc %}
@@ -27,7 +26,7 @@
     {%- if brand_collection != blank -%}<a href="{{ brand_collection.url }}">{%- endif -%}
     {%- assign logo_alt = 'the_ginza.labels.brand' | t -%}
     {% render 'image-the-ginza',
-      image: logo,
+      image: brand_collection.metafields.my_fields.brand_top_logo.value,
       asset: 'the-ginza-logo.png',
       width: 2000,
       height: 2000,

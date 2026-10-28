@@ -127,9 +127,9 @@ describe('THE GINZA brand pages', () => {
     const doc = mount(
       (
         await renderCollection({
+          metafields: { custom: { the_ginza_story_page: { value: { url: '/pages/the-ginza-story' } } } },
           settings: {
             introduction: '<p>確定済み原稿</p>',
-            story_page: { url: '/pages/the-ginza-story' },
             store_title: 'スキヤ仙台店',
             store_text: '<p>確定済み店舗情報</p>',
             store_link: '/pages/stores',
@@ -140,6 +140,24 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelector('.the-ginza__introduction').textContent).toBe('確定済み原稿');
     expect(doc.querySelector('.the-ginza__about a').getAttribute('href')).toBe('/pages/the-ginza-story');
     expect(doc.querySelector('.the-ginza__store a').getAttribute('href')).toBe('/pages/stores');
+  });
+
+  it('uses collection metafields for shared branding and category content', async () => {
+    const metafields = {
+      my_fields: { brand_top_logo: { value: { src: '/files/logo.jpg' } } },
+      custom: {
+        the_ginza_story_page: { value: { url: '/pages/story' } },
+        the_ginza_category_image_skincare: { value: { src: '/files/skincare.jpg' } },
+        the_ginza_category_description_skincare: { value: '<p>スキンケアの説明</p>' },
+      },
+    };
+    const top = mount((await renderCollection({ metafields })).html);
+    expect(top.querySelector('.the-ginza__logo img').getAttribute('src')).toBe('/files/logo.jpg');
+    expect(top.querySelector('.the-ginza__categories img').getAttribute('src')).toBe('/files/skincare.jpg');
+    expect(top.querySelector('.the-ginza__navigation a[href="/pages/story"]')).not.toBeNull();
+    const listing = mount((await renderCollection({ metafields, tags: ['スキンケア'] })).html);
+    expect(listing.querySelector('.the-ginza__category-banner img').getAttribute('src')).toBe('/files/skincare.jpg');
+    expect(listing.querySelector('.the-ginza__category-banner p').textContent).toBe('スキンケアの説明');
   });
 
   it('provides the five tag routes and a separate all-products route', async () => {

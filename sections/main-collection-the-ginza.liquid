@@ -2,6 +2,7 @@
 {%- liquid
   assign category_keys = 'skincare,protection,body,fragrance,sets' | split: ','
   assign category_tags = 'スキンケア,プロテクション,ボディ,フレグランス,セット・その他' | split: ','
+  assign story_page = collection.metafields.custom.the_ginza_story_page.value
   assign selected_tag = current_tags | first
   assign listing_title = ''
   assign show_listing = false
@@ -16,8 +17,7 @@
 <div class="the-ginza page-width">
   {% render 'header-the-ginza',
     brand_collection: collection,
-    story_page: section.settings.story_page,
-    logo: section.settings.logo,
+    story_page: story_page,
     current_title: listing_title,
     active_category: selected_tag
   %}
@@ -36,13 +36,15 @@
         {%- assign has_category_banner = true -%}
         {%- assign category_translation = 'the_ginza.categories.' | append: block.settings.key -%}
         {%- assign category_title = category_translation | t -%}
+        {%- assign image_key = block.settings.key | prepend: 'the_ginza_category_image_' -%}
+        {%- assign description_key = block.settings.key | prepend: 'the_ginza_category_description_' -%}
         <div class="the-ginza__category-banner" {{ block.shopify_attributes }}>
           <div>
             <h1>{{ category_title }}</h1>
-            {{ block.settings.description }}
+            {{ collection.metafields.custom[description_key] | metafield_tag }}
           </div>
           {% render 'image-the-ginza',
-            image: block.settings.image,
+            image: collection.metafields.custom[image_key].value,
             asset: block.settings.asset,
             width: 1080,
             height: 1080,
@@ -199,10 +201,11 @@
               {%- break -%}
             {%- endif -%}
           {%- endfor -%}
+          {%- assign image_key = block.settings.key | prepend: 'the_ginza_category_image_' -%}
           <li {{ block.shopify_attributes }}>
             <a href="{{ collection.url }}/{{ block_category_tag | handleize }}?view=the-ginza-products">
               {% render 'image-the-ginza',
-                image: block.settings.image,
+                image: collection.metafields.custom[image_key].value,
                 asset: block.settings.asset,
                 width: 1080,
                 height: 1080,
@@ -251,8 +254,8 @@
         {%- if section.settings.about_text != blank -%}
           <div class="rte">{{ section.settings.about_text }}</div>
         {%- endif -%}
-        {%- if section.settings.story_page != blank -%}
-          <a class="the-ginza__button" href="{{ section.settings.story_page.url }}">
+        {%- if story_page != blank -%}
+          <a class="the-ginza__button" href="{{ story_page.url }}">
             {{- 'the_ginza.labels.details' | t -}}
           </a>
         {%- endif -%}
@@ -270,7 +273,7 @@
   {%- endif -%}
   {% render 'mobile-menu-the-ginza',
     brand_collection: collection,
-    story_page: section.settings.story_page,
+    story_page: story_page,
     active_category: selected_tag
   %}
 </div>
@@ -284,16 +287,6 @@
     {
       "type": "paragraph",
       "content": "未確定の原稿・リンクは空欄で保留します。KVはPC・SPの採用画像が確定してから表示を有効にしてください。商品詳細は標準テンプレートを使用します。"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "正方形ロゴ"
-    },
-    {
-      "type": "page",
-      "id": "story_page",
-      "label": "ストーリーページ"
     },
     {
       "type": "checkbox",
@@ -470,16 +463,6 @@
             }
           ],
           "default": "the-ginza-category-skincare.jpg"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "画像を差し替え"
-        },
-        {
-          "type": "richtext",
-          "id": "description",
-          "label": "カテゴリ説明の確定原稿"
         }
       ]
     },
