@@ -3,7 +3,7 @@
 
   @param {product} product - Product to render.
 {% enddoc %}
-{%- if product != blank and product.vendor == 'ザ・ギンザ' -%}
+{%- if product.vendor == 'THE GINZA' or product.vendor == 'ザ・ギンザ' -%}
   <li class="the-ginza__product">
     <a href="{{ product.url }}" class="the-ginza__product-link">
       <div class="the-ginza__product-image">

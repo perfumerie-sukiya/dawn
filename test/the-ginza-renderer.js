@@ -115,7 +115,7 @@ function product(id, tags = ['スキンケア'], overrides = {}) {
   return {
     id,
     title: `商品${id}`,
-    vendor: 'ザ・ギンザ',
+    vendor: 'THE GINZA',
     price: 2200000,
     price_varies: false,
     tags,

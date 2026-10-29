@@ -69,6 +69,17 @@ describe('THE GINZA brand pages', () => {
     expect(top.querySelector('.the-ginza__products--rail')).toBeNull();
   });
 
+  it('renders products with the registered vendor in listings and product selections', async () => {
+    const registered = product(1, ['スキンケア'], { vendor: 'THE GINZA' });
+    const legacy = product(2, [], { vendor: 'ザ・ギンザ' });
+    const listing = mount((await renderCollection({ products: [registered, legacy], listing: true })).html);
+    expect(listing.querySelectorAll('.the-ginza__product')).toHaveLength(2);
+    expect(listing.querySelector('a[href="/products/ginza-1"]')).not.toBeNull();
+    expect(listing.querySelector('a[href="/products/ginza-2"]')).not.toBeNull();
+    const top = mount((await renderCollection({ settings: { best_sellers: [registered] } })).html);
+    expect(top.querySelector('.the-ginza__products--rail a[href="/products/ginza-1"]')).not.toBeNull();
+  });
+
   it('keeps the selected product order and links to unchanged product pages', async () => {
     const best = [product(3), product(1), product(2), product(4)];
     const doc = mount((await renderCollection({ settings: { best_sellers: best } })).html);
