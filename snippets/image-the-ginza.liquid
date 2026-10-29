@@ -1,0 +1,97 @@
+{% doc %}
+  Renders an uploaded image or a bundled THE GINZA image without cropping.
+
+  @param {image} [image] - Image selected in the theme editor.
+  @param {string} [asset] - Bundled image filename.
+  @param {number} width - Intrinsic width of the bundled image.
+  @param {number} height - Intrinsic height of the bundled image.
+  @param {string} alt - Accessible description.
+  @param {string} [loading] - Image loading strategy.
+{% enddoc %}
+{%- liquid
+  case asset
+    when 'the-ginza-about.jpg'
+      assign width = 2100
+      assign height = 1182
+    when 'the-ginza-category-body.jpg'
+      assign width = 1080
+      assign height = 1080
+    when 'the-ginza-category-fragrance.jpg'
+      assign width = 2000
+      assign height = 2000
+    when 'the-ginza-category-protection.jpg'
+      assign width = 1080
+      assign height = 1080
+    when 'the-ginza-category-sets.jpg'
+      assign width = 2000
+      assign height = 2000
+    when 'the-ginza-category-skincare.jpg'
+      assign width = 1080
+      assign height = 1080
+    when 'the-ginza-close-up-core.jpg'
+      assign width = 2000
+      assign height = 2000
+    when 'the-ginza-close-up-linden.jpg'
+      assign width = 1080
+      assign height = 1080
+    when 'the-ginza-close-up-special.jpg'
+      assign width = 2000
+      assign height = 2000
+    when 'the-ginza-close-up-trial.jpg'
+      assign width = 2000
+      assign height = 2000
+    when 'the-ginza-core-landscape.jpg'
+      assign width = 1600
+      assign height = 670
+    when 'the-ginza-core-portrait.jpg'
+      assign width = 840
+      assign height = 1480
+    when 'the-ginza-holiday-landscape.jpg'
+      assign width = 1090
+      assign height = 750
+    when 'the-ginza-holiday-portrait.jpg'
+      assign width = 840
+      assign height = 1480
+    when 'the-ginza-holiday-square.jpg'
+      assign width = 1040
+      assign height = 1040
+    when 'the-ginza-logo.png'
+      assign width = 2000
+      assign height = 2000
+    when 'the-ginza-story-1975.jpg'
+      assign width = 580
+      assign height = 780
+    when 'the-ginza-story-2002.jpg'
+      assign width = 2376
+      assign height = 1940
+    when 'the-ginza-story-2025.jpg'
+      assign width = 1000
+      assign height = 1460
+    when 'the-ginza-story-aesthetics.jpg'
+      assign width = 2000
+      assign height = 2000
+    when 'the-ginza-story-hero.jpg'
+      assign width = 1400
+      assign height = 700
+  endcase
+-%}
+{%- assign image_loading = loading | default: 'lazy' -%}
+{%- if image != blank -%}
+  {{-
+    image
+    | image_url: width: 1600
+    | image_tag:
+      widths: '320, 480, 750, 1000, 1600',
+      sizes: '(min-width: 990px) 50vw, 100vw',
+      alt: alt,
+      loading: image_loading
+  -}}
+{%- elsif asset != blank -%}
+  <img
+    src="{{ asset | asset_url }}"
+    alt="{{ alt | escape }}"
+    width="{{ width }}"
+    height="{{ height }}"
+    loading="{{ image_loading }}"
+  >
+{%- endif -%}

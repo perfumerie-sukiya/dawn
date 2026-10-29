@@ -1,0 +1,533 @@
+{{ 'the-ginza-brand.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign category_keys = 'skincare,protection,body,fragrance,sets' | split: ','
+  assign category_tags = 'スキンケア,プロテクション,ボディ,フレグランス,セット・その他' | split: ','
+  assign story_page = collection.metafields.custom.the_ginza_story_page.value
+  assign selected_tag = current_tags | first
+  assign listing_title = ''
+  assign show_listing = false
+  if template.suffix == 'the-ginza-products' or current_tags != blank
+    assign show_listing = true
+    assign listing_title = 'the_ginza.labels.all_products' | t
+    if selected_tag != blank
+      assign listing_title = selected_tag
+    endif
+  endif
+-%}
+<div class="the-ginza page-width">
+  {% render 'header-the-ginza',
+    brand_collection: collection,
+    story_page: story_page,
+    current_title: listing_title,
+    active_category: selected_tag
+  %}
+  {%- if show_listing -%}
+    {%- assign has_category_banner = false -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type != 'category' -%}{%- continue -%}{%- endif -%}
+      {%- assign block_category_tag = '' -%}
+      {%- for category_key in category_keys -%}
+        {%- if category_key == block.settings.key -%}
+          {%- assign block_category_tag = category_tags[forloop.index0] -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if block_category_tag == selected_tag -%}
+        {%- assign has_category_banner = true -%}
+        {%- assign category_translation = 'the_ginza.categories.' | append: block.settings.key -%}
+        {%- assign category_title = category_translation | t -%}
+        {%- assign image_key = block.settings.key | prepend: 'the_ginza_category_image_' -%}
+        {%- assign description_key = block.settings.key | prepend: 'the_ginza_category_description_' -%}
+        <div class="the-ginza__category-banner" {{ block.shopify_attributes }}>
+          <div>
+            <h1>{{ category_title }}</h1>
+            {{ collection.metafields.custom[description_key] | metafield_tag }}
+          </div>
+          {% render 'image-the-ginza',
+            image: collection.metafields.custom[image_key].value,
+            asset: block.settings.asset,
+            width: 1080,
+            height: 1080,
+            alt: category_title,
+            loading: 'eager'
+          %}
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+    {%- unless has_category_banner -%}
+      <h1 class="the-ginza__heading">{{ listing_title | escape }}</h1>
+    {%- endunless -%}
+    <nav class="the-ginza__tabs" aria-label="{{ 'the_ginza.labels.categories' | t }}">
+      <a
+        href="{{ collection.url }}?view=the-ginza-products"
+        {% if current_tags == blank %}
+          aria-current="page"
+        {% endif %}
+      >
+        {{- 'the_ginza.labels.all' | t -}}
+      </a>
+      {% render 'navigation-the-ginza', brand_collection: collection, active_category: selected_tag %}
+    </nav>
+    <form method="get" class="the-ginza__sort">
+      <input type="hidden" name="view" value="the-ginza-products">
+      <label for="Sort-{{ section.id }}">{{ 'products.facets.sort_by_label' | t }}</label>
+      <select id="Sort-{{ section.id }}" name="sort_by">
+        {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+        {%- for option in collection.sort_options -%}
+          <option
+            value="{{ option.value | escape }}"
+            {% if sort_by == option.value %}
+              selected
+            {% endif %}
+          >
+            {{ option.name | escape }}
+          </option>
+        {%- endfor -%}
+      </select>
+      <button type="submit" class="the-ginza__button">{{ 'the_ginza.labels.apply' | t }}</button>
+    </form>
+    {%- paginate collection.products by 48 -%}
+      {%- capture listing -%}
+        {%- if current_tags != blank -%}
+          {%- capture cards -%}
+            {%- for product in collection.products -%}
+              {% render 'card-product-the-ginza', product: product %}
+            {%- endfor -%}
+          {%- endcapture -%}
+          {%- assign cards = cards | strip -%}
+          {%- if cards != blank -%}<ul class="the-ginza__products" role="list">{{ cards }}</ul>{%- endif -%}
+        {%- else -%}
+          {%- for listing_category in category_tags -%}
+            {%- assign listing_category_key = category_keys[forloop.index0] -%}
+            {%- capture cards -%}
+              {%- for product in collection.products -%}
+                {%- assign primary_category = '' -%}
+                {%- for category_tag in category_tags -%}
+                  {%- if product.tags contains category_tag -%}
+                    {%- assign primary_category = category_tag -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- if primary_category == listing_category -%}
+                  {% render 'card-product-the-ginza', product: product %}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endcapture -%}
+            {%- assign cards = cards | strip -%}
+            {%- if cards != blank -%}
+              <section class="the-ginza__section">
+                <h2 class="the-ginza__heading">{%- assign category_translation = 'the_ginza.categories.' | append: listing_category_key -%}{{ category_translation | t }}</h2>
+                <ul class="the-ginza__products" role="list">{{ cards }}</ul>
+              </section>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- capture unclassified_cards -%}
+            {%- for product in collection.products -%}
+              {%- assign has_category = false -%}
+              {%- for category_tag in category_tags -%}
+                {%- if product.tags contains category_tag -%}{%- assign has_category = true -%}{%- break -%}{%- endif -%}
+              {%- endfor -%}
+              {%- unless has_category -%}{% render 'card-product-the-ginza', product: product %}{%- endunless -%}
+            {%- endfor -%}
+          {%- endcapture -%}
+          {%- assign unclassified_cards = unclassified_cards | strip -%}
+          {%- if unclassified_cards != blank -%}
+            <section class="the-ginza__section">
+              <h2 class="the-ginza__heading">{{ 'the_ginza.labels.other_products' | t }}</h2>
+              <ul class="the-ginza__products" role="list">{{ unclassified_cards }}</ul>
+            </section>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endcapture -%}
+      {%- assign listing = listing | strip -%}
+      {%- if listing != blank -%}
+        {{ listing }}
+      {%- else -%}
+        <p class="the-ginza__empty">{{ 'the_ginza.labels.empty' | t }}</p>
+      {%- endif -%}
+      {%- if paginate.pages > 1 -%}{% render 'pagination', paginate: paginate %}{%- endif -%}
+    {%- endpaginate -%}
+  {%- else -%}
+    <h1 class="visually-hidden">{{ 'the_ginza.labels.brand' | t }}</h1>
+    {%- if section.settings.show_hero -%}
+      <div class="the-ginza__hero">
+        {%- if section.settings.hero_link != blank -%}<a href="{{ section.settings.hero_link }}">{%- endif -%}
+        <picture>
+          {%- if section.settings.hero_mobile != blank -%}
+            <source media="(max-width: 749px)" srcset="{{ section.settings.hero_mobile | image_url: width: 840 }}">
+          {%- else -%}
+            <source media="(max-width: 749px)" srcset="{{ section.settings.hero_mobile_asset | asset_url }}">
+          {%- endif -%}
+          {% render 'image-the-ginza',
+            image: section.settings.hero_desktop,
+            asset: section.settings.hero_desktop_asset,
+            width: 1090,
+            height: 750,
+            alt: section.settings.hero_alt,
+            loading: 'eager'
+          %}
+        </picture>
+        {%- if section.settings.hero_link != blank -%}</a>{%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.introduction != blank -%}
+      <div class="the-ginza__introduction rte">{{ section.settings.introduction }}</div>
+    {%- endif -%}
+    {%- assign best_subtitle = 'the_ginza.labels.best_seller' | t -%}
+    {%- assign new_subtitle = 'the_ginza.labels.new_arrivals' | t -%}
+    {% render 'product-rail-the-ginza',
+      products: section.settings.best_sellers,
+      title: 'BEST SELLER',
+      subtitle: best_subtitle
+    %}
+    {% render 'product-rail-the-ginza',
+      products: section.settings.new_arrivals,
+      title: 'NEW ARRIVALS',
+      subtitle: new_subtitle
+    %}
+    <section class="the-ginza__section">
+      <h2 class="the-ginza__heading">
+        CATEGORY <span>{{ 'the_ginza.labels.categories' | t }}</span>
+      </h2>
+      <ul class="the-ginza__categories" role="list">
+        {%- for block in section.blocks -%}
+          {%- if block.type != 'category' -%}{%- continue -%}{%- endif -%}
+          {%- assign category_translation = 'the_ginza.categories.' | append: block.settings.key -%}
+          {%- assign category_title = category_translation | t -%}
+          {%- assign block_category_tag = '' -%}
+          {%- for category_key in category_keys -%}
+            {%- if category_key == block.settings.key -%}
+              {%- assign block_category_tag = category_tags[forloop.index0] -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- assign image_key = block.settings.key | prepend: 'the_ginza_category_image_' -%}
+          <li {{ block.shopify_attributes }}>
+            <a href="{{ collection.url }}/{{ block_category_tag | handleize }}?view=the-ginza-products">
+              {% render 'image-the-ginza',
+                image: collection.metafields.custom[image_key].value,
+                asset: block.settings.asset,
+                width: 1080,
+                height: 1080,
+                alt: category_title
+              %}
+              <span>{{ category_title }}</span>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+      <a class="the-ginza__button the-ginza__view-all" href="{{ collection.url }}?view=the-ginza-products">
+        {{- 'the_ginza.labels.view_all' | t -}}
+      </a>
+    </section>
+    {%- capture close_up -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type != 'close_up' or block.settings.enabled == false -%}{%- continue -%}{%- endif -%}
+        <li {{ block.shopify_attributes }}>
+          {%- if block.settings.link != blank -%}<a href="{{ block.settings.link }}">{%- endif -%}
+          {% render 'image-the-ginza', image: block.settings.image, asset: block.settings.asset, width: 2000, height: 2000, alt: block.settings.title %}
+          <h3>{{ block.settings.title | escape }}</h3>
+          {%- if block.settings.copy != blank -%}<p>{{ block.settings.copy | escape }}</p>{%- endif -%}
+          {%- if block.settings.link != blank -%}</a>{%- endif -%}
+        </li>
+      {%- endfor -%}
+    {%- endcapture -%}
+    {%- assign close_up = close_up | strip -%}
+    {%- if close_up != blank -%}
+      <section class="the-ginza__section">
+        <h2 class="the-ginza__heading">CLOSE UP</h2>
+        <ul class="the-ginza__close-up" role="list">
+          {{ close_up }}
+        </ul>
+      </section>
+    {%- endif -%}
+    <section class="the-ginza__section the-ginza__about">
+      {% render 'image-the-ginza',
+        image: section.settings.about_image,
+        asset: 'the-ginza-about.jpg',
+        width: 2100,
+        height: 1182,
+        alt: 'THE GINZA'
+      %}
+      <div>
+        <h2 class="the-ginza__heading">about THE GINZA</h2>
+        {%- if section.settings.about_text != blank -%}
+          <div class="rte">{{ section.settings.about_text }}</div>
+        {%- endif -%}
+        {%- if story_page != blank -%}
+          <a class="the-ginza__button" href="{{ story_page.url }}">
+            {{- 'the_ginza.labels.details' | t -}}
+          </a>
+        {%- endif -%}
+      </div>
+    </section>
+    {%- if section.settings.store_title != blank and section.settings.store_text != blank -%}
+      <section class="the-ginza__section the-ginza__store">
+        <h2 class="the-ginza__heading">{{ section.settings.store_title | escape }}</h2>
+        <div class="rte">{{ section.settings.store_text }}</div>
+        {%- if section.settings.store_link != blank -%}
+          <a class="the-ginza__button" href="{{ section.settings.store_link }}">{{ 'the_ginza.labels.details' | t }}</a>
+        {%- endif -%}
+      </section>
+    {%- endif -%}
+  {%- endif -%}
+  {% render 'mobile-menu-the-ginza',
+    brand_collection: collection,
+    story_page: story_page,
+    active_category: selected_tag
+  %}
+</div>
+
+{% schema %}
+{
+  "name": "THE GINZA ブランド",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "未確定の原稿・リンクは空欄で保留します。KVはPC・SPの採用画像が確定してから表示を有効にしてください。商品詳細は標準テンプレートを使用します。"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_hero",
+      "label": "確定したKVを表示",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_desktop",
+      "label": "PC KVを差し替え"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_mobile",
+      "label": "SP KVを差し替え"
+    },
+    {
+      "type": "select",
+      "id": "hero_desktop_asset",
+      "label": "支給KV（PC）",
+      "options": [
+        {
+          "value": "the-ginza-holiday-square.jpg",
+          "label": "ホリデー 正方形"
+        },
+        {
+          "value": "the-ginza-holiday-landscape.jpg",
+          "label": "ホリデー 横長"
+        },
+        {
+          "value": "the-ginza-core-landscape.jpg",
+          "label": "通常期 横長"
+        }
+      ],
+      "default": "the-ginza-holiday-landscape.jpg"
+    },
+    {
+      "type": "select",
+      "id": "hero_mobile_asset",
+      "label": "支給KV（SP）",
+      "options": [
+        {
+          "value": "the-ginza-holiday-square.jpg",
+          "label": "ホリデー 正方形"
+        },
+        {
+          "value": "the-ginza-holiday-portrait.jpg",
+          "label": "ホリデー 縦長"
+        },
+        {
+          "value": "the-ginza-core-portrait.jpg",
+          "label": "通常期 縦長"
+        }
+      ],
+      "default": "the-ginza-holiday-square.jpg"
+    },
+    {
+      "type": "text",
+      "id": "hero_alt",
+      "label": "KVの代替テキスト",
+      "default": "THE GINZA"
+    },
+    {
+      "type": "url",
+      "id": "hero_link",
+      "label": "KVリンク先"
+    },
+    {
+      "type": "richtext",
+      "id": "introduction",
+      "label": "KV直下の確定紹介文"
+    },
+    {
+      "type": "product_list",
+      "id": "best_sellers",
+      "label": "BEST SELLER（表示順に選択）",
+      "limit": 4
+    },
+    {
+      "type": "product_list",
+      "id": "new_arrivals",
+      "label": "NEW ARRIVALS（表示順に選択）",
+      "limit": 4
+    },
+    {
+      "type": "image_picker",
+      "id": "about_image",
+      "label": "ブランド紹介画像を差し替え"
+    },
+    {
+      "type": "richtext",
+      "id": "about_text",
+      "label": "ブランド紹介の確定原稿"
+    },
+    {
+      "type": "text",
+      "id": "store_title",
+      "label": "店舗案内の見出し"
+    },
+    {
+      "type": "richtext",
+      "id": "store_text",
+      "label": "店舗案内の確定原稿"
+    },
+    {
+      "type": "url",
+      "id": "store_link",
+      "label": "店舗案内リンク"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "カテゴリ",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "select",
+          "id": "key",
+          "label": "カテゴリ",
+          "options": [
+            {
+              "value": "skincare",
+              "label": "スキンケア"
+            },
+            {
+              "value": "protection",
+              "label": "プロテクション"
+            },
+            {
+              "value": "body",
+              "label": "ボディ"
+            },
+            {
+              "value": "fragrance",
+              "label": "フレグランス"
+            },
+            {
+              "value": "sets",
+              "label": "セット・その他"
+            }
+          ],
+          "default": "skincare"
+        },
+        {
+          "type": "paragraph",
+          "content": "商品タグは選択したカテゴリと同じ固定名称を使います（スキンケア／プロテクション／ボディ／フレグランス／セット・その他）。"
+        },
+        {
+          "type": "select",
+          "id": "asset",
+          "label": "支給画像",
+          "options": [
+            {
+              "value": "the-ginza-category-skincare.jpg",
+              "label": "スキンケア"
+            },
+            {
+              "value": "the-ginza-category-protection.jpg",
+              "label": "プロテクション"
+            },
+            {
+              "value": "the-ginza-category-body.jpg",
+              "label": "ボディ"
+            },
+            {
+              "value": "the-ginza-category-fragrance.jpg",
+              "label": "フレグランス"
+            },
+            {
+              "value": "the-ginza-category-sets.jpg",
+              "label": "セット・その他"
+            }
+          ],
+          "default": "the-ginza-category-skincare.jpg"
+        }
+      ]
+    },
+    {
+      "type": "close_up",
+      "name": "CLOSE UP",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enabled",
+          "label": "表示する",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "見出し"
+        },
+        {
+          "type": "text",
+          "id": "copy",
+          "label": "確定コピー"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "確定したリンク先"
+        },
+        {
+          "type": "select",
+          "id": "asset",
+          "label": "支給画像",
+          "options": [
+            {
+              "value": "the-ginza-close-up-core.jpg",
+              "label": "コアエッセンスケア"
+            },
+            {
+              "value": "the-ginza-close-up-linden.jpg",
+              "label": "リンデンアロマ"
+            },
+            {
+              "value": "the-ginza-close-up-trial.jpg",
+              "label": "はじめての方へ"
+            },
+            {
+              "value": "the-ginza-close-up-special.jpg",
+              "label": "スペシャルケア"
+            }
+          ],
+          "default": "the-ginza-close-up-core.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像を差し替え"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "THE GINZA ブランド"
+    }
+  ]
+}
+{% endschema %}

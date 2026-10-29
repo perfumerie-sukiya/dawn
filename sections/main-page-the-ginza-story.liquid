@@ -1,0 +1,149 @@
+{{ 'the-ginza-brand.css' | asset_url | stylesheet_tag }}
+{%- assign brand_collection = section.settings.brand_collection -%}
+{%- assign story_title = 'the_ginza.labels.story' | t -%}
+<div class="the-ginza page-width">
+  {% render 'header-the-ginza',
+    brand_collection: brand_collection,
+    story_page: page,
+    current_title: story_title
+  %}
+  <article class="the-ginza__story">
+    <header class="the-ginza__story-hero">
+      {% render 'image-the-ginza',
+        image: section.settings.hero,
+        asset: 'the-ginza-story-hero.jpg',
+        width: 1400,
+        height: 700,
+        alt: 'THE GINZA',
+        loading: 'eager'
+      %}
+      <h1>SINCE1975</h1>
+    </header>
+    {%- for block in section.blocks -%}
+      <section
+        class="the-ginza__chapter{% if block.settings.year == blank and block.settings.title == blank and block.settings.body == blank %} the-ginza__chapter--image-only{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        {% render 'image-the-ginza',
+          image: block.settings.image,
+          asset: block.settings.asset,
+          width: 1000,
+          height: 1000,
+          alt: block.settings.title
+        %}
+        {%- if block.settings.year != blank or block.settings.title != blank or block.settings.body != blank -%}
+          <div>
+            {%- if block.settings.year != blank -%}
+              <p class="the-ginza__year">{{ block.settings.year | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.title != blank -%}
+              <h2>{{ block.settings.title | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.body != blank -%}
+              <div class="rte">{{ block.settings.body }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </section>
+    {%- endfor -%}
+    {%- assign products_title = 'the_ginza.labels.products' | t -%}
+    {% render 'product-rail-the-ginza', products: section.settings.products, title: products_title, subtitle: '' %}
+    {%- if brand_collection != blank -%}
+      <nav class="the-ginza__story-links" aria-label="{{ 'the_ginza.labels.brand' | t }}">
+        <a class="the-ginza__button" href="{{ brand_collection.url }}?view=the-ginza-products">
+          {{- 'the_ginza.labels.view_all' | t -}}
+        </a>
+        <a class="the-ginza__button" href="{{ brand_collection.url }}">{{ 'the_ginza.labels.back_to_brand' | t }}</a>
+      </nav>
+    {%- endif -%}
+  </article>
+  {% render 'mobile-menu-the-ginza', brand_collection: brand_collection, story_page: page %}
+</div>
+
+{% schema %}
+{
+  "name": "THE GINZA ストーリー",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "確定した全文のみ各章の本文に設定してください。未確定原稿・動画・スクロール演出は保留し、支給静止画を使用します。"
+    },
+    {
+      "type": "collection",
+      "id": "brand_collection",
+      "label": "THE GINZAコレクション"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero",
+      "label": "KVを差し替え"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "コアエッセンスケア3品",
+      "limit": 3
+    }
+  ],
+  "blocks": [
+    {
+      "type": "chapter",
+      "name": "ストーリーの章",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "year",
+          "label": "年"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "確定した見出し"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "確定した本文"
+        },
+        {
+          "type": "select",
+          "id": "asset",
+          "label": "支給画像",
+          "options": [
+            {
+              "value": "the-ginza-story-1975.jpg",
+              "label": "1975"
+            },
+            {
+              "value": "the-ginza-story-2002.jpg",
+              "label": "2002"
+            },
+            {
+              "value": "the-ginza-story-aesthetics.jpg",
+              "label": "aesthetics"
+            },
+            {
+              "value": "the-ginza-story-2025.jpg",
+              "label": "2025"
+            }
+          ],
+          "default": "the-ginza-story-1975.jpg"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像を差し替え"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "THE GINZA ストーリー"
+    }
+  ]
+}
+{% endschema %}
