@@ -1,3 +1,6 @@
+{%- if product.vendor == 'ザ・ギンザ' or product.vendor == 'THE GINZA' -%}
+  {% render 'related-products-the-ginza', product: product, section: section %}
+{%- else -%}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
@@ -53,6 +56,8 @@
     {% render 'mask-arch' %}
   {%- endif -%}
 </div>
+
+{%- endif -%}
 
 {% schema %}
 {

@@ -152,7 +152,9 @@
                 </div>
               {%- when 'price' -%}
                 {%- assign show_price_badges = true -%}
-                {%- if template.suffix == 'the-ginza' -%}{%- assign show_price_badges = false -%}{%- endif -%}
+                {%- if product.vendor == 'ザ・ギンザ' or product.vendor == 'THE GINZA' -%}
+                  {%- assign show_price_badges = false -%}
+                {%- endif -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
                       product: product,
