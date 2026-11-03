@@ -8,38 +8,26 @@ function mount(html) {
 }
 
 describe('THE GINZA brand pages', () => {
-  it('uses brand-selected related products only for THE GINZA and preserves standard recommendations for other brands', async () => {
+  it('shows standard recommendations for THE GINZA only when manually selected products are enabled', async () => {
     const source = fs.readFileSync(path.join(__dirname, '../sections/related-products.liquid'), 'utf8')
       .replace(/{% schema %}[\s\S]*?{% endschema %}/, '')
       .replace(/{%-? style -?%}[\s\S]*?{%-? endstyle -?%}/, '');
     const engine = createRenderer();
     const section = { id: 'related', settings: { image_shape: 'square' } };
+    const routes = { product_recommendations_url: '/recommendations/products' };
     for (const vendor of ['ザ・ギンザ', 'THE GINZA']) {
-      const current = product(1, [], { vendor, metafields: { custom: { the_ginza_related_products: { value: [product(2)] } } } });
-      const doc = mount(await engine.parseAndRender(source, { product: current, section }));
-      expect(doc.querySelector('.the-ginza__product-link').getAttribute('href')).toBe('/products/ginza-2');
-      expect(doc.querySelector('product-recommendations')).toBeNull();
+      for (const setting of [undefined, 'ahead', 'only manual']) {
+        const current = product(1, [], { vendor, metafields: {
+          'shopify--discovery--product_recommendation': { related_products_display: { value: setting } },
+        } });
+        const doc = mount(await engine.parseAndRender(source, { product: current, section, routes }));
+        expect(Boolean(doc.querySelector('product-recommendations'))).toBe(setting === 'only manual');
+      }
     }
     const doc = mount(await engine.parseAndRender(source, {
-      product: product(3, [], { vendor: '別ブランド' }), section, routes: { product_recommendations_url: '/recommendations/products' },
+      product: product(3, [], { vendor: '別ブランド' }), section, routes,
     }));
     expect(doc.querySelector('product-recommendations')).not.toBeNull();
-    expect(doc.querySelector('.the-ginza__product')).toBeNull();
-  });
-
-  it('shows only selected THE GINZA related products and excludes the current product', async () => {
-    const source = fs.readFileSync(path.join(__dirname, '../snippets/related-products-the-ginza.liquid'), 'utf8')
-      .replace(/{% schema %}[\s\S]*?{% endschema %}/, '');
-    const current = product(1);
-    current.metafields = { custom: { the_ginza_related_products: { value: [
-      current, product(2, [], { vendor: 'ザ・ギンザ' }), product(3, [], { vendor: '別ブランド' }),
-    ] } } };
-    const doc = mount(await createRenderer().parseAndRender(source, { product: current, section: { id: 'related' } }));
-    expect(doc.querySelectorAll('.the-ginza__product')).toHaveLength(1);
-    expect(doc.querySelector('.the-ginza__product-link').getAttribute('href')).toBe('/products/ginza-2');
-    current.metafields.custom.the_ginza_related_products.value = [];
-    const empty = mount(await createRenderer().parseAndRender(source, { product: current, section: { id: 'related' } }));
-    expect(empty.querySelector('.the-ginza__section')).toBeNull();
   });
 
   it('groups all 33 products under five category headings without truncation', async () => {
