@@ -57,17 +57,6 @@
     {%- unless has_category_banner -%}
       <h1 class="the-ginza__heading">{{ listing_title | escape }}</h1>
     {%- endunless -%}
-    <nav class="the-ginza__tabs" aria-label="{{ 'the_ginza.labels.categories' | t }}">
-      <a
-        href="{{ collection.url }}?view=the-ginza-products"
-        {% if current_tags == blank %}
-          aria-current="page"
-        {% endif %}
-      >
-        {{- 'the_ginza.labels.all' | t -}}
-      </a>
-      {% render 'navigation-the-ginza', brand_collection: collection, active_category: selected_tag %}
-    </nav>
     <form method="get" class="the-ginza__sort">
       <input type="hidden" name="view" value="the-ginza-products">
       <label for="Sort-{{ section.id }}">{{ 'products.facets.sort_by_label' | t }}</label>
