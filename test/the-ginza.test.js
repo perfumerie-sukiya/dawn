@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const { renderCollection, renderStory, product, createRenderer, sectionFromTemplate } = require('./the-ginza-renderer');
 
 function mount(html) {
@@ -6,6 +8,28 @@ function mount(html) {
 }
 
 describe('THE GINZA brand pages', () => {
+  it('shows standard recommendations for THE GINZA only when manually selected products are enabled', async () => {
+    const source = fs.readFileSync(path.join(__dirname, '../sections/related-products.liquid'), 'utf8')
+      .replace(/{% schema %}[\s\S]*?{% endschema %}/, '')
+      .replace(/{%-? style -?%}[\s\S]*?{%-? endstyle -?%}/, '');
+    const engine = createRenderer();
+    const section = { id: 'related', settings: { image_shape: 'square' } };
+    const routes = { product_recommendations_url: '/recommendations/products' };
+    for (const vendor of ['ザ・ギンザ', 'THE GINZA']) {
+      for (const setting of [undefined, 'ahead', 'only manual']) {
+        const current = product(1, [], { vendor, metafields: {
+          'shopify--discovery--product_recommendation': { related_products_display: { value: setting } },
+        } });
+        const doc = mount(await engine.parseAndRender(source, { product: current, section, routes }));
+        expect(Boolean(doc.querySelector('product-recommendations'))).toBe(setting === 'only manual');
+      }
+    }
+    const doc = mount(await engine.parseAndRender(source, {
+      product: product(3, [], { vendor: '別ブランド' }), section, routes,
+    }));
+    expect(doc.querySelector('product-recommendations')).not.toBeNull();
+  });
+
   it('groups all 33 products under five category headings without truncation', async () => {
     const tags = ['スキンケア', 'プロテクション', 'ボディ', 'フレグランス', 'セット・その他'];
     const counts = [18, 3, 4, 2, 6];

@@ -276,6 +276,12 @@
     font-size: 26px;
     letter-spacing: 0.12em;
 }
+.the-ginza__story-hero h1 span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: normal;
+}
 .the-ginza__chapter {
     display: grid;
     grid-template-columns: 1fr 1fr;
