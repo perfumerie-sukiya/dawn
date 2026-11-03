@@ -57,6 +57,11 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelector('.the-ginza__category-banner img').getAttribute('src')).toContain('category-protection');
     expect(doc.querySelector('.the-ginza__close-up')).toBeNull();
     expect(doc.querySelector('.the-ginza__sort input[name="view"]').value).toBe('the-ginza-products');
+    expect(doc.querySelector('.the-ginza__tabs')).toBeNull();
+    expect(doc.querySelector('.the-ginza__desktop-menu .the-ginza__navigation')).not.toBeNull();
+    expect(doc.querySelector('.the-ginza__mobile-menu .the-ginza__navigation')).not.toBeNull();
+    expect(doc.querySelector('.the-ginza__sort select[name="sort_by"]')).not.toBeNull();
+    expect(doc.querySelector('.the-ginza__sort button[type="submit"]')).not.toBeNull();
     expect(doc.querySelector('.the-ginza__navigation a[aria-current="page"]').textContent).toBe('プロテクション');
   });
 
