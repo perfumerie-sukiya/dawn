@@ -151,11 +151,13 @@
                   </a>
                 </div>
               {%- when 'price' -%}
+                {%- assign show_price_badges = true -%}
+                {%- if template.suffix == 'the-ginza' -%}{%- assign show_price_badges = false -%}{%- endif -%}
                 <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
                       product: product,
                       use_variant: true,
-                      show_badges: true,
+                      show_badges: show_price_badges,
                       price_class: 'price--large'
                   -%}
                 </div>

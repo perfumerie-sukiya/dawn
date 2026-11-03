@@ -1,0 +1,26 @@
+{{ 'the-ginza-brand.css' | asset_url | stylesheet_tag }}
+{%- capture product_cards -%}
+  {%- for related_product in product.metafields.custom.the_ginza_related_products.value limit: 10 -%}
+    {%- if related_product.id != product.id -%}
+      {%- if related_product.vendor == 'ザ・ギンザ' or related_product.vendor == 'THE GINZA' -%}
+        {% render 'card-product-the-ginza', product: related_product %}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign product_cards = product_cards | strip -%}
+{%- if product_cards != blank -%}
+  <section class="the-ginza page-width" aria-labelledby="TheGinzaRelated-{{ section.id }}">
+    <div class="the-ginza__section">
+      <h2 class="the-ginza__heading" id="TheGinzaRelated-{{ section.id }}">関連商品</h2>
+      <ul class="the-ginza__products the-ginza__products--rail" role="list">{{ product_cards }}</ul>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "THE GINZA 関連商品",
+  "settings": []
+}
+{% endschema %}

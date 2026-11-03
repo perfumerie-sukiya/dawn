@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const { renderCollection, renderStory, product, createRenderer, sectionFromTemplate } = require('./the-ginza-renderer');
 
 function mount(html) {
@@ -6,6 +8,21 @@ function mount(html) {
 }
 
 describe('THE GINZA brand pages', () => {
+  it('shows only selected THE GINZA related products and excludes the current product', async () => {
+    const source = fs.readFileSync(path.join(__dirname, '../sections/related-products-the-ginza.liquid'), 'utf8')
+      .replace(/{% schema %}[\s\S]*?{% endschema %}/, '');
+    const current = product(1);
+    current.metafields = { custom: { the_ginza_related_products: { value: [
+      current, product(2, [], { vendor: 'ザ・ギンザ' }), product(3, [], { vendor: '別ブランド' }),
+    ] } } };
+    const doc = mount(await createRenderer().parseAndRender(source, { product: current, section: { id: 'related' } }));
+    expect(doc.querySelectorAll('.the-ginza__product')).toHaveLength(1);
+    expect(doc.querySelector('.the-ginza__product-link').getAttribute('href')).toBe('/products/ginza-2');
+    current.metafields.custom.the_ginza_related_products.value = [];
+    const empty = mount(await createRenderer().parseAndRender(source, { product: current, section: { id: 'related' } }));
+    expect(empty.querySelector('.the-ginza__section')).toBeNull();
+  });
+
   it('groups all 33 products under five category headings without truncation', async () => {
     const tags = ['スキンケア', 'プロテクション', 'ボディ', 'フレグランス', 'セット・その他'];
     const counts = [18, 3, 4, 2, 6];
