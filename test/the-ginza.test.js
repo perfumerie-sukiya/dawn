@@ -60,24 +60,21 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelector('.the-ginza__navigation a[aria-current="page"]').textContent).toBe('プロテクション');
   });
 
-  it('does not display other brands in listings or fixed product selections', async () => {
-    const other = product(9, ['スキンケア'], { vendor: '別ブランド' });
-    const listing = mount((await renderCollection({ products: [other], listing: true })).html);
-    expect(listing.querySelector('.the-ginza__product')).toBeNull();
-    expect(listing.querySelector('.the-ginza__empty')).not.toBeNull();
-    const top = mount((await renderCollection({ settings: { best_sellers: [other] } })).html);
-    expect(top.querySelector('.the-ginza__products--rail')).toBeNull();
-  });
-
-  it('renders products with the registered vendor in listings and product selections', async () => {
-    const registered = product(1, ['スキンケア'], { vendor: 'THE GINZA' });
-    const legacy = product(2, [], { vendor: 'ザ・ギンザ' });
-    const listing = mount((await renderCollection({ products: [registered, legacy], listing: true })).html);
-    expect(listing.querySelectorAll('.the-ginza__product')).toHaveLength(2);
-    expect(listing.querySelector('a[href="/products/ginza-1"]')).not.toBeNull();
-    expect(listing.querySelector('a[href="/products/ginza-2"]')).not.toBeNull();
-    const top = mount((await renderCollection({ settings: { best_sellers: [registered] } })).html);
-    expect(top.querySelector('.the-ginza__products--rail a[href="/products/ginza-1"]')).not.toBeNull();
+  it('renders every collection product regardless of its vendor', async () => {
+    const products = [
+      product(1, ['スキンケア'], { vendor: 'THE GINZA' }),
+      product(2, [], { vendor: '別ブランド' }),
+      product(3, ['ボディ'], { vendor: '' }),
+    ];
+    const listing = mount((await renderCollection({ products, listing: true })).html);
+    expect(listing.querySelectorAll('.the-ginza__product')).toHaveLength(3);
+    for (const item of products) {
+      expect(listing.querySelector(`a[href="${item.url}"]`)).not.toBeNull();
+    }
+    const category = mount((await renderCollection({ products: [products[1]], tags: ['スキンケア'] })).html);
+    expect(category.querySelector('a[href="/products/ginza-2"]')).not.toBeNull();
+    const top = mount((await renderCollection({ settings: { best_sellers: [products[1]] } })).html);
+    expect(top.querySelector('.the-ginza__products--rail a[href="/products/ginza-2"]')).not.toBeNull();
   });
 
   it('keeps the selected product order and links to unchanged product pages', async () => {
