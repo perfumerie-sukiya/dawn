@@ -89,7 +89,10 @@
                 "best_seller_collection": "the-ginza-best-seller",
                 "new_arrival_collection": "the-ginza-new-arrivals-auto",
                 "hero_desktop_asset": "the-ginza-holiday-landscape.jpg",
-                "hero_mobile_asset": "the-ginza-holiday-square.jpg"
+                "hero_mobile_asset": "the-ginza-holiday-square.jpg",
+                "hero_eyebrow": "THE GINZA HOLIDAY COLLECTION 2026",
+                "hero_title": "ホリデーコレクション",
+                "hero_caption": "10月1日発売　数量限定"
             }
         }
     },
