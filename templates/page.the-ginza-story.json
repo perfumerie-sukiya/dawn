@@ -7,40 +7,56 @@
                     "type": "chapter",
                     "settings": {
                         "year": "1975",
-                        "title": "",
-                        "asset": "the-ginza-story-1975.jpg"
+                        "title": "ザ・ギンザのはじまり",
+                        "asset": "the-ginza-story-1975.jpg",
+                        "body": "<p>1975年、東京・銀座にファッションブティックとして誕生。上質でミニマルな感性は、今もブランドに受け継がれています。</p>"
                     }
                 },
                 "2002": {
                     "type": "chapter",
                     "settings": {
                         "year": "2002",
-                        "title": "",
-                        "asset": "the-ginza-story-2002.jpg"
+                        "title": "スキンケアの誕生",
+                        "asset": "the-ginza-story-2002.jpg",
+                        "body": "<p>服と肌の美しさを大切にしてきたザ・ギンザは、2002年にスキンケアをスタート。一人ひとりの肌に寄り添うものづくりを続けています。</p>"
                     }
                 },
                 "aesthetics": {
                     "type": "chapter",
                     "settings": {
                         "year": "",
-                        "title": "",
-                        "asset": "the-ginza-story-aesthetics.jpg"
+                        "title": "肌をまとう美学",
+                        "asset": "the-ginza-story-aesthetics.jpg",
+                        "body": "<p>肌の状態や環境に目を向け、その人らしい美しさを追求。ハイブリッドジェルオイルをはじめとするスキンケアに、ブランドの美学を込めています。</p>"
                     }
                 },
                 "2025": {
                     "type": "chapter",
                     "settings": {
                         "year": "2025",
-                        "title": "",
-                        "asset": "the-ginza-story-2025.jpg"
+                        "title": "エッセンシャリスト・スキンケアへ",
+                        "asset": "the-ginza-story-2025.jpg",
+                        "body": "<p>本当に必要なものを選ぶ人へ。ザ・ギンザは、肌本来の健やかさと美しさを大切にするスキンケアを提案します。</p>"
                     }
                 }
             },
-            "block_order": ["1975", "2002", "aesthetics", "2025"],
+            "block_order": [
+                "1975",
+                "2002",
+                "aesthetics",
+                "2025"
+            ],
             "settings": {
-                "brand_collection": "the-ginza"
+                "brand_collection": "the-ginza",
+                "products": [
+                    "the-ginza-essence-lotion-n-2026-11-14",
+                    "the-ginza-hybrid-gel-oil-n-2026-11-14",
+                    "the-ginza-essence-emulsion-n-2026-11-14"
+                ]
             }
         }
     },
-    "order": ["main"]
+    "order": [
+        "main"
+    ]
 }

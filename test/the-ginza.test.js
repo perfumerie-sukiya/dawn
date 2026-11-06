@@ -208,15 +208,19 @@ describe('THE GINZA brand pages', () => {
     );
   });
 
-  it('renders supplied story images in order without inventing missing body copy', async () => {
-    const doc = mount(await renderStory());
+  it('renders story chapters, three selected products, and links to the collection', async () => {
+    const products = [product(1), product(2), product(3)];
+    const doc = mount(await renderStory({ products, brand_collection: { url: '/collections/the-ginza' } }));
     expect([...doc.querySelectorAll('.the-ginza__chapter img')].map((img) => img.getAttribute('src'))).toEqual([
       '/assets/the-ginza-story-1975.jpg',
       '/assets/the-ginza-story-2002.jpg',
       '/assets/the-ginza-story-aesthetics.jpg',
       '/assets/the-ginza-story-2025.jpg',
     ]);
-    expect(doc.querySelector('.the-ginza__chapter .rte')).toBeNull();
+    expect(doc.querySelectorAll('.the-ginza__chapter .rte')).toHaveLength(4);
+    expect([...doc.querySelectorAll('.the-ginza__products--rail .the-ginza__product-link')].map((a) => a.getAttribute('href'))).toEqual(products.map((p) => p.url));
+    expect(doc.querySelector('.the-ginza__story-links a[href="/collections/the-ginza?view=the-ginza-products"]')).not.toBeNull();
+    expect(doc.querySelector('.the-ginza__story-links a[href="/collections/the-ginza"]')).not.toBeNull();
     expect(doc.querySelector('a[href=""], a[href="#"]')).toBeNull();
     expect(doc.querySelector('video, iframe')).toBeNull();
   });
