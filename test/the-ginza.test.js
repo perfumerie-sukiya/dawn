@@ -123,6 +123,8 @@ describe('THE GINZA brand pages', () => {
   it('shows the holiday KV and holds undecided copy and store information', async () => {
     const doc = mount((await renderCollection()).html);
     expect(doc.querySelector('.the-ginza__hero img').getAttribute('src')).toBe('/assets/the-ginza-holiday-landscape.jpg');
+    expect(doc.querySelector('.the-ginza__hero-title').textContent).toBe('ホリデーコレクション');
+    expect(doc.querySelector('.the-ginza__hero-caption').textContent).toBe('10月1日発売　数量限定');
     expect(doc.querySelector('.the-ginza__hero source').getAttribute('srcset')).toBe('/assets/the-ginza-holiday-square.jpg');
     expect(doc.querySelector('.the-ginza__introduction')).toBeNull();
     expect(doc.querySelector('.the-ginza__store')).toBeNull();
@@ -131,7 +133,10 @@ describe('THE GINZA brand pages', () => {
     const links = [...doc.querySelectorAll('.the-ginza__close-up > li')].map((item) => item.querySelector('a')?.getAttribute('href'));
     expect(links).toEqual(['/pages/the-ginza-story#core-essence-care', '/collections/the-ginza/フレグランス?view=the-ginza-products', undefined]);
     expect(doc.querySelector('a[href=""], a[href="#"]')).toBeNull();
-    expect(doc.querySelector('.the-ginza__mobile-menu').hasAttribute('open')).toBe(false);
+    const menu = doc.querySelector('.the-ginza__mobile-menu');
+    expect(menu.hasAttribute('open')).toBe(false);
+    expect(menu.querySelector('summary')).not.toBeNull();
+    expect(menu.querySelectorAll('.the-ginza__navigation a')).toHaveLength(5);
   });
 
   it('renders approved desktop and mobile KV choices at the actual source dimensions', async () => {

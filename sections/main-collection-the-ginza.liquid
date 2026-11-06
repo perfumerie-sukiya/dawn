@@ -139,24 +139,39 @@
   {%- else -%}
     <h1 class="visually-hidden">{{ 'the_ginza.labels.brand' | t }}</h1>
     {%- if section.settings.show_hero -%}
-      <div class="the-ginza__hero">
-        {%- if section.settings.hero_link != blank -%}<a href="{{ section.settings.hero_link }}">{%- endif -%}
-        <picture>
-          {%- if section.settings.hero_mobile != blank -%}
-            <source media="(max-width: 749px)" srcset="{{ section.settings.hero_mobile | image_url: width: 840 }}">
-          {%- else -%}
-            <source media="(max-width: 749px)" srcset="{{ section.settings.hero_mobile_asset | asset_url }}">
-          {%- endif -%}
-          {% render 'image-the-ginza',
-            image: section.settings.hero_desktop,
-            asset: section.settings.hero_desktop_asset,
-            width: 1090,
-            height: 750,
-            alt: section.settings.hero_alt,
-            loading: 'eager'
-          %}
-        </picture>
-        {%- if section.settings.hero_link != blank -%}</a>{%- endif -%}
+      <div class="the-ginza__hero{% if section.settings.hero_eyebrow != blank or section.settings.hero_title != blank or section.settings.hero_caption != blank %} the-ginza__hero--with-copy{% endif %}">
+        {%- if section.settings.hero_eyebrow != blank or section.settings.hero_title != blank or section.settings.hero_caption != blank -%}
+          <div class="the-ginza__hero-copy">
+            {%- if section.settings.hero_eyebrow != blank -%}
+              <p class="the-ginza__hero-eyebrow">{{ section.settings.hero_eyebrow | escape }}</p>
+            {%- endif -%}
+            {%- if section.settings.hero_title != blank -%}
+              <h2 class="the-ginza__hero-title">{{ section.settings.hero_title | escape }}</h2>
+            {%- endif -%}
+            {%- if section.settings.hero_caption != blank -%}
+              <p class="the-ginza__hero-caption">{{ section.settings.hero_caption | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+        <div class="the-ginza__hero-media">
+          {%- if section.settings.hero_link != blank -%}<a href="{{ section.settings.hero_link }}">{%- endif -%}
+          <picture>
+            {%- if section.settings.hero_mobile != blank -%}
+              <source media="(max-width: 749px)" srcset="{{ section.settings.hero_mobile | image_url: width: 840 }}">
+            {%- else -%}
+              <source media="(max-width: 749px)" srcset="{{ section.settings.hero_mobile_asset | asset_url }}">
+            {%- endif -%}
+            {% render 'image-the-ginza',
+              image: section.settings.hero_desktop,
+              asset: section.settings.hero_desktop_asset,
+              width: 1090,
+              height: 750,
+              alt: section.settings.hero_alt,
+              loading: 'eager'
+            %}
+          </picture>
+          {%- if section.settings.hero_link != blank -%}</a>{%- endif -%}
+        </div>
       </div>
     {%- endif -%}
     {%- if section.settings.introduction != blank -%}
@@ -282,6 +297,21 @@
       "id": "show_hero",
       "label": "確定したKVを表示",
       "default": false
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "KVの英語見出し"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "KVの見出し"
+    },
+    {
+      "type": "text",
+      "id": "hero_caption",
+      "label": "KVの補足"
     },
     {
       "type": "image_picker",
