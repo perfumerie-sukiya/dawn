@@ -120,9 +120,10 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelectorAll('form[action*="cart"], .badge, .rating')).toHaveLength(0);
   });
 
-  it('holds undecided KV, copy, story links, store information and special care', async () => {
+  it('shows the holiday KV and holds undecided copy and store information', async () => {
     const doc = mount((await renderCollection()).html);
-    expect(doc.querySelector('.the-ginza__hero')).toBeNull();
+    expect(doc.querySelector('.the-ginza__hero img').getAttribute('src')).toBe('/assets/the-ginza-holiday-landscape.jpg');
+    expect(doc.querySelector('.the-ginza__hero source').getAttribute('srcset')).toBe('/assets/the-ginza-holiday-square.jpg');
     expect(doc.querySelector('.the-ginza__introduction')).toBeNull();
     expect(doc.querySelector('.the-ginza__store')).toBeNull();
     expect(doc.querySelector('.the-ginza__about a')).toBeNull();

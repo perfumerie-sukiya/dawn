@@ -85,9 +85,11 @@
                 "close_special"
             ],
             "settings": {
-                "show_hero": false,
+                "show_hero": true,
                 "best_seller_collection": "the-ginza-best-seller",
-                "new_arrival_collection": "the-ginza-new-arrivals-auto"
+                "new_arrival_collection": "the-ginza-new-arrivals-auto",
+                "hero_desktop_asset": "the-ginza-holiday-landscape.jpg",
+                "hero_mobile_asset": "the-ginza-holiday-square.jpg"
             }
         }
     },
