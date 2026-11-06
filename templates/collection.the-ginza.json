@@ -43,7 +43,8 @@
                     "settings": {
                         "title": "コアエッセンスケア",
                         "asset": "the-ginza-close-up-core.jpg",
-                        "enabled": true
+                        "enabled": true,
+                        "link": "/pages/the-ginza-story#core-essence-care"
                     }
                 },
                 "close_linden": {
@@ -51,7 +52,8 @@
                     "settings": {
                         "title": "THE GINZA リンデンアロマ",
                         "asset": "the-ginza-close-up-linden.jpg",
-                        "enabled": true
+                        "enabled": true,
+                        "link": "/collections/the-ginza/フレグランス?view=the-ginza-products"
                     }
                 },
                 "close_trial": {
@@ -87,5 +89,7 @@
             }
         }
     },
-    "order": ["main"]
+    "order": [
+        "main"
+    ]
 }

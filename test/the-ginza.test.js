@@ -124,9 +124,10 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelector('.the-ginza__hero')).toBeNull();
     expect(doc.querySelector('.the-ginza__introduction')).toBeNull();
     expect(doc.querySelector('.the-ginza__store')).toBeNull();
-    expect(doc.querySelector('a[href*="/pages/"]')).toBeNull();
+    expect(doc.querySelector('.the-ginza__about a')).toBeNull();
     expect(doc.querySelectorAll('.the-ginza__close-up > li')).toHaveLength(3);
-    expect(doc.querySelector('.the-ginza__close-up a')).toBeNull();
+    const links = [...doc.querySelectorAll('.the-ginza__close-up > li')].map((item) => item.querySelector('a')?.getAttribute('href'));
+    expect(links).toEqual(['/pages/the-ginza-story#core-essence-care', '/collections/the-ginza/フレグランス?view=the-ginza-products', undefined]);
     expect(doc.querySelector('a[href=""], a[href="#"]')).toBeNull();
     expect(doc.querySelector('.the-ginza__mobile-menu').hasAttribute('open')).toBe(false);
   });
@@ -218,6 +219,7 @@ describe('THE GINZA brand pages', () => {
       '/assets/the-ginza-story-2025.jpg',
     ]);
     expect(doc.querySelectorAll('.the-ginza__chapter .rte')).toHaveLength(4);
+    expect(doc.querySelector('#core-essence-care .the-ginza__products--rail')).not.toBeNull();
     expect([...doc.querySelectorAll('.the-ginza__products--rail .the-ginza__product-link')].map((a) => a.getAttribute('href'))).toEqual(products.map((p) => p.url));
     expect(doc.querySelector('.the-ginza__story-links a[href="/collections/the-ginza?view=the-ginza-products"]')).not.toBeNull();
     expect(doc.querySelector('.the-ginza__story-links a[href="/collections/the-ginza"]')).not.toBeNull();
