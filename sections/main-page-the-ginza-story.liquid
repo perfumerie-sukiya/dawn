@@ -47,7 +47,9 @@
       </section>
     {%- endfor -%}
     {%- assign products_title = 'the_ginza.labels.products' | t -%}
-    {% render 'product-rail-the-ginza', products: section.settings.products, title: products_title, subtitle: '' %}
+    <div id="core-essence-care">
+      {% render 'product-rail-the-ginza', products: section.settings.products, title: products_title, subtitle: '' %}
+    </div>
     {%- if brand_collection != blank -%}
       <nav class="the-ginza__story-links" aria-label="{{ 'the_ginza.labels.brand' | t }}">
         <a class="the-ginza__button" href="{{ brand_collection.url }}?view=the-ginza-products">
