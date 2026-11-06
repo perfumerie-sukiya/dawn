@@ -87,7 +87,7 @@
             "settings": {
                 "show_hero": false,
                 "best_seller_collection": "the-ginza-best-seller",
-                "new_arrival_collection": "the-ginza-new-arrivals"
+                "new_arrival_collection": "the-ginza-new-arrivals-auto"
             }
         }
     },
