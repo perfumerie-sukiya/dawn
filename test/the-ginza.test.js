@@ -102,18 +102,19 @@ describe('THE GINZA brand pages', () => {
     }
     const category = mount((await renderCollection({ products: [products[1]], tags: ['スキンケア'] })).html);
     expect(category.querySelector('a[href="/products/ginza-2"]')).not.toBeNull();
-    const top = mount((await renderCollection({ settings: { best_sellers: [products[1]] } })).html);
+    const top = mount((await renderCollection({ settings: { best_seller_collection: { products: [products[1]] } } })).html);
     expect(top.querySelector('.the-ginza__products--rail a[href="/products/ginza-2"]')).not.toBeNull();
   });
 
-  it('keeps the selected product order and links to unchanged product pages', async () => {
+  it('renders up to four products from each selected collection in collection order', async () => {
     const best = [product(3), product(1), product(2), product(4)];
-    const doc = mount((await renderCollection({ settings: { best_sellers: best } })).html);
+    const arrivals = [product(6), product(5)];
+    const doc = mount((await renderCollection({ settings: { best_seller_collection: { products: [...best, product(7)] }, new_arrival_collection: { products: arrivals } } })).html);
     expect(
       [...doc.querySelectorAll('.the-ginza__products--rail .the-ginza__product-link')].map((a) =>
         a.getAttribute('href'),
       ),
-    ).toEqual(best.map((p) => p.url));
+    ).toEqual([...best, ...arrivals].map((p) => p.url));
     expect(doc.querySelector('.the-ginza__price').textContent).toContain('¥22,000');
     expect(doc.querySelector('.the-ginza__price').textContent).toContain('税込');
     expect(doc.querySelectorAll('form[action*="cart"], .badge, .rating')).toHaveLength(0);
