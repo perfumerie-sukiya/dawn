@@ -165,12 +165,12 @@
     {%- assign best_subtitle = 'the_ginza.labels.best_seller' | t -%}
     {%- assign new_subtitle = 'the_ginza.labels.new_arrivals' | t -%}
     {% render 'product-rail-the-ginza',
-      products: section.settings.best_sellers,
+      products: section.settings.best_seller_collection.products,
       title: 'BEST SELLER',
       subtitle: best_subtitle
     %}
     {% render 'product-rail-the-ginza',
-      products: section.settings.new_arrivals,
+      products: section.settings.new_arrival_collection.products,
       title: 'NEW ARRIVALS',
       subtitle: new_subtitle
     %}
@@ -350,16 +350,14 @@
       "label": "KV直下の確定紹介文"
     },
     {
-      "type": "product_list",
-      "id": "best_sellers",
-      "label": "BEST SELLER（表示順に選択）",
-      "limit": 4
+      "type": "collection",
+      "id": "best_seller_collection",
+      "label": "BEST SELLER コレクション"
     },
     {
-      "type": "product_list",
-      "id": "new_arrivals",
-      "label": "NEW ARRIVALS（表示順に選択）",
-      "limit": 4
+      "type": "collection",
+      "id": "new_arrival_collection",
+      "label": "NEW ARRIVALS コレクション"
     },
     {
       "type": "image_picker",
