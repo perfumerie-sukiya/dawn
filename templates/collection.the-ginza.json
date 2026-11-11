@@ -61,7 +61,8 @@
                     "settings": {
                         "title": "はじめての方へ",
                         "asset": "the-ginza-close-up-trial.jpg",
-                        "enabled": true
+                        "enabled": true,
+                        "link": "/collections/the-ginza-for-first-time-visitors"
                     }
                 },
                 "close_special": {
@@ -69,7 +70,8 @@
                     "settings": {
                         "title": "スペシャルケア",
                         "asset": "the-ginza-close-up-special.jpg",
-                        "enabled": true
+                        "enabled": true,
+                        "link": "/collections/the-ginza-special-care"
                     }
                 }
             },
