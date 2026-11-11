@@ -20,20 +20,26 @@ describe('THE GINZA scroll reveal', () => {
     blocks[2].getBoundingClientRect = () => ({ top: 1000 });
   });
 
-  it('leaves visible blocks alone and reveals offscreen blocks once', () => {
+  it('leaves the DOM unchanged until scrolling and reveals offscreen blocks once', () => {
     window.eval(script);
     const blocks = document.querySelector('.the-ginza').children;
+    expect(document.querySelector('.tg-reveal')).toBeNull();
+    expect(observe).not.toHaveBeenCalled();
+    window.dispatchEvent(new Event('scroll'));
     expect(blocks[0].classList.contains('tg-reveal')).toBe(false);
     expect(observe).toHaveBeenCalledTimes(2);
     expect(blocks[1].classList.contains('tg-reveal')).toBe(true);
     callback([{ target: blocks[1], isIntersecting: true }]);
     expect(blocks[1].classList.contains('tg-reveal--visible')).toBe(true);
     expect(unobserve).toHaveBeenCalledWith(blocks[1]);
+    window.dispatchEvent(new Event('scroll'));
+    expect(observe).toHaveBeenCalledTimes(2);
   });
 
   it('leaves content visible when reduced motion is requested or IntersectionObserver is unavailable', () => {
     window.matchMedia = jest.fn(() => ({ matches: true }));
     window.eval(script);
+    window.dispatchEvent(new Event('scroll'));
     expect(observe).not.toHaveBeenCalled();
     delete window.IntersectionObserver;
     window.eval(script);
