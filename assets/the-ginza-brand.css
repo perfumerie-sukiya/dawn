@@ -490,3 +490,16 @@
         margin-top: 48px;
     }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .the-ginza > .tg-reveal {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .the-ginza > .tg-reveal.tg-reveal--visible {
+    opacity: 1;
+    transform: none;
+  }
+}

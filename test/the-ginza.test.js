@@ -120,18 +120,21 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelectorAll('form[action*="cart"], .badge, .rating')).toHaveLength(0);
   });
 
-  it('shows the holiday KV and holds undecided copy and store information', async () => {
+  it('shows the holiday KV, approved copy and four close-up blocks', async () => {
     const doc = mount((await renderCollection()).html);
     expect(doc.querySelector('.the-ginza__hero img').getAttribute('src')).toBe('/assets/the-ginza-holiday-landscape.jpg');
     expect(doc.querySelector('.the-ginza__hero-title').textContent).toBe('ホリデーコレクション');
     expect(doc.querySelector('.the-ginza__hero-caption').textContent).toBe('10月1日発売　数量限定');
     expect(doc.querySelector('.the-ginza__hero source').getAttribute('srcset')).toBe('/assets/the-ginza-holiday-square.jpg');
-    expect(doc.querySelector('.the-ginza__introduction')).toBeNull();
+    expect(doc.querySelector('.the-ginza__introduction').textContent).toContain('タイムレスで本質的な美しさ');
+    expect(doc.querySelector('.the-ginza__about .rte').textContent).toContain('1975年に銀座でファッションブティック');
+    expect(sectionFromTemplate('collection.the-ginza.json').settings.new_arrival_collection).toBe('the-ginza-new-arrivals');
     expect(doc.querySelector('.the-ginza__store')).toBeNull();
     expect(doc.querySelector('.the-ginza__about a')).toBeNull();
-    expect(doc.querySelectorAll('.the-ginza__close-up > li')).toHaveLength(3);
+    expect(doc.querySelectorAll('.the-ginza__close-up > li')).toHaveLength(4);
+    expect(doc.querySelector('.the-ginza__close-up > li:last-child img').getAttribute('src')).toContain('close-up-special');
     const links = [...doc.querySelectorAll('.the-ginza__close-up > li')].map((item) => item.querySelector('a')?.getAttribute('href'));
-    expect(links).toEqual(['/pages/the-ginza-story#core-essence-care', '/collections/the-ginza/フレグランス?view=the-ginza-products', undefined]);
+    expect(links).toEqual(['/pages/the-ginza-story#core-essence-care', '/collections/the-ginza/フレグランス?view=the-ginza-products', undefined, undefined]);
     expect(doc.querySelector('a[href=""], a[href="#"]')).toBeNull();
     const menu = doc.querySelector('.the-ginza__mobile-menu');
     expect(menu.hasAttribute('open')).toBe(false);
@@ -226,6 +229,8 @@ describe('THE GINZA brand pages', () => {
       '/assets/the-ginza-story-2025.jpg',
     ]);
     expect(doc.querySelectorAll('.the-ginza__chapter .rte')).toHaveLength(4);
+    expect([...doc.querySelectorAll('.the-ginza__chapter h2')].map((heading) => heading.textContent)).toEqual(['ザ・ギンザという、物語の始まり。', 'ザ・ギンザ スキンケアの誕生。', '肌は、身にまとう最高のオートクチュール。', 'エッセンシャリスト・スキンケアへ。']);
+    expect(doc.querySelectorAll('.the-ginza__chapter .rte')[3].textContent).toContain('エンパワリング グロウスキン');
     expect(doc.querySelector('#core-essence-care .the-ginza__products--rail')).not.toBeNull();
     expect([...doc.querySelectorAll('.the-ginza__products--rail .the-ginza__product-link')].map((a) => a.getAttribute('href'))).toEqual(products.map((p) => p.url));
     expect(doc.querySelector('.the-ginza__story-links a[href="/collections/the-ginza?view=the-ginza-products"]')).not.toBeNull();

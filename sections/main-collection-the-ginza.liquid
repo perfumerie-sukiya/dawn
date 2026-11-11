@@ -1,4 +1,5 @@
 {{ 'the-ginza-brand.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'the-ginza-scroll-reveal.js' | asset_url }}" defer></script>
 {%- liquid
   assign category_keys = 'skincare,protection,body,fragrance,sets' | split: ','
   assign category_tags = 'スキンケア,プロテクション,ボディ,フレグランス,セット・その他' | split: ','
