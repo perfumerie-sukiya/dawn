@@ -219,6 +219,37 @@ describe('THE GINZA brand pages', () => {
     );
   });
 
+  it('renders a feature collection under its own title and links the header to the brand collection', async () => {
+    const section = sectionFromTemplate('collection.the-ginza-feature.json');
+    section.settings.brand_collection = { url: '/collections/the-ginza', metafields: {} };
+    const products = [product(3, ['セット・その他']), product(1), product(2, [])];
+    const html = await createRenderer().parseAndRender(
+      fs.readFileSync(path.join(__dirname, '../sections/main-collection-the-ginza-feature.liquid'), 'utf8')
+        .replace(/{% schema %}[\s\S]*?{% endschema %}/, ''),
+      {
+        section,
+        routes: { root_url: '/' },
+        collection: {
+          title: 'はじめての方へ',
+          url: '/collections/the-ginza-for-first-time-visitors',
+          products,
+          default_sort_by: 'manual',
+          sort_options: [{ name: 'おすすめ順', value: 'manual' }],
+        },
+        paginate: { pages: 1 },
+      },
+    );
+    const doc = mount(html);
+    expect(doc.querySelector('h1').textContent).toBe('はじめての方へ');
+    expect(doc.querySelectorAll('h2')).toHaveLength(0);
+    const links = [...doc.querySelectorAll('.the-ginza__product a')].map((a) => a.getAttribute('href'));
+    expect([...new Set(links)]).toEqual(['/products/ginza-3', '/products/ginza-1', '/products/ginza-2']);
+    expect(doc.querySelector('.the-ginza__logo a').getAttribute('href')).toBe('/collections/the-ginza');
+    expect(doc.querySelector('.the-ginza__navigation a').getAttribute('href')).toBe(
+      '/collections/the-ginza/スキンケア?view=the-ginza-products',
+    );
+  });
+
   it('renders story chapters, three selected products, and links to the collection', async () => {
     const products = [product(1), product(2), product(3)];
     const doc = mount(await renderStory({ products, brand_collection: { url: '/collections/the-ginza' } }));

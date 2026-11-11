@@ -1,0 +1,74 @@
+{{ 'the-ginza-brand.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'the-ginza-scroll-reveal.js' | asset_url }}" defer></script>
+{%- liquid
+  assign brand_collection = section.settings.brand_collection
+  if brand_collection == blank
+    assign brand_collection = collections['the-ginza']
+  endif
+  assign story_page = brand_collection.metafields.custom.the_ginza_story_page.value
+-%}
+<div class="the-ginza page-width">
+  {% render 'header-the-ginza',
+    brand_collection: brand_collection,
+    story_page: story_page,
+    current_title: collection.title
+  %}
+  <h1 class="the-ginza__heading">{{ collection.title | escape }}</h1>
+  <form method="get" class="the-ginza__sort">
+    <label for="Sort-{{ section.id }}">{{ 'products.facets.sort_by_label' | t }}</label>
+    <select id="Sort-{{ section.id }}" name="sort_by">
+      {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+      {%- for option in collection.sort_options -%}
+        <option
+          value="{{ option.value | escape }}"
+          {% if sort_by == option.value %}
+            selected
+          {% endif %}
+        >
+          {{ option.name | escape }}
+        </option>
+      {%- endfor -%}
+    </select>
+    <button type="submit" class="the-ginza__button">{{ 'the_ginza.labels.apply' | t }}</button>
+  </form>
+  {%- paginate collection.products by 48 -%}
+    {%- capture cards -%}
+      {%- for product in collection.products -%}
+        {% render 'card-product-the-ginza', product: product %}
+      {%- endfor -%}
+    {%- endcapture -%}
+    {%- assign cards = cards | strip -%}
+    {%- if cards != blank -%}
+      <ul class="the-ginza__products" role="list">{{ cards }}</ul>
+    {%- else -%}
+      <p class="the-ginza__empty">{{ 'the_ginza.labels.empty' | t }}</p>
+    {%- endif -%}
+    {%- if paginate.pages > 1 -%}{% render 'pagination', paginate: paginate %}{%- endif -%}
+  {%- endpaginate -%}
+  {% render 'mobile-menu-the-ginza', brand_collection: brand_collection, story_page: story_page %}
+</div>
+
+{% schema %}
+{
+  "name": "THE GINZA 特集一覧",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "コレクションのタイトルを見出しに、商品を掲載順のまま表示します。ヘッダーのロゴ・メニューはブランドコレクションへリンクします。"
+    },
+    {
+      "type": "collection",
+      "id": "brand_collection",
+      "label": "ブランドコレクション",
+      "info": "未設定時は the-ginza を使用します。"
+    }
+  ],
+  "presets": [
+    {
+      "name": "THE GINZA 特集一覧"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,13 @@
+{
+    "sections": {
+        "main": {
+            "type": "main-collection-the-ginza-feature",
+            "blocks": {},
+            "block_order": [],
+            "settings": {
+                "brand_collection": "the-ginza"
+            }
+        }
+    },
+    "order": ["main"]
+}
