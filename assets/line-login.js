@@ -6,6 +6,7 @@ if (skipLineLogin) {
   // スキップ時は既存のlocalStorage値を設定してLINEログイン済み状態にする
   localStorage.setItem('lineAccessToken', 'bypass');
   localStorage.setItem('isLineLogin', 'true');
+  document.dispatchEvent(new Event('line-login:connected'));
   // 成功状態のUIを表示
   document.querySelector('.line-login-success')?.classList.remove('tw-hidden');
   document.querySelector('.line-connect-success')?.classList.remove('tw-hidden');
@@ -107,6 +108,7 @@ async function verifyLineApp(access_token) {
 // スキップ処理が実行された場合は既存の検証ロジックをスキップ
 if (lineAccessToken === 'bypass') {
   console.log('LINE login bypassed - skipping verification');
+  document.dispatchEvent(new Event('line-login:connected'));
 } else if (!lineAccessToken || lineAccessToken === 'undefined' || lineAccessToken === 'true') {
   console.log('no token');
   const url = new URL(window.location.href);
@@ -120,6 +122,7 @@ if (lineAccessToken === 'bypass') {
           document.querySelector('.line-connect-success').classList.remove('tw-hidden');
           document.getElementById('open-modal').classList.add('tw-hidden');
           localStorage.setItem('isLineLogin', 'true');
+          document.dispatchEvent(new Event('line-login:connected'));
         } else {
           document.querySelector('.line-connect-required').classList.remove('tw-hidden');
           changeToDummyImage();
@@ -146,6 +149,7 @@ if (lineAccessToken === 'bypass') {
         document.querySelector('.line-connect-success').classList.remove('tw-hidden');
         document.getElementById('open-modal').classList.add('tw-hidden');
         localStorage.setItem('isLineLogin', 'true');
+        document.dispatchEvent(new Event('line-login:connected'));
       }
     })
     .catch((e) => {

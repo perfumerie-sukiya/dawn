@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-line-login",
+      "settings": { "padding_top": 28, "padding_bottom": 28 }
+    },
+    "line-login": {
+      "type": "main-collection-line-login",
+      "settings": {}
+    }
+  },
+  "order": ["main", "line-login"]
+}
