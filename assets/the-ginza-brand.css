@@ -116,7 +116,7 @@
 @media screen and (min-width: 750px) {
     .the-ginza__hero--with-copy {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-columns: minmax(0, 35fr) minmax(0, 65fr);
         align-items: center;
         gap: 32px;
     }
@@ -466,9 +466,16 @@
     .the-ginza__mobile-menu a {
         padding: 16px 8px;
     }
+    .the-ginza__story-hero img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        height: auto;
+        object-fit: cover;
+    }
     .the-ginza__story-hero h1 {
         left: 12px;
-        bottom: 12px;
+        top: 12px;
+        bottom: auto;
         font-size: 18px;
     }
     .the-ginza__chapter {
