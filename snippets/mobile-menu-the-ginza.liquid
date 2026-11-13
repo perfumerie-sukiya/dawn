@@ -1,0 +1,19 @@
+{% doc %}
+  Renders a native, initially collapsed mobile brand menu.
+
+  @param {collection} brand_collection - Brand collection.
+  @param {page} [story_page] - Published story page.
+  @param {string} [active_category] - Selected category tag.
+{% enddoc %}
+{%- if brand_collection != blank -%}
+  <details class="the-ginza__mobile-menu">
+    <summary>{{ 'the_ginza.labels.menu' | t }}</summary>
+    <nav aria-label="{{ 'the_ginza.labels.menu' | t }}">
+      {% render 'navigation-the-ginza',
+        brand_collection: brand_collection,
+        story_page: story_page,
+        active_category: active_category
+      %}
+    </nav>
+  </details>
+{%- endif -%}

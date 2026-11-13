@@ -1,3 +1,13 @@
+{%- liquid
+  assign show_related_products = true
+  if product.vendor == 'ザ・ギンザ' or product.vendor == 'THE GINZA'
+    assign recommendation_display = product.metafields['shopify--discovery--product_recommendation'].related_products_display.value
+    unless recommendation_display == 'only manual'
+      assign show_related_products = false
+    endunless
+  endif
+-%}
+{%- if show_related_products -%}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
@@ -53,6 +63,8 @@
     {% render 'mask-arch' %}
   {%- endif -%}
 </div>
+
+{%- endif -%}
 
 {% schema %}
 {
