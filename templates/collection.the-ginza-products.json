@@ -49,7 +49,7 @@
                 "close_linden": {
                     "type": "close_up",
                     "settings": {
-                        "title": "THE GINZA リンデンアロマ",
+                        "title": "フレグランス",
                         "asset": "the-ginza-close-up-linden.jpg",
                         "enabled": true
                     }
@@ -77,10 +77,10 @@
                 "body",
                 "fragrance",
                 "sets",
-                "close_core",
-                "close_linden",
                 "close_trial",
-                "close_special"
+                "close_core",
+                "close_special",
+                "close_linden"
             ],
             "settings": {
                 "show_hero": false

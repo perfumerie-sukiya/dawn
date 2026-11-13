@@ -132,9 +132,10 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelector('.the-ginza__store')).toBeNull();
     expect(doc.querySelector('.the-ginza__about a')).toBeNull();
     expect(doc.querySelectorAll('.the-ginza__close-up > li')).toHaveLength(4);
-    expect(doc.querySelector('.the-ginza__close-up > li:last-child img').getAttribute('src')).toContain('close-up-special');
+    expect(doc.querySelectorAll('.the-ginza__close-up > li')[2].querySelector('img').getAttribute('src')).toContain('close-up-special');
     const links = [...doc.querySelectorAll('.the-ginza__close-up > li')].map((item) => item.querySelector('a')?.getAttribute('href'));
-    expect(links).toEqual(['/pages/the-ginza-story#core-essence-care', '/collections/the-ginza/フレグランス?view=the-ginza-products', '/collections/the-ginza-for-first-time-visitors', '/collections/the-ginza-special-care']);
+expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages/the-ginza-story#core-essence-care', '/collections/the-ginza-special-care', '/collections/the-ginza/フレグランス?view=the-ginza-products']);
+    expect([...doc.querySelectorAll('.the-ginza__close-up h3')].map((heading) => heading.textContent)).toEqual(['はじめての方へ', 'コアエッセンスケア', 'スペシャルケア', 'フレグランス']);
     expect(doc.querySelector('a[href=""], a[href="#"]')).toBeNull();
     const menu = doc.querySelector('.the-ginza__mobile-menu');
     expect(menu.hasAttribute('open')).toBe(false);
