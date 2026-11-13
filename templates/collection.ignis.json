@@ -20,30 +20,30 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-albion",
       "blocks": {
-        "slide_UFjJ3G": {
+        "slide_ygrUfV": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ignis_4__IG_PC_1.jpg",
-            "image_file": "ignis_4__IG_PC_1.jpg",
-            "image_sp": "shopify://shop_images/ignis_4__IG_SP_1.jpg",
-            "image_sp_file": "ignis_4__IG_SP_1.jpg",
-            "link": "shopify://collections/ignis-new-items"
+            "image": "shopify://shop_images/IGNIS-Cleansing-RE_A-PC1280_640.jpg",
+            "image_file": "IGNIS-Cleansing-RE_A-PC1280_640",
+            "image_sp": "shopify://shop_images/IGNIS-Cleansing-RE_A-SP750_1008.jpg",
+            "image_sp_file": "IGNIS-Cleansing-RE_A-SP750_1008",
+            "link": "https://online.sukiya.biz/products/ignis-moist-renew-cleansing-cream-2026-4-1"
           }
         },
-        "slide_AJkpVf": {
+        "slide_eKrgt7": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/ignis_4__IG_PC_2.jpg",
-            "image_file": "ignis_4__IG_PC_2.jpg",
-            "image_sp": "shopify://shop_images/ignis_4__IG_SP_2.jpg",
-            "image_sp_file": "ignis_4__IG_SP_2.jpg",
-            "link": "shopify://products/ignis-bright-fforia-massage-and-cleansing-cream-2026-4-1"
+            "image": "shopify://shop_images/IGNIS-EFFORIA_Apc.jpg",
+            "image_file": "IGNIS-EFFORIA_Apc",
+            "image_sp": "shopify://shop_images/IGNIS-EFFORIA_Asp.jpg",
+            "image_sp_file": "IGNIS-EFFORIA_Asp",
+            "link": "https://online.sukiya.biz/products/ignis-efforia-oil-serum-2026-9-18"
           }
         }
       },
       "block_order": [
-        "slide_UFjJ3G",
-        "slide_AJkpVf"
+        "slide_ygrUfV",
+        "slide_eKrgt7"
       ],
       "settings": {}
     },

@@ -20,30 +20,52 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-albion",
       "blocks": {
-        "slide_tWFPcx": {
+        "slide_9tDPDX": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/albion_4__AL_PC_1.jpg",
-            "image_file": "albion_4__AL_PC_1.jpg",
-            "image_sp": "shopify://shop_images/albion_4__AL_SP_1.jpg",
-            "image_sp_file": "albion_4__AL_SP_1.jpg",
-            "link": "shopify://collections/al-flarune-bright"
+            "image": "shopify://shop_images/A_AL2026M_MilkModel_PC.jpg",
+            "image_file": "A_AL2026M_MilkModel_PC",
+            "image_sp": "shopify://shop_images/A_AL2026M_MilkModel_SP.jpg",
+            "image_sp_file": "A_AL2026M_MilkModel_SP",
+            "link": "https://online.sukiya.biz/products/albion-fully-refine-milk-f-em-2026-4-1"
           }
         },
-        "slide_4NPcQK": {
+        "slide_ec6CLr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/albion_4__AL_PC_2.jpg",
-            "image_file": "albion_4__AL_PC_2.jpg",
-            "image_sp": "shopify://shop_images/albion_4__AL_SP_2.jpg",
-            "image_sp_file": "albion_4__AL_SP_2.jpg",
-            "link": "shopify://products/albion-exia-sirius-starbright-serum-2026-3-17"
+            "image": "shopify://shop_images/ALBION-MilkFoundation-RE2_A-PC1280-640.jpg",
+            "image_file": "Albion_A-pc",
+            "image_sp": "shopify://shop_images/ALBION-MilkFoundation-RE2_A-SP750-1008.jpg",
+            "image_sp_file": "Albion_A-sp",
+            "link": "https://online.sukiya.biz/products/albion-studio-milk-foundation-2026-8-18"
+          }
+        },
+        "slide_9BFc3t": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Excia_A_PC.jpg",
+            "image_file": "Excia_A_PC",
+            "image_sp": "shopify://shop_images/Excia_A_SP.jpg",
+            "image_sp_file": "Excia_A_SP",
+            "link": "https://online.sukiya.biz/products/albion-excia-radiance-renew-rich-milk-e-2026-9-18"
+          }
+        },
+        "slide_qymWhp": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ExciaRouge_A_PC.jpg",
+            "image_file": "ExciaRouge_A_PC",
+            "image_sp": "shopify://shop_images/ExciaRouge_A_SP.jpg",
+            "image_sp_file": "ExciaRouge_A_SP",
+            "link": "https://online.sukiya.biz/products/albion-excia-rouge-miel-2026-9-18"
           }
         }
       },
       "block_order": [
-        "slide_tWFPcx",
-        "slide_4NPcQK"
+        "slide_9tDPDX",
+        "slide_ec6CLr",
+        "slide_9BFc3t",
+        "slide_qymWhp"
       ],
       "settings": {}
     },

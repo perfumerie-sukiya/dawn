@@ -869,8 +869,16 @@
   text-align: center;
 }
 
-.ais-page .ais-Pagination--active {
-  border-color: var(--main-color);
+.ais-page .ais-Pagination-item--selected {
+  background-color: #ccc;
+  border-color: #ccc;
+  pointer-events: none;
+}
+
+.ais-page .ais-Pagination-item--selected .ais-Pagination-link {
+  color: #fff;
+  cursor: default;
+  text-decoration: none;
 }
 
 .ais-page .ais-Pagination-item--disabled {

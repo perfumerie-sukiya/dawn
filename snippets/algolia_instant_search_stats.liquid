@@ -13,11 +13,8 @@
         <span class="ais-stats--nb-results">
           ${' '}
           ${algolia.helpers.formatNumber(data.nbHits)}
-          ${' '}
           ${algolia.translations.resultsFound}
-        </span>`}
-        ${' '}
-        ${algolia.translation_helpers.in(data.processingTimeMS)}`
+        </span>`}`
     };
   })(window.algoliaShopify);
 </script>

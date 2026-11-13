@@ -12,14 +12,22 @@
     "24868b4c-3917-47de-829e-304405793cbe": {
       "type": "top-slider",
       "blocks": {
-        "slide_pDdaJU": {
+        "slide_nnbgzr": {
           "type": "slide",
-          "name": "ALBION",
           "settings": {
-            "title": "ALBION",
-            "image": "shopify://shop_images/banner_sukiya_1618x1000_a34ac729-adb1-4fd5-9929-b2e916a7515c.jpg",
-            "image_sp": "shopify://shop_images/banner_sukiya_828x1242_c41121fd-a8af-4232-a9e3-4e84564b9a97.jpg",
-            "link": ""
+            "title": "アルビオン",
+            "image": "shopify://shop_images/ALB-MilkFd-S_PC1618_1000.jpg",
+            "image_sp": "shopify://shop_images/ALB-MilkFd-S_SP828_1242.jpg",
+            "link": "https://online.sukiya.biz/collections/albion"
+          }
+        },
+        "slide_njnFU6": {
+          "type": "slide",
+          "settings": {
+            "title": "エレガンス",
+            "image": "shopify://shop_images/ELG-Mp-S_PC1618_1000.jpg",
+            "image_sp": "shopify://shop_images/ELG-Mp-S_SP828_1242.jpg",
+            "link": "https://online.sukiya.biz/collections/elegance"
           }
         },
         "aed8695d-1c8c-4faf-90e2-f9596f48623a": {
@@ -35,7 +43,7 @@
           "type": "slide",
           "settings": {
             "title": "クレ・ド・ポー ボーテ",
-            "image": "shopify://shop_images/CPB_25SS_KeyRadianceCare.jpg",
+            "image": "shopify://shop_images/890px_550px_PC.jpg",
             "image_sp": "shopify://shop_images/SP_CPB_25AW_KRC_DigitalKV_fa05a4d8-f37f-4f9f-a326-bd58253d69dd.jpg",
             "link": "shopify://collections/cle-de-peau-beaute"
           }
@@ -53,8 +61,8 @@
           "type": "slide",
           "settings": {
             "title": "NARS",
-            "image": "shopify://shop_images/sukiya_890_550_2.png",
-            "image_sp": "shopify://shop_images/sukiya_828_1242_2604.png",
+            "image": "shopify://shop_images/Sukiya_890x550_2dbbaf49-2dc3-4130-94c6-7e5bed6d1e48.jpg",
+            "image_sp": "shopify://shop_images/Sukiya_828x1242_7962c815-af69-4c45-b734-25259deba26a.jpg",
             "link": "shopify://collections/nars"
           }
         },
@@ -62,18 +70,9 @@
           "type": "slide",
           "settings": {
             "title": "JILL STUART",
-            "image": "shopify://shop_images/transparency_A_B1_yoko_26Summer_890x550-03.jpg",
-            "image_sp": "shopify://shop_images/transparency_A_B1_26Summer_828x1242-02.jpg",
+            "image": "shopify://shop_images/transparency_A_B1_yoko_26Fall-1400_x_1000.jpg",
+            "image_sp": "shopify://shop_images/transparency_A_B1_yoko_26Fall-828_x_1242.jpg",
             "link": "shopify://collections/jillstuart"
-          }
-        },
-        "661067f2-b6f0-4de4-9ae0-f8624f2add30": {
-          "type": "slide",
-          "settings": {
-            "title": "ADDICTION",
-            "image": "shopify://shop_images/25_SUKIYA_SITE_TOP_PC_w1618h1000_26Summer.jpg",
-            "image_sp": "shopify://shop_images/26_SUKIYA_SITE_TOP_SMP_w828h1242_26Summer.jpg",
-            "link": "shopify://collections/addiction"
           }
         },
         "a1cc6b99-2ae6-47b8-b02b-6fe593d572d7": {
@@ -93,28 +92,18 @@
             "image_sp": "shopify://shop_images/KA_slide_sp.jpg",
             "link": "shopify://collections/kanebo"
           }
-        },
-        "09e6a20b-5b0f-4d1a-8e8d-35d867d49fae": {
-          "type": "slide",
-          "settings": {
-            "title": "セルジュ・ルタンス",
-            "image": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_1.618x1.jpg",
-            "image_sp": "shopify://shop_images/SL_ROYAUME_DES_LUMIERES_2025_828x1242_d9c1bf42-16c0-4beb-8c38-17cd2ee28cb5.jpg",
-            "link": "shopify://collections/serge-lutens"
-          }
         }
       },
       "block_order": [
-        "slide_pDdaJU",
+        "slide_nnbgzr",
+        "slide_njnFU6",
         "aed8695d-1c8c-4faf-90e2-f9596f48623a",
         "5614945f-e2ea-4edb-a296-37fe83d4bd86",
         "slide_brNxcD",
         "df7f0c5b-43ad-426d-aae8-11c72a9455ed",
         "88f8f653-ead8-4ae6-b7fb-c0c277520c47",
-        "661067f2-b6f0-4de4-9ae0-f8624f2add30",
         "a1cc6b99-2ae6-47b8-b02b-6fe593d572d7",
-        "52bf3442-8879-4745-833f-93a39618b6aa",
-        "09e6a20b-5b0f-4d1a-8e8d-35d867d49fae"
+        "52bf3442-8879-4745-833f-93a39618b6aa"
       ],
       "settings": {}
     },
@@ -230,129 +219,63 @@
     "be2a5f83-c59d-417a-90ef-5a1c222ec0a8": {
       "type": "multicolumn",
       "blocks": {
-        "column_dfApNw": {
+        "column_tk6YXX": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/20260701.jpg",
+            "image": "shopify://shop_images/NA20261009.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-liposome-advanced-repair-cream-10g-repair-serum-6ml-kit-2026-7-1"
+            "link": "https://online.sukiya.biz/pages/nars-original-pouch-2026-10-9"
           }
         },
-        "column_d66NT6": {
+        "column_4Yqtyg": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/PJ7_GWP_62fdf422-92ef-4fba-9f76-3a507f0782cf.jpg",
+            "image": "shopify://shop_images/SL20260928.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/paulandjoe-original-summer-tote-bag-2026-7-1"
+            "link": "https://online.sukiya.biz/pages/serge-lutens-collection-noir-5ml-brand-exclusive-pouch-2026-9-28"
           }
         },
-        "column_ajPrHK": {
+        "column_yEgYRk": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/FM20260624.jpg",
+            "image": "shopify://shop_images/JS20260821.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/frederic-mall-rose-tonnerre-eau-de-toilette-7ml-2026-6-24"
+            "link": "https://online.sukiya.biz/pages/jill-stuart-moisture-lotion-sheet-mask-1-sheet-2026-8-21"
           }
         },
-        "column_AWmHhB": {
+        "column_w3yLTk": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/NA20260619.jpg",
+            "image": "shopify://shop_images/SL20260801_4d32d5a9-43a5-4a97-b5ae-014e48edee66.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-original-color-hairpin-light-reflecting-serum-cushion-foundation-sample-18g-2026-6-19"
+            "link": "https://online.sukiya.biz/pages/store-serge-lutens-eau-de-parfum-5ml-brand-specific-pouch-2026-8-1"
           }
         },
-        "column_ePHi67": {
+        "column_Cgem8P": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/20260616.jpg",
+            "image": "shopify://shop_images/NA20260805.jpg",
             "title": "",
             "text": "",
             "link_label": "",
-            "link": "https://online.sukiya.biz/pages/decorte-youth-power-essence-lotion-9ml-2026-6-16"
-          }
-        },
-        "column_KekDbW": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SL20260601_b8fe262c-c4f1-4e4d-985d-94384bb2b7d6.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/serge-lutens-la-nuit-tombe-5ml-2026-6-1"
-          }
-        },
-        "column_8cfzAF": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SL20260601.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/serge-lutens-la-nuit-tombe-1ml-2026-6-1"
-          }
-        },
-        "column_UFHRwR": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/NA20260529.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/nars-original-fan-folding-fan-2026-5-29"
-          }
-        },
-        "column_k8Ewjb": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/AD2060522.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/addiction-blur-and-lock-primer-75g-mini-sample-2026-5-22"
-          }
-        },
-        "column_MtVgph": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SIM20260521.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/shiseido-men-uv-protector-holder-2026-5-21"
-          }
-        },
-        "column_AwYDze": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/KA202605.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/kanebo-on-skin-essence-v-15ml-2026-5-12"
+            "link": "https://online.sukiya.biz/pages/nars-natural-longwear-foundation-04788-mont-blanc-special-size-finger-puff-2026-8-5"
           }
         }
       },
       "block_order": [
-        "column_dfApNw",
-        "column_d66NT6",
-        "column_ajPrHK",
-        "column_AWmHhB",
-        "column_ePHi67",
-        "column_KekDbW",
-        "column_8cfzAF",
-        "column_UFHRwR",
-        "column_k8Ewjb",
-        "column_MtVgph",
-        "column_AwYDze"
+        "column_tk6YXX",
+        "column_4Yqtyg",
+        "column_yEgYRk",
+        "column_w3yLTk",
+        "column_Cgem8P"
       ],
       "settings": {
         "title": "Campaign　",

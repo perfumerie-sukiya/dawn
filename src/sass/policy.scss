@@ -4,26 +4,51 @@
   table {
     width: 100%;
     border-collapse: collapse;
+
+    @include mq() {
+      display: block;
+    }
+
+    @include mq-up() {
+      table-layout: auto !important;
+    }
+  }
+
+  tbody {
+    @include mq() {
+      display: block;
+    }
+  }
+
+  tr {
+    @include mq() {
+      display: block;
+      margin-bottom: 16px;
+    }
   }
 
   th, td {
     text-align: left;
 
     @include mq() {
-      display: block;
-      width: 100%;
+      display: block !important;
+      width: 100% !important;
     }
 
     @include mq-up() {
-      width: auto;
+      width: auto !important;
       border: 1px solid #ddd;
       padding: 10px 14px;
     }
   }
 
-  td {
+  th {
     @include mq() {
-      margin-bottom: 16px;
+      font-weight: bold;
+    }
+
+    @include mq-up() {
+      white-space: nowrap;
     }
   }
 }

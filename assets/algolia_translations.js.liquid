@@ -29,8 +29,8 @@
     },
 
     render_title: function(text, query){
-      if (text === 'Products' && query) {
-        return text + ' for ' + query;
+      if ((text === 'Products' || text === '商品') && query) {
+        return text + '「' + query + '」';
       }
       return text;
     }

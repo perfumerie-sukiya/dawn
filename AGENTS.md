@@ -1,39 +1,34 @@
-# Repository Guidelines
+# リポジトリの作業ガイド
 
-## Project Structure & Module Organization
-- `layout/`, `templates/`, `sections/`, `snippets/`: Shopify theme structure (Liquid + JSON templates).
-- `assets/`: compiled theme assets plus brand- and page-specific JS/CSS.
-- `src/`: source JS/Sass/Tailwind (`src/index.js`, `src/sass/`, `src/css/`).
-- `config/` and `locales/`: theme settings and translations.
-- `test/`: Jest tests (e.g., `test/line-login.test.js`).
-- `scripts/` and `docs/`: project utilities and documentation.
+## テーマの実装方針
 
-## Build, Test, and Development Commands
-- `npm run build` — build assets with Webpack (development defaults).
-- `npm run prod` — production build with optimizations.
-- `npm run watch` — rebuild on file changes.
-- `npm test` — run Jest test suite.
-- `shopify theme check` — lint Liquid/theme files via Theme Check.
-- Frontend changes must always be followed by `npm run build` before handing work back.
+- サーバー側で描画する Liquid を基本とし、HTML を中心に、必要に応じて JavaScript で機能を追加する。
+- ブランド別のテンプレート・セクション・スニペットには `*-cpb`、`*-decorte`、`*-shiseido` などの接尾辞を使う。対象ブランドの既存パターンに従う。
+- `src/` はビルド元のソース、`assets/` はビルド成果物とブランド・ページ固有の独立したアセットを含む。編集前に対象アセットの生成方法を確認する。
+- Tailwind のユーティリティには `tw-` 接頭辞を使う。書式は `.editorconfig` と `.prettierrc.json` に従う。
+- Zeno ページには `zeno-page-[ID].liquid` と関連アセットを使う。
 
-## Coding Style & Naming Conventions
-- Indentation: 4 spaces by default; 2 spaces for `.liquid`, `.js`, and `.html` (see `.editorconfig`).
-- Prettier: `printWidth` 120, single quotes in JS; Liquid uses double quotes (`.prettierrc.json`).
-- Tailwind: uses a `tw-` prefix for utilities.
-- Brand-specific files follow suffixes like `*-cpb.liquid`, `*-decorte.liquid`, `*-shiseido.liquid` and related JS (e.g., `cpb-connect.js`).
-- Zeno pages use `zeno-page-[ID].liquid` and related assets.
+## ビルド・テスト・開発コマンド
 
-## Testing Guidelines
-- Framework: Jest with `jsdom` environment.
-- Location and naming: `test/*.test.js`.
-- Expectation: add or update tests for behavior changes; no explicit coverage target defined.
+- `npm run build` — Webpack でアセットをビルドする（既定は開発用）。
+- `npm run prod` — 最適化した本番用ビルドを実行する。
+- `npm run watch` — ファイルの変更を監視して再ビルドする。
+- `npm test` — Jest のテストを実行する。
+- `shopify theme check` — Theme Check で Liquid とテーマファイルを静的検査する。
+- フロントエンドを変更した場合は、作業完了を報告する前に必ず `npm run build` を実行する。
 
-## Commit & Pull Request Guidelines
-- Commit messages are short, sentence-case, and verb-led (e.g., “Add …”, “Remove …”, “Update from Shopify …”).
-- PRs should include: a concise summary, linked issue/ticket if applicable, and screenshots for UI changes.
-- Before opening a PR, run relevant checks (`npm test`, `npm run build`, `shopify theme check`).
-- If using GitHub CLI, write PR bodies to a temp file and pass it via `gh pr create --body-file` (or `gh pr edit --body-file`), then delete the temp file.
+## 検証とプレビュー
 
-## Architecture Notes
-- Multi-brand variants are implemented via template/section/snippet variants per brand.
-- The theme favors progressive enhancement (HTML-first, JS as needed) and server-rendered Liquid.
+- 挙動を変更した場合は `test/*.test.js` のテストを追加・更新する（Jest と jsdom）。
+- PR 作成前に、上記のうち変更に関連する検証を実行する。成功後の再実行は、追加変更や失敗への対応で必要な場合に限る。
+- プレビューコマンドは現在の作業ディレクトリで、対象ストアの現在の認証設定を使って実行する。`shopify theme dev` は、そのストアの開発テーマへファイルをアップロードする。
+- ページへのテンプレート割り当ては、テーマのプレビューとは別のストア側コンテンツ変更である。許可された範囲のテストストア・ページでのみ変更する。開発テーマを使っていても、本番ページへの割り当て変更が一時的になるわけではない。
+- 単体の HTML で確認できるのは静的な見た目であり、Liquid、Shopify のデータ、ストアフロントの挙動は検証できない。成功した検証と未確認の挙動を報告する。
+- ブランドのコレクションを変更した場合は、絞り込みのないブランドトップと、タグで絞り込んだカテゴリ表示の両方を確認する。商品がないテストコレクションでは、商品が並んだ状態のグリッドは検証できない。
+- テーマアクセス用の認証情報とストアフロントのパスワードは別物である。認証に問題がある場合は、現在の `shopify theme dev --help` と対象ストアの設定を確認する。
+
+## コミットと Pull Request
+
+- コミットメッセージは短い英語で、動詞から始め、文頭を大文字にする（例：`Add …`、`Remove …`、`Update from Shopify …`）。
+- PR には簡潔な概要、該当する Issue・チケットへのリンク、UI 変更がある場合はスクリーンショットを含める。
+- GitHub CLI を使う場合は、PR 本文を一時ファイルに書き、`gh pr create --body-file` または `gh pr edit --body-file` で渡す。使用後に一時ファイルを削除する。

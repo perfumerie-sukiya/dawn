@@ -20,30 +20,41 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-albion",
       "blocks": {
-        "slide_jnaYUk": {
+        "slide_QdyPAx": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/elegance_4__EL_PC_1.jpg",
-            "image_file": "elegance_4__EL_PC_1.jpg",
-            "image_sp": "shopify://shop_images/elegance_4__EL_SP_1.jpg",
-            "image_sp_file": "elegance_4__EL_SP_1.jpg",
-            "link": "shopify://products/elegance-paris-airy-liquid-foundation-2026-2-17"
+            "image": "shopify://shop_images/PARFAIT_COULEUR_PALETTE_model_A_PC.jpg",
+            "image_file": "PARFAIT COULEUR PALETTE_model_A_PC",
+            "image_sp": "shopify://shop_images/PARFAIT_COULEUR_PALETTE_model_A_PC_A_SP.jpg",
+            "image_sp_file": "PARFAITCOULEURPALETTE_model_A_PC_A_SP",
+            "link": "https://online.sukiya.biz/products/elegance-paris-parfait-couleur-palette-2026-8-18"
           }
         },
-        "slide_jAYATw": {
+        "slide_QFaE7M": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/elegance_4__EL_PC_2.jpg",
-            "image_file": "elegance_4__EL_PC_2.jpg",
-            "image_sp": "shopify://shop_images/elegance_4__EL_SP_2.jpg",
-            "image_sp_file": "elegance_4__EL_SP_2.jpg",
-            "link": "shopify://products/elegance-paris-silky-liquid-eyes-n-2026-2-17"
+            "image": "shopify://shop_images/ELEGANCE-AiryLiquid-RE_A-PC1280_640.jpg",
+            "image_file": "Elegance-FD_Apc",
+            "image_sp": "shopify://shop_images/ELEGANCE-AiryLiquid-RE_A-SP750_1008.jpg",
+            "image_sp_file": "Elegance-FD_Asp",
+            "link": "https://online.sukiya.biz/products/elegance-paris-airy-liquid-foundation-2026-2-17"
+          }
+        },
+        "slide_XbK6fw": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/ELEGANCE-MakePalette-RE_A-PC1280_640.jpg",
+            "image_file": "Elegance-AW_Apc",
+            "image_sp": "shopify://shop_images/ELEGANCE-MakePalette-RE_A-SP750_1008.jpg",
+            "image_sp_file": "Elegance-AW_Asp",
+            "link": "https://online.sukiya.biz/products/elegance-paris-parfait-couleur-palette-2026-8-18"
           }
         }
       },
       "block_order": [
-        "slide_jnaYUk",
-        "slide_jAYATw"
+        "slide_QdyPAx",
+        "slide_QFaE7M",
+        "slide_XbK6fw"
       ],
       "settings": {}
     },
