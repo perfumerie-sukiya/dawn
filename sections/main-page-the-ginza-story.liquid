@@ -4,7 +4,7 @@
 <div class="the-ginza page-width">
   {% render 'header-the-ginza',
     brand_collection: brand_collection,
-    story_page: page,
+    story_url: page.url,
     current_title: story_title
   %}
   <article class="the-ginza__story">
@@ -59,7 +59,7 @@
       </nav>
     {%- endif -%}
   </article>
-  {% render 'mobile-menu-the-ginza', brand_collection: brand_collection, story_page: page %}
+  {% render 'mobile-menu-the-ginza', brand_collection: brand_collection, story_url: page.url %}
 </div>
 
 {% schema %}

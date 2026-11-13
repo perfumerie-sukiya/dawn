@@ -3,7 +3,6 @@
 {%- liquid
   assign category_keys = 'skincare,protection,body,fragrance,sets' | split: ','
   assign category_tags = 'スキンケア,プロテクション,ボディ,フレグランス,セット・その他' | split: ','
-  assign story_page = collection.metafields.custom.the_ginza_story_page.value
   assign selected_tag = current_tags | first
   assign listing_title = ''
   assign show_listing = false
@@ -18,7 +17,7 @@
 <div class="the-ginza page-width">
   {% render 'header-the-ginza',
     brand_collection: collection,
-    story_page: story_page,
+    story_url: section.settings.about_link,
     current_title: listing_title,
     active_category: selected_tag
   %}
@@ -259,8 +258,8 @@
         {%- if section.settings.about_text != blank -%}
           <div class="rte">{{ section.settings.about_text }}</div>
         {%- endif -%}
-        {%- if story_page != blank -%}
-          <a class="the-ginza__button" href="{{ story_page.url }}">
+        {%- if section.settings.about_link != blank -%}
+          <a class="the-ginza__button" href="{{ section.settings.about_link }}">
             {{- 'the_ginza.labels.details' | t -}}
           </a>
         {%- endif -%}
@@ -278,7 +277,7 @@
   {%- endif -%}
   {% render 'mobile-menu-the-ginza',
     brand_collection: collection,
-    story_page: story_page,
+    story_url: section.settings.about_link,
     active_category: selected_tag
   %}
 </div>
@@ -399,6 +398,12 @@
       "type": "richtext",
       "id": "about_text",
       "label": "ブランド紹介の確定原稿"
+    },
+    {
+      "type": "url",
+      "id": "about_link",
+      "label": "ストーリーページのリンク先",
+      "info": "ブランド紹介のボタンとブランドメニューで共通です。"
     },
     {
       "type": "text",
