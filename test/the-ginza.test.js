@@ -124,7 +124,8 @@ describe('THE GINZA brand pages', () => {
     const doc = mount((await renderCollection()).html);
     expect(doc.querySelector('.the-ginza__hero img').getAttribute('src')).toBe('/assets/the-ginza-holiday-landscape.jpg');
     expect(doc.querySelector('.the-ginza__hero-title').textContent).toBe('ホリデーコレクション');
-    expect(doc.querySelector('.the-ginza__hero-caption').textContent).toBe('10月1日発売　数量限定');
+    expect(doc.querySelector('.the-ginza__hero-caption').textContent).toBe('数量限定');
+    expect(doc.querySelector('.the-ginza__hero-media a').getAttribute('href')).toBe('/collections/the-ginza-holiday-collection?view=the-ginza-feature');
     expect(doc.querySelector('.the-ginza__hero source').getAttribute('srcset')).toBe('/assets/the-ginza-holiday-square.jpg');
     expect(doc.querySelector('.the-ginza__introduction').textContent).toContain('タイムレスで本質的な美しさ');
     expect(doc.querySelector('.the-ginza__about .rte').textContent).toContain('1975年に銀座でファッションブティック');
@@ -159,7 +160,7 @@ describe('THE GINZA brand pages', () => {
     expect(hero.querySelector('img').getAttribute('width')).toBe('1040');
     expect(hero.querySelector('img').getAttribute('height')).toBe('1040');
     expect(hero.querySelector('img').getAttribute('loading')).toBe('eager');
-    expect(hero.querySelector('a')).toBeNull();
+    expect(hero.querySelector('a').getAttribute('href')).toBe('/collections/the-ginza-holiday-collection?view=the-ginza-feature');
   });
 
   it('escapes product titles without changing the supplied wording', async () => {
