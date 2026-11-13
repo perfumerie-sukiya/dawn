@@ -2,7 +2,7 @@
   Renders one-level category links for THE GINZA.
 
   @param {collection} brand_collection - Collection containing THE GINZA products.
-  @param {page} [story_page] - Published story page, when available.
+  @param {string} [story_url] - Published story page, when available.
   @param {string} [active_category] - Selected category tag.
 {% enddoc %}
 {%- if brand_collection != blank -%}
@@ -24,9 +24,9 @@
         </a>
       </li>
     {%- endfor -%}
-    {%- if story_page != blank -%}
+    {%- if story_url != blank -%}
       <li>
-        <a href="{{ story_page.url }}">{{ 'the_ginza.labels.story' | t }}</a>
+        <a href="{{ story_url }}">{{ 'the_ginza.labels.story' | t }}</a>
       </li>
     {%- endif -%}
   </ul>

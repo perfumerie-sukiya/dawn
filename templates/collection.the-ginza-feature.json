@@ -12,7 +12,8 @@
     "main": {
       "type": "main-collection-the-ginza-feature",
       "settings": {
-        "brand_collection": "the-ginza"
+        "brand_collection": "the-ginza",
+        "story_url": "https://online.sukiya.biz/pages/the-ginza-story"
       }
     }
   },

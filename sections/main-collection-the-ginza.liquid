@@ -3,7 +3,6 @@
 {%- liquid
   assign category_keys = 'skincare,protection,body,fragrance,sets' | split: ','
   assign category_tags = 'スキンケア,プロテクション,ボディ,フレグランス,セット・その他' | split: ','
-  assign story_page = collection.metafields.custom.the_ginza_story_page.value
   assign selected_tag = current_tags | first
   assign listing_title = ''
   assign show_listing = false
@@ -18,7 +17,7 @@
 <div class="the-ginza page-width">
   {% render 'header-the-ginza',
     brand_collection: collection,
-    story_page: story_page,
+    story_url: section.settings.about_link,
     current_title: listing_title,
     active_category: selected_tag
   %}
@@ -278,7 +277,7 @@
   {%- endif -%}
   {% render 'mobile-menu-the-ginza',
     brand_collection: collection,
-    story_page: story_page,
+    story_url: section.settings.about_link,
     active_category: selected_tag
   %}
 </div>
@@ -403,7 +402,8 @@
     {
       "type": "url",
       "id": "about_link",
-      "label": "ブランド紹介のリンク先"
+      "label": "ストーリーページのリンク先",
+      "info": "ブランド紹介のボタンとブランドメニューで共通です。"
     },
     {
       "type": "text",
