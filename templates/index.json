@@ -184,7 +184,10 @@
     },
     "9b8922e2-5e36-4a67-acad-ca3d2ec85a82": {
       "type": "top-brand",
-      "settings": {}
+      "settings": {
+        "show_the_ginza": true,
+        "the_ginza_collection": "the-ginza"
+      }
     },
     "545aef19-2d64-404f-b8cc-d9095aebc908": {
       "type": "featured-collection",

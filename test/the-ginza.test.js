@@ -278,7 +278,7 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
       section: { settings: { show_the_ginza: false } },
       collections: {},
     });
-    expect(html).not.toContain('the-ginza-logo.png');
+    expect(html).not.toContain('the-ginza-top-logo.svg');
     const enabled = await engine.renderFile('../sections/top-brand', {
       section: {
         settings: {
@@ -289,8 +289,11 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
       collections: {},
     });
     const doc = mount(enabled);
-    const logo = doc.querySelector('img[src="/assets/the-ginza-logo.png"]');
+    const logo = doc.querySelector('img[src="/assets/the-ginza-top-logo.svg"]');
     expect(logo.closest('a').getAttribute('href')).toBe('/collections/the-ginza');
     expect(logo.classList.contains('tw-object-contain')).toBe(true);
+    const index = JSON.parse(fs.readFileSync(path.join(__dirname, '../templates/index.json'), 'utf8').replace(/^\s*\/\*[\s\S]*?\*\//, ''));
+    const brandSection = Object.values(index.sections).find((section) => section.type === 'top-brand');
+    expect(brandSection.settings).toMatchObject({ show_the_ginza: true, the_ginza_collection: 'the-ginza' });
   });
 });
