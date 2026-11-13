@@ -131,7 +131,7 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelector('.the-ginza__about .rte').textContent).toContain('1975年に銀座でファッションブティック');
     expect(sectionFromTemplate('collection.the-ginza.json').settings.new_arrival_collection).toBe('the-ginza-new-arrivals');
     expect(doc.querySelector('.the-ginza__store')).toBeNull();
-    expect(doc.querySelector('.the-ginza__about a')).toBeNull();
+    expect(doc.querySelector('.the-ginza__about a').getAttribute('href')).toBe('https://online.sukiya.biz/pages/the-ginza-story');
     expect(doc.querySelectorAll('.the-ginza__close-up > li')).toHaveLength(4);
     expect(doc.querySelectorAll('.the-ginza__close-up > li')[2].querySelector('img').getAttribute('src')).toContain('close-up-special');
     const links = [...doc.querySelectorAll('.the-ginza__close-up > li')].map((item) => item.querySelector('a')?.getAttribute('href'));
@@ -177,8 +177,8 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
     const doc = mount(
       (
         await renderCollection({
-          metafields: { custom: { the_ginza_story_page: { value: { url: '/pages/the-ginza-story' } } } },
           settings: {
+            about_link: '/pages/the-ginza-story',
             introduction: '<p>確定済み原稿</p>',
             store_title: 'スキヤ仙台店',
             store_text: '<p>確定済み店舗情報</p>',
@@ -190,6 +190,11 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
     expect(doc.querySelector('.the-ginza__introduction').textContent).toBe('確定済み原稿');
     expect(doc.querySelector('.the-ginza__about a').getAttribute('href')).toBe('/pages/the-ginza-story');
     expect(doc.querySelector('.the-ginza__store a').getAttribute('href')).toBe('/pages/stores');
+  });
+
+  it('hides the brand introduction link when no link is configured', async () => {
+    const doc = mount((await renderCollection({ settings: { about_link: '' } })).html);
+    expect(doc.querySelector('.the-ginza__about a')).toBeNull();
   });
 
   it('uses collection metafields for shared branding and category content', async () => {

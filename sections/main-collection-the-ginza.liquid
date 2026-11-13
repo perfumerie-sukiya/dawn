@@ -259,8 +259,8 @@
         {%- if section.settings.about_text != blank -%}
           <div class="rte">{{ section.settings.about_text }}</div>
         {%- endif -%}
-        {%- if story_page != blank -%}
-          <a class="the-ginza__button" href="{{ story_page.url }}">
+        {%- if section.settings.about_link != blank -%}
+          <a class="the-ginza__button" href="{{ section.settings.about_link }}">
             {{- 'the_ginza.labels.details' | t -}}
           </a>
         {%- endif -%}
@@ -399,6 +399,11 @@
       "type": "richtext",
       "id": "about_text",
       "label": "ブランド紹介の確定原稿"
+    },
+    {
+      "type": "url",
+      "id": "about_link",
+      "label": "ブランド紹介のリンク先"
     },
     {
       "type": "text",
