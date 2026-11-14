@@ -279,24 +279,11 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
     expect(doc.querySelector('video, iframe')).toBeNull();
   });
 
-  it('keeps the global brand entry disabled until its collection is selected and enabled', async () => {
-    const engine = createRenderer();
-    const html = await engine.renderFile('../sections/top-brand', {
-      section: { settings: { show_the_ginza: false } },
-      collections: {},
+  it('links the THE GINZA brand logo to its collection', async () => {
+    const html = await createRenderer().renderFile('../sections/top-brand', {
+      collections: { 'the-ginza': { url: '/collections/the-ginza' } },
     });
-    expect(html).not.toContain('the-ginza-logo.png');
-    const enabled = await engine.renderFile('../sections/top-brand', {
-      section: {
-        settings: {
-          show_the_ginza: true,
-          the_ginza_collection: { url: '/collections/the-ginza' },
-        },
-      },
-      collections: {},
-    });
-    const doc = mount(enabled);
-    const logo = doc.querySelector('img[src="/assets/the-ginza-logo.png"]');
+    const logo = mount(html).querySelector('img[src="/assets/the-ginza-top-logo.svg"]');
     expect(logo.closest('a').getAttribute('href')).toBe('/collections/the-ginza');
     expect(logo.classList.contains('tw-object-contain')).toBe(true);
   });
