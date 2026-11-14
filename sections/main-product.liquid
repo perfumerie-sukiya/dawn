@@ -2,9 +2,8 @@
   <script>
     const isLineLogin = localStorage.getItem('isLineLogin');
     console.log('isLineLogin', isLineLogin);
-    // isLineLoginが'true'ではない時は'/collections/sukiya-hukubukuro-2026'にリダイレクト
     if (isLineLogin !== 'true') {
-      window.location.href = '/collections/sukiya-hukubukuro-2026';
+      window.location.href = {{ settings.line_login_collection_path | default: '/collections/sukiya-hukubukuro-2027' | json }};
     }
   </script>
 {% endif %}

@@ -1467,6 +1467,18 @@
     ]
   },
   {
+    "name": "福袋のLINEログイン",
+    "settings": [
+      {
+        "type": "text",
+        "id": "line_login_collection_path",
+        "label": "福袋コレクションのパス",
+        "info": "LINEログイン後と未ログイン時の移動先です。LINE側のコールバックURLも同じパスに設定してください。",
+        "default": "/collections/sukiya-hukubukuro-2027"
+      }
+    ]
+  },
+  {
     "name": "送料無料金額設定",
     "settings": [
       {
