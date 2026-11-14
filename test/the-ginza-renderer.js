@@ -3,7 +3,8 @@ const path = require('path');
 const { Liquid } = require('liquidjs');
 
 const root = path.resolve(__dirname, '..');
-const translations = require('../locales/ja.json');
+const readShopifyJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\s*\/\*[\s\S]*?\*\//, ''));
+const translations = readShopifyJson(path.join(root, 'locales/ja.json'));
 const clean = (source) => source.replace(/{%-?\s*(doc|schema)\s*-?%}[\s\S]*?{%-?\s*end\1\s*-?%}/g, '');
 const escape = (value) =>
   String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -55,7 +56,7 @@ function createRenderer() {
 }
 
 function sectionFromTemplate(name) {
-  const template = JSON.parse(fs.readFileSync(path.join(root, 'templates', name), 'utf8'));
+  const template = readShopifyJson(path.join(root, 'templates', name));
   const section = template.sections.main;
   const schema = JSON.parse(
     fs
@@ -69,7 +70,7 @@ function sectionFromTemplate(name) {
   return {
     id: 'the-ginza-test',
     settings: { ...defaults, ...section.settings },
-    blocks: section.block_order.map((id) => ({ id, ...section.blocks[id] })),
+    blocks: (section.block_order || []).map((id) => ({ id, ...section.blocks[id] })),
   };
 }
 

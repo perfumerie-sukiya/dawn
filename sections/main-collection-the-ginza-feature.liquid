@@ -5,12 +5,11 @@
   if brand_collection == blank
     assign brand_collection = collections['the-ginza']
   endif
-  assign story_page = brand_collection.metafields.custom.the_ginza_story_page.value
 -%}
 <div class="the-ginza page-width">
   {% render 'header-the-ginza',
     brand_collection: brand_collection,
-    story_page: story_page,
+    story_url: section.settings.story_url,
     current_title: collection.title
   %}
   <h1 class="the-ginza__heading">{{ collection.title | escape }}</h1>
@@ -45,7 +44,7 @@
     {%- endif -%}
     {%- if paginate.pages > 1 -%}{% render 'pagination', paginate: paginate %}{%- endif -%}
   {%- endpaginate -%}
-  {% render 'mobile-menu-the-ginza', brand_collection: brand_collection, story_page: story_page %}
+  {% render 'mobile-menu-the-ginza', brand_collection: brand_collection, story_url: section.settings.story_url %}
 </div>
 
 {% schema %}
@@ -63,6 +62,11 @@
       "id": "brand_collection",
       "label": "ブランドコレクション",
       "info": "未設定時は the-ginza を使用します。"
+    },
+    {
+      "type": "url",
+      "id": "story_url",
+      "label": "ストーリーページのリンク先"
     }
   ],
   "presets": [

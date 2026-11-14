@@ -2,7 +2,7 @@
   Renders THE GINZA breadcrumbs, square logo and desktop navigation.
 
   @param {collection} brand_collection - Brand collection.
-  @param {page} [story_page] - Story page.
+  @param {string} [story_url] - Story page.
   @param {string} [current_title] - Title of the current listing or story.
   @param {string} [active_category] - Selected category tag.
 {% enddoc %}
@@ -38,7 +38,7 @@
   <nav class="the-ginza__desktop-menu" aria-label="{{ 'the_ginza.labels.menu' | t }}">
     {% render 'navigation-the-ginza',
       brand_collection: brand_collection,
-      story_page: story_page,
+      story_url: story_url,
       active_category: active_category
     %}
   </nav>

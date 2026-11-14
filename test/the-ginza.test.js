@@ -131,7 +131,7 @@ describe('THE GINZA brand pages', () => {
     expect(doc.querySelector('.the-ginza__about .rte').textContent).toContain('1975年に銀座でファッションブティック');
     expect(sectionFromTemplate('collection.the-ginza.json').settings.new_arrival_collection).toBe('the-ginza-new-arrivals');
     expect(doc.querySelector('.the-ginza__store')).toBeNull();
-    expect(doc.querySelector('.the-ginza__about a')).toBeNull();
+    expect(doc.querySelector('.the-ginza__about a').getAttribute('href')).toBe('https://online.sukiya.biz/pages/the-ginza-story');
     expect(doc.querySelectorAll('.the-ginza__close-up > li')).toHaveLength(4);
     expect(doc.querySelectorAll('.the-ginza__close-up > li')[2].querySelector('img').getAttribute('src')).toContain('close-up-special');
     const links = [...doc.querySelectorAll('.the-ginza__close-up > li')].map((item) => item.querySelector('a')?.getAttribute('href'));
@@ -141,7 +141,7 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
     const menu = doc.querySelector('.the-ginza__mobile-menu');
     expect(menu.hasAttribute('open')).toBe(false);
     expect(menu.querySelector('summary')).not.toBeNull();
-    expect(menu.querySelectorAll('.the-ginza__navigation a')).toHaveLength(5);
+    expect(menu.querySelectorAll('.the-ginza__navigation a')).toHaveLength(6);
   });
 
   it('renders approved desktop and mobile KV choices at the actual source dimensions', async () => {
@@ -177,8 +177,8 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
     const doc = mount(
       (
         await renderCollection({
-          metafields: { custom: { the_ginza_story_page: { value: { url: '/pages/the-ginza-story' } } } },
           settings: {
+            about_link: '/pages/the-ginza-story',
             introduction: '<p>確定済み原稿</p>',
             store_title: 'スキヤ仙台店',
             store_text: '<p>確定済み店舗情報</p>',
@@ -192,20 +192,26 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
     expect(doc.querySelector('.the-ginza__store a').getAttribute('href')).toBe('/pages/stores');
   });
 
+  it('hides the brand introduction link when no link is configured', async () => {
+    const doc = mount((await renderCollection({ settings: { about_link: '' } })).html);
+    expect(doc.querySelector('.the-ginza__about a')).toBeNull();
+    expect(doc.querySelectorAll('.the-ginza__navigation a')).toHaveLength(10);
+  });
+
   it('uses collection metafields for shared branding and category content', async () => {
     const metafields = {
       my_fields: { brand_top_logo: { value: { src: '/files/logo.jpg' } } },
       custom: {
-        the_ginza_story_page: { value: { url: '/pages/story' } },
         the_ginza_category_image_skincare: { value: { src: '/files/skincare.jpg' } },
         the_ginza_category_description_skincare: { value: '<p>スキンケアの説明</p>' },
       },
     };
-    const top = mount((await renderCollection({ metafields })).html);
+    const top = mount((await renderCollection({ metafields, settings: { about_link: '/pages/story' } })).html);
     expect(top.querySelector('.the-ginza__logo img').getAttribute('src')).toBe('/files/logo.jpg');
     expect(top.querySelector('.the-ginza__categories img').getAttribute('src')).toBe('/files/skincare.jpg');
     expect(top.querySelector('.the-ginza__navigation a[href="/pages/story"]')).not.toBeNull();
-    const listing = mount((await renderCollection({ metafields, tags: ['スキンケア'] })).html);
+    const listing = mount((await renderCollection({ metafields, tags: ['スキンケア'], settings: { about_link: '/pages/story' } })).html);
+    expect(listing.querySelector('.the-ginza__navigation a[href="/pages/story"]')).not.toBeNull();
     expect(listing.querySelector('.the-ginza__category-banner img').getAttribute('src')).toBe('/files/skincare.jpg');
     expect(listing.querySelector('.the-ginza__category-banner p').textContent).toBe('スキンケアの説明');
   });
@@ -247,6 +253,7 @@ expect(links).toEqual(['/collections/the-ginza-for-first-time-visitors', '/pages
     const links = [...doc.querySelectorAll('.the-ginza__product a')].map((a) => a.getAttribute('href'));
     expect([...new Set(links)]).toEqual(['/products/ginza-3', '/products/ginza-1', '/products/ginza-2']);
     expect(doc.querySelector('.the-ginza__logo a').getAttribute('href')).toBe('/collections/the-ginza');
+    expect(doc.querySelector('.the-ginza__navigation a[href="https://online.sukiya.biz/pages/the-ginza-story"]')).not.toBeNull();
     expect(doc.querySelector('.the-ginza__navigation a').getAttribute('href')).toBe(
       '/collections/the-ginza/スキンケア?view=the-ginza-products',
     );
