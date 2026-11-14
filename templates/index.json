@@ -12,6 +12,15 @@
     "24868b4c-3917-47de-829e-304405793cbe": {
       "type": "top-slider",
       "blocks": {
+        "slide_cgp7NL": {
+          "type": "slide",
+          "settings": {
+            "title": "ザ・ギンザ",
+            "image": "shopify://shop_images/PC_890x550_aaed1a9e-6030-437f-a5cf-121d90073468.jpg",
+            "image_sp": "shopify://shop_images/SP_828x1242_458d1373-e4ab-4bd2-8c25-2f494b895cae.jpg",
+            "link": "https://online.sukiya.biz/collections/the-ginza"
+          }
+        },
         "slide_nnbgzr": {
           "type": "slide",
           "settings": {
@@ -95,6 +104,7 @@
         }
       },
       "block_order": [
+        "slide_cgp7NL",
         "slide_nnbgzr",
         "slide_njnFU6",
         "aed8695d-1c8c-4faf-90e2-f9596f48623a",
@@ -184,7 +194,10 @@
     },
     "9b8922e2-5e36-4a67-acad-ca3d2ec85a82": {
       "type": "top-brand",
-      "settings": {}
+      "settings": {
+        "show_the_ginza": false,
+        "the_ginza_collection": ""
+      }
     },
     "545aef19-2d64-404f-b8cc-d9095aebc908": {
       "type": "featured-collection",
