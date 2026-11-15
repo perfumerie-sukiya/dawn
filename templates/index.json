@@ -239,16 +239,6 @@
             "link": "https://online.sukiya.biz/pages/nars-original-pouch-2026-10-9"
           }
         },
-        "column_4Yqtyg": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SL20260928.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/serge-lutens-collection-noir-5ml-brand-exclusive-pouch-2026-9-28"
-          }
-        },
         "column_yEgYRk": {
           "type": "column",
           "settings": {
@@ -257,16 +247,6 @@
             "text": "",
             "link_label": "",
             "link": "https://online.sukiya.biz/pages/jill-stuart-moisture-lotion-sheet-mask-1-sheet-2026-8-21"
-          }
-        },
-        "column_w3yLTk": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/SL20260801_4d32d5a9-43a5-4a97-b5ae-014e48edee66.jpg",
-            "title": "",
-            "text": "",
-            "link_label": "",
-            "link": "https://online.sukiya.biz/pages/store-serge-lutens-eau-de-parfum-5ml-brand-specific-pouch-2026-8-1"
           }
         },
         "column_Cgem8P": {
@@ -282,9 +262,7 @@
       },
       "block_order": [
         "column_tk6YXX",
-        "column_4Yqtyg",
         "column_yEgYRk",
-        "column_w3yLTk",
         "column_Cgem8P"
       ],
       "settings": {
