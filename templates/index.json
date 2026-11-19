@@ -117,6 +117,41 @@
       ],
       "settings": {}
     },
+    "multicolumn_zCTFig": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_eDK9nC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/top-banner-2027.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": "https://online.sukiya.biz/collections/sukiya-hukubukuro-2027"
+          }
+        }
+      },
+      "block_order": [
+        "column_eDK9nC"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_text_link_grid_PUAaAR": {
       "type": "image-text-link-grid",
       "disabled": true,
@@ -302,6 +337,7 @@
   },
   "order": [
     "24868b4c-3917-47de-829e-304405793cbe",
+    "multicolumn_zCTFig",
     "image_text_link_grid_PUAaAR",
     "4e924789-09e2-4d09-b5ac-1841525ecc15",
     "7e633bcc-ce15-4de6-ac72-96f7eff1c483",
