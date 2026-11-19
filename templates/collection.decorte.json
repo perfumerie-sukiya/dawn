@@ -67,6 +67,14 @@
             "image_sp": "shopify://shop_images/6JFZZW_MakeCoffret_banner_SP.jpg",
             "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-makeup-collection-2026-alice-in-decorte-wonderland-2026-10-28"
           }
+        },
+        "slide_F7qNMb": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/6JFZZJ_26MWC_banner_PC.jpg",
+            "image_sp": "shopify://shop_images/6JFZZJ_26MWC_banner_SP.jpg",
+            "link": "https://online.sukiya.biz/products/decorte-cosme-decorte-face-powder-xvi-2026-12-1"
+          }
         }
       },
       "block_order": [
@@ -75,7 +83,8 @@
         "slide_B7PtXt",
         "slide_AhNCNE",
         "slide_Ayb8xC",
-        "slide_fTWwQC"
+        "slide_fTWwQC",
+        "slide_F7qNMb"
       ],
       "settings": {}
     },
