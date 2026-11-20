@@ -1,0 +1,132 @@
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'collection-line-login-banner.js' | asset_url }}" defer="defer"></script>
+
+{%- for block in section.blocks -%}
+  {%- liquid
+    if block.settings.image != blank
+      assign banner_image_url = block.settings.image | image_url: width: 2000
+    elsif block.settings.image_asset != blank
+      assign banner_image_url = block.settings.image_asset | asset_url
+    else
+      assign banner_image_url = blank
+    endif
+
+    if block.settings.secret_image != blank
+      assign secret_image_url = block.settings.secret_image | image_url: width: 2000
+    elsif block.settings.secret_image_asset != blank
+      assign secret_image_url = block.settings.secret_image_asset | asset_url
+    else
+      assign secret_image_url = 'https://cdn.shopify.com/s/files/1/0496/5436/6365/files/secret-product.jpg?v=1763088092'
+    endif
+  -%}
+  <div
+    class="collection-hero{% if banner_image_url != blank %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient"
+    data-line-login-banner
+    {{ block.shopify_attributes }}
+  >
+    <div class="collection-hero__inner page-width">
+      <div class="collection-hero__text-wrapper">
+        {%- if block.settings.title != blank -%}
+          <h2 class="collection-hero__title h1">{{ block.settings.title | escape }}</h2>
+        {%- endif -%}
+        {%- if block.settings.text != blank -%}
+          <div class="collection-hero__description rte">{{ block.settings.text }}</div>
+        {%- endif -%}
+      </div>
+      {%- if banner_image_url != blank -%}
+        <div class="collection-hero__image-container media gradient">
+          <a
+            data-line-login-href="{{ block.settings.link }}"
+            aria-disabled="true"
+            class="tw-block tw-pointer-events-none"
+          >
+            <img
+              src="{{ secret_image_url }}"
+              data-line-login-src="{{ banner_image_url }}"
+              alt="{{ block.settings.title | escape }}"
+              width="{{ block.settings.image_width }}"
+              height="{{ block.settings.image_height }}"
+              loading="lazy"
+            >
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endfor -%}
+
+{% schema %}
+{
+  "name": "LINE連携者限定バナー",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "LINE連携済みの方には画像とリンクを表示し、未連携の方にはSecret画像を表示します（リンクは無効）。"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "バナー",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "タイトル"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "詳細テキスト"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "リンク先"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "画像（LINE連携済みの方に表示）"
+        },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "画像のテーマアセット名",
+          "info": "画像を選択していない場合に使用します。"
+        },
+        {
+          "type": "image_picker",
+          "id": "secret_image",
+          "label": "Secret画像（未連携の方に表示）"
+        },
+        {
+          "type": "text",
+          "id": "secret_image_asset",
+          "label": "Secret画像のテーマアセット名",
+          "info": "画像を選択していない場合に使用します。どちらも空の場合は商品用のSecret画像を表示します。"
+        },
+        {
+          "type": "number",
+          "id": "image_width",
+          "label": "画像の幅（px）",
+          "default": 1000
+        },
+        {
+          "type": "number",
+          "id": "image_height",
+          "label": "画像の高さ（px）",
+          "default": 400
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
