@@ -18,7 +18,7 @@
         "select-hukubukuro": {
           "type": "banner",
           "settings": {
-            "title": "オンライン限定セレクト福袋",
+            "title": "オンライン限定 セレクト福袋",
             "text": "<p>予約期間11月16日10時〜12月27日まで</p><p>1月1日以降順次発送</p><p><strong>ご注意事項</strong></p><p>※予約販売のみとなります。<br/>※対象外のブランドもございます。<br/>※セレクト福袋は、1ブランド1回までご購入可能です。</p>",
             "link": "/pages/select-hukubukuro",
             "image_asset": "select-hukubukuro-2027-banner.jpg",
