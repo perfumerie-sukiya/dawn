@@ -20,6 +20,26 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-albion",
       "blocks": {
+        "slide_GwFhFh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/A_IG2026W_Milk_PC.jpg",
+            "image_file": "A_IG2026W_Milk_PC",
+            "image_sp": "shopify://shop_images/A_IG2026W_Milk_SP.jpg",
+            "image_sp_file": "A_IG2026W_Milk_SP",
+            "link": "https://online.sukiya.biz/products/ignis-moisturizing-milk-ii-2026-4-1"
+          }
+        },
+        "slide_tTCfDR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/A_IG2026W_nightwell_PC.jpg",
+            "image_file": "A_IG2026W_nightwell_PC",
+            "image_sp": "shopify://shop_images/A_IG2026W_nightwell_SP.jpg",
+            "image_sp_file": "A_IG2026W_nightwell_SP",
+            "link": "https://online.sukiya.biz/products/ignis-nightwell-retreat-body-wash-2026-11-17"
+          }
+        },
         "slide_ygrUfV": {
           "type": "slide",
           "settings": {
@@ -42,6 +62,8 @@
         }
       },
       "block_order": [
+        "slide_GwFhFh",
+        "slide_tTCfDR",
         "slide_ygrUfV",
         "slide_eKrgt7"
       ],
