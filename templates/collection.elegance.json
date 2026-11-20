@@ -20,6 +20,16 @@
     "3e08194e-2506-4270-ad48-8fc91d8079f0": {
       "type": "slider-albion",
       "blocks": {
+        "slide_anpCUm": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/A_EL2026Sy_poudle_PC_2.jpg",
+            "image_file": "A_EL2026Sy_poudle_PC_2",
+            "image_sp": "shopify://shop_images/A_EL2026Sy_poudle_SP_2.jpg",
+            "image_sp_file": "A_EL2026Sy_poudle_SP_2",
+            "link": "https://online.sukiya.biz/products/elegance-paris-la-poudre-haute-nuance-2026-6-1"
+          }
+        },
         "slide_QdyPAx": {
           "type": "slide",
           "settings": {
@@ -52,6 +62,7 @@
         }
       },
       "block_order": [
+        "slide_anpCUm",
         "slide_QdyPAx",
         "slide_QFaE7M",
         "slide_XbK6fw"
