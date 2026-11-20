@@ -27,7 +27,7 @@
     <div class="collection-hero__inner page-width">
       <div class="collection-hero__text-wrapper">
         {%- if block.settings.title != blank -%}
-          <h2 class="collection-hero__title h1">
+          <h2 class="collection-hero__title h2">
             {%- assign title_parts = block.settings.title | split: ' ' -%}
             {%- for title_part in title_parts -%}
               <span class="tw-inline-block">{{ title_part | escape }}</span>
@@ -44,7 +44,7 @@
           <a
             data-line-login-href="{{ block.settings.link }}"
             aria-disabled="true"
-            class="tw-block tw-pointer-events-none"
+            class="tw-block tw-cursor-pointer"
           >
             <img
               src="{{ secret_image_url }}"
@@ -69,7 +69,7 @@
   "settings": [
     {
       "type": "paragraph",
-      "content": "LINE連携済みの方には画像とリンクを表示し、未連携の方にはSecret画像を表示します（リンクは無効）。"
+      "content": "LINE連携済みの方には画像とリンクを表示し、未連携の方にはSecret画像を表示し、クリックするとLINE連携のポップアップを開きます。"
     },
     {
       "type": "color_scheme",

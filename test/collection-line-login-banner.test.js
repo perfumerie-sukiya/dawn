@@ -48,7 +48,6 @@ test('reveals the banner image and link after LINE connection succeeds', async (
   expect(image.getAttribute('src')).toBe('https://cdn.example.com/select-hukubukuro-2027-banner.jpg');
   expect(link.getAttribute('href')).toBe('/pages/select-hukubukuro');
   expect(link.hasAttribute('aria-disabled')).toBe(false);
-  expect(link.classList.contains('tw-pointer-events-none')).toBe(false);
 });
 
 test('reveals the banner immediately for users already connected', async () => {
@@ -62,4 +61,19 @@ test('reveals the banner immediately for users already connected', async () => {
 test('falls back to the product secret image when no secret image is set', async () => {
   const { image } = await renderBanner({ ...blockSettings, secret_image_asset: '' });
   expect(image.getAttribute('src')).toContain('secret-product.jpg');
+});
+
+test('opens the LINE login modal when the secret banner is clicked before connection', async () => {
+  const { link } = await renderBanner();
+  const openDialog = jest.fn();
+  const modal = document.createElement('div');
+  modal.className = 'line-login-modal';
+  modal.openDialog = openDialog;
+  document.body.appendChild(modal);
+  loadScript();
+  link.querySelector('img').click();
+  expect(openDialog).toHaveBeenCalledTimes(1);
+  document.dispatchEvent(new Event('line-login:connected'));
+  link.click();
+  expect(openDialog).toHaveBeenCalledTimes(1);
 });

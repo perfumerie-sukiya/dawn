@@ -8,10 +8,17 @@
         if (!link.dataset.lineLoginHref) return;
         link.href = link.dataset.lineLoginHref;
         link.removeAttribute('aria-disabled');
-        link.classList.remove('tw-pointer-events-none');
       });
     });
   }
+
+  document.querySelectorAll('[data-line-login-banner] [data-line-login-href]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      if (link.hasAttribute('href')) return;
+      event.preventDefault();
+      document.querySelector('.line-login-modal')?.openDialog();
+    });
+  });
 
   if (localStorage.getItem('isLineLogin') === 'true') unlockLineLoginBanners();
   document.addEventListener('line-login:connected', unlockLineLoginBanners);
