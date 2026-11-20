@@ -37,7 +37,8 @@ test('shows the secret image without a link before LINE connection', async () =>
   loadScript();
   expect(image.getAttribute('src')).toBe('https://cdn.example.com/select-hukubukuro-2027-banner-secret.jpg');
   expect(link.hasAttribute('href')).toBe(false);
-  expect(link.getAttribute('aria-disabled')).toBe('true');
+  expect(link.getAttribute('role')).toBe('button');
+  expect(link.getAttribute('tabindex')).toBe('0');
   expect(document.body.textContent).toContain('オンライン限定セレクト福袋');
 });
 
@@ -47,7 +48,8 @@ test('reveals the banner image and link after LINE connection succeeds', async (
   document.dispatchEvent(new Event('line-login:connected'));
   expect(image.getAttribute('src')).toBe('https://cdn.example.com/select-hukubukuro-2027-banner.jpg');
   expect(link.getAttribute('href')).toBe('/pages/select-hukubukuro');
-  expect(link.hasAttribute('aria-disabled')).toBe(false);
+  expect(link.hasAttribute('role')).toBe(false);
+  expect(link.hasAttribute('tabindex')).toBe(false);
 });
 
 test('reveals the banner immediately for users already connected', async () => {
@@ -73,7 +75,9 @@ test('opens the LINE login modal when the secret banner is clicked before connec
   loadScript();
   link.querySelector('img').click();
   expect(openDialog).toHaveBeenCalledTimes(1);
+  link.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+  expect(openDialog).toHaveBeenCalledTimes(2);
   document.dispatchEvent(new Event('line-login:connected'));
   link.click();
-  expect(openDialog).toHaveBeenCalledTimes(1);
+  expect(openDialog).toHaveBeenCalledTimes(2);
 });
