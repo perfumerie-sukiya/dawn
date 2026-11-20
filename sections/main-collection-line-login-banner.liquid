@@ -27,7 +27,13 @@
     <div class="collection-hero__inner page-width">
       <div class="collection-hero__text-wrapper">
         {%- if block.settings.title != blank -%}
-          <h2 class="collection-hero__title h1 tw-break-keep">{{ block.settings.title | escape }}</h2>
+          <h2 class="collection-hero__title h1">
+            {%- assign title_parts = block.settings.title | split: ' ' -%}
+            {%- for title_part in title_parts -%}
+              <span class="tw-inline-block">{{ title_part | escape }}</span>
+              {%- unless forloop.last %} {% endunless -%}
+            {%- endfor -%}
+          </h2>
         {%- endif -%}
         {%- if block.settings.text != blank -%}
           <div class="collection-hero__description rte">{{ block.settings.text }}</div>
